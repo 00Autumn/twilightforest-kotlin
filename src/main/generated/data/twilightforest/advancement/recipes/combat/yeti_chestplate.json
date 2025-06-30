@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_alpha_yeti_fur": {
+      "conditions": {
+        "items": [
+          {
+            "items": "twilightforest:alpha_yeti_fur"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "twilightforest:yeti_chestplate"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_alpha_yeti_fur"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "twilightforest:yeti_chestplate"
+    ]
+  }
+}

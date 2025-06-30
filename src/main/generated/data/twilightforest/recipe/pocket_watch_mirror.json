@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "C": {
+      "item": "minecraft:chain"
+    },
+    "G": {
+      "item": "minecraft:gold_ingot"
+    },
+    "R": {
+      "item": "minecraft:rabbit_foot"
+    }
+  },
+  "pattern": [
+    "CG ",
+    "GRG",
+    " G "
+  ],
+  "result": {
+    "count": 1,
+    "id": "twilightforest:pocket_watch"
+  }
+}

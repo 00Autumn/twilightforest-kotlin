@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "twilightforest:cracked_towerwood_from_smelting_towerwood"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_towerwood": {
+      "conditions": {
+        "items": [
+          {
+            "items": "twilightforest:towerwood"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_towerwood"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "twilightforest:cracked_towerwood_from_smelting_towerwood"
+    ]
+  }
+}

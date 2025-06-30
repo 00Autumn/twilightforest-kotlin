@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "K": {
+      "item": "twilightforest:knightmetal_ingot"
+    }
+  },
+  "pattern": [
+    "KKK",
+    "K K",
+    "   "
+  ],
+  "result": {
+    "count": 1,
+    "id": "twilightforest:knightmetal_helmet"
+  }
+}

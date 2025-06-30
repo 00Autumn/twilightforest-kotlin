@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_armor_shard_cluster": {
+      "conditions": {
+        "items": [
+          {
+            "items": "twilightforest:armor_shard_cluster"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "twilightforest:knightmetal_ingot_from_blasting_armor_shard_cluster"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_armor_shard_cluster"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "twilightforest:knightmetal_ingot_from_blasting_armor_shard_cluster"
+    ]
+  }
+}

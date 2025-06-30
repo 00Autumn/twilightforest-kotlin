@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "I": {
+      "item": "twilightforest:steeleaf_ingot"
+    },
+    "S": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    " II",
+    " S ",
+    " S "
+  ],
+  "result": {
+    "count": 1,
+    "id": "twilightforest:steeleaf_hoe"
+  }
+}

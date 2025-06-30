@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_knightmetal_block": {
+      "conditions": {
+        "items": [
+          {
+            "items": "twilightforest:knightmetal_block"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "twilightforest:knightmetal_ingot"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_knightmetal_block"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "twilightforest:knightmetal_ingot"
+    ]
+  }
+}

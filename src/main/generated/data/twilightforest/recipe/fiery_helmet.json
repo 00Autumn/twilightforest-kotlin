@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "F": {
+      "item": "twilightforest:fiery_ingot"
+    }
+  },
+  "pattern": [
+    "FFF",
+    "F F",
+    "   "
+  ],
+  "result": {
+    "count": 1,
+    "id": "twilightforest:fiery_helmet"
+  }
+}

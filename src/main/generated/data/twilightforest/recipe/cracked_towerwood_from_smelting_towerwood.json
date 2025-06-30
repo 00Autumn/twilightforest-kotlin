@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:smelting",
+  "category": "blocks",
+  "cookingtime": 200,
+  "experience": 0.25,
+  "group": "towerwood",
+  "ingredient": {
+    "item": "twilightforest:towerwood"
+  },
+  "result": {
+    "id": "twilightforest:cracked_towerwood"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "B": {
+      "item": "minecraft:blaze_rod"
+    },
+    "F": {
+      "item": "twilightforest:fiery_ingot"
+    }
+  },
+  "pattern": [
+    " F ",
+    " F ",
+    " B "
+  ],
+  "result": {
+    "count": 1,
+    "id": "twilightforest:fiery_sword"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "I": {
+      "item": "twilightforest:ironwood_ingot"
+    },
+    "S": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    "II ",
+    "IS ",
+    " S "
+  ],
+  "result": {
+    "count": 1,
+    "id": "twilightforest:ironwood_axe"
+  }
+}

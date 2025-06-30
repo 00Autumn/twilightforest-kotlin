@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_charm_of_keeping_i": {
+      "conditions": {
+        "items": [
+          {
+            "items": "twilightforest:charm_of_keeping_i"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "twilightforest:charm_of_keeping_ii"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_charm_of_keeping_i"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "twilightforest:charm_of_keeping_ii"
+    ]
+  }
+}

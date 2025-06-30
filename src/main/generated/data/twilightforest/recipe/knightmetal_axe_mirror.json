@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "K": {
+      "item": "twilightforest:knightmetal_ingot"
+    },
+    "S": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    "KK ",
+    "KS ",
+    " S "
+  ],
+  "result": {
+    "count": 1,
+    "id": "twilightforest:knightmetal_axe"
+  }
+}

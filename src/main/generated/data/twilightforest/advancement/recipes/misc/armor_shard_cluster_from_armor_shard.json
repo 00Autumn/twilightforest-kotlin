@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_armor_shard": {
+      "conditions": {
+        "items": [
+          {
+            "items": "twilightforest:armor_shard"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "twilightforest:armor_shard_cluster_from_armor_shard"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_armor_shard"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "twilightforest:armor_shard_cluster_from_armor_shard"
+    ]
+  }
+}

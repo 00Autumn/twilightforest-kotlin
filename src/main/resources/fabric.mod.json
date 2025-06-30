@@ -1,0 +1,50 @@
+{
+	"schemaVersion": 1,
+	"id": "twilightforest",
+	"version": "${version}",
+	"name": "twilightForest",
+	"description": "KOTLIN!",
+	"authors": [
+		"AUTUMN!"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/twilightforest/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			{
+				"value": "autumn.twilightforest.TwilightForest",
+				"adapter": "kotlin"
+			}
+		],
+		"client": [
+			{
+				"value": "autumn.twilightforest.TwilightForestClient",
+				"adapter": "kotlin"
+			}
+		],
+		"fabric-datagen": [
+			{
+				"value": "autumn.twilightforest.TwilightForestDataGenerator",
+				"adapter": "kotlin"
+			}
+		]
+	},
+	"mixins": [
+		"twilightforest.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.16.14",
+		"minecraft": "~1.21.1",
+		"java": ">=21",
+		"fabric-api": "*",
+		"fabric-language-kotlin": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}

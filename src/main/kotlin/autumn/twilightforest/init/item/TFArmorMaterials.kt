@@ -3,14 +3,36 @@ package autumn.twilightforest.init.item
 import autumn.twilightforest.TwilightForest
 import autumn.twilightforest.util.TFItemTags
 import net.minecraft.item.equipment.ArmorMaterial
+import net.minecraft.item.equipment.EquipmentAsset
 import net.minecraft.item.equipment.EquipmentType
+import net.minecraft.registry.Registry
+import net.minecraft.registry.RegistryKey
 import net.minecraft.sound.SoundEvents
 import net.minecraft.util.Identifier
 import java.util.EnumMap
 
 object TFArmorMaterials {
 
-    val NAGA_SCALE: ArmorMaterial = ArmorMaterial(
+    val REGISTRY_KEY: RegistryKey<out Registry<EquipmentAsset>> = RegistryKey.ofRegistry(Identifier.ofVanilla("equipment_asset"))
+
+    val NAGA_KEY: RegistryKey<EquipmentAsset> =
+        RegistryKey.of(REGISTRY_KEY, Identifier.of(TwilightForest.MOD_ID, "naga"))
+    val IRONWOOD_KEY: RegistryKey<EquipmentAsset> =
+        RegistryKey.of(REGISTRY_KEY, Identifier.of(TwilightForest.MOD_ID, "ironwood"))
+    val STEELEAF_KEY: RegistryKey<EquipmentAsset> =
+        RegistryKey.of(REGISTRY_KEY, Identifier.of(TwilightForest.MOD_ID, "steeleaf"))
+    val KNIGHTMETAL_KEY: RegistryKey<EquipmentAsset> =
+        RegistryKey.of(REGISTRY_KEY, Identifier.of(TwilightForest.MOD_ID, "knightmetal"))
+    val PHANTOM_KEY: RegistryKey<EquipmentAsset> =
+        RegistryKey.of(REGISTRY_KEY, Identifier.of(TwilightForest.MOD_ID, "phantom"))
+    val FIERY_KEY: RegistryKey<EquipmentAsset> =
+        RegistryKey.of(REGISTRY_KEY, Identifier.of(TwilightForest.MOD_ID, "fiery"))
+    val ARCTIC_KEY: RegistryKey<EquipmentAsset> =
+        RegistryKey.of(REGISTRY_KEY, Identifier.of(TwilightForest.MOD_ID, "arctic"))
+    val YETI_KEY: RegistryKey<EquipmentAsset> =
+        RegistryKey.of(REGISTRY_KEY, Identifier.of(TwilightForest.MOD_ID, "yeti"))
+
+    val NAGA_ARMOR_MATERIAL: ArmorMaterial = ArmorMaterial(
         13,
         EnumMap<EquipmentType, Int>(EquipmentType::class.java).apply {
             put(EquipmentType.BOOTS, 2)
@@ -24,9 +46,9 @@ object TFArmorMaterials {
         0.5f,
         0.0f,
         TFItemTags.REPAIRS_NAGA_SCALE_ARMOR,
-        Identifier.of(TwilightForest.MOD_ID, "naga_scale")
+        NAGA_KEY
     )
-    val IRONWOOD: ArmorMaterial = ArmorMaterial(
+    val IRONWOOD_ARMOR_MATERIAL: ArmorMaterial = ArmorMaterial(
         15,
         EnumMap<EquipmentType, Int>(EquipmentType::class.java).apply {
             put(EquipmentType.BOOTS, 2)
@@ -40,9 +62,9 @@ object TFArmorMaterials {
         0.0f,
         0.0f,
         TFItemTags.REPAIRS_IRONWOOD_ARMOR,
-        Identifier.of(TwilightForest.MOD_ID, "ironwood")
+        IRONWOOD_KEY
     )
-    val STEELEAF: ArmorMaterial = ArmorMaterial(
+    val STEELEAF_ARMOR_MATERIAL: ArmorMaterial = ArmorMaterial(
         11,
         EnumMap<EquipmentType, Int>(EquipmentType::class.java).apply {
             put(EquipmentType.BOOTS, 2)
@@ -56,9 +78,9 @@ object TFArmorMaterials {
         0.0f,
         0.0f,
         TFItemTags.REPAIRS_STEELEAF_ARMOR,
-        Identifier.of(TwilightForest.MOD_ID, "steeleaf")
+        STEELEAF_KEY
     )
-    val KNIGHTMETAL: ArmorMaterial = ArmorMaterial(
+    val KNIGHTMETAL_ARMOR_MATERIAL: ArmorMaterial = ArmorMaterial(
         33,
         EnumMap<EquipmentType, Int>(EquipmentType::class.java).apply {
             put(EquipmentType.BOOTS, 2)
@@ -72,9 +94,9 @@ object TFArmorMaterials {
         1.0f,
         0.0f,
         TFItemTags.REPAIRS_KNIGHTMETAL_ARMOR,
-        Identifier.of(TwilightForest.MOD_ID, "knightmetal")
+        KNIGHTMETAL_KEY
     )
-    val PHANTOM: ArmorMaterial = ArmorMaterial(
+    val PHANTOM_ARMOR_MATERIAL: ArmorMaterial = ArmorMaterial(
         37,
         EnumMap<EquipmentType, Int>(EquipmentType::class.java).apply {
             put(EquipmentType.BOOTS, 2)
@@ -88,9 +110,9 @@ object TFArmorMaterials {
         2.5f,
         0.0f,
         TFItemTags.REPAIRS_KNIGHTMETAL_ARMOR,
-        Identifier.of(TwilightForest.MOD_ID, "phantom")
+        PHANTOM_KEY
     )
-    val FIERY: ArmorMaterial = ArmorMaterial(
+    val FIERY_ARMOR_MATERIAL: ArmorMaterial = ArmorMaterial(
         37,
         EnumMap<EquipmentType, Int>(EquipmentType::class.java).apply {
             put(EquipmentType.BOOTS, 2)
@@ -104,9 +126,9 @@ object TFArmorMaterials {
         1.5f,
         0.0f,
         TFItemTags.REPAIRS_FIERY_ARMOR,
-        Identifier.of(TwilightForest.MOD_ID, "fiery")
+        FIERY_KEY
     )
-    val ARCTIC: ArmorMaterial = ArmorMaterial(
+    val ARCTIC_ARMOR_MATERIAL: ArmorMaterial = ArmorMaterial(
         11,
         EnumMap<EquipmentType, Int>(EquipmentType::class.java).apply {
             put(EquipmentType.BOOTS, 2)
@@ -120,9 +142,9 @@ object TFArmorMaterials {
         2.0f,
         0.0f,
         TFItemTags.REPAIRS_ARCTIC_ARMOR,
-        Identifier.of(TwilightForest.MOD_ID, "arctic")
+        ARCTIC_KEY
     )
-    val YETI: ArmorMaterial = ArmorMaterial(
+    val YETI_ARMOR_MATERIAL: ArmorMaterial = ArmorMaterial(
         11,
         EnumMap<EquipmentType, Int>(EquipmentType::class.java).apply {
             put(EquipmentType.BOOTS, 2)
@@ -136,6 +158,6 @@ object TFArmorMaterials {
         3.0f,
         0.0f,
         TFItemTags.REPAIRS_YETI_ARMOR,
-        Identifier.of(TwilightForest.MOD_ID, "yeti")
+        YETI_KEY
     )
 }

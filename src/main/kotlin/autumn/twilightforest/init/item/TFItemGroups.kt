@@ -114,8 +114,6 @@ object TFItemGroups {
                 entries.add(TFBlocks.TWILIGHT_OAK_SLAB)
                 entries.add(TFBlocks.TWILIGHT_OAK_PRESSURE_PLATE)
                 entries.add(TFBlocks.TWILIGHT_OAK_BUTTON)
-                //entries.add(TFItems.TWILIGHT_OAK_SIGN)
-                //entries.add(TFItems.TWILIGHT_OAK_HANGING_SIGN)
             }.build()
     )
     val TWILIGHT_FOREST_EQUIPMENT_GROUP = Registry.register(Registries.ITEM_GROUP,

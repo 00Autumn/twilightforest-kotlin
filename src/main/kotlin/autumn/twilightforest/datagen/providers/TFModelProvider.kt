@@ -1,20 +1,16 @@
 package autumn.twilightforest.datagen.providers
 
-import autumn.twilightforest.TwilightForest
 import autumn.twilightforest.init.block.TFBlocks
 import autumn.twilightforest.init.item.TFItems
 import autumn.twilightforest.util.TFBlockFamilies
+import net.fabricmc.fabric.api.client.datagen.v1.provider.FabricModelProvider
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput
-import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider
-import net.minecraft.data.client.BlockStateModelGenerator
-import net.minecraft.data.client.ItemModelGenerator
-import net.minecraft.data.client.Models
-import net.minecraft.data.family.BlockFamily
-import net.minecraft.entity.EquipmentSlot
+import net.minecraft.client.data.BlockStateModelGenerator
+import net.minecraft.client.data.ItemModelGenerator
+import net.minecraft.client.data.Models
 import net.minecraft.item.ArmorItem
-import net.minecraft.item.Item
-import net.minecraft.item.equipment.EquipmentModel
-import net.minecraft.util.Identifier
+import net.minecraft.item.equipment.EquipmentAsset
+import net.minecraft.registry.RegistryKey
 
 class TFModelProvider(output: FabricDataOutput) : FabricModelProvider(output) {
     override fun generateBlockStateModels(generator: BlockStateModelGenerator) {
@@ -64,7 +60,7 @@ class TFModelProvider(output: FabricDataOutput) : FabricModelProvider(output) {
             val twilightOakFamily = TFBlockFamilies.get(TFBlocks.TWILIGHT_OAK_PLANKS)
             val twilightOakPool = registerCubeAllModelTexturePool(TFBlocks.TWILIGHT_OAK_PLANKS)
             registerSimpleCubeAll(TFBlocks.TWILIGHT_OAK_LEAVES)
-            registerTintableCross(TFBlocks.TWILIGHT_OAK_SAPLING, BlockStateModelGenerator.TintType.NOT_TINTED)
+            registerTintableCross(TFBlocks.TWILIGHT_OAK_SAPLING, BlockStateModelGenerator.CrossType.NOT_TINTED)
             //registerHangingSign(TFBlocks.STRIPPED_TWILIGHT_OAK_LOG, TFBlocks.TWILIGHT_OAK_HANGING_SIGN, TFBlocks.TWILIGHT_OAK_WALL_HANGING_SIGN)
             twilightOakFamily?.let { twilightOakPool.family(it) }
 
@@ -72,7 +68,7 @@ class TFModelProvider(output: FabricDataOutput) : FabricModelProvider(output) {
     }
 
         override fun generateItemModels(generator: ItemModelGenerator) {
-            // Single layer items
+            //SINGLE LAYER
             listOf(
                 TFItems.NAGA_SCALE,
                 TFItems.LIVEROOT,
@@ -112,7 +108,7 @@ class TFModelProvider(output: FabricDataOutput) : FabricModelProvider(output) {
                 TFItems.POCKET_WATCH
             ).forEach { generator.register(it, Models.GENERATED) }
 
-            // Handheld tools and weapons
+            //HANDHELD TOOLS
             listOf(
                 TFItems.IRONWOOD_SWORD,
                 TFItems.IRONWOOD_PICKAXE,
@@ -134,111 +130,91 @@ class TFModelProvider(output: FabricDataOutput) : FabricModelProvider(output) {
                 TFItems.DIAMOND_MINOTAUR_AXE
             ).forEach { generator.register(it, Models.HANDHELD) }
 
+            /*
             //ARMOR
             registerArmorSet(
+                generator = generator,
+                armorKey = TFArmorMaterials.NAGA_SCALE_KEY,
+                items = mapOf(
+                    "chestplate" to TFItems.NAGA_CHESTPLATE as ArmorItem,
+                    "leggings" to TFItems.NAGA_LEGGINGS as ArmorItem,
+                )
+            )
+            registerFullArmorSet(
                 generator,
-                idBase = "naga",
-                chest = TFItems.NAGA_CHESTPLATE,
-                legs = TFItems.NAGA_LEGGINGS
+                TFArmorMaterials.IRONWOOD_KEY,
+                TFItems.IRONWOOD_HELMET as ArmorItem,
+                TFItems.IRONWOOD_CHESTPLATE as ArmorItem,
+                TFItems.IRONWOOD_LEGGINGS as ArmorItem,
+                TFItems.IRONWOOD_BOOTS as ArmorItem
+            )
+            registerFullArmorSet(
+                generator,
+                TFArmorMaterials.STEELEAF_KEY,
+                TFItems.STEELEAF_HELMET as ArmorItem,
+                TFItems.STEELEAF_CHESTPLATE as ArmorItem,
+                TFItems.STEELEAF_LEGGINGS as ArmorItem,
+                TFItems.STEELEAF_BOOTS as ArmorItem
+            )
+            registerFullArmorSet(
+                generator,
+                TFArmorMaterials.KNIGHTMETAL_KEY,
+                TFItems.KNIGHTMETAL_HELMET as ArmorItem,
+                TFItems.KNIGHTMETAL_CHESTPLATE as ArmorItem,
+                TFItems.KNIGHTMETAL_LEGGINGS as ArmorItem,
+                TFItems.KNIGHTMETAL_BOOTS as ArmorItem
             )
             registerArmorSet(
-                generator,
-                idBase = "ironwood",
-                helmet = TFItems.IRONWOOD_HELMET,
-                chest = TFItems.IRONWOOD_CHESTPLATE,
-                legs = TFItems.IRONWOOD_LEGGINGS,
-                boots = TFItems.IRONWOOD_BOOTS
+                generator = generator,
+                armorKey = TFArmorMaterials.PHANTOM_KEY,
+                items = mapOf(
+                    "helmet" to TFItems.PHANTOM_HELMET as ArmorItem,
+                    "chestplate" to TFItems.PHANTOM_CHESTPLATE as ArmorItem,
+                )
             )
-            registerArmorSet(
+            registerFullArmorSet(
                 generator,
-                idBase = "steeleaf",
-                helmet = TFItems.STEELEAF_HELMET,
-                chest = TFItems.STEELEAF_CHESTPLATE,
-                legs = TFItems.STEELEAF_LEGGINGS,
-                boots = TFItems.STEELEAF_BOOTS
+                TFArmorMaterials.FIERY_KEY,
+                TFItems.FIERY_HELMET as ArmorItem,
+                TFItems.FIERY_CHESTPLATE as ArmorItem,
+                TFItems.FIERY_LEGGINGS as ArmorItem,
+                TFItems.FIERY_BOOTS as ArmorItem
             )
-            registerArmorSet(
+            registerFullArmorSet(
                 generator,
-                idBase = "knightmetal",
-                helmet = TFItems.KNIGHTMETAL_HELMET,
-                chest = TFItems.KNIGHTMETAL_CHESTPLATE,
-                legs = TFItems.KNIGHTMETAL_LEGGINGS,
-                boots = TFItems.KNIGHTMETAL_BOOTS
+                TFArmorMaterials.ARCTIC_KEY,
+                TFItems.ARCTIC_HELMET as ArmorItem,
+                TFItems.ARCTIC_CHESTPLATE as ArmorItem,
+                TFItems.ARCTIC_LEGGINGS as ArmorItem,
+                TFItems.ARCTIC_BOOTS as ArmorItem
             )
-            registerArmorSet(
+            registerFullArmorSet(
                 generator,
-                idBase = "phantom",
-                helmet = TFItems.PHANTOM_HELMET,
-                chest = TFItems.PHANTOM_CHESTPLATE
-            )
-            registerArmorSet(
-                generator,
-                idBase = "fiery",
-                helmet = TFItems.FIERY_HELMET,
-                chest = TFItems.FIERY_CHESTPLATE,
-                legs = TFItems.FIERY_LEGGINGS,
-                boots = TFItems.FIERY_BOOTS
-            )
-            registerArmorSet(
-                generator,
-                idBase = "arctic",
-                helmet = TFItems.ARCTIC_HELMET,
-                chest = TFItems.ARCTIC_CHESTPLATE,
-                legs = TFItems.ARCTIC_LEGGINGS,
-                boots = TFItems.ARCTIC_BOOTS
-            )
-            registerArmorSet(
-                generator,
-                idBase = "yeti",
-                helmet = TFItems.YETI_HELMET,
-                chest = TFItems.YETI_CHESTPLATE,
-                legs = TFItems.YETI_LEGGINGS,
-                boots = TFItems.YETI_BOOTS
-            )
+                TFArmorMaterials.YETI_KEY,
+                TFItems.YETI_HELMET as ArmorItem,
+                TFItems.YETI_CHESTPLATE as ArmorItem,
+                TFItems.YETI_LEGGINGS as ArmorItem,
+                TFItems.YETI_BOOTS as ArmorItem
+            )*/
+            generator.registerArmor(TFItems.IRONWOOD_HELMET as ArmorItem, ModArmorMaterials.IRONWOOD_KEY, "helmet", false)
+            generator.registerArmor(TFItems.IRONWOOD_CHESTPLATE as ArmorItem, ModArmorMaterials.IRONWOOD_KEY, "chestplate", false)
+            generator.registerArmor(TFItems.IRONWOOD_LEGGINGS as ArmorItem, ModArmorMaterials.IRONWOOD_KEY, "leggings", false)
+            generator.registerArmor(TFItems.IRONWOOD_BOOTS as ArmorItem, ModArmorMaterials.IRONWOOD_KEY, "boots", false)
         }
 
-    fun registerArmorSet(
-        generator: ItemModelGenerator,
-        idBase: String,
-        helmet: Item? = null,
-        chest: Item? = null,
-        legs: Item? = null,
-        boots: Item? = null
-    ) {
-        val model = EquipmentModel.builder().addHumanoidLayers(Identifier.of(TwilightForest.MOD_ID, idBase)).build()
-
-        helmet?.let {
-            generator.registerArmor(
-                it,
-                Identifier.of(TwilightForest.MOD_ID, "${idBase}_helmet"),
-                model,
-                EquipmentSlot.HEAD
-            )
-        }
-        chest?.let {
-            generator.registerArmor(
-                it,
-                Identifier.of(TwilightForest.MOD_ID, "${idBase}_chestplate"),
-                model,
-                EquipmentSlot.CHEST
-            )
-        }
-        legs?.let {
-            generator.registerArmor(
-                it,
-                Identifier.of(TwilightForest.MOD_ID, "${idBase}_leggings"),
-                model,
-                EquipmentSlot.LEGS
-            )
-        }
-        boots?.let {
-            generator.registerArmor(
-                it,
-                Identifier.of(TwilightForest.MOD_ID, "${idBase}_boots"),
-                model,
-                EquipmentSlot.FEET
-            )
+    fun registerArmorSet(generator: ItemModelGenerator, armorKey: RegistryKey<EquipmentAsset>, items: Map<String, ArmorItem>) {
+        items.forEach { (slot, item) ->
+            generator.registerArmor(item, armorKey, slot, false)
         }
     }
 
+    fun registerFullArmorSet(generator: ItemModelGenerator, armorKey: RegistryKey<EquipmentAsset>, helmet: ArmorItem, chestplate: ArmorItem, leggings: ArmorItem, boots: ArmorItem) {
+        registerArmorSet(generator, armorKey, mapOf(
+            "helmet" to helmet,
+            "chestplate" to chestplate,
+            "leggings" to leggings,
+            "boots" to boots
+        ))
     }
+}
+

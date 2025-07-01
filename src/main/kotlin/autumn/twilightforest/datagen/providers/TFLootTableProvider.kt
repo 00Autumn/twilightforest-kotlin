@@ -56,9 +56,5 @@ class TFLootTableProvider(dataOutput: FabricDataOutput, registryLookup: Completa
         addDrop(TFBlocks.TWILIGHT_OAK_SLAB)
         addDrop(TFBlocks.TWILIGHT_OAK_PRESSURE_PLATE)
         addDrop(TFBlocks.TWILIGHT_OAK_BUTTON)
-        /*addDrop(TFBlocks.TWILIGHT_OAK_SIGN, TFItems.TWILIGHT_OAK_SIGN)
-        addDrop(TFBlocks.TWILIGHT_OAK_WALL_SIGN, TFItems.TWILIGHT_OAK_SIGN)
-        addDrop(TFBlocks.TWILIGHT_OAK_HANGING_SIGN, TFItems.TWILIGHT_OAK_HANGING_SIGN)
-        addDrop(TFBlocks.TWILIGHT_OAK_WALL_HANGING_SIGN, TFItems.TWILIGHT_OAK_HANGING_SIGN)*/
     }
 }

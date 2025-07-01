@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:ironwood_block"
+        "recipe": "twilightforest:ironwood_block"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:ironwood_block"
+      "twilightforest:ironwood_block"
     ]
   }
 }

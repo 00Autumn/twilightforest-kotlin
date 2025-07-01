@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:arctic_fur"
+        "recipe": "twilightforest:arctic_fur"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:arctic_fur"
+      "twilightforest:arctic_fur"
     ]
   }
 }

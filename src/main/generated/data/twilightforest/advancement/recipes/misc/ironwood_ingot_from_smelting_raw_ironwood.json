@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:ironwood_ingot_from_smelting_raw_ironwood"
+        "recipe": "twilightforest:ironwood_ingot_from_smelting_raw_ironwood"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:ironwood_ingot_from_smelting_raw_ironwood"
+      "twilightforest:ironwood_ingot_from_smelting_raw_ironwood"
     ]
   }
 }

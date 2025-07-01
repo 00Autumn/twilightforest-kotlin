@@ -12,7 +12,7 @@ import net.minecraft.util.Identifier
 object TFItemGroups {
     val TWILIGHT_FOREST_ITEMS_GROUP = Registry.register(Registries.ITEM_GROUP,
         Identifier.of(TwilightForest.MOD_ID, "twilight_forest_items"),
-        FabricItemGroup.builder().icon { ItemStack(TFItems.STEELEAF_INGOT)}
+        FabricItemGroup.builder().icon { ItemStack(TFItems.MAGIC_MAP_FOCUS)}
             .displayName(Text.translatable("itemgroup.twilightforest.twilight_forest_items"))
             .entries {displayContext, entries ->
                 entries.add(TFItems.NAGA_SCALE)
@@ -32,11 +32,6 @@ object TFItemGroups {
                 entries.add(TFItems.RAVEN_FEATHER)
                 entries.add(TFItems.MAGIC_MAP_FOCUS)
                 entries.add(TFItems.MAZE_MAP_FOCUS)
-                entries.add(TFItems.CHARM_OF_LIFE_I)
-                entries.add(TFItems.CHARM_OF_LIFE_II)
-                entries.add(TFItems.CHARM_OF_KEEPING_I)
-                entries.add(TFItems.CHARM_OF_KEEPING_II)
-                entries.add(TFItems.CHARM_OF_KEEPING_III)
                 entries.add(TFItems.BORER_ESSENCE)
                 entries.add(TFItems.CARMINITE)
                 entries.add(TFItems.EMPERORS_CLOTH)
@@ -118,10 +113,15 @@ object TFItemGroups {
     )
     val TWILIGHT_FOREST_EQUIPMENT_GROUP = Registry.register(Registries.ITEM_GROUP,
         Identifier.of(TwilightForest.MOD_ID, "twilight_forest_equipment"),
-        FabricItemGroup.builder().icon { ItemStack(TFItems.CHARM_OF_KEEPING_III)}
+        FabricItemGroup.builder().icon { ItemStack(TFItems.POCKET_WATCH)}
             .displayName(Text.translatable("itemgroup.twilightforest.twilight_forest_equipment"))
             .entries {displayContext, entries ->
                 entries.add(TFItems.POCKET_WATCH)
+                entries.add(TFItems.CHARM_OF_LIFE_I)
+                entries.add(TFItems.CHARM_OF_LIFE_II)
+                entries.add(TFItems.CHARM_OF_KEEPING_I)
+                entries.add(TFItems.CHARM_OF_KEEPING_II)
+                entries.add(TFItems.CHARM_OF_KEEPING_III)
 
                 entries.add(TFItems.NAGA_LEGGINGS)
                 entries.add(TFItems.NAGA_CHESTPLATE)

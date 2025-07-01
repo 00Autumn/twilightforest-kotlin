@@ -3,16 +3,11 @@ package autumn.twilightforest.init.item
 import autumn.twilightforest.TwilightForest
 import autumn.twilightforest.init.item.custom.PocketWatchItem
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents
-import net.minecraft.item.ArmorItem
-import net.minecraft.item.AxeItem
-import net.minecraft.item.HoeItem
+import net.minecraft.component.type.TooltipDisplayComponent
 import net.minecraft.item.Item
 import net.minecraft.item.ItemGroups
 import net.minecraft.item.ItemStack
 import net.minecraft.item.Items
-import net.minecraft.item.PickaxeItem
-import net.minecraft.item.ShovelItem
-import net.minecraft.item.SwordItem
 import net.minecraft.item.ToolMaterial
 import net.minecraft.item.equipment.EquipmentType
 import net.minecraft.item.tooltip.TooltipType
@@ -23,198 +18,127 @@ import net.minecraft.registry.RegistryKeys
 import net.minecraft.text.Text
 import net.minecraft.util.Identifier
 import net.minecraft.util.Rarity
+import java.util.function.Consumer
 
 object TFItems {
 
     //EQUIPMENT INGREDIENTS
-    val NAGA_SCALE = registerItem("naga_scale", Item(Item.Settings().rarity(Rarity.UNCOMMON)
-        .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(TwilightForest.MOD_ID, "naga_scale")))))
-    val LIVEROOT = registerItem("liveroot", Item(Item.Settings()
-        .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(TwilightForest.MOD_ID, "liveroot")))))
-    val RAW_IRONWOOD = registerItem("raw_ironwood", Item(Item.Settings()
-        .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(TwilightForest.MOD_ID, "raw_ironwood")))))
-    val IRONWOOD_INGOT = registerItem("ironwood_ingot", Item(Item.Settings()
-        .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(TwilightForest.MOD_ID, "ironwood_ingot")))))
-    val STEELEAF_INGOT = registerItem("steeleaf_ingot", Item(Item.Settings()
-        .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(TwilightForest.MOD_ID, "steeleaf_ingot")))))
-    val ARMOR_SHARD = registerItem("armor_shard", Item(Item.Settings()
-        .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(TwilightForest.MOD_ID, "armor_shard")))))
-    val ARMOR_SHARD_CLUSTER = registerItem("armor_shard_cluster", Item(Item.Settings()
-        .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(TwilightForest.MOD_ID, "armor_shard_cluster")))))
-    val KNIGHTMETAL_INGOT = registerItem("knightmetal_ingot", Item(Item.Settings()
-        .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(TwilightForest.MOD_ID, "knightmetal_ingot")))))
-    val FIERY_BLOOD = registerItem("fiery_blood", Item(Item.Settings().rarity(Rarity.UNCOMMON)
-        .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(TwilightForest.MOD_ID, "fiery_blood")))))
-    val FIERY_TEARS = registerItem("fiery_tears", Item(Item.Settings().rarity(Rarity.UNCOMMON)
-        .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(TwilightForest.MOD_ID, "fiery_tears")))))
-    val FIERY_INGOT = registerItem("fiery_ingot", Item(Item.Settings().rarity(Rarity.UNCOMMON)
-        .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(TwilightForest.MOD_ID, "fiery_ingot")))))
-    val ARCTIC_FUR = registerItem("arctic_fur", Item(Item.Settings()
-        .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(TwilightForest.MOD_ID, "arctic_fur")))))
-    val ALPHA_YETI_FUR = registerItem("alpha_yeti_fur", Item(Item.Settings().rarity(Rarity.UNCOMMON)
-        .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(TwilightForest.MOD_ID, "alpha_yeti_fur")))))
+    val NAGA_SCALE = registerItem("naga_scale") { it.rarity(Rarity.UNCOMMON); Item(it) }
+    val LIVEROOT = registerItem("liveroot") { Item(it) }
+    val RAW_IRONWOOD = registerItem("raw_ironwood") { Item(it) }
+    val IRONWOOD_INGOT = registerItem("ironwood_ingot") { Item(it) }
+    val STEELEAF_INGOT = registerItem("steeleaf_ingot") { Item(it) }
+    val ARMOR_SHARD = registerItem("armor_shard") { Item(it) }
+    val ARMOR_SHARD_CLUSTER = registerItem("armor_shard_cluster") { Item(it) }
+    val KNIGHTMETAL_INGOT = registerItem("knightmetal_ingot") { Item(it) }
+    val FIERY_BLOOD = registerItem("fiery_blood") { it.rarity(Rarity.UNCOMMON); Item(it) }
+    val FIERY_TEARS = registerItem("fiery_tears") { it.rarity(Rarity.UNCOMMON); Item(it) }
+    val FIERY_INGOT = registerItem("fiery_ingot") { it.rarity(Rarity.UNCOMMON); Item(it) }
+    val ARCTIC_FUR = registerItem("arctic_fur") { Item(it) }
+    val ALPHA_YETI_FUR = registerItem("alpha_yeti_fur") { it.rarity(Rarity.UNCOMMON); Item(it) }
 
-    //MISC INGREDIENTS
-    val RAVEN_FEATHER = registerItem("raven_feather", Item(Item.Settings()
-        .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(TwilightForest.MOD_ID, "raven_feather")))))
-    val MAGIC_MAP_FOCUS = registerItem("magic_map_focus", Item(Item.Settings()
-        .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(TwilightForest.MOD_ID, "magic_map_focus")))))
-    val MAZE_MAP_FOCUS = registerItem("maze_map_focus", Item(Item.Settings()
-        .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(TwilightForest.MOD_ID, "maze_map_focus")))))
-    val CHARM_OF_LIFE_I = registerItem("charm_of_life_i", Item(Item.Settings().rarity(Rarity.UNCOMMON)
-        .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(TwilightForest.MOD_ID, "charm_of_life_i")))))
-    val CHARM_OF_LIFE_II = registerItem("charm_of_life_ii", Item(Item.Settings().rarity(Rarity.UNCOMMON)
-        .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(TwilightForest.MOD_ID, "charm_of_life_ii")))))
-    val CHARM_OF_KEEPING_I = registerItem("charm_of_keeping_i", Item(Item.Settings().rarity(Rarity.UNCOMMON)
-        .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(TwilightForest.MOD_ID, "charm_of_keeping_i")))))
-    val CHARM_OF_KEEPING_II = registerItem("charm_of_keeping_ii", Item(Item.Settings().rarity(Rarity.UNCOMMON)
-        .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(TwilightForest.MOD_ID, "charm_of_keeping_ii")))))
-    val CHARM_OF_KEEPING_III = registerItem("charm_of_keeping_iii", Item(Item.Settings().rarity(Rarity.UNCOMMON)
-        .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(TwilightForest.MOD_ID, "charm_of_keeping_iii")))))
-    val BORER_ESSENCE = registerItem("borer_essence", Item(Item.Settings()
-        .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(TwilightForest.MOD_ID, "borer_essence")))))
-    val CARMINITE = registerItem("carminite", Item(Item.Settings()
-        .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(TwilightForest.MOD_ID, "carminite")))))
-    val EMPERORS_CLOTH = registerItem("emperors_cloth", Item(Item.Settings().rarity(Rarity.UNCOMMON)
-        .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(TwilightForest.MOD_ID, "emperors_cloth")))))
-    val CROWN_SPLINTER = registerItem("crown_splinter", Item(Item.Settings().rarity(Rarity.UNCOMMON)
-        .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(TwilightForest.MOD_ID, "crown_splinter")))))
+    // MISC INGREDIENTS
+    val RAVEN_FEATHER = registerItem("raven_feather") { Item(it) }
+    val MAGIC_MAP_FOCUS = registerItem("magic_map_focus") { Item(it) }
+    val MAZE_MAP_FOCUS = registerItem("maze_map_focus") { Item(it) }
+    val CHARM_OF_LIFE_I = registerItem("charm_of_life_i") { Item(it.rarity(Rarity.UNCOMMON)) }
+    val CHARM_OF_LIFE_II = registerItem("charm_of_life_ii") { Item(it.rarity(Rarity.UNCOMMON)) }
+    val CHARM_OF_KEEPING_I = registerItem("charm_of_keeping_i") { Item(it.rarity(Rarity.UNCOMMON)) }
+    val CHARM_OF_KEEPING_II = registerItem("charm_of_keeping_ii") { Item(it.rarity(Rarity.UNCOMMON)) }
+    val CHARM_OF_KEEPING_III = registerItem("charm_of_keeping_iii") { Item(it.rarity(Rarity.UNCOMMON)) }
+    val BORER_ESSENCE = registerItem("borer_essence") { Item(it) }
+    val CARMINITE = registerItem("carminite") { Item(it) }
+    val EMPERORS_CLOTH = registerItem("emperors_cloth") { Item(it.rarity(Rarity.UNCOMMON)) }
+    val CROWN_SPLINTER = registerItem("crown_splinter") { Item(it.rarity(Rarity.UNCOMMON)) }
 
-    //MISC ITEMS
-    val TOWER_KEY = registerItem("tower_key", Item(Item.Settings().fireproof().rarity(Rarity.UNCOMMON)
-        .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(TwilightForest.MOD_ID, "tower_key")))))
+    // MISC ITEMS
+    val TOWER_KEY = registerItem("tower_key") { Item(it.fireproof().rarity(Rarity.UNCOMMON)) }
 
-    //FOOD ITEMS
-    val RAW_VENISON = registerItem("raw_venison", Item(Item.Settings().food(TFFoodComponents.RAW_VENISON)
-        .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(TwilightForest.MOD_ID, "raw_venison")))))
-    val COOKED_VENISON = registerItem("cooked_venison", Item(Item.Settings().food(TFFoodComponents.COOKED_VENISON)
-        .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(TwilightForest.MOD_ID, "cooked_venison")))))
-    val RAW_MEEF = registerItem("raw_meef", Item(Item.Settings().food(TFFoodComponents.RAW_MEEF)
-        .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(TwilightForest.MOD_ID, "raw_meef")))))
-    val COOKED_MEEF = registerItem("cooked_meef", Item(Item.Settings().food(TFFoodComponents.COOKED_MEEF)
-        .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(TwilightForest.MOD_ID, "cooked_meef")))))
-    val MEEF_STROGANOFF = registerItem("meef_stroganoff", Item(Item.Settings().maxCount(1).food(TFFoodComponents.MEEF_STROGANOFF).useRemainder(Items.BOWL).rarity(Rarity.UNCOMMON)
-        .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(TwilightForest.MOD_ID, "meef_stroganoff")))))
-    val HYDRA_CHOP = registerItem("hydra_chop", Item(Item.Settings().food(TFFoodComponents.HYDRA_CHOP, TFConsumableComponents.HYDRA_CHOP_EFFECT).fireproof().rarity(Rarity.UNCOMMON)
-        .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(TwilightForest.MOD_ID, "hydra_chop")))))
-    val TORCHBERRIES = registerItem("torchberries", Item(Item.Settings().food(TFFoodComponents.TORCHBERRIES, TFConsumableComponents.TORCHBERRIES_EFFECT)
-        .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(TwilightForest.MOD_ID, "torchberries")))))
-    val EXPERIMENT_115 = registerItem("experiment_115", object : Item(Item.Settings().food(TFFoodComponents.EXPERIMENT_115)
-        .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(TwilightForest.MOD_ID, "experiment_115")))) {
-        override fun appendTooltip(stack: ItemStack, context: TooltipContext, tooltip: MutableList<Text>, type: TooltipType) {
-            tooltip.add(Text.translatable("tooltip.twilightforest.experiment_115.tooltip").withColor(16717824))
-            super.appendTooltip(stack, context, tooltip, type)
-        }
-    })
-    val MAZE_WAFER = registerItem("maze_wafer", Item(Item.Settings().food(TFFoodComponents.MAZE_WAFER)
-        .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(TwilightForest.MOD_ID, "maze_wafer")))))
+    // FOOD ITEMS
+    val RAW_VENISON = registerItem("raw_venison") { Item(it.food(TFFoodComponents.RAW_VENISON)) }
+    val COOKED_VENISON = registerItem("cooked_venison") { Item(it.food(TFFoodComponents.COOKED_VENISON)) }
+    val RAW_MEEF = registerItem("raw_meef") { Item(it.food(TFFoodComponents.RAW_MEEF)) }
+    val COOKED_MEEF = registerItem("cooked_meef") { Item(it.food(TFFoodComponents.COOKED_MEEF)) }
+    val MEEF_STROGANOFF = registerItem("meef_stroganoff") {
+        Item(it.maxCount(1).food(TFFoodComponents.MEEF_STROGANOFF).useRemainder(Items.BOWL).rarity(Rarity.UNCOMMON))
+    }
+    val HYDRA_CHOP = registerItem("hydra_chop") {
+        Item(it.food(TFFoodComponents.HYDRA_CHOP, TFConsumableComponents.HYDRA_CHOP_EFFECT).fireproof().rarity(Rarity.UNCOMMON))
+    }
+    val TORCHBERRIES = registerItem("torchberries") {
+        Item(it.food(TFFoodComponents.TORCHBERRIES, TFConsumableComponents.TORCHBERRIES_EFFECT))
+    }
+    val EXPERIMENT_115 = registerItem("experiment_115") {
+        Item(it.food(TFFoodComponents.EXPERIMENT_115))
+    }
 
-    //EQUIPMENT & TRINKETS
-    val POCKET_WATCH = registerItem("pocket_watch", PocketWatchItem(Item.Settings().maxCount(1).rarity(Rarity.RARE)
-        .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(TwilightForest.MOD_ID, "pocket_watch")))))
+    val MAZE_WAFER = registerItem("maze_wafer") { Item(it.food(TFFoodComponents.MAZE_WAFER)) }
 
-    val NAGA_LEGGINGS = registerItem("naga_leggings", ArmorItem(TFArmorMaterials.NAGA_ARMOR_MATERIAL, EquipmentType.LEGGINGS, Item.Settings()
-        .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(TwilightForest.MOD_ID, "naga_leggings")))))
-    val NAGA_CHESTPLATE = registerItem("naga_chestplate", ArmorItem(TFArmorMaterials.NAGA_ARMOR_MATERIAL, EquipmentType.CHESTPLATE, Item.Settings()
-        .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(TwilightForest.MOD_ID, "naga_chestplate")))))
+    // EQUIPMENT & TRINKETS
+    val POCKET_WATCH = registerItem("pocket_watch") { PocketWatchItem(it.maxCount(1).rarity(Rarity.RARE)) }
 
-    val IRONWOOD_BOOTS = registerItem("ironwood_boots", ArmorItem(TFArmorMaterials.IRONWOOD_ARMOR_MATERIAL, EquipmentType.BOOTS, Item.Settings()
-        .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(TwilightForest.MOD_ID, "ironwood_boots")))))
-    val IRONWOOD_LEGGINGS = registerItem("ironwood_leggings", ArmorItem(TFArmorMaterials.IRONWOOD_ARMOR_MATERIAL, EquipmentType.LEGGINGS, Item.Settings()
-        .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(TwilightForest.MOD_ID, "ironwood_leggings")))))
-    val IRONWOOD_CHESTPLATE = registerItem("ironwood_chestplate", ArmorItem(TFArmorMaterials.IRONWOOD_ARMOR_MATERIAL, EquipmentType.CHESTPLATE, Item.Settings()
-        .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(TwilightForest.MOD_ID, "ironwood_chestplate")))))
-    val IRONWOOD_HELMET = registerItem("ironwood_helmet", ArmorItem(TFArmorMaterials.IRONWOOD_ARMOR_MATERIAL, EquipmentType.HELMET, Item.Settings()
-        .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(TwilightForest.MOD_ID, "ironwood_helmet")))))
-    val IRONWOOD_SWORD = registerItem("ironwood_sword", SwordItem(TFToolMaterials.IRONWOOD,  4.0F, -2.4F, Item.Settings()
-        .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(TwilightForest.MOD_ID, "ironwood_sword")))))
-    val IRONWOOD_PICKAXE = registerItem("ironwood_pickaxe", PickaxeItem(TFToolMaterials.IRONWOOD, 2.0F, -2.8F,  Item.Settings()
-        .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(TwilightForest.MOD_ID, "ironwood_pickaxe")))))
-    val IRONWOOD_SHOVEL = registerItem("ironwood_shovel", ShovelItem(TFToolMaterials.IRONWOOD, 2.5F, -3.0F,  Item.Settings()
-        .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(TwilightForest.MOD_ID, "ironwood_shovel")))))
-    val IRONWOOD_AXE = registerItem("ironwood_axe", AxeItem(TFToolMaterials.IRONWOOD,7.0F, -3.1F , Item.Settings()
-        .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(TwilightForest.MOD_ID, "ironwood_axe")))))
-    val IRONWOOD_HOE = registerItem("ironwood_hoe", HoeItem(TFToolMaterials.IRONWOOD,-1.0F, -1.0F,  Item.Settings()
-        .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(TwilightForest.MOD_ID, "ironwood_hoe")))))
+    val NAGA_LEGGINGS = registerItem("naga_leggings") { Item(it.armor(TFArmorMaterials.NAGA_ARMOR_MATERIAL, EquipmentType.LEGGINGS)) }
+    val NAGA_CHESTPLATE = registerItem("naga_chestplate") { Item(it.armor(TFArmorMaterials.NAGA_ARMOR_MATERIAL, EquipmentType.CHESTPLATE)) }
 
-    val STEELEAF_BOOTS = registerItem("steeleaf_boots", ArmorItem(TFArmorMaterials.STEELEAF_ARMOR_MATERIAL, EquipmentType.BOOTS, Item.Settings()
-        .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(TwilightForest.MOD_ID, "steeleaf_boots")))))
-    val STEELEAF_LEGGINGS = registerItem("steeleaf_leggings", ArmorItem(TFArmorMaterials.STEELEAF_ARMOR_MATERIAL, EquipmentType.LEGGINGS, Item.Settings()
-        .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(TwilightForest.MOD_ID, "steeleaf_leggings")))))
-    val STEELEAF_CHESTPLATE = registerItem("steeleaf_chestplate", ArmorItem(TFArmorMaterials.STEELEAF_ARMOR_MATERIAL, EquipmentType.CHESTPLATE, Item.Settings()
-        .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(TwilightForest.MOD_ID, "steeleaf_chestplate")))))
-    val STEELEAF_HELMET = registerItem("steeleaf_helmet", ArmorItem(TFArmorMaterials.STEELEAF_ARMOR_MATERIAL, EquipmentType.HELMET, Item.Settings()
-        .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(TwilightForest.MOD_ID, "steeleaf_helmet")))))
-    val STEELEAF_SWORD = registerItem("steeleaf_sword", SwordItem(TFToolMaterials.STEELEAF,4.0F, -2.4F, Item.Settings()
-        .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(TwilightForest.MOD_ID, "steeleaf_sword")))))
-    val STEELEAF_PICKAXE = registerItem("steeleaf_pickaxe", PickaxeItem(TFToolMaterials.STEELEAF,2.0F, -2.8F,  Item.Settings()
-        .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(TwilightForest.MOD_ID, "steeleaf_pickaxe")))))
-    val STEELEAF_SHOVEL = registerItem("steeleaf_shovel", ShovelItem(TFToolMaterials.STEELEAF,2.5F, -3.0F,  Item.Settings()
-        .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(TwilightForest.MOD_ID, "steeleaf_shovel")))))
-    val STEELEAF_AXE = registerItem("steeleaf_axe", AxeItem(TFToolMaterials.STEELEAF, 7.0F, -3.0F, Item.Settings()
-        .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(TwilightForest.MOD_ID, "steeleaf_axe")))))
-    val STEELEAF_HOE = registerItem("steeleaf_hoe", HoeItem(TFToolMaterials.STEELEAF, -2.0F, -0.5F, Item.Settings()
-        .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(TwilightForest.MOD_ID, "steeleaf_hoe")))))
+    val IRONWOOD_BOOTS = registerItem("ironwood_boots") { Item(it.armor(TFArmorMaterials.IRONWOOD_ARMOR_MATERIAL, EquipmentType.BOOTS)) }
+    val IRONWOOD_LEGGINGS = registerItem("ironwood_leggings") { Item(it.armor(TFArmorMaterials.IRONWOOD_ARMOR_MATERIAL, EquipmentType.LEGGINGS)) }
+    val IRONWOOD_CHESTPLATE = registerItem("ironwood_chestplate") { Item(it.armor(TFArmorMaterials.IRONWOOD_ARMOR_MATERIAL, EquipmentType.CHESTPLATE)) }
+    val IRONWOOD_HELMET = registerItem("ironwood_helmet") { Item(it.armor(TFArmorMaterials.IRONWOOD_ARMOR_MATERIAL, EquipmentType.HELMET)) }
+    val IRONWOOD_SWORD = registerItem("ironwood_sword") { Item(it.sword(TFToolMaterials.IRONWOOD, 4.0F, -2.4F)) }
+    val IRONWOOD_PICKAXE = registerItem("ironwood_pickaxe") { Item(it.pickaxe(TFToolMaterials.IRONWOOD, 2.0F, -2.8F)) }
+    val IRONWOOD_SHOVEL = registerItem("ironwood_shovel") { Item(it.shovel(TFToolMaterials.IRONWOOD, 2.5F, -3.0F)) }
+    val IRONWOOD_AXE = registerItem("ironwood_axe") { Item(it.axe(TFToolMaterials.IRONWOOD, 7.0F, -3.1F)) }
+    val IRONWOOD_HOE = registerItem("ironwood_hoe") { Item(it.hoe(TFToolMaterials.IRONWOOD, -1.0F, -1.0F)) }
 
-    val GOLD_MINOTAUR_AXE = registerItem("gold_minotaur_axe", AxeItem(ToolMaterial.GOLD, 7.0F, -2.8F, Item.Settings()
-        .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(TwilightForest.MOD_ID, "gold_minotaur_axe")))))
-    val DIAMOND_MINOTAUR_AXE = registerItem("diamond_minotaur_axe", AxeItem(ToolMaterial.DIAMOND,7.0F, -3.0F, Item.Settings().rarity(Rarity.RARE)
-        .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(TwilightForest.MOD_ID, "diamond_minotaur_axe")))))
-    val MAZEBREAKER_PICKAXE = registerItem("mazebreaker_pickaxe", PickaxeItem(ToolMaterial.DIAMOND,2.0F, -2.8F,  Item.Settings().rarity(Rarity.EPIC)
-        .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(TwilightForest.MOD_ID, "mazebreaker_pickaxe")))))
+    val STEELEAF_BOOTS = registerItem("steeleaf_boots") { Item(it.armor(TFArmorMaterials.STEELEAF_ARMOR_MATERIAL, EquipmentType.BOOTS)) }
+    val STEELEAF_LEGGINGS = registerItem("steeleaf_leggings") { Item(it.armor(TFArmorMaterials.STEELEAF_ARMOR_MATERIAL, EquipmentType.LEGGINGS)) }
+    val STEELEAF_CHESTPLATE = registerItem("steeleaf_chestplate") { Item(it.armor(TFArmorMaterials.STEELEAF_ARMOR_MATERIAL, EquipmentType.CHESTPLATE)) }
+    val STEELEAF_HELMET = registerItem("steeleaf_helmet") { Item(it.armor(TFArmorMaterials.STEELEAF_ARMOR_MATERIAL, EquipmentType.HELMET)) }
+    val STEELEAF_SWORD = registerItem("steeleaf_sword") { Item(it.sword(TFToolMaterials.STEELEAF, 4.0F, -2.4F)) }
+    val STEELEAF_PICKAXE = registerItem("steeleaf_pickaxe") { Item(it.pickaxe(TFToolMaterials.STEELEAF, 2.0F, -2.8F)) }
+    val STEELEAF_SHOVEL = registerItem("steeleaf_shovel") { Item(it.shovel(TFToolMaterials.STEELEAF, 2.5F, -3.0F)) }
+    val STEELEAF_AXE = registerItem("steeleaf_axe") { Item(it.axe(TFToolMaterials.STEELEAF, 7.0F, -3.0F)) }
+    val STEELEAF_HOE = registerItem("steeleaf_hoe") { Item(it.hoe(TFToolMaterials.STEELEAF, -2.0F, -0.5F)) }
 
-    val KNIGHTMETAL_BOOTS = registerItem("knightmetal_boots", ArmorItem(TFArmorMaterials.KNIGHTMETAL_ARMOR_MATERIAL, EquipmentType.BOOTS, Item.Settings()
-        .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(TwilightForest.MOD_ID, "knightmetal_boots")))))
-    val KNIGHTMETAL_LEGGINGS = registerItem("knightmetal_leggings", ArmorItem(TFArmorMaterials.KNIGHTMETAL_ARMOR_MATERIAL, EquipmentType.LEGGINGS, Item.Settings()
-        .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(TwilightForest.MOD_ID, "knightmetal_leggings")))))
-    val KNIGHTMETAL_CHESTPLATE = registerItem("knightmetal_chestplate", ArmorItem(TFArmorMaterials.KNIGHTMETAL_ARMOR_MATERIAL, EquipmentType.CHESTPLATE, Item.Settings()
-        .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(TwilightForest.MOD_ID, "knightmetal_chestplate")))))
-    val KNIGHTMETAL_HELMET = registerItem("knightmetal_helmet", ArmorItem(TFArmorMaterials.KNIGHTMETAL_ARMOR_MATERIAL, EquipmentType.HELMET, Item.Settings()
-        .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(TwilightForest.MOD_ID, "knightmetal_helmet")))))
-    val KNIGHTMETAL_SWORD = registerItem("knightmetal_sword", SwordItem(TFToolMaterials.KNIGHTMETAL, 4.0F, -2.4F, Item.Settings()
-        .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(TwilightForest.MOD_ID, "knightmetal_sword")))))
-    val KNIGHTMETAL_PICKAXE = registerItem("knightmetal_pickaxe", PickaxeItem(TFToolMaterials.KNIGHTMETAL, 2.0F, -2.8F, Item.Settings()
-        .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(TwilightForest.MOD_ID, "knightmetal_pickaxe")))))
-    val KNIGHTMETAL_AXE = registerItem("knightmetal_axe", AxeItem(TFToolMaterials.KNIGHTMETAL, 7.0F, -3.0F, Item.Settings()
-        .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(TwilightForest.MOD_ID, "knightmetal_axe")))))
-    val PHANTOM_CHESTPLATE = registerItem("phantom_chestplate", ArmorItem(TFArmorMaterials.PHANTOM_ARMOR_MATERIAL, EquipmentType.CHESTPLATE, Item.Settings().rarity(Rarity.EPIC)
-        .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(TwilightForest.MOD_ID, "phantom_chestplate")))))
-    val PHANTOM_HELMET = registerItem("phantom_helmet", ArmorItem(TFArmorMaterials.PHANTOM_ARMOR_MATERIAL, EquipmentType.HELMET, Item.Settings().rarity(Rarity.EPIC)
-        .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(TwilightForest.MOD_ID, "phantom_helmet")))))
+    val GOLD_MINOTAUR_AXE = registerItem("gold_minotaur_axe") { Item(it.axe(ToolMaterial.GOLD, 7.0F, -2.8F)) }
+    val DIAMOND_MINOTAUR_AXE = registerItem("diamond_minotaur_axe") { Item(it.axe(ToolMaterial.DIAMOND, 7.0F, -3.0F).rarity(Rarity.RARE)) }
+    val MAZEBREAKER_PICKAXE = registerItem("mazebreaker_pickaxe") { Item(it.pickaxe(ToolMaterial.DIAMOND, 2.0F, -2.8F).rarity(Rarity.EPIC)) }
 
-    val FIERY_BOOTS = registerItem("fiery_boots", ArmorItem(TFArmorMaterials.FIERY_ARMOR_MATERIAL, EquipmentType.BOOTS, Item.Settings()
-        .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(TwilightForest.MOD_ID, "fiery_boots")))))
-    val FIERY_LEGGINGS = registerItem("fiery_leggings", ArmorItem(TFArmorMaterials.FIERY_ARMOR_MATERIAL, EquipmentType.LEGGINGS, Item.Settings()
-        .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(TwilightForest.MOD_ID, "fiery_leggings")))))
-    val FIERY_CHESTPLATE = registerItem("fiery_chestplate", ArmorItem(TFArmorMaterials.FIERY_ARMOR_MATERIAL, EquipmentType.CHESTPLATE, Item.Settings()
-        .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(TwilightForest.MOD_ID, "fiery_chestplate")))))
-    val FIERY_HELMET = registerItem("fiery_helmet", ArmorItem(TFArmorMaterials.FIERY_ARMOR_MATERIAL, EquipmentType.HELMET, Item.Settings()
-        .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(TwilightForest.MOD_ID, "fiery_helmet")))))
-    val FIERY_SWORD = registerItem("fiery_sword", SwordItem(TFToolMaterials.FIERY, 4.0F, -2.4F,  Item.Settings()
-        .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(TwilightForest.MOD_ID, "fiery_sword")))))
-    val FIERY_PICKAXE = registerItem("fiery_pickaxe", PickaxeItem(TFToolMaterials.FIERY, 2.0F, -2.8F, Item.Settings()
-        .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(TwilightForest.MOD_ID, "fiery_pickaxe")))))
+    val KNIGHTMETAL_BOOTS = registerItem("knightmetal_boots") { Item(it.armor(TFArmorMaterials.KNIGHTMETAL_ARMOR_MATERIAL, EquipmentType.BOOTS)) }
+    val KNIGHTMETAL_LEGGINGS = registerItem("knightmetal_leggings") { Item(it.armor(TFArmorMaterials.KNIGHTMETAL_ARMOR_MATERIAL, EquipmentType.LEGGINGS)) }
+    val KNIGHTMETAL_CHESTPLATE = registerItem("knightmetal_chestplate") { Item(it.armor(TFArmorMaterials.KNIGHTMETAL_ARMOR_MATERIAL, EquipmentType.CHESTPLATE)) }
+    val KNIGHTMETAL_HELMET = registerItem("knightmetal_helmet") { Item(it.armor(TFArmorMaterials.KNIGHTMETAL_ARMOR_MATERIAL, EquipmentType.HELMET)) }
+    val KNIGHTMETAL_SWORD = registerItem("knightmetal_sword") { Item(it.sword(TFToolMaterials.KNIGHTMETAL, 4.0F, -2.4F)) }
+    val KNIGHTMETAL_PICKAXE = registerItem("knightmetal_pickaxe") { Item(it.pickaxe(TFToolMaterials.KNIGHTMETAL, 2.0F, -2.8F)) }
+    val KNIGHTMETAL_AXE = registerItem("knightmetal_axe") { Item(it.axe(TFToolMaterials.KNIGHTMETAL, 7.0F, -3.0F)) }
 
-    val ARCTIC_BOOTS = registerItem("arctic_boots", ArmorItem(TFArmorMaterials.ARCTIC_ARMOR_MATERIAL, EquipmentType.BOOTS, Item.Settings()
-        .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(TwilightForest.MOD_ID, "arctic_boots")))))
-    val ARCTIC_LEGGINGS = registerItem("arctic_leggings", ArmorItem(TFArmorMaterials.ARCTIC_ARMOR_MATERIAL, EquipmentType.LEGGINGS, Item.Settings()
-        .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(TwilightForest.MOD_ID, "arctic_leggings")))))
-    val ARCTIC_CHESTPLATE = registerItem("arctic_chestplate", ArmorItem(TFArmorMaterials.ARCTIC_ARMOR_MATERIAL, EquipmentType.CHESTPLATE, Item.Settings()
-        .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(TwilightForest.MOD_ID, "arctic_chestplate")))))
-    val ARCTIC_HELMET = registerItem("arctic_helmet", ArmorItem(TFArmorMaterials.ARCTIC_ARMOR_MATERIAL, EquipmentType.HELMET, Item.Settings()
-        .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(TwilightForest.MOD_ID, "arctic_helmet")))))
+    val PHANTOM_CHESTPLATE = registerItem("phantom_chestplate") { Item(it.armor(TFArmorMaterials.PHANTOM_ARMOR_MATERIAL, EquipmentType.CHESTPLATE).rarity(Rarity.EPIC)) }
+    val PHANTOM_HELMET = registerItem("phantom_helmet") { Item(it.armor(TFArmorMaterials.PHANTOM_ARMOR_MATERIAL, EquipmentType.HELMET).rarity(Rarity.EPIC)) }
 
-    val YETI_BOOTS = registerItem("yeti_boots", ArmorItem(TFArmorMaterials.YETI_ARMOR_MATERIAL, EquipmentType.BOOTS, Item.Settings()
-        .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(TwilightForest.MOD_ID, "yeti_boots")))))
-    val YETI_LEGGINGS = registerItem("yeti_leggings", ArmorItem(TFArmorMaterials.YETI_ARMOR_MATERIAL, EquipmentType.LEGGINGS, Item.Settings()
-        .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(TwilightForest.MOD_ID, "yeti_leggings")))))
-    val YETI_CHESTPLATE = registerItem("yeti_chestplate", ArmorItem(TFArmorMaterials.YETI_ARMOR_MATERIAL, EquipmentType.CHESTPLATE, Item.Settings()
-        .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(TwilightForest.MOD_ID, "yeti_chestplate")))))
-    val YETI_HELMET = registerItem("yeti_helmet", ArmorItem(TFArmorMaterials.YETI_ARMOR_MATERIAL, EquipmentType.HELMET, Item.Settings()
-        .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(TwilightForest.MOD_ID, "yeti_helmet")))))
+    val FIERY_BOOTS = registerItem("fiery_boots") { Item(it.armor(TFArmorMaterials.FIERY_ARMOR_MATERIAL, EquipmentType.BOOTS)) }
+    val FIERY_LEGGINGS = registerItem("fiery_leggings") { Item(it.armor(TFArmorMaterials.FIERY_ARMOR_MATERIAL, EquipmentType.LEGGINGS)) }
+    val FIERY_CHESTPLATE = registerItem("fiery_chestplate") { Item(it.armor(TFArmorMaterials.FIERY_ARMOR_MATERIAL, EquipmentType.CHESTPLATE)) }
+    val FIERY_HELMET = registerItem("fiery_helmet") { Item(it.armor(TFArmorMaterials.FIERY_ARMOR_MATERIAL, EquipmentType.HELMET)) }
+    val FIERY_SWORD = registerItem("fiery_sword") { Item(it.sword(TFToolMaterials.FIERY, 4.0F, -2.4F)) }
+    val FIERY_PICKAXE = registerItem("fiery_pickaxe") { Item(it.pickaxe(TFToolMaterials.FIERY, 2.0F, -2.8F)) }
 
-    private fun registerItem(name: String, item: Item): Item {
-        return Registry.register(Registries.ITEM, Identifier.of(TwilightForest.MOD_ID, name), item)
+    val ARCTIC_BOOTS = registerItem("arctic_boots") { Item(it.armor(TFArmorMaterials.ARCTIC_ARMOR_MATERIAL, EquipmentType.BOOTS)) }
+    val ARCTIC_LEGGINGS = registerItem("arctic_leggings") { Item(it.armor(TFArmorMaterials.ARCTIC_ARMOR_MATERIAL, EquipmentType.LEGGINGS)) }
+    val ARCTIC_CHESTPLATE = registerItem("arctic_chestplate") { Item(it.armor(TFArmorMaterials.ARCTIC_ARMOR_MATERIAL, EquipmentType.CHESTPLATE)) }
+    val ARCTIC_HELMET = registerItem("arctic_helmet") { Item(it.armor(TFArmorMaterials.ARCTIC_ARMOR_MATERIAL, EquipmentType.HELMET)) }
+
+    val YETI_BOOTS = registerItem("yeti_boots") { Item(it.armor(TFArmorMaterials.YETI_ARMOR_MATERIAL, EquipmentType.BOOTS)) }
+    val YETI_LEGGINGS = registerItem("yeti_leggings") { Item(it.armor(TFArmorMaterials.YETI_ARMOR_MATERIAL, EquipmentType.LEGGINGS)) }
+    val YETI_CHESTPLATE = registerItem("yeti_chestplate") { Item(it.armor(TFArmorMaterials.YETI_ARMOR_MATERIAL, EquipmentType.CHESTPLATE)) }
+    val YETI_HELMET = registerItem("yeti_helmet") { Item(it.armor(TFArmorMaterials.YETI_ARMOR_MATERIAL, EquipmentType.HELMET)) }
+
+    private fun registerItem(name: String, factory: (Item.Settings) -> Item): Item {
+        val id = Identifier.of(TwilightForest.MOD_ID, name)
+        val key = RegistryKey.of(RegistryKeys.ITEM, id)
+        val settings = Item.Settings().registryKey(key)
+        val item = factory(settings)
+
+        return Registry.register(Registries.ITEM, key, item)
     }
 
     fun registerItems() {

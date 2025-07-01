@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:armor_shard"
+        "recipe": "twilightforest:armor_shard"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:armor_shard"
+      "twilightforest:armor_shard"
     ]
   }
 }

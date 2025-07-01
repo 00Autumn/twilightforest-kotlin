@@ -7,6 +7,7 @@ import net.minecraft.block.BlockState
 import net.minecraft.block.ShapeContext
 import net.minecraft.block.entity.BlockEntity
 import net.minecraft.entity.Entity
+import net.minecraft.entity.EntityCollisionHandler
 import net.minecraft.entity.ItemEntity
 import net.minecraft.entity.LivingEntity
 import net.minecraft.entity.ai.pathing.NavigationType
@@ -34,7 +35,7 @@ class HedgeBlock(settings: AbstractBlock.Settings) : Block(settings) {
     override fun getCollisionShape(state: BlockState, world: BlockView, pos: BlockPos, context: ShapeContext): VoxelShape = HEDGE_BB
     override fun getOutlineShape(state: BlockState, world: BlockView, pos: BlockPos, context: ShapeContext): VoxelShape = HEDGE_BB
 
-    override fun onEntityCollision(state: BlockState, world: World, pos: BlockPos, entity: Entity) {
+    override fun onEntityCollision(state: BlockState, world: World, pos: BlockPos, entity: Entity, handler: EntityCollisionHandler) {
         if (shouldDamage(entity) && world is ServerWorld?) {
             entity.damage(world, world.damageSources.cactus(), DAMAGE.toFloat())
         }

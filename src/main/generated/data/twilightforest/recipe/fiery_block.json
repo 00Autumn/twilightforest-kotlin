@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "#": {
-      "item": "twilightforest:fiery_ingot"
-    }
+    "#": "twilightforest:fiery_ingot"
   },
   "pattern": [
     "###",

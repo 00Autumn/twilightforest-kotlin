@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "twilightforest:steeleaf_ingot"
+        "recipe": "minecraft:steeleaf_ingot"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "twilightforest:steeleaf_ingot"
+      "minecraft:steeleaf_ingot"
     ]
   }
 }

@@ -39,7 +39,6 @@ class TFLootTableProvider(dataOutput: FabricDataOutput, registryLookup: Completa
         addDrop(TFBlocks.ENCASED_TOWERWOOD)
         addDrop(TFBlocks.CRACKED_TOWERWOOD)
         addDrop(TFBlocks.MOSSY_TOWERWOOD)
-        addDropWithSilkTouch(TFBlocks.INFESTED_TOWERWOOD, TFBlocks.TOWERWOOD)
 
         addDrop(TFBlocks.HEDGE)
         addDrop(TFBlocks.HEDGE_ROSE, TFBlocks.HEDGE)

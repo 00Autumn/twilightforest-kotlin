@@ -4,9 +4,7 @@
   "cookingtime": 200,
   "experience": 0.25,
   "group": "underbrick",
-  "ingredient": {
-    "item": "twilightforest:underbrick"
-  },
+  "ingredient": "twilightforest:underbrick",
   "result": {
     "id": "twilightforest:cracked_underbrick"
   }

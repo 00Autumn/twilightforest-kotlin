@@ -4,9 +4,7 @@
   "cookingtime": 200,
   "experience": 0.25,
   "group": "knightmetal",
-  "ingredient": {
-    "item": "twilightforest:armor_shard_cluster"
-  },
+  "ingredient": "twilightforest:armor_shard_cluster",
   "result": {
     "id": "twilightforest:knightmetal_ingot"
   }

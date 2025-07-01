@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "category": "building",
   "ingredients": [
-    {
-      "item": "twilightforest:arctic_fur_block"
-    }
+    "twilightforest:arctic_fur_block"
   ],
   "result": {
     "count": 9,

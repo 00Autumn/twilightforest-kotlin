@@ -2,15 +2,9 @@
   "type": "minecraft:crafting_shaped",
   "category": "equipment",
   "key": {
-    "C": {
-      "item": "minecraft:chain"
-    },
-    "G": {
-      "item": "minecraft:gold_ingot"
-    },
-    "R": {
-      "item": "minecraft:rabbit_foot"
-    }
+    "C": "minecraft:chain",
+    "G": "minecraft:gold_ingot",
+    "R": "minecraft:rabbit_foot"
   },
   "pattern": [
     "CG ",

@@ -2,12 +2,8 @@
   "type": "minecraft:crafting_shapeless",
   "category": "building",
   "ingredients": [
-    {
-      "item": "twilightforest:underbrick"
-    },
-    {
-      "item": "minecraft:moss_block"
-    }
+    "twilightforest:underbrick",
+    "minecraft:moss_block"
   ],
   "result": {
     "count": 1,

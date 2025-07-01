@@ -2,12 +2,8 @@
   "type": "minecraft:crafting_shaped",
   "category": "equipment",
   "key": {
-    "K": {
-      "item": "twilightforest:knightmetal_ingot"
-    },
-    "S": {
-      "item": "minecraft:stick"
-    }
+    "K": "twilightforest:knightmetal_ingot",
+    "S": "minecraft:stick"
   },
   "pattern": [
     " KK",

@@ -13,15 +13,27 @@ object TFItemTags {
 
     val IS_FIERY_VIAL: TagKey<Item> = createTag("is_fiery_vial")
 
+    val NAGA_SCALES: TagKey<Item> = createTag("naga_scales")
     val IRONWOOD_INGOTS: TagKey<Item> = createTag("ironwood_ingots")
     val STEELEAF_INGOTS: TagKey<Item> = createTag("steeleaf_ingots")
     val KNIGHTMETAL_INGOTS: TagKey<Item> = createTag("knightmetal_ingots")
     val FIERY_INGOTS: TagKey<Item> = createTag("fiery_ingots")
+    val ARCTIC_FURS: TagKey<Item> = createTag("arctic_furs")
+    val ALPHA_YETI_FURS: TagKey<Item> = createTag("alpha_yeti_furs")
 
     val REPAIRS_IRONWOOD_TOOLS: TagKey<Item> = createTag("repairs_ironwood_tools")
     val REPAIRS_STEELEAF_TOOLS: TagKey<Item> = createTag("repairs_steeleaf_tools")
     val REPAIRS_KNIGHTMETAL_TOOLS: TagKey<Item> = createTag("repairs_knightmetal_tools")
     val REPAIRS_FIERY_TOOLS: TagKey<Item> = createTag("repairs_fiery_tools")
+
+    val REPAIRS_NAGA_SCALE_ARMOR: TagKey<Item> = createTag("repairs_naga_scale_armor")
+    val REPAIRS_IRONWOOD_ARMOR: TagKey<Item> = createTag("repairs_ironwood_armor")
+    val REPAIRS_STEELEAF_ARMOR: TagKey<Item> = createTag("repairs_steeleaf_armor")
+    val REPAIRS_KNIGHTMETAL_ARMOR: TagKey<Item> = createTag("repairs_knightmetal_armor")
+    val REPAIRS_PHANTOM_ARMOR: TagKey<Item> = createTag("repairs_phantom_armor")
+    val REPAIRS_FIERY_ARMOR: TagKey<Item> = createTag("repairs_fiery_armor")
+    val REPAIRS_ARCTIC_ARMOR: TagKey<Item> = createTag("repairs_arctic_armor")
+    val REPAIRS_YETI_ARMOR: TagKey<Item> = createTag("repairs_yeti_armor")
 
     val TWILIGHT_FOREST_LOGS: TagKey<Item> = createTag("twilight_forest_logs")
 

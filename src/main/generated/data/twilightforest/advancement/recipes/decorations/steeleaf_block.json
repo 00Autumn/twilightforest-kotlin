@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "twilightforest:steeleaf_block"
+        "recipe": "minecraft:steeleaf_block"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "twilightforest:steeleaf_block"
+      "minecraft:steeleaf_block"
     ]
   }
 }

@@ -2,12 +2,8 @@
   "type": "minecraft:crafting_shapeless",
   "category": "building",
   "ingredients": [
-    {
-      "item": "twilightforest:towerwood"
-    },
-    {
-      "item": "minecraft:moss_block"
-    }
+    "twilightforest:towerwood",
+    "minecraft:moss_block"
   ],
   "result": {
     "count": 1,

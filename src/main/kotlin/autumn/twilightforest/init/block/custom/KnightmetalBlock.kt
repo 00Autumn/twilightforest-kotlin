@@ -10,6 +10,7 @@ import net.minecraft.entity.ai.pathing.NavigationType
 import net.minecraft.item.Item
 import net.minecraft.item.ItemStack
 import net.minecraft.item.tooltip.TooltipType
+import net.minecraft.server.world.ServerWorld
 import net.minecraft.text.Text
 import net.minecraft.util.math.BlockPos
 import net.minecraft.util.shape.VoxelShape
@@ -28,8 +29,8 @@ class KnightmetalBlock(settings: AbstractBlock.Settings) : Block(settings) {
     override fun getOutlineShape(state: BlockState, world: BlockView, pos: BlockPos, context: ShapeContext): VoxelShape = KNIGHTMETAL_BLOCK_BB
 
     override fun onEntityCollision(state: BlockState, world: World, pos: BlockPos, entity: Entity) {
-        if (shouldDamage(entity)) {
-            entity.damage(world.damageSources.cactus(), DAMAGE.toFloat())
+        if (shouldDamage(entity) && world is ServerWorld) {
+            entity.damage(world, world.damageSources.cactus(), DAMAGE.toFloat())
         }
     }
 

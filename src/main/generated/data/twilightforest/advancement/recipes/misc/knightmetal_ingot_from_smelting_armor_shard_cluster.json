@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "twilightforest:knightmetal_ingot_from_smelting_armor_shard_cluster"
+        "recipe": "minecraft:knightmetal_ingot_from_smelting_armor_shard_cluster"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "twilightforest:knightmetal_ingot_from_smelting_armor_shard_cluster"
+      "minecraft:knightmetal_ingot_from_smelting_armor_shard_cluster"
     ]
   }
 }

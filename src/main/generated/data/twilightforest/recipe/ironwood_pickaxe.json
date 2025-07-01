@@ -2,12 +2,8 @@
   "type": "minecraft:crafting_shaped",
   "category": "equipment",
   "key": {
-    "I": {
-      "item": "twilightforest:ironwood_ingot"
-    },
-    "S": {
-      "item": "minecraft:stick"
-    }
+    "I": "twilightforest:ironwood_ingot",
+    "S": "minecraft:stick"
   },
   "pattern": [
     "III",

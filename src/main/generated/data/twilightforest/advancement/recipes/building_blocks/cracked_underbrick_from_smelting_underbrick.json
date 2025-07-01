@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "twilightforest:cracked_underbrick_from_smelting_underbrick"
+        "recipe": "minecraft:cracked_underbrick_from_smelting_underbrick"
       },
       "trigger": "minecraft:recipe_unlocked"
     },
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "twilightforest:cracked_underbrick_from_smelting_underbrick"
+      "minecraft:cracked_underbrick_from_smelting_underbrick"
     ]
   }
 }

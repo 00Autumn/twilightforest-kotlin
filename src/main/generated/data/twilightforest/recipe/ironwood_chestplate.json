@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "equipment",
   "key": {
-    "I": {
-      "item": "twilightforest:ironwood_ingot"
-    }
+    "I": "twilightforest:ironwood_ingot"
   },
   "pattern": [
     "I I",

@@ -3,8 +3,6 @@
   "package": "autumn.twilightforest.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
-    "MixinAbstractBlockSettings",
-    "MixinBlockEntityType"
   ],
   "injectors": {
     "defaultRequire": 1
@@ -13,9 +11,5 @@
     "requireAnnotations": true
   },
   "client": [
-    "MixinHangingSignBlockEntityRenderer",
-    "MixinSignBlockEntityRenderer",
-    "MixinHangingSignEditScreen",
-    "MixinSignEditScreen"
   ]
 }

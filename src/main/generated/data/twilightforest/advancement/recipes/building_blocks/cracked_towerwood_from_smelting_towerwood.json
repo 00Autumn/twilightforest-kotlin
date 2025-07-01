@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "twilightforest:cracked_towerwood_from_smelting_towerwood"
+        "recipe": "minecraft:cracked_towerwood_from_smelting_towerwood"
       },
       "trigger": "minecraft:recipe_unlocked"
     },
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "twilightforest:cracked_towerwood_from_smelting_towerwood"
+      "minecraft:cracked_towerwood_from_smelting_towerwood"
     ]
   }
 }

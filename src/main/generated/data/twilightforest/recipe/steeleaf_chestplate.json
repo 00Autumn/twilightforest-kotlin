@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "equipment",
   "key": {
-    "S": {
-      "item": "twilightforest:steeleaf_ingot"
-    }
+    "S": "twilightforest:steeleaf_ingot"
   },
   "pattern": [
     "S S",

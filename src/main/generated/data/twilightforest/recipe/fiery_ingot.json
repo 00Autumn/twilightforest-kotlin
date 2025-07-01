@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "category": "building",
   "ingredients": [
-    {
-      "item": "twilightforest:fiery_block"
-    }
+    "twilightforest:fiery_block"
   ],
   "result": {
     "count": 9,

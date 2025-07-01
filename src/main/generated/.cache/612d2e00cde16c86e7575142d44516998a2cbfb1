@@ -1,4 +1,4 @@
-// 1.21.1	2025-06-30T10:38:27.765788	twilightForest/Tags for minecraft:block
+// 1.21.3	2025-06-30T23:22:49.8362076	twilightForest/Tags for minecraft:block
 24bbac3e67533318f52f8a7f3a7e4803cdba9e63 data\minecraft\tags\block\leaves.json
 edfaa8cda9c6e3da8038e030c4631fa83cb73959 data\minecraft\tags\block\wooden_slabs.json
 04f4f56ed00ee38270536c5aef09343683472685 data\minecraft\tags\block\wooden_pressure_plates.json
@@ -7,8 +7,8 @@ a249c46329a41538f49a564e1f14338aaf1be5a0 data\twilightforest\tags\block\needs_st
 ffe7605d195930efeb9cd2c6ddff848c013939cc data\minecraft\tags\block\mineable\axe.json
 3908af010fe072238ba2623f48b38a8a778b7c52 data\minecraft\tags\block\saplings.json
 7f89e0aad5b3f84db9e6935350ccb1dabe9664a8 data\minecraft\tags\block\fence_gates.json
-1159460bc9f26874e46ef893746bd349a8562000 data\minecraft\tags\block\planks.json
 c15f20a0c7467da527d9bde3456b9eb9e6a86021 data\minecraft\tags\block\strider_warm_blocks.json
+1159460bc9f26874e46ef893746bd349a8562000 data\minecraft\tags\block\planks.json
 32b13946c4cd1f944b029659ccce5fcb2adad4ff data\twilightforest\tags\block\needs_ironwood_tool.json
 21509a530d8fc1cf6fb2871e0002994fb49bf507 data\twilightforest\tags\block\mazebreaker_tool_accelerated.json
 9801f24a0666870fdcf584489810f7c3acbf9fd8 data\minecraft\tags\block\needs_stone_tool.json

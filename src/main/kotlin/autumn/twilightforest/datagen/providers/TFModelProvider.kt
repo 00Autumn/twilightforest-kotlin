@@ -1,5 +1,6 @@
 package autumn.twilightforest.datagen.providers
 
+import autumn.twilightforest.TwilightForest
 import autumn.twilightforest.init.block.TFBlocks
 import autumn.twilightforest.init.item.TFItems
 import autumn.twilightforest.util.TFBlockFamilies
@@ -9,7 +10,11 @@ import net.minecraft.data.client.BlockStateModelGenerator
 import net.minecraft.data.client.ItemModelGenerator
 import net.minecraft.data.client.Models
 import net.minecraft.data.family.BlockFamily
+import net.minecraft.entity.EquipmentSlot
 import net.minecraft.item.ArmorItem
+import net.minecraft.item.Item
+import net.minecraft.item.equipment.EquipmentModel
+import net.minecraft.util.Identifier
 
 class TFModelProvider(output: FabricDataOutput) : FabricModelProvider(output) {
     override fun generateBlockStateModels(generator: BlockStateModelGenerator) {
@@ -60,7 +65,7 @@ class TFModelProvider(output: FabricDataOutput) : FabricModelProvider(output) {
             val twilightOakPool = registerCubeAllModelTexturePool(TFBlocks.TWILIGHT_OAK_PLANKS)
             registerSimpleCubeAll(TFBlocks.TWILIGHT_OAK_LEAVES)
             registerTintableCross(TFBlocks.TWILIGHT_OAK_SAPLING, BlockStateModelGenerator.TintType.NOT_TINTED)
-            registerHangingSign(TFBlocks.STRIPPED_TWILIGHT_OAK_LOG, TFBlocks.TWILIGHT_OAK_HANGING_SIGN, TFBlocks.TWILIGHT_OAK_WALL_HANGING_SIGN)
+            //registerHangingSign(TFBlocks.STRIPPED_TWILIGHT_OAK_LOG, TFBlocks.TWILIGHT_OAK_HANGING_SIGN, TFBlocks.TWILIGHT_OAK_WALL_HANGING_SIGN)
             twilightOakFamily?.let { twilightOakPool.family(it) }
 
         }
@@ -129,38 +134,111 @@ class TFModelProvider(output: FabricDataOutput) : FabricModelProvider(output) {
                 TFItems.DIAMOND_MINOTAUR_AXE
             ).forEach { generator.register(it, Models.HANDHELD) }
 
-            //Armor
-            listOf(
-                TFItems.NAGA_LEGGINGS,
-                TFItems.NAGA_CHESTPLATE,
-                TFItems.IRONWOOD_BOOTS,
-                TFItems.IRONWOOD_LEGGINGS,
-                TFItems.IRONWOOD_CHESTPLATE,
-                TFItems.IRONWOOD_HELMET,
-                TFItems.STEELEAF_BOOTS,
-                TFItems.STEELEAF_LEGGINGS,
-                TFItems.STEELEAF_CHESTPLATE,
-                TFItems.STEELEAF_HELMET,
-                TFItems.KNIGHTMETAL_BOOTS,
-                TFItems.KNIGHTMETAL_LEGGINGS,
-                TFItems.KNIGHTMETAL_CHESTPLATE,
-                TFItems.KNIGHTMETAL_HELMET,
-                TFItems.PHANTOM_CHESTPLATE,
-                TFItems.PHANTOM_HELMET,
-                TFItems.FIERY_BOOTS,
-                TFItems.FIERY_LEGGINGS,
-                TFItems.FIERY_CHESTPLATE,
-                TFItems.FIERY_HELMET,
-                TFItems.ARCTIC_BOOTS,
-                TFItems.ARCTIC_LEGGINGS,
-                TFItems.ARCTIC_CHESTPLATE,
-                TFItems.ARCTIC_HELMET,
-                TFItems.YETI_BOOTS,
-                TFItems.YETI_LEGGINGS,
-                TFItems.YETI_CHESTPLATE,
-                TFItems.YETI_HELMET
-            ).forEach { generator.registerArmor(it as? ArmorItem) }
-
+            //ARMOR
+            registerArmorSet(
+                generator,
+                idBase = "naga",
+                chest = TFItems.NAGA_CHESTPLATE,
+                legs = TFItems.NAGA_LEGGINGS
+            )
+            registerArmorSet(
+                generator,
+                idBase = "ironwood",
+                helmet = TFItems.IRONWOOD_HELMET,
+                chest = TFItems.IRONWOOD_CHESTPLATE,
+                legs = TFItems.IRONWOOD_LEGGINGS,
+                boots = TFItems.IRONWOOD_BOOTS
+            )
+            registerArmorSet(
+                generator,
+                idBase = "steeleaf",
+                helmet = TFItems.STEELEAF_HELMET,
+                chest = TFItems.STEELEAF_CHESTPLATE,
+                legs = TFItems.STEELEAF_LEGGINGS,
+                boots = TFItems.STEELEAF_BOOTS
+            )
+            registerArmorSet(
+                generator,
+                idBase = "knightmetal",
+                helmet = TFItems.KNIGHTMETAL_HELMET,
+                chest = TFItems.KNIGHTMETAL_CHESTPLATE,
+                legs = TFItems.KNIGHTMETAL_LEGGINGS,
+                boots = TFItems.KNIGHTMETAL_BOOTS
+            )
+            registerArmorSet(
+                generator,
+                idBase = "phantom",
+                helmet = TFItems.PHANTOM_HELMET,
+                chest = TFItems.PHANTOM_CHESTPLATE
+            )
+            registerArmorSet(
+                generator,
+                idBase = "fiery",
+                helmet = TFItems.FIERY_HELMET,
+                chest = TFItems.FIERY_CHESTPLATE,
+                legs = TFItems.FIERY_LEGGINGS,
+                boots = TFItems.FIERY_BOOTS
+            )
+            registerArmorSet(
+                generator,
+                idBase = "arctic",
+                helmet = TFItems.ARCTIC_HELMET,
+                chest = TFItems.ARCTIC_CHESTPLATE,
+                legs = TFItems.ARCTIC_LEGGINGS,
+                boots = TFItems.ARCTIC_BOOTS
+            )
+            registerArmorSet(
+                generator,
+                idBase = "yeti",
+                helmet = TFItems.YETI_HELMET,
+                chest = TFItems.YETI_CHESTPLATE,
+                legs = TFItems.YETI_LEGGINGS,
+                boots = TFItems.YETI_BOOTS
+            )
         }
+
+    fun registerArmorSet(
+        generator: ItemModelGenerator,
+        idBase: String,
+        helmet: Item? = null,
+        chest: Item? = null,
+        legs: Item? = null,
+        boots: Item? = null
+    ) {
+        val model = EquipmentModel.builder().addHumanoidLayers(Identifier.of(TwilightForest.MOD_ID, idBase)).build()
+
+        helmet?.let {
+            generator.registerArmor(
+                it,
+                Identifier.of(TwilightForest.MOD_ID, "${idBase}_helmet"),
+                model,
+                EquipmentSlot.HEAD
+            )
+        }
+        chest?.let {
+            generator.registerArmor(
+                it,
+                Identifier.of(TwilightForest.MOD_ID, "${idBase}_chestplate"),
+                model,
+                EquipmentSlot.CHEST
+            )
+        }
+        legs?.let {
+            generator.registerArmor(
+                it,
+                Identifier.of(TwilightForest.MOD_ID, "${idBase}_leggings"),
+                model,
+                EquipmentSlot.LEGS
+            )
+        }
+        boots?.let {
+            generator.registerArmor(
+                it,
+                Identifier.of(TwilightForest.MOD_ID, "${idBase}_boots"),
+                model,
+                EquipmentSlot.FEET
+            )
+        }
+    }
 
     }

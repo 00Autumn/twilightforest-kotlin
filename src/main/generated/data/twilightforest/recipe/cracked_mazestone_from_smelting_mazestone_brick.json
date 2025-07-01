@@ -4,9 +4,7 @@
   "cookingtime": 200,
   "experience": 0.25,
   "group": "mazestone",
-  "ingredient": {
-    "item": "twilightforest:mazestone_brick"
-  },
+  "ingredient": "twilightforest:mazestone_brick",
   "result": {
     "id": "twilightforest:cracked_mazestone"
   }

@@ -17,6 +17,6 @@ object TFWoodTypes {
 
 
     fun registerWoodTypes() {
-        TwilightForest.logger.info("Registering wood types for " + TwilightForest.MOD_ID)
+        TwilightForest.logger?.info("Registering wood types for " + TwilightForest.MOD_ID)
     }
 }

@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "twilightforest:knightmetal_ingot"
+        "recipe": "minecraft:knightmetal_ingot"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "twilightforest:knightmetal_ingot"
+      "minecraft:knightmetal_ingot"
     ]
   }
 }

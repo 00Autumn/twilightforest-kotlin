@@ -2,12 +2,8 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "item": "twilightforest:charm_of_keeping_ii"
-    },
-    {
-      "item": "twilightforest:charm_of_keeping_i"
-    }
+    "twilightforest:charm_of_keeping_ii",
+    "twilightforest:charm_of_keeping_i"
   ],
   "result": {
     "count": 1,

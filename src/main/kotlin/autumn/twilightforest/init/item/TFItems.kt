@@ -3,22 +3,17 @@ package autumn.twilightforest.init.item
 import autumn.twilightforest.TwilightForest
 import autumn.twilightforest.init.item.custom.PocketWatchItem
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents
-import net.minecraft.component.type.TooltipDisplayComponent
 import net.minecraft.item.Item
 import net.minecraft.item.ItemGroups
-import net.minecraft.item.ItemStack
 import net.minecraft.item.Items
 import net.minecraft.item.ToolMaterial
 import net.minecraft.item.equipment.EquipmentType
-import net.minecraft.item.tooltip.TooltipType
 import net.minecraft.registry.Registries
 import net.minecraft.registry.Registry
 import net.minecraft.registry.RegistryKey
 import net.minecraft.registry.RegistryKeys
-import net.minecraft.text.Text
 import net.minecraft.util.Identifier
 import net.minecraft.util.Rarity
-import java.util.function.Consumer
 
 object TFItems {
 
@@ -59,19 +54,10 @@ object TFItems {
     val COOKED_VENISON = registerItem("cooked_venison") { Item(it.food(TFFoodComponents.COOKED_VENISON)) }
     val RAW_MEEF = registerItem("raw_meef") { Item(it.food(TFFoodComponents.RAW_MEEF)) }
     val COOKED_MEEF = registerItem("cooked_meef") { Item(it.food(TFFoodComponents.COOKED_MEEF)) }
-    val MEEF_STROGANOFF = registerItem("meef_stroganoff") {
-        Item(it.maxCount(1).food(TFFoodComponents.MEEF_STROGANOFF).useRemainder(Items.BOWL).rarity(Rarity.UNCOMMON))
-    }
-    val HYDRA_CHOP = registerItem("hydra_chop") {
-        Item(it.food(TFFoodComponents.HYDRA_CHOP, TFConsumableComponents.HYDRA_CHOP_EFFECT).fireproof().rarity(Rarity.UNCOMMON))
-    }
-    val TORCHBERRIES = registerItem("torchberries") {
-        Item(it.food(TFFoodComponents.TORCHBERRIES, TFConsumableComponents.TORCHBERRIES_EFFECT))
-    }
-    val EXPERIMENT_115 = registerItem("experiment_115") {
-        Item(it.food(TFFoodComponents.EXPERIMENT_115))
-    }
-
+    val MEEF_STROGANOFF = registerItem("meef_stroganoff") { Item(it.maxCount(1).food(TFFoodComponents.MEEF_STROGANOFF).useRemainder(Items.BOWL).rarity(Rarity.UNCOMMON)) }
+    val HYDRA_CHOP = registerItem("hydra_chop") { Item(it.food(TFFoodComponents.HYDRA_CHOP, TFConsumableComponents.HYDRA_CHOP_EFFECT).fireproof().rarity(Rarity.UNCOMMON)) }
+    val TORCHBERRIES = registerItem("torchberries") { Item(it.food(TFFoodComponents.TORCHBERRIES, TFConsumableComponents.TORCHBERRIES_EFFECT)) }
+    val EXPERIMENT_115 = registerItem("experiment_115") { Item(it.food(TFFoodComponents.EXPERIMENT_115)) }
     val MAZE_WAFER = registerItem("maze_wafer") { Item(it.food(TFFoodComponents.MAZE_WAFER)) }
 
     // EQUIPMENT & TRINKETS

@@ -39,136 +39,110 @@ import net.minecraft.util.Identifier
 
 object TFBlocks {
 
-    //NATURAL BLOCKS
-    val ROOT_BLOCK = registerBlock("root_block",
-        Block(AbstractBlock.Settings.create().registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(TwilightForest.MOD_ID, "root_block")))
-            .burnable().mapColor(MapColor.BROWN).sounds(BlockSoundGroup.WOOD).strength(2.0F, 3.0F)))
-    val LIVEROOT_BLOCK = registerBlock("liveroot_block",
-        Block(AbstractBlock.Settings.create().registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(TwilightForest.MOD_ID, "liveroot_block")))
-            .burnable().mapColor(MapColor.LICHEN_GREEN).sounds(BlockSoundGroup.WOOD).strength(2.0F, 3.0F)))
+    // NATURAL BLOCKS
+    val ROOT_BLOCK = registerBlock("root_block") { settings -> Block(settings.burnable().mapColor(MapColor.BROWN).sounds(BlockSoundGroup.WOOD).strength(2.0F, 3.0F)) }
+    val LIVEROOT_BLOCK = registerBlock("liveroot_block") { settings -> Block(settings.burnable().mapColor(MapColor.LICHEN_GREEN).sounds(BlockSoundGroup.WOOD).strength(2.0F, 3.0F)) }
+    val MAZE_SLIME_BLOCK = registerCopyBlock("maze_slime_block", Blocks.SLIME_BLOCK) { settings -> SlimeBlock(settings.mapColor(MapColor.LIGHT_GRAY)) }
+    val IRONWOOD_BLOCK = registerCopyBlock("ironwood_block", Blocks.IRON_BLOCK) { settings -> Block(settings.mapColor(MapColor.LICHEN_GREEN).sounds(BlockSoundGroup.METAL)) }
+    val STEELEAF_BLOCK = registerCopyBlock("steeleaf_block", Blocks.DIAMOND_BLOCK) { settings -> Block(settings.mapColor(MapColor.GREEN).sounds(BlockSoundGroup.METAL)) }
+    val KNIGHTMETAL_BLOCK = registerCopyBlock("knightmetal_block", Blocks.DIAMOND_BLOCK) { settings -> KnightmetalBlock(settings.mapColor(MapColor.LIGHT_GRAY).sounds(BlockSoundGroup.ANVIL)) }
+    val FIERY_BLOCK = registerCopyBlock("fiery_block", Blocks.DIAMOND_BLOCK) { settings -> FieryBlock(settings.mapColor(MapColor.TERRACOTTA_RED).sounds(BlockSoundGroup.METAL)) }
+    val ARCTIC_FUR_BLOCK = registerCopyBlock("arctic_fur_block", Blocks.WHITE_WOOL) { settings -> ArcticFurBlock(settings) }
 
-    //STORAGE BLOCKS
-    val MAZE_SLIME_BLOCK = registerBlock("maze_slime_block",
-        SlimeBlock(AbstractBlock.Settings.copy(Blocks.SLIME_BLOCK).registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(TwilightForest.MOD_ID, "maze_slime_block")))
-            .mapColor(MapColor.LIGHT_GRAY)))
-    val IRONWOOD_BLOCK = registerBlock("ironwood_block",
-        Block(AbstractBlock.Settings.copy(Blocks.IRON_BLOCK).registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(TwilightForest.MOD_ID, "ironwood_block")))
-            .mapColor(MapColor.LICHEN_GREEN).sounds(BlockSoundGroup.METAL)))
-    val STEELEAF_BLOCK = registerBlock("steeleaf_block",
-        Block(AbstractBlock.Settings.copy(Blocks.DIAMOND_BLOCK).registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(TwilightForest.MOD_ID, "steeleaf_block")))
-            .mapColor(MapColor.GREEN).sounds(BlockSoundGroup.METAL)))
-    val KNIGHTMETAL_BLOCK = registerBlock("knightmetal_block",
-        KnightmetalBlock(AbstractBlock.Settings.copy(Blocks.DIAMOND_BLOCK).registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(TwilightForest.MOD_ID, "knightmetal_block")))
-            .mapColor(MapColor.LIGHT_GRAY).sounds(BlockSoundGroup.ANVIL)))
-    val FIERY_BLOCK = registerBlock("fiery_block",
-        FieryBlock(AbstractBlock.Settings.copy(Blocks.DIAMOND_BLOCK).registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(TwilightForest.MOD_ID, "fiery_block")))
-            .mapColor(MapColor.TERRACOTTA_RED).sounds(BlockSoundGroup.METAL)))
-    val ARCTIC_FUR_BLOCK = registerBlock("arctic_fur_block",
-        ArcticFurBlock(AbstractBlock.Settings.copy(Blocks.WHITE_WOOL).registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(TwilightForest.MOD_ID, "arctic_fur_block")))))
+    // LABYRINTH BLOCKS
+    val MAZESTONE = registerBlock("mazestone") { settings -> Block(settings.instrument(NoteBlockInstrument.BASEDRUM).mapColor(MapColor.LIGHT_GRAY).requiresTool().sounds(BlockSoundGroup.STONE).strength(100.0f, 5.0f)) }
+    val MAZESTONE_BRICK = registerCopyBlock("mazestone_brick", MAZESTONE) { settings -> Block(settings) }
+    val MAZESTONE_LARGE_BRICK = registerCopyBlock("mazestone_large_brick", MAZESTONE) { settings -> Block(settings) }
+    val CHISELED_MAZESTONE = registerCopyBlock("chiseled_mazestone", MAZESTONE) { settings -> Block(settings) }
+    val CUT_MAZESTONE = registerCopyBlock("cut_mazestone", MAZESTONE) { settings -> Block(settings) }
+    val DECORATIVE_MAZESTONE = registerCopyBlock("decorative_mazestone", MAZESTONE) { settings -> Block(settings) }
+    val CRACKED_MAZESTONE = registerCopyBlock("cracked_mazestone", MAZESTONE) { settings -> Block(settings) }
+    val MOSSY_MAZESTONE = registerCopyBlock("mossy_mazestone", MAZESTONE) { settings -> Block(settings) }
+    val MAZESTONE_MOSAIC = registerCopyBlock("mazestone_mosaic", MAZESTONE) { settings -> Block(settings) }
+    val MAZESTONE_BORDER = registerCopyBlock("mazestone_border", MAZESTONE) { settings -> Block(settings) }
 
-    //LABYRINTH BLOCKS
-    val MAZESTONE = registerBlock("mazestone",
-        Block(AbstractBlock.Settings.create().registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(TwilightForest.MOD_ID, "mazestone")))
-            .instrument(NoteBlockInstrument.BASEDRUM).mapColor(MapColor.LIGHT_GRAY).requiresTool().sounds(BlockSoundGroup.STONE).strength(100.0f, 5.0f)))
-    val MAZESTONE_BRICK = registerBlock("mazestone_brick", Block(AbstractBlock.Settings.copy(MAZESTONE).registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(TwilightForest.MOD_ID, "mazestone_brick")))))
-    val MAZESTONE_LARGE_BRICK = registerBlock("mazestone_large_brick", Block(AbstractBlock.Settings.copy(MAZESTONE).registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(TwilightForest.MOD_ID, "mazestone_large_brick")))))
-    val CHISELED_MAZESTONE = registerBlock("chiseled_mazestone", Block(AbstractBlock.Settings.copy(MAZESTONE).registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(TwilightForest.MOD_ID, "chiseled_mazestone")))))
-    val CUT_MAZESTONE = registerBlock("cut_mazestone", Block(AbstractBlock.Settings.copy(MAZESTONE).registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(TwilightForest.MOD_ID, "cut_mazestone")))))
-    val DECORATIVE_MAZESTONE = registerBlock("decorative_mazestone", Block(AbstractBlock.Settings.copy(MAZESTONE).registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(TwilightForest.MOD_ID, "decorative_mazestone")))))
-    val CRACKED_MAZESTONE = registerBlock("cracked_mazestone", Block(AbstractBlock.Settings.copy(MAZESTONE).registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(TwilightForest.MOD_ID, "cracked_mazestone")))))
-    val MOSSY_MAZESTONE = registerBlock("mossy_mazestone", Block(AbstractBlock.Settings.copy(MAZESTONE).registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(TwilightForest.MOD_ID, "mossy_mazestone")))))
-    val MAZESTONE_MOSAIC = registerBlock("mazestone_mosaic", Block(AbstractBlock.Settings.copy(MAZESTONE).registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(TwilightForest.MOD_ID, "mazestone_mosaic")))))
-    val MAZESTONE_BORDER = registerBlock("mazestone_border", Block(AbstractBlock.Settings.copy(MAZESTONE).registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(TwilightForest.MOD_ID, "mazestone_border")))))
+    // STRONGHOLD BLOCKS
+    val STRONGHOLD_SHIELD = registerBlock("stronghold_shield") { settings -> Block(settings.dropsNothing().mapColor(MapColor.LIGHT_GRAY).pistonBehavior(PistonBehavior.BLOCK).requiresTool().sounds(BlockSoundGroup.METAL).strength(-1.0f, 6_000_000.0f)) }
+    val UNDERBRICK = registerBlock("underbrick") { settings -> Block(settings.mapColor(MapColor.BROWN).requiresTool().sounds(BlockSoundGroup.DEEPSLATE_BRICKS).strength(1.5f, 6.0f)) }
+    val MOSSY_UNDERBRICK = registerCopyBlock("mossy_underbrick", UNDERBRICK) { settings -> Block(settings) }
+    val CRACKED_UNDERBRICK = registerCopyBlock("cracked_underbrick", UNDERBRICK) { settings -> Block(settings) }
+    val UNDERBRICK_FLOOR = registerCopyBlock("underbrick_floor", UNDERBRICK) { settings -> Block(settings) }
 
-    //STRONGHOLD BLOCKS
-    val STRONGHOLD_SHIELD = registerBlock("stronghold_shield",
-        Block(AbstractBlock.Settings.create().registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(TwilightForest.MOD_ID, "stronghold_shield")))
-            .dropsNothing().mapColor(MapColor.LIGHT_GRAY).pistonBehavior(PistonBehavior.BLOCK).requiresTool().sounds(BlockSoundGroup.METAL).strength(-1.0f, 6000000.0f)))
-    val UNDERBRICK = registerBlock("underbrick",
-        Block(AbstractBlock.Settings.create().registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(TwilightForest.MOD_ID, "underbrick")))
-            .mapColor(MapColor.BROWN).requiresTool().sounds(BlockSoundGroup.DEEPSLATE_BRICKS).strength(1.5f, 6.0f)))
-    val MOSSY_UNDERBRICK = registerBlock("mossy_underbrick", Block(AbstractBlock.Settings.copy(UNDERBRICK).registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(TwilightForest.MOD_ID, "mossy_underbrick")))))
-    val CRACKED_UNDERBRICK = registerBlock("cracked_underbrick", Block(AbstractBlock.Settings.copy(UNDERBRICK).registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(TwilightForest.MOD_ID, "cracked_underbrick")))))
-    val UNDERBRICK_FLOOR = registerBlock("underbrick_floor", Block(AbstractBlock.Settings.copy(UNDERBRICK).registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(TwilightForest.MOD_ID, "underbrick_floor")))))
+    // DARK TOWER BLOCKS
+    val TOWERWOOD = registerBlock("towerwood") { settings -> Block(settings.burnable().instrument(NoteBlockInstrument.BASS).mapColor(MapColor.ORANGE).sounds(BlockSoundGroup.WOOD).strength(40.0f, 6.0f).requiresTool()) }
+    val ENCASED_TOWERWOOD = registerCopyBlock("encased_towerwood", TOWERWOOD) { settings -> Block(settings.mapColor(MapColor.PALE_YELLOW)) }
+    val CRACKED_TOWERWOOD = registerCopyBlock("cracked_towerwood", TOWERWOOD) { settings -> Block(settings) }
+    val MOSSY_TOWERWOOD = registerCopyBlock("mossy_towerwood", TOWERWOOD) { settings -> Block(settings) }
+    val INFESTED_TOWERWOOD = registerCopyBlock("infested_towerwood", TOWERWOOD) { settings -> InfestedBlock(TOWERWOOD, settings.dropsNothing().instrument(NoteBlockInstrument.FLUTE).strength(2.0f, 6.0f)) }
 
-    //DARK TOWER BLOCKS
-    val TOWERWOOD = registerBlock("towerwood",
-        Block(AbstractBlock.Settings.create().registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(TwilightForest.MOD_ID, "towerwood")))
-            .burnable().instrument(NoteBlockInstrument.BASS).mapColor(MapColor.ORANGE).sounds(BlockSoundGroup.WOOD).strength(40.0f, 6.0f).requiresTool()))
-    val ENCASED_TOWERWOOD = registerBlock("encased_towerwood",
-        Block(AbstractBlock.Settings.copy(TOWERWOOD).registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(TwilightForest.MOD_ID, "encased_towerwood")))
-            .mapColor(MapColor.PALE_YELLOW)))
-    val CRACKED_TOWERWOOD = registerBlock("cracked_towerwood",
-        Block(AbstractBlock.Settings.copy(TOWERWOOD).registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(TwilightForest.MOD_ID, "cracked_towerwood")))))
-    val MOSSY_TOWERWOOD = registerBlock("mossy_towerwood",
-        Block(AbstractBlock.Settings.copy(TOWERWOOD).registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(TwilightForest.MOD_ID, "mossy_towerwood")))))
-    val INFESTED_TOWERWOOD = registerBlock("infested_towerwood",
-        InfestedBlock(TOWERWOOD, AbstractBlock.Settings.copy(TOWERWOOD).registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(TwilightForest.MOD_ID, "infested_towerwood")))
-            .dropsNothing().instrument(NoteBlockInstrument.FLUTE).strength(2.0f, 6.0f)))
-    val ANTIBUILT_BLOCK = registerBlock("antibuilt_block",
-        Block(AbstractBlock.Settings.create().registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(TwilightForest.MOD_ID, "antibuilt_block")))
-            .dropsNothing().nonOpaque().pistonBehavior(PistonBehavior.BLOCK).sounds(BlockSoundGroup.WOOD).strength(0.3f, 2000.0f).requiresTool()))
-    val FAKE_GOLD = registerBlock("fake_gold",
-        Block(AbstractBlock.Settings.create().registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(TwilightForest.MOD_ID, "fake_gold")))
-            .dropsNothing().pistonBehavior(PistonBehavior.BLOCK).sounds(BlockSoundGroup.METAL).strength(50.0f, 2000.0f).requiresTool()))
-    val FAKE_DIAMOND = registerBlock("fake_diamond",
-        Block(AbstractBlock.Settings.copy(FAKE_GOLD).registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(TwilightForest.MOD_ID, "fake_diamond")))))
+    // MISC
+    val ANTIBUILT_BLOCK = registerBlock("antibuilt_block") { settings -> Block(settings.dropsNothing().nonOpaque().pistonBehavior(PistonBehavior.BLOCK).sounds(BlockSoundGroup.WOOD).strength(0.3f, 2000.0f).requiresTool()) }
+    val FAKE_GOLD = registerBlock("fake_gold") { settings -> Block(settings.dropsNothing().pistonBehavior(PistonBehavior.BLOCK).sounds(BlockSoundGroup.METAL).strength(50.0f, 2000.0f).requiresTool()) }
+    val FAKE_DIAMOND = registerCopyBlock("fake_diamond", FAKE_GOLD) { settings -> Block(settings) }
 
-    //MISC BLOCKS
-    val HEDGE = registerBlock("hedge",
-        HedgeBlock(AbstractBlock.Settings.create().registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(TwilightForest.MOD_ID, "hedge")))
-            .mapColor(MapColor.GREEN).pistonBehavior(PistonBehavior.DESTROY).sounds(BlockSoundGroup.GRASS).strength(2.0F, 6.0F)))
-    val HEDGE_ROSE = registerBlock("hedge_rose",
-        HedgeBlock(AbstractBlock.Settings.copy(HEDGE).registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(TwilightForest.MOD_ID, "hedge_rose")))
-            .mapColor(MapColor.DARK_RED)))
+    // MISC BLOCKS
+    val HEDGE = registerBlock("hedge") { settings -> HedgeBlock(settings.mapColor(MapColor.GREEN).pistonBehavior(PistonBehavior.DESTROY).sounds(BlockSoundGroup.GRASS).strength(2.0F, 6.0F)) }
+    val HEDGE_ROSE = registerCopyBlock("hedge_rose", HEDGE) { settings -> HedgeBlock(settings.mapColor(MapColor.DARK_RED)) }
 
-    //WOOD BLOCKS
-    val TWILIGHT_OAK_LOG = registerBlock("twilight_oak_log",
-        PillarBlock(Blocks.createLogSettings(MapColor.OAK_TAN, MapColor.WHITE, BlockSoundGroup.WOOD).registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(TwilightForest.MOD_ID, "twilight_oak_log")))))
-    val STRIPPED_TWILIGHT_OAK_LOG = registerBlock("stripped_twilight_oak_log",
-        PillarBlock(Blocks.createLogSettings(MapColor.OAK_TAN, MapColor.WHITE, BlockSoundGroup.WOOD).registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(TwilightForest.MOD_ID, "stripped_twilight_oak_log")))))
-    val TWILIGHT_OAK_WOOD = registerBlock("twilight_oak_wood",
-        PillarBlock(AbstractBlock.Settings.copy(Blocks.OAK_WOOD).registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(TwilightForest.MOD_ID, "twilight_oak_wood")))))
-    val STRIPPED_TWILIGHT_OAK_WOOD = registerBlock("stripped_twilight_oak_wood",
-        PillarBlock(AbstractBlock.Settings.copy(Blocks.STRIPPED_OAK_WOOD).registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(TwilightForest.MOD_ID, "stripped_twilight_oak_wood")))))
-    val TWILIGHT_OAK_LEAVES = registerBlock("twilight_oak_leaves",
-        TintedParticleLeavesBlock(0.02F, Blocks.createLeavesSettings(BlockSoundGroup.WOOD).registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(TwilightForest.MOD_ID, "twilight_oak_leaves")))))
-    val TWILIGHT_OAK_SAPLING = registerBlock("twilight_oak_sapling",
-        SaplingBlock(null, AbstractBlock.Settings.copy(Blocks.OAK_SAPLING).registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(TwilightForest.MOD_ID, "twilight_oak_sapling")))))
-    val TWILIGHT_OAK_PLANKS = registerBlock("twilight_oak_planks",
-        Block(AbstractBlock.Settings.copy(Blocks.OAK_PLANKS).registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(TwilightForest.MOD_ID, "twilight_oak_planks")))))
-    val TWILIGHT_OAK_DOOR = registerBlock("twilight_oak_door",
-        DoorBlock(TFBlockSetTypes.TWILIGHT_OAK_BLOCK_SET_TYPE, AbstractBlock.Settings.copy(Blocks.OAK_DOOR).registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(TwilightForest.MOD_ID, "twilight_oak_door")))))
-    val TWILIGHT_OAK_TRAPDOOR = registerBlock("twilight_oak_trapdoor",
-        TrapdoorBlock(TFBlockSetTypes.TWILIGHT_OAK_BLOCK_SET_TYPE, AbstractBlock.Settings.copy(Blocks.OAK_TRAPDOOR).registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(TwilightForest.MOD_ID, "twilight_oak_trapdoor")))))
-    val TWILIGHT_OAK_FENCE = registerBlock("twilight_oak_fence",
-        FenceBlock(AbstractBlock.Settings.copy(Blocks.OAK_FENCE).registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(TwilightForest.MOD_ID, "twilight_oak_fence")))))
-    val TWILIGHT_OAK_FENCE_GATE = registerBlock("twilight_oak_fence_gate",
-        FenceGateBlock(TFWoodTypes.TWILIGHT_OAK_WOOD_TYPE, AbstractBlock.Settings.copy(Blocks.OAK_FENCE_GATE).registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(TwilightForest.MOD_ID, "twilight_oak_fence_gate")))))
-    val TWILIGHT_OAK_STAIRS = registerBlock("twilight_oak_stairs",
-        StairsBlock(TWILIGHT_OAK_PLANKS.defaultState, AbstractBlock.Settings.copy(Blocks.OAK_STAIRS).registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(TwilightForest.MOD_ID, "twilight_oak_stairs")))))
-    val TWILIGHT_OAK_SLAB = registerBlock("twilight_oak_slab",
-        SlabBlock(AbstractBlock.Settings.copy(Blocks.OAK_SLAB).registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(TwilightForest.MOD_ID, "twilight_oak_slab")))))
-    val TWILIGHT_OAK_PRESSURE_PLATE = registerBlock("twilight_oak_pressure_plate",
-        PressurePlateBlock(TFBlockSetTypes.TWILIGHT_OAK_BLOCK_SET_TYPE,AbstractBlock.Settings.copy(Blocks.OAK_PRESSURE_PLATE).registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(TwilightForest.MOD_ID, "twilight_oak_pressure_plate")))))
-    val TWILIGHT_OAK_BUTTON = registerBlock("twilight_oak_button",
-        ButtonBlock(TFBlockSetTypes.TWILIGHT_OAK_BLOCK_SET_TYPE,10, Blocks.createButtonSettings().registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(TwilightForest.MOD_ID, "twilight_oak_button")))))
+    // WOOD BLOCKS
+    val TWILIGHT_OAK_LOG = registerVanillaBlock("twilight_oak_log", Blocks.OAK_LOG) { settings -> PillarBlock(settings) }
+    val STRIPPED_TWILIGHT_OAK_LOG = registerVanillaBlock("stripped_twilight_oak_log", Blocks.STRIPPED_OAK_LOG) { settings -> PillarBlock(settings) }
+    val TWILIGHT_OAK_WOOD = registerCopyBlock("twilight_oak_wood", Blocks.OAK_WOOD) { settings -> PillarBlock(settings) }
+    val STRIPPED_TWILIGHT_OAK_WOOD = registerCopyBlock("stripped_twilight_oak_wood", Blocks.STRIPPED_OAK_WOOD) { settings -> PillarBlock(settings) }
+    val TWILIGHT_OAK_LEAVES = registerVanillaBlock("twilight_oak_leaves", Blocks.OAK_LEAVES) { settings -> TintedParticleLeavesBlock(0.02F, settings) }
+    val TWILIGHT_OAK_SAPLING = registerCopyBlock("twilight_oak_sapling", Blocks.OAK_SAPLING) { settings -> SaplingBlock(null, settings) }
+    val TWILIGHT_OAK_PLANKS = registerCopyBlock("twilight_oak_planks", Blocks.OAK_PLANKS) { settings -> Block(settings) }
+    val TWILIGHT_OAK_DOOR = registerCopyBlock("twilight_oak_door", Blocks.OAK_DOOR) { settings -> DoorBlock(TFBlockSetTypes.TWILIGHT_OAK_BLOCK_SET_TYPE, settings) }
+    val TWILIGHT_OAK_TRAPDOOR = registerCopyBlock("twilight_oak_trapdoor", Blocks.OAK_TRAPDOOR) { settings -> TrapdoorBlock(TFBlockSetTypes.TWILIGHT_OAK_BLOCK_SET_TYPE, settings) }
+    val TWILIGHT_OAK_FENCE = registerCopyBlock("twilight_oak_fence", Blocks.OAK_FENCE) { settings -> FenceBlock(settings) }
+    val TWILIGHT_OAK_FENCE_GATE = registerCopyBlock("twilight_oak_fence_gate", Blocks.OAK_FENCE_GATE) { settings -> FenceGateBlock(TFWoodTypes.TWILIGHT_OAK_WOOD_TYPE, settings) }
+    val TWILIGHT_OAK_STAIRS = registerCopyBlock("twilight_oak_stairs", Blocks.OAK_STAIRS) { settings -> StairsBlock(TWILIGHT_OAK_PLANKS.defaultState, settings) }
+    val TWILIGHT_OAK_SLAB = registerCopyBlock("twilight_oak_slab", Blocks.OAK_SLAB) { settings -> SlabBlock(settings) }
+    val TWILIGHT_OAK_PRESSURE_PLATE = registerCopyBlock("twilight_oak_pressure_plate", Blocks.OAK_PRESSURE_PLATE) { settings -> PressurePlateBlock(TFBlockSetTypes.TWILIGHT_OAK_BLOCK_SET_TYPE, settings) }
+    val TWILIGHT_OAK_BUTTON = registerVanillaBlock("twilight_oak_button", Blocks.OAK_BUTTON) { settings -> ButtonBlock(TFBlockSetTypes.TWILIGHT_OAK_BLOCK_SET_TYPE, 10, settings) }
 
-    private fun <T: Block> registerBlock(name: String, block: T): T {
-        registerBlockWithItem(name, block)
-        return Registry.register(Registries.BLOCK, Identifier.of(TwilightForest.MOD_ID, name), block)
+    private fun registerBlock(name: String, function: (AbstractBlock.Settings) -> Block): Block {
+        val id = Identifier.of(TwilightForest.MOD_ID, name)
+        val blockKey = RegistryKey.of(RegistryKeys.BLOCK, id)
+        val settings = AbstractBlock.Settings.create().registryKey(blockKey)
+        val block = function(settings)
+        registerBlockItem(name, block)
+        return Registry.register(Registries.BLOCK, id, block)
     }
 
-    private fun <T: Block> registerBlockWithoutItem(name: String, block: T): T {
-        return Registry.register(Registries.BLOCK, Identifier.of(TwilightForest.MOD_ID, name), block)
+    private fun registerCopyBlock(name: String, baseBlock: Block, function: (AbstractBlock.Settings) -> Block): Block {
+        val id = Identifier.of(TwilightForest.MOD_ID, name)
+        val blockKey = RegistryKey.of(RegistryKeys.BLOCK, id)
+        val settings = AbstractBlock.Settings.copy(baseBlock).registryKey(blockKey)
+        val block = function(settings)
+        registerBlockItem(name, block)
+        return Registry.register(Registries.BLOCK, id, block)
     }
 
-    private fun registerBlockWithItem(name: String, block: Block) {
-        Registry.register(
-            Registries.ITEM,
-            Identifier.of(TwilightForest.MOD_ID, name),
-            BlockItem(block, Item.Settings().registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(TwilightForest.MOD_ID, name))))
-        )
+    private fun registerVanillaBlock(name: String, vanillaBlock: Block, function: (AbstractBlock.Settings) -> Block): Block {
+        val id = Identifier.of(TwilightForest.MOD_ID, name)
+        // Use vanilla block's settings as-is, do NOT call registryKey() here
+        val settings = vanillaBlock.settings
+        val block = function(settings)
+        registerBlockItem(name, block)
+        return Registry.register(Registries.BLOCK, id, block)
+    }
+
+    private fun registerBlockWithoutBlockItem(name: String, function: (AbstractBlock.Settings) -> Block): Block {
+        val id = Identifier.of(TwilightForest.MOD_ID, name)
+        val blockKey = RegistryKey.of(RegistryKeys.BLOCK, id)
+        val settings = AbstractBlock.Settings.create().registryKey(blockKey)
+        return Registry.register(Registries.BLOCK, id, function(settings))
+    }
+
+    private fun registerBlockItem(name: String, block: Block) {
+        val id = Identifier.of(TwilightForest.MOD_ID, name)
+        val itemKey = RegistryKey.of(RegistryKeys.ITEM, id)
+        val itemSettings = Item.Settings()
+            .useBlockPrefixedTranslationKey()
+            .registryKey(itemKey)
+        val blockItem = BlockItem(block, itemSettings)
+        Registry.register(Registries.ITEM, id, blockItem)
     }
 
     fun registerBlocks() {

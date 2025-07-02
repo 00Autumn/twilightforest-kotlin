@@ -1,15 +1,24 @@
 package autumn.twilightforest.datagen.providers
 
+import autumn.twilightforest.TwilightForest
 import autumn.twilightforest.init.block.TFBlocks
+import autumn.twilightforest.init.item.TFArmorMaterials
 import autumn.twilightforest.init.item.TFItems
 import autumn.twilightforest.util.TFBlockFamilies
+import net.fabricmc.fabric.api.client.datagen.v1.provider.FabricModelProvider
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput
-import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider
-import net.minecraft.data.client.BlockStateModelGenerator
-import net.minecraft.data.client.ItemModelGenerator
-import net.minecraft.data.client.Models
-import net.minecraft.data.family.BlockFamily
-import net.minecraft.item.ArmorItem
+import net.minecraft.client.data.BlockStateModelGenerator
+import net.minecraft.client.data.ItemModelGenerator
+import net.minecraft.client.data.Models
+import net.minecraft.client.data.TextureKey
+import net.minecraft.client.data.TextureMap
+import net.minecraft.entity.EquipmentSlot
+import net.minecraft.item.Item
+import net.minecraft.item.equipment.EquipmentAsset
+import net.minecraft.registry.Registries
+import net.minecraft.registry.Registry
+import net.minecraft.registry.RegistryKey
+import net.minecraft.util.Identifier
 
 class TFModelProvider(output: FabricDataOutput) : FabricModelProvider(output) {
     override fun generateBlockStateModels(generator: BlockStateModelGenerator) {
@@ -53,21 +62,20 @@ class TFModelProvider(output: FabricDataOutput) : FabricModelProvider(output) {
             registerSimpleCubeAll(TFBlocks.HEDGE)
             registerSimpleCubeAll(TFBlocks.HEDGE_ROSE)
 
-            registerLog(TFBlocks.TWILIGHT_OAK_LOG).log(TFBlocks.TWILIGHT_OAK_LOG).wood(TFBlocks.TWILIGHT_OAK_WOOD)
-            registerLog(TFBlocks.STRIPPED_TWILIGHT_OAK_LOG).log(TFBlocks.STRIPPED_TWILIGHT_OAK_LOG)
+            createLogTexturePool(TFBlocks.TWILIGHT_OAK_LOG).log(TFBlocks.TWILIGHT_OAK_LOG).wood(TFBlocks.TWILIGHT_OAK_WOOD)
+            createLogTexturePool(TFBlocks.STRIPPED_TWILIGHT_OAK_LOG).log(TFBlocks.STRIPPED_TWILIGHT_OAK_LOG)
                 .wood(TFBlocks.STRIPPED_TWILIGHT_OAK_WOOD)
             val twilightOakFamily = TFBlockFamilies.get(TFBlocks.TWILIGHT_OAK_PLANKS)
             val twilightOakPool = registerCubeAllModelTexturePool(TFBlocks.TWILIGHT_OAK_PLANKS)
             registerSimpleCubeAll(TFBlocks.TWILIGHT_OAK_LEAVES)
-            registerTintableCross(TFBlocks.TWILIGHT_OAK_SAPLING, BlockStateModelGenerator.TintType.NOT_TINTED)
-            registerHangingSign(TFBlocks.STRIPPED_TWILIGHT_OAK_LOG, TFBlocks.TWILIGHT_OAK_HANGING_SIGN, TFBlocks.TWILIGHT_OAK_WALL_HANGING_SIGN)
+            registerTintableCross(TFBlocks.TWILIGHT_OAK_SAPLING, BlockStateModelGenerator.CrossType.NOT_TINTED)
+            //registerHangingSign(TFBlocks.STRIPPED_TWILIGHT_OAK_LOG, TFBlocks.TWILIGHT_OAK_HANGING_SIGN, TFBlocks.TWILIGHT_OAK_WALL_HANGING_SIGN)
             twilightOakFamily?.let { twilightOakPool.family(it) }
-
         }
     }
 
         override fun generateItemModels(generator: ItemModelGenerator) {
-            // Single layer items
+            //SINGLE LAYER
             listOf(
                 TFItems.NAGA_SCALE,
                 TFItems.LIVEROOT,
@@ -90,7 +98,6 @@ class TFModelProvider(output: FabricDataOutput) : FabricModelProvider(output) {
                 TFItems.CHARM_OF_KEEPING_I,
                 TFItems.CHARM_OF_KEEPING_II,
                 TFItems.CHARM_OF_KEEPING_III,
-                TFItems.BORER_ESSENCE,
                 TFItems.CARMINITE,
                 TFItems.EMPERORS_CLOTH,
                 TFItems.CROWN_SPLINTER,
@@ -106,8 +113,12 @@ class TFModelProvider(output: FabricDataOutput) : FabricModelProvider(output) {
                 TFItems.MAZE_WAFER,
                 TFItems.POCKET_WATCH
             ).forEach { generator.register(it, Models.GENERATED) }
-
-            // Handheld tools and weapons
+            //DUAL-LAYER
+            generator.register(TFItems.BORER_ESSENCE)
+            listOf("borer_essence").forEach {
+                registerTwoLayerItemModel(generator, it)
+            }
+            //HANDHELD TOOLS
             listOf(
                 TFItems.IRONWOOD_SWORD,
                 TFItems.IRONWOOD_PICKAXE,
@@ -128,39 +139,137 @@ class TFModelProvider(output: FabricDataOutput) : FabricModelProvider(output) {
                 TFItems.GOLD_MINOTAUR_AXE,
                 TFItems.DIAMOND_MINOTAUR_AXE
             ).forEach { generator.register(it, Models.HANDHELD) }
-
-            //Armor
-            listOf(
-                TFItems.NAGA_LEGGINGS,
-                TFItems.NAGA_CHESTPLATE,
-                TFItems.IRONWOOD_BOOTS,
-                TFItems.IRONWOOD_LEGGINGS,
-                TFItems.IRONWOOD_CHESTPLATE,
-                TFItems.IRONWOOD_HELMET,
-                TFItems.STEELEAF_BOOTS,
-                TFItems.STEELEAF_LEGGINGS,
-                TFItems.STEELEAF_CHESTPLATE,
-                TFItems.STEELEAF_HELMET,
-                TFItems.KNIGHTMETAL_BOOTS,
-                TFItems.KNIGHTMETAL_LEGGINGS,
-                TFItems.KNIGHTMETAL_CHESTPLATE,
-                TFItems.KNIGHTMETAL_HELMET,
-                TFItems.PHANTOM_CHESTPLATE,
-                TFItems.PHANTOM_HELMET,
-                TFItems.FIERY_BOOTS,
-                TFItems.FIERY_LEGGINGS,
-                TFItems.FIERY_CHESTPLATE,
-                TFItems.FIERY_HELMET,
-                TFItems.ARCTIC_BOOTS,
-                TFItems.ARCTIC_LEGGINGS,
-                TFItems.ARCTIC_CHESTPLATE,
-                TFItems.ARCTIC_HELMET,
-                TFItems.YETI_BOOTS,
-                TFItems.YETI_LEGGINGS,
-                TFItems.YETI_CHESTPLATE,
-                TFItems.YETI_HELMET
-            ).forEach { generator.registerArmor(it as? ArmorItem) }
-
+            //ARMOR
+            registerArmorSet(
+                generator,
+                TFArmorMaterials.NAGA_KEY,
+                mapOf(
+                    EquipmentSlot.CHEST to TFItems.NAGA_CHESTPLATE,
+                    EquipmentSlot.LEGS to TFItems.NAGA_LEGGINGS
+                )
+            )
+            registerArmorSet(
+                generator,
+                TFArmorMaterials.IRONWOOD_KEY,
+                mapOf(
+                    EquipmentSlot.HEAD to TFItems.IRONWOOD_HELMET,
+                    EquipmentSlot.CHEST to TFItems.IRONWOOD_CHESTPLATE,
+                    EquipmentSlot.LEGS to TFItems.IRONWOOD_LEGGINGS,
+                    EquipmentSlot.FEET to TFItems.IRONWOOD_BOOTS
+                )
+            )
+            registerArmorSet(
+                generator,
+                TFArmorMaterials.STEELEAF_KEY,
+                mapOf(
+                    EquipmentSlot.HEAD to TFItems.STEELEAF_HELMET,
+                    EquipmentSlot.CHEST to TFItems.STEELEAF_CHESTPLATE,
+                    EquipmentSlot.LEGS to TFItems.STEELEAF_LEGGINGS,
+                    EquipmentSlot.FEET to TFItems.STEELEAF_BOOTS
+                )
+            )
+            registerArmorSet(
+                generator,
+                TFArmorMaterials.KNIGHTMETAL_KEY,
+                mapOf(
+                    EquipmentSlot.HEAD to TFItems.KNIGHTMETAL_HELMET,
+                    EquipmentSlot.CHEST to TFItems.KNIGHTMETAL_CHESTPLATE,
+                    EquipmentSlot.LEGS to TFItems.KNIGHTMETAL_LEGGINGS,
+                    EquipmentSlot.FEET to TFItems.KNIGHTMETAL_BOOTS
+                )
+            )
+            registerArmorSet(
+                generator,
+                TFArmorMaterials.PHANTOM_KEY,
+                mapOf(
+                    EquipmentSlot.HEAD to TFItems.PHANTOM_HELMET,
+                    EquipmentSlot.CHEST to TFItems.PHANTOM_CHESTPLATE
+                )
+            )
+            registerArmorSet(
+                generator,
+                TFArmorMaterials.FIERY_KEY,
+                mapOf(
+                    EquipmentSlot.HEAD to TFItems.FIERY_HELMET,
+                    EquipmentSlot.CHEST to TFItems.FIERY_CHESTPLATE,
+                    EquipmentSlot.LEGS to TFItems.FIERY_LEGGINGS,
+                    EquipmentSlot.FEET to TFItems.FIERY_BOOTS
+                )
+            )
+            registerDyeableArmorSet(
+                generator,
+                TFArmorMaterials.ARCTIC_KEY,
+                mapOf(
+                    EquipmentSlot.HEAD to TFItems.ARCTIC_HELMET,
+                    EquipmentSlot.CHEST to TFItems.ARCTIC_CHESTPLATE,
+                    EquipmentSlot.LEGS to TFItems.ARCTIC_LEGGINGS,
+                    EquipmentSlot.FEET to TFItems.ARCTIC_BOOTS
+                )
+            )
+            registerArmorSet(
+                generator,
+                TFArmorMaterials.YETI_KEY,
+                mapOf(
+                    EquipmentSlot.HEAD to TFItems.YETI_HELMET,
+                    EquipmentSlot.CHEST to TFItems.YETI_CHESTPLATE,
+                    EquipmentSlot.LEGS to TFItems.YETI_LEGGINGS,
+                    EquipmentSlot.FEET to TFItems.YETI_BOOTS
+                )
+            )
         }
 
+    fun registerArmorSet(
+        generator: ItemModelGenerator,
+        armorKey: RegistryKey<EquipmentAsset>,
+        items: Map<EquipmentSlot, Item>
+    ) {
+        items.forEach { (slot, item) ->
+            val trimPrefix = when (slot) {
+                EquipmentSlot.HEAD -> ItemModelGenerator.HELMET_TRIM_ID_PREFIX
+                EquipmentSlot.CHEST -> ItemModelGenerator.CHESTPLATE_TRIM_ID_PREFIX
+                EquipmentSlot.LEGS -> ItemModelGenerator.LEGGINGS_TRIM_ID_PREFIX
+                EquipmentSlot.FEET -> ItemModelGenerator.BOOTS_TRIM_ID_PREFIX
+                else -> null
+            }
+
+            if (trimPrefix != null) {
+                generator.registerArmor(item, armorKey, trimPrefix, false)
+            }
+        }
     }
+    fun registerDyeableArmorSet(
+        generator: ItemModelGenerator,
+        armorKey: RegistryKey<EquipmentAsset>,
+        items: Map<EquipmentSlot, Item>
+    ) {
+        items.forEach { (slot, item) ->
+            val trimPrefix = when (slot) {
+                EquipmentSlot.HEAD -> ItemModelGenerator.HELMET_TRIM_ID_PREFIX
+                EquipmentSlot.CHEST -> ItemModelGenerator.CHESTPLATE_TRIM_ID_PREFIX
+                EquipmentSlot.LEGS -> ItemModelGenerator.LEGGINGS_TRIM_ID_PREFIX
+                EquipmentSlot.FEET -> ItemModelGenerator.BOOTS_TRIM_ID_PREFIX
+                else -> null
+            }
+
+            if (trimPrefix != null) {
+                generator.registerArmor(item, armorKey, trimPrefix, true)
+            }
+        }
+    }
+    fun registerTwoLayerItemModel(
+        generator: ItemModelGenerator,
+        name: String
+    ) {
+        val modId = TwilightForest.MOD_ID
+        val id = Identifier.of(modId, "item/$name")
+        Models.GENERATED_TWO_LAYERS.upload(
+            id,
+            TextureMap.layered(
+                Identifier.of(modId, "item/$name"),
+                Identifier.of(modId, "item/${name}_overlay")
+            ),
+            generator.modelCollector
+        )
+    }
+}
+

@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "twilightforest:armor_shard_cluster"
+  ],
+  "result": {
+    "count": 9,
+    "id": "twilightforest:armor_shard"
+  }
+}

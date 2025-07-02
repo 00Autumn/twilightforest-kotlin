@@ -1,145 +1,134 @@
 package autumn.twilightforest.init.item
 
 import autumn.twilightforest.TwilightForest
-import autumn.twilightforest.init.block.TFBlocks
 import autumn.twilightforest.init.item.custom.PocketWatchItem
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents
-import net.minecraft.item.ArmorItem
-import net.minecraft.item.AxeItem
-import net.minecraft.item.HangingSignItem
-import net.minecraft.item.HoeItem
 import net.minecraft.item.Item
 import net.minecraft.item.ItemGroups
-import net.minecraft.item.ItemStack
-import net.minecraft.item.PickaxeItem
-import net.minecraft.item.ShovelItem
-import net.minecraft.item.SignItem
-import net.minecraft.item.SwordItem
-import net.minecraft.item.ToolMaterials
-import net.minecraft.item.tooltip.TooltipType
+import net.minecraft.item.Items
+import net.minecraft.item.ToolMaterial
+import net.minecraft.item.equipment.EquipmentType
 import net.minecraft.registry.Registries
 import net.minecraft.registry.Registry
-import net.minecraft.text.Text
+import net.minecraft.registry.RegistryKey
+import net.minecraft.registry.RegistryKeys
 import net.minecraft.util.Identifier
 import net.minecraft.util.Rarity
 
 object TFItems {
 
     //EQUIPMENT INGREDIENTS
-    val NAGA_SCALE = registerItem("naga_scale", Item(Item.Settings().rarity(Rarity.UNCOMMON)))
-    val LIVEROOT = registerItem("liveroot", Item(Item.Settings()))
-    val RAW_IRONWOOD = registerItem("raw_ironwood", Item(Item.Settings()))
-    val IRONWOOD_INGOT = registerItem("ironwood_ingot", Item(Item.Settings()))
-    val STEELEAF_INGOT = registerItem("steeleaf_ingot", Item(Item.Settings()))
-    val ARMOR_SHARD = registerItem("armor_shard", Item(Item.Settings()))
-    val ARMOR_SHARD_CLUSTER = registerItem("armor_shard_cluster", Item(Item.Settings()))
-    val KNIGHTMETAL_INGOT = registerItem("knightmetal_ingot", Item(Item.Settings()))
-    val FIERY_BLOOD = registerItem("fiery_blood", Item(Item.Settings().rarity(Rarity.UNCOMMON)))
-    val FIERY_TEARS = registerItem("fiery_tears", Item(Item.Settings().rarity(Rarity.UNCOMMON)))
-    val FIERY_INGOT = registerItem("fiery_ingot", Item(Item.Settings().rarity(Rarity.UNCOMMON)))
-    val ARCTIC_FUR = registerItem("arctic_fur", Item(Item.Settings()))
-    val ALPHA_YETI_FUR = registerItem("alpha_yeti_fur", Item(Item.Settings().rarity(Rarity.UNCOMMON)))
+    val NAGA_SCALE = registerItem("naga_scale") { it.rarity(Rarity.UNCOMMON); Item(it) }
+    val LIVEROOT = registerItem("liveroot") { Item(it) }
+    val RAW_IRONWOOD = registerItem("raw_ironwood") { Item(it) }
+    val IRONWOOD_INGOT = registerItem("ironwood_ingot") { Item(it) }
+    val STEELEAF_INGOT = registerItem("steeleaf_ingot") { Item(it) }
+    val ARMOR_SHARD = registerItem("armor_shard") { Item(it) }
+    val ARMOR_SHARD_CLUSTER = registerItem("armor_shard_cluster") { Item(it) }
+    val KNIGHTMETAL_INGOT = registerItem("knightmetal_ingot") { Item(it) }
+    val FIERY_BLOOD = registerItem("fiery_blood") { it.rarity(Rarity.UNCOMMON); Item(it) }
+    val FIERY_TEARS = registerItem("fiery_tears") { it.rarity(Rarity.UNCOMMON); Item(it) }
+    val FIERY_INGOT = registerItem("fiery_ingot") { it.rarity(Rarity.UNCOMMON); Item(it) }
+    val ARCTIC_FUR = registerItem("arctic_fur") { Item(it) }
+    val ALPHA_YETI_FUR = registerItem("alpha_yeti_fur") { it.rarity(Rarity.UNCOMMON); Item(it) }
 
-    //MISC INGREDIENTS
-    val RAVEN_FEATHER = registerItem("raven_feather", Item(Item.Settings()))
-    val MAGIC_MAP_FOCUS = registerItem("magic_map_focus", Item(Item.Settings()))
-    val MAZE_MAP_FOCUS = registerItem("maze_map_focus", Item(Item.Settings()))
-    val CHARM_OF_LIFE_I = registerItem("charm_of_life_i", Item(Item.Settings().rarity(Rarity.UNCOMMON)))
-    val CHARM_OF_LIFE_II = registerItem("charm_of_life_ii", Item(Item.Settings().rarity(Rarity.UNCOMMON)))
-    val CHARM_OF_KEEPING_I = registerItem("charm_of_keeping_i", Item(Item.Settings().rarity(Rarity.UNCOMMON)))
-    val CHARM_OF_KEEPING_II = registerItem("charm_of_keeping_ii", Item(Item.Settings().rarity(Rarity.UNCOMMON)))
-    val CHARM_OF_KEEPING_III = registerItem("charm_of_keeping_iii", Item(Item.Settings().rarity(Rarity.UNCOMMON)))
-    val BORER_ESSENCE = registerItem("borer_essence", Item(Item.Settings()))
-    val CARMINITE = registerItem("carminite", Item(Item.Settings()))
-    val EMPERORS_CLOTH = registerItem("emperors_cloth", Item(Item.Settings().rarity(Rarity.UNCOMMON)))
-    val CROWN_SPLINTER = registerItem("crown_splinter", Item(Item.Settings().rarity(Rarity.UNCOMMON)))
+    // MISC INGREDIENTS
+    val RAVEN_FEATHER = registerItem("raven_feather") { Item(it) }
+    val MAGIC_MAP_FOCUS = registerItem("magic_map_focus") { Item(it) }
+    val MAZE_MAP_FOCUS = registerItem("maze_map_focus") { Item(it) }
+    val CHARM_OF_LIFE_I = registerItem("charm_of_life_i") { Item(it.rarity(Rarity.UNCOMMON)) }
+    val CHARM_OF_LIFE_II = registerItem("charm_of_life_ii") { Item(it.rarity(Rarity.UNCOMMON)) }
+    val CHARM_OF_KEEPING_I = registerItem("charm_of_keeping_i") { Item(it.rarity(Rarity.UNCOMMON)) }
+    val CHARM_OF_KEEPING_II = registerItem("charm_of_keeping_ii") { Item(it.rarity(Rarity.UNCOMMON)) }
+    val CHARM_OF_KEEPING_III = registerItem("charm_of_keeping_iii") { Item(it.rarity(Rarity.UNCOMMON)) }
+    val BORER_ESSENCE = registerItem("borer_essence") { Item(it) }
+    val CARMINITE = registerItem("carminite") { Item(it) }
+    val EMPERORS_CLOTH = registerItem("emperors_cloth") { Item(it.rarity(Rarity.UNCOMMON)) }
+    val CROWN_SPLINTER = registerItem("crown_splinter") { Item(it.rarity(Rarity.UNCOMMON)) }
 
-    //MISC ITEMS
-    val TOWER_KEY = registerItem("tower_key", Item(Item.Settings().fireproof().rarity(Rarity.UNCOMMON)))
+    // MISC ITEMS
+    val TOWER_KEY = registerItem("tower_key") { Item(it.fireproof().rarity(Rarity.UNCOMMON)) }
 
-    //FOOD ITEMS
-    val RAW_VENISON = registerItem("raw_venison", Item(Item.Settings().food(TFFoodComponents.RAW_VENISON)))
-    val COOKED_VENISON = registerItem("cooked_venison", Item(Item.Settings().food(TFFoodComponents.COOKED_VENISON)))
-    val RAW_MEEF = registerItem("raw_meef", Item(Item.Settings().food(TFFoodComponents.RAW_MEEF)))
-    val COOKED_MEEF = registerItem("cooked_meef", Item(Item.Settings().food(TFFoodComponents.COOKED_MEEF)))
-    val MEEF_STROGANOFF = registerItem("meef_stroganoff", Item(Item.Settings().maxCount(1).food(TFFoodComponents.MEEF_STROGANOFF).rarity(Rarity.UNCOMMON)))
-    val HYDRA_CHOP = registerItem("hydra_chop", Item(Item.Settings().food(TFFoodComponents.HYDRA_CHOP).fireproof().rarity(Rarity.UNCOMMON)))
-    val TORCHBERRIES = registerItem("torchberries", Item(Item.Settings().food(TFFoodComponents.TORCHBERRIES)))
-    val EXPERIMENT_115 = registerItem("experiment_115", object : Item(Item.Settings().food(TFFoodComponents.EXPERIMENT_115)) {
-        override fun appendTooltip(stack: ItemStack, context: TooltipContext, tooltip: MutableList<Text>, type: TooltipType) {
-            tooltip.add(Text.translatable("tooltip.twilightforest.experiment_115.tooltip").withColor(16717824))
-            super.appendTooltip(stack, context, tooltip, type)
-        }
-    })
-    val MAZE_WAFER = registerItem("maze_wafer", Item(Item.Settings().food(TFFoodComponents.MAZE_WAFER)))
+    // FOOD ITEMS
+    val RAW_VENISON = registerItem("raw_venison") { Item(it.food(TFFoodComponents.RAW_VENISON)) }
+    val COOKED_VENISON = registerItem("cooked_venison") { Item(it.food(TFFoodComponents.COOKED_VENISON)) }
+    val RAW_MEEF = registerItem("raw_meef") { Item(it.food(TFFoodComponents.RAW_MEEF)) }
+    val COOKED_MEEF = registerItem("cooked_meef") { Item(it.food(TFFoodComponents.COOKED_MEEF)) }
+    val MEEF_STROGANOFF = registerItem("meef_stroganoff") { Item(it.maxCount(1).food(TFFoodComponents.MEEF_STROGANOFF).useRemainder(Items.BOWL).rarity(Rarity.UNCOMMON)) }
+    val HYDRA_CHOP = registerItem("hydra_chop") { Item(it.food(TFFoodComponents.HYDRA_CHOP, TFConsumableComponents.HYDRA_CHOP_EFFECT).fireproof().rarity(Rarity.UNCOMMON)) }
+    val TORCHBERRIES = registerItem("torchberries") { Item(it.food(TFFoodComponents.TORCHBERRIES, TFConsumableComponents.TORCHBERRIES_EFFECT)) }
+    val EXPERIMENT_115 = registerItem("experiment_115") { Item(it.food(TFFoodComponents.EXPERIMENT_115)) }
+    val MAZE_WAFER = registerItem("maze_wafer") { Item(it.food(TFFoodComponents.MAZE_WAFER)) }
 
-    //EQUIPMENT & TRINKETS
-    val POCKET_WATCH = registerItem("pocket_watch", PocketWatchItem(Item.Settings().maxCount(1).rarity(Rarity.RARE)))
+    // EQUIPMENT & TRINKETS
+    val POCKET_WATCH = registerItem("pocket_watch") { PocketWatchItem(it.maxCount(1).rarity(Rarity.RARE)) }
 
-    val NAGA_LEGGINGS = registerItem("naga_leggings", ArmorItem(TFArmorMaterials.NAGA_ARMOR_MATERIAL, ArmorItem.Type.LEGGINGS, Item.Settings().maxDamage(ArmorItem.Type.LEGGINGS.getMaxDamage(15))))
-    val NAGA_CHESTPLATE = registerItem("naga_chestplate", ArmorItem(TFArmorMaterials.NAGA_ARMOR_MATERIAL, ArmorItem.Type.CHESTPLATE, Item.Settings().maxDamage(ArmorItem.Type.CHESTPLATE.getMaxDamage(15))))
+    val NAGA_LEGGINGS = registerItem("naga_leggings") { Item(it.armor(TFArmorMaterials.NAGA_ARMOR_MATERIAL, EquipmentType.LEGGINGS)) }
+    val NAGA_CHESTPLATE = registerItem("naga_chestplate") { Item(it.armor(TFArmorMaterials.NAGA_ARMOR_MATERIAL, EquipmentType.CHESTPLATE)) }
 
-    val IRONWOOD_BOOTS = registerItem("ironwood_boots", ArmorItem(TFArmorMaterials.IRONWOOD_ARMOR_MATERIAL, ArmorItem.Type.BOOTS, Item.Settings().maxDamage(ArmorItem.Type.BOOTS.getMaxDamage(15))))
-    val IRONWOOD_LEGGINGS = registerItem("ironwood_leggings", ArmorItem(TFArmorMaterials.IRONWOOD_ARMOR_MATERIAL, ArmorItem.Type.LEGGINGS, Item.Settings().maxDamage(ArmorItem.Type.LEGGINGS.getMaxDamage(15))))
-    val IRONWOOD_CHESTPLATE = registerItem("ironwood_chestplate", ArmorItem(TFArmorMaterials.IRONWOOD_ARMOR_MATERIAL, ArmorItem.Type.CHESTPLATE, Item.Settings().maxDamage(ArmorItem.Type.CHESTPLATE.getMaxDamage(15))))
-    val IRONWOOD_HELMET = registerItem("ironwood_helmet", ArmorItem(TFArmorMaterials.IRONWOOD_ARMOR_MATERIAL, ArmorItem.Type.HELMET, Item.Settings().maxDamage(ArmorItem.Type.HELMET.getMaxDamage(15))))
-    val IRONWOOD_SWORD = registerItem("ironwood_sword", SwordItem(TFToolMaterials.IRONWOOD, Item.Settings().attributeModifiers(SwordItem.createAttributeModifiers(TFToolMaterials.IRONWOOD, 4, -2.4f))))
-    val IRONWOOD_PICKAXE = registerItem("ironwood_pickaxe", PickaxeItem(TFToolMaterials.IRONWOOD, Item.Settings().attributeModifiers(PickaxeItem.createAttributeModifiers(TFToolMaterials.IRONWOOD, 2.0F, -2.8F))))
-    val IRONWOOD_SHOVEL = registerItem("ironwood_shovel", ShovelItem(TFToolMaterials.IRONWOOD, Item.Settings().attributeModifiers(ShovelItem.createAttributeModifiers(TFToolMaterials.IRONWOOD, 2.5F, -3.0F))))
-    val IRONWOOD_AXE = registerItem("ironwood_axe", AxeItem(TFToolMaterials.IRONWOOD, Item.Settings().attributeModifiers(AxeItem.createAttributeModifiers(TFToolMaterials.IRONWOOD, 7.0F, -3.1F))))
-    val IRONWOOD_HOE = registerItem("ironwood_hoe", HoeItem(TFToolMaterials.IRONWOOD, Item.Settings().attributeModifiers(HoeItem.createAttributeModifiers(TFToolMaterials.IRONWOOD, -1.0F, -1.0F))))
+    val IRONWOOD_BOOTS = registerItem("ironwood_boots") { Item(it.armor(TFArmorMaterials.IRONWOOD_ARMOR_MATERIAL, EquipmentType.BOOTS)) }
+    val IRONWOOD_LEGGINGS = registerItem("ironwood_leggings") { Item(it.armor(TFArmorMaterials.IRONWOOD_ARMOR_MATERIAL, EquipmentType.LEGGINGS)) }
+    val IRONWOOD_CHESTPLATE = registerItem("ironwood_chestplate") { Item(it.armor(TFArmorMaterials.IRONWOOD_ARMOR_MATERIAL, EquipmentType.CHESTPLATE)) }
+    val IRONWOOD_HELMET = registerItem("ironwood_helmet") { Item(it.armor(TFArmorMaterials.IRONWOOD_ARMOR_MATERIAL, EquipmentType.HELMET)) }
+    val IRONWOOD_SWORD = registerItem("ironwood_sword") { Item(it.sword(TFToolMaterials.IRONWOOD, 4.0F, -2.4F)) }
+    val IRONWOOD_PICKAXE = registerItem("ironwood_pickaxe") { Item(it.pickaxe(TFToolMaterials.IRONWOOD, 2.0F, -2.8F)) }
+    val IRONWOOD_SHOVEL = registerItem("ironwood_shovel") { Item(it.shovel(TFToolMaterials.IRONWOOD, 2.5F, -3.0F)) }
+    val IRONWOOD_AXE = registerItem("ironwood_axe") { Item(it.axe(TFToolMaterials.IRONWOOD, 7.0F, -3.1F)) }
+    val IRONWOOD_HOE = registerItem("ironwood_hoe") { Item(it.hoe(TFToolMaterials.IRONWOOD, -1.0F, -1.0F)) }
 
-    val STEELEAF_BOOTS = registerItem("steeleaf_boots", ArmorItem(TFArmorMaterials.STEELEAF_ARMOR_MATERIAL, ArmorItem.Type.BOOTS, Item.Settings().maxDamage(ArmorItem.Type.BOOTS.getMaxDamage(15))))
-    val STEELEAF_LEGGINGS = registerItem("steeleaf_leggings", ArmorItem(TFArmorMaterials.STEELEAF_ARMOR_MATERIAL, ArmorItem.Type.LEGGINGS, Item.Settings().maxDamage(ArmorItem.Type.LEGGINGS.getMaxDamage(15))))
-    val STEELEAF_CHESTPLATE = registerItem("steeleaf_chestplate", ArmorItem(TFArmorMaterials.STEELEAF_ARMOR_MATERIAL, ArmorItem.Type.CHESTPLATE, Item.Settings().maxDamage(ArmorItem.Type.CHESTPLATE.getMaxDamage(15))))
-    val STEELEAF_HELMET = registerItem("steeleaf_helmet", ArmorItem(TFArmorMaterials.STEELEAF_ARMOR_MATERIAL, ArmorItem.Type.HELMET, Item.Settings().maxDamage(ArmorItem.Type.HELMET.getMaxDamage(15))))
-    val STEELEAF_SWORD = registerItem("steeleaf_sword", SwordItem(TFToolMaterials.STEELEAF, Item.Settings().attributeModifiers(SwordItem.createAttributeModifiers(TFToolMaterials.STEELEAF, 4, -2.4F))))
-    val STEELEAF_PICKAXE = registerItem("steeleaf_pickaxe", PickaxeItem(TFToolMaterials.STEELEAF, Item.Settings().attributeModifiers(PickaxeItem.createAttributeModifiers(TFToolMaterials.STEELEAF, 2.0F, -2.8f))))
-    val STEELEAF_SHOVEL = registerItem("steeleaf_shovel", ShovelItem(TFToolMaterials.STEELEAF, Item.Settings().attributeModifiers(ShovelItem.createAttributeModifiers(TFToolMaterials.STEELEAF, 2.5f, -3.0f))))
-    val STEELEAF_AXE = registerItem("steeleaf_axe", AxeItem(TFToolMaterials.STEELEAF, Item.Settings().attributeModifiers(AxeItem.createAttributeModifiers(TFToolMaterials.STEELEAF, 7.0F, -3.0F))))
-    val STEELEAF_HOE = registerItem("steeleaf_hoe", HoeItem(TFToolMaterials.STEELEAF, Item.Settings().attributeModifiers(HoeItem.createAttributeModifiers(TFToolMaterials.STEELEAF, -2.0F, -0.5F))))
+    val STEELEAF_BOOTS = registerItem("steeleaf_boots") { Item(it.armor(TFArmorMaterials.STEELEAF_ARMOR_MATERIAL, EquipmentType.BOOTS)) }
+    val STEELEAF_LEGGINGS = registerItem("steeleaf_leggings") { Item(it.armor(TFArmorMaterials.STEELEAF_ARMOR_MATERIAL, EquipmentType.LEGGINGS)) }
+    val STEELEAF_CHESTPLATE = registerItem("steeleaf_chestplate") { Item(it.armor(TFArmorMaterials.STEELEAF_ARMOR_MATERIAL, EquipmentType.CHESTPLATE)) }
+    val STEELEAF_HELMET = registerItem("steeleaf_helmet") { Item(it.armor(TFArmorMaterials.STEELEAF_ARMOR_MATERIAL, EquipmentType.HELMET)) }
+    val STEELEAF_SWORD = registerItem("steeleaf_sword") { Item(it.sword(TFToolMaterials.STEELEAF, 4.0F, -2.4F)) }
+    val STEELEAF_PICKAXE = registerItem("steeleaf_pickaxe") { Item(it.pickaxe(TFToolMaterials.STEELEAF, 2.0F, -2.8F)) }
+    val STEELEAF_SHOVEL = registerItem("steeleaf_shovel") { Item(it.shovel(TFToolMaterials.STEELEAF, 2.5F, -3.0F)) }
+    val STEELEAF_AXE = registerItem("steeleaf_axe") { Item(it.axe(TFToolMaterials.STEELEAF, 7.0F, -3.0F)) }
+    val STEELEAF_HOE = registerItem("steeleaf_hoe") { Item(it.hoe(TFToolMaterials.STEELEAF, -2.0F, -0.5F)) }
 
-    val GOLD_MINOTAUR_AXE = registerItem("gold_minotaur_axe", AxeItem(ToolMaterials.GOLD, Item.Settings().attributeModifiers(AxeItem.createAttributeModifiers(ToolMaterials.GOLD, 7.0F, -2.8f))))
-    val DIAMOND_MINOTAUR_AXE = registerItem("diamond_minotaur_axe", AxeItem(ToolMaterials.DIAMOND, Item.Settings().attributeModifiers(AxeItem.createAttributeModifiers(ToolMaterials.DIAMOND, 7.0F, -3.0f)).rarity(Rarity.RARE)))
-    val MAZEBREAKER_PICKAXE = registerItem("mazebreaker_pickaxe", PickaxeItem(ToolMaterials.DIAMOND, Item.Settings().attributeModifiers(PickaxeItem.createAttributeModifiers(ToolMaterials.DIAMOND, 2.0F, -2.8f)).rarity(Rarity.EPIC)))
+    val GOLD_MINOTAUR_AXE = registerItem("gold_minotaur_axe") { Item(it.axe(ToolMaterial.GOLD, 7.0F, -2.8F)) }
+    val DIAMOND_MINOTAUR_AXE = registerItem("diamond_minotaur_axe") { Item(it.axe(ToolMaterial.DIAMOND, 7.0F, -3.0F).rarity(Rarity.RARE)) }
+    val MAZEBREAKER_PICKAXE = registerItem("mazebreaker_pickaxe") { Item(it.pickaxe(ToolMaterial.DIAMOND, 2.0F, -2.8F).rarity(Rarity.EPIC)) }
 
-    val KNIGHTMETAL_BOOTS = registerItem("knightmetal_boots", ArmorItem(TFArmorMaterials.KNIGHTMETAL_ARMOR_MATERIAL, ArmorItem.Type.BOOTS, Item.Settings().maxDamage(ArmorItem.Type.BOOTS.getMaxDamage(15))))
-    val KNIGHTMETAL_LEGGINGS = registerItem("knightmetal_leggings", ArmorItem(TFArmorMaterials.KNIGHTMETAL_ARMOR_MATERIAL, ArmorItem.Type.LEGGINGS, Item.Settings().maxDamage(ArmorItem.Type.LEGGINGS.getMaxDamage(15))))
-    val KNIGHTMETAL_CHESTPLATE = registerItem("knightmetal_chestplate", ArmorItem(TFArmorMaterials.KNIGHTMETAL_ARMOR_MATERIAL, ArmorItem.Type.CHESTPLATE, Item.Settings().maxDamage(ArmorItem.Type.CHESTPLATE.getMaxDamage(15))))
-    val KNIGHTMETAL_HELMET = registerItem("knightmetal_helmet", ArmorItem(TFArmorMaterials.KNIGHTMETAL_ARMOR_MATERIAL, ArmorItem.Type.HELMET, Item.Settings().maxDamage(ArmorItem.Type.HELMET.getMaxDamage(15))))
-    val KNIGHTMETAL_SWORD = registerItem("knightmetal_sword", SwordItem(TFToolMaterials.KNIGHTMETAL, Item.Settings().attributeModifiers(SwordItem.createAttributeModifiers(TFToolMaterials.KNIGHTMETAL, 4, -2.4F))))
-    val KNIGHTMETAL_PICKAXE = registerItem("knightmetal_pickaxe", PickaxeItem(TFToolMaterials.KNIGHTMETAL, Item.Settings().attributeModifiers(PickaxeItem.createAttributeModifiers(TFToolMaterials.KNIGHTMETAL, 2.0F, -2.8F))))
-    val KNIGHTMETAL_AXE = registerItem("knightmetal_axe", AxeItem(TFToolMaterials.KNIGHTMETAL, Item.Settings().attributeModifiers(AxeItem.createAttributeModifiers(TFToolMaterials.KNIGHTMETAL, 7.0F, -3.0F))))
-    val PHANTOM_CHESTPLATE = registerItem("phantom_chestplate", ArmorItem(TFArmorMaterials.PHANTOM_ARMOR_MATERIAL, ArmorItem.Type.CHESTPLATE, Item.Settings().maxDamage(ArmorItem.Type.CHESTPLATE.getMaxDamage(15)).rarity(Rarity.EPIC)))
-    val PHANTOM_HELMET = registerItem("phantom_helmet", ArmorItem(TFArmorMaterials.PHANTOM_ARMOR_MATERIAL, ArmorItem.Type.HELMET, Item.Settings().maxDamage(ArmorItem.Type.HELMET.getMaxDamage(15)).rarity(Rarity.EPIC)))
+    val KNIGHTMETAL_BOOTS = registerItem("knightmetal_boots") { Item(it.armor(TFArmorMaterials.KNIGHTMETAL_ARMOR_MATERIAL, EquipmentType.BOOTS)) }
+    val KNIGHTMETAL_LEGGINGS = registerItem("knightmetal_leggings") { Item(it.armor(TFArmorMaterials.KNIGHTMETAL_ARMOR_MATERIAL, EquipmentType.LEGGINGS)) }
+    val KNIGHTMETAL_CHESTPLATE = registerItem("knightmetal_chestplate") { Item(it.armor(TFArmorMaterials.KNIGHTMETAL_ARMOR_MATERIAL, EquipmentType.CHESTPLATE)) }
+    val KNIGHTMETAL_HELMET = registerItem("knightmetal_helmet") { Item(it.armor(TFArmorMaterials.KNIGHTMETAL_ARMOR_MATERIAL, EquipmentType.HELMET)) }
+    val KNIGHTMETAL_SWORD = registerItem("knightmetal_sword") { Item(it.sword(TFToolMaterials.KNIGHTMETAL, 4.0F, -2.4F)) }
+    val KNIGHTMETAL_PICKAXE = registerItem("knightmetal_pickaxe") { Item(it.pickaxe(TFToolMaterials.KNIGHTMETAL, 2.0F, -2.8F)) }
+    val KNIGHTMETAL_AXE = registerItem("knightmetal_axe") { Item(it.axe(TFToolMaterials.KNIGHTMETAL, 7.0F, -3.0F)) }
 
-    val FIERY_BOOTS = registerItem("fiery_boots", ArmorItem(TFArmorMaterials.FIERY_ARMOR_MATERIAL, ArmorItem.Type.BOOTS, Item.Settings().maxDamage(ArmorItem.Type.BOOTS.getMaxDamage(15))))
-    val FIERY_LEGGINGS = registerItem("fiery_leggings", ArmorItem(TFArmorMaterials.FIERY_ARMOR_MATERIAL, ArmorItem.Type.LEGGINGS, Item.Settings().maxDamage(ArmorItem.Type.LEGGINGS.getMaxDamage(15))))
-    val FIERY_CHESTPLATE = registerItem("fiery_chestplate", ArmorItem(TFArmorMaterials.FIERY_ARMOR_MATERIAL, ArmorItem.Type.CHESTPLATE, Item.Settings().maxDamage(ArmorItem.Type.CHESTPLATE.getMaxDamage(15))))
-    val FIERY_HELMET = registerItem("fiery_helmet", ArmorItem(TFArmorMaterials.FIERY_ARMOR_MATERIAL, ArmorItem.Type.HELMET, Item.Settings().maxDamage(ArmorItem.Type.HELMET.getMaxDamage(15))))
-    val FIERY_SWORD = registerItem("fiery_sword", SwordItem(TFToolMaterials.FIERY, Item.Settings().attributeModifiers(SwordItem.createAttributeModifiers(TFToolMaterials.FIERY, 4, -2.4F))))
-    val FIERY_PICKAXE = registerItem("fiery_pickaxe", PickaxeItem(TFToolMaterials.FIERY, Item.Settings().attributeModifiers(PickaxeItem.createAttributeModifiers(TFToolMaterials.FIERY, 2.0F, -2.8F))))
+    val PHANTOM_CHESTPLATE = registerItem("phantom_chestplate") { Item(it.armor(TFArmorMaterials.PHANTOM_ARMOR_MATERIAL, EquipmentType.CHESTPLATE).rarity(Rarity.EPIC)) }
+    val PHANTOM_HELMET = registerItem("phantom_helmet") { Item(it.armor(TFArmorMaterials.PHANTOM_ARMOR_MATERIAL, EquipmentType.HELMET).rarity(Rarity.EPIC)) }
 
-    val ARCTIC_BOOTS = registerItem("arctic_boots", ArmorItem(TFArmorMaterials.ARCTIC_ARMOR_MATERIAL, ArmorItem.Type.BOOTS, Item.Settings().maxDamage(ArmorItem.Type.BOOTS.getMaxDamage(15))))
-    val ARCTIC_LEGGINGS = registerItem("arctic_leggings", ArmorItem(TFArmorMaterials.ARCTIC_ARMOR_MATERIAL, ArmorItem.Type.LEGGINGS, Item.Settings().maxDamage(ArmorItem.Type.LEGGINGS.getMaxDamage(15))))
-    val ARCTIC_CHESTPLATE = registerItem("arctic_chestplate", ArmorItem(TFArmorMaterials.ARCTIC_ARMOR_MATERIAL, ArmorItem.Type.CHESTPLATE, Item.Settings().maxDamage(ArmorItem.Type.CHESTPLATE.getMaxDamage(15))))
-    val ARCTIC_HELMET = registerItem("arctic_helmet", ArmorItem(TFArmorMaterials.ARCTIC_ARMOR_MATERIAL, ArmorItem.Type.HELMET, Item.Settings().maxDamage(ArmorItem.Type.HELMET.getMaxDamage(15))))
+    val FIERY_BOOTS = registerItem("fiery_boots") { Item(it.armor(TFArmorMaterials.FIERY_ARMOR_MATERIAL, EquipmentType.BOOTS)) }
+    val FIERY_LEGGINGS = registerItem("fiery_leggings") { Item(it.armor(TFArmorMaterials.FIERY_ARMOR_MATERIAL, EquipmentType.LEGGINGS)) }
+    val FIERY_CHESTPLATE = registerItem("fiery_chestplate") { Item(it.armor(TFArmorMaterials.FIERY_ARMOR_MATERIAL, EquipmentType.CHESTPLATE)) }
+    val FIERY_HELMET = registerItem("fiery_helmet") { Item(it.armor(TFArmorMaterials.FIERY_ARMOR_MATERIAL, EquipmentType.HELMET)) }
+    val FIERY_SWORD = registerItem("fiery_sword") { Item(it.sword(TFToolMaterials.FIERY, 4.0F, -2.4F)) }
+    val FIERY_PICKAXE = registerItem("fiery_pickaxe") { Item(it.pickaxe(TFToolMaterials.FIERY, 2.0F, -2.8F)) }
 
-    val YETI_BOOTS = registerItem("yeti_boots", ArmorItem(TFArmorMaterials.YETI_ARMOR_MATERIAL, ArmorItem.Type.BOOTS, Item.Settings().maxDamage(ArmorItem.Type.BOOTS.getMaxDamage(15))))
-    val YETI_LEGGINGS = registerItem("yeti_leggings", ArmorItem(TFArmorMaterials.YETI_ARMOR_MATERIAL, ArmorItem.Type.LEGGINGS, Item.Settings().maxDamage(ArmorItem.Type.LEGGINGS.getMaxDamage(15))))
-    val YETI_CHESTPLATE = registerItem("yeti_chestplate", ArmorItem(TFArmorMaterials.YETI_ARMOR_MATERIAL, ArmorItem.Type.CHESTPLATE, Item.Settings().maxDamage(ArmorItem.Type.CHESTPLATE.getMaxDamage(15))))
-    val YETI_HELMET = registerItem("yeti_helmet", ArmorItem(TFArmorMaterials.YETI_ARMOR_MATERIAL, ArmorItem.Type.HELMET, Item.Settings().maxDamage(ArmorItem.Type.HELMET.getMaxDamage(15))))
+    val ARCTIC_BOOTS = registerItem("arctic_boots") { Item(it.armor(TFArmorMaterials.ARCTIC_ARMOR_MATERIAL, EquipmentType.BOOTS)) }
+    val ARCTIC_LEGGINGS = registerItem("arctic_leggings") { Item(it.armor(TFArmorMaterials.ARCTIC_ARMOR_MATERIAL, EquipmentType.LEGGINGS)) }
+    val ARCTIC_CHESTPLATE = registerItem("arctic_chestplate") { Item(it.armor(TFArmorMaterials.ARCTIC_ARMOR_MATERIAL, EquipmentType.CHESTPLATE)) }
+    val ARCTIC_HELMET = registerItem("arctic_helmet") { Item(it.armor(TFArmorMaterials.ARCTIC_ARMOR_MATERIAL, EquipmentType.HELMET)) }
 
-    //WOOD ITEMS
-    val TWILIGHT_OAK_SIGN = registerItem("twilight_oak_sign", SignItem(Item.Settings().maxCount(16), TFBlocks.TWILIGHT_OAK_SIGN, TFBlocks.TWILIGHT_OAK_WALL_SIGN))
-    val TWILIGHT_OAK_HANGING_SIGN = registerItem("twilight_oak_hanging_sign", HangingSignItem(TFBlocks.TWILIGHT_OAK_HANGING_SIGN, TFBlocks.TWILIGHT_OAK_WALL_HANGING_SIGN, Item.Settings().maxCount(16)))
+    val YETI_BOOTS = registerItem("yeti_boots") { Item(it.armor(TFArmorMaterials.YETI_ARMOR_MATERIAL, EquipmentType.BOOTS)) }
+    val YETI_LEGGINGS = registerItem("yeti_leggings") { Item(it.armor(TFArmorMaterials.YETI_ARMOR_MATERIAL, EquipmentType.LEGGINGS)) }
+    val YETI_CHESTPLATE = registerItem("yeti_chestplate") { Item(it.armor(TFArmorMaterials.YETI_ARMOR_MATERIAL, EquipmentType.CHESTPLATE)) }
+    val YETI_HELMET = registerItem("yeti_helmet") { Item(it.armor(TFArmorMaterials.YETI_ARMOR_MATERIAL, EquipmentType.HELMET)) }
 
-    private fun registerItem(name: String, item: Item): Item {
-        return Registry.register(Registries.ITEM, Identifier.of(TwilightForest.MOD_ID, name), item)
+    private fun registerItem(name: String, factory: (Item.Settings) -> Item): Item {
+        val id = Identifier.of(TwilightForest.MOD_ID, name)
+        val key = RegistryKey.of(RegistryKeys.ITEM, id)
+        val settings = Item.Settings().registryKey(key)
+        val item = factory(settings)
+
+        return Registry.register(Registries.ITEM, key, item)
     }
 
     fun registerItems() {
-        TwilightForest.logger.info("Registering items for" + TwilightForest.MOD_ID)
+        TwilightForest.logger?.info("Registering items for" + TwilightForest.MOD_ID)
 
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register { entries ->
             entries.add(NAGA_SCALE)
@@ -239,10 +228,6 @@ object TFItems {
             entries.add(YETI_LEGGINGS)
             entries.add(YETI_CHESTPLATE)
             entries.add(YETI_HELMET)
-        }
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS).register { entries ->
-            entries.add(TWILIGHT_OAK_SIGN)
-            entries.add(TWILIGHT_OAK_HANGING_SIGN)
         }
     }
 }

@@ -24,6 +24,6 @@ object TFDataComponentTypes {
     }
 
     fun registerDataComponentTypes() {
-        TwilightForest.logger.info("Registering data component types for" + TwilightForest.MOD_ID)
+        TwilightForest.logger?.info("Registering data component types for" + TwilightForest.MOD_ID)
     }
 }

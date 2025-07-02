@@ -2,12 +2,8 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "item": "twilightforest:charm_of_life_i"
-    },
-    {
-      "item": "twilightforest:charm_of_life_i"
-    }
+    "twilightforest:charm_of_life_i",
+    "twilightforest:charm_of_life_i"
   ],
   "result": {
     "count": 1,

@@ -10,11 +10,12 @@ import autumn.twilightforest.util.TFBlockSetTypes
 import autumn.twilightforest.util.TFWoodTypes
 import net.fabricmc.api.ModInitializer
 import net.minecraft.util.Identifier
+import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 
 object TwilightForest : ModInitializer {
 	const val MOD_ID = "twilightforest"
-    val logger = LoggerFactory.getLogger(MOD_ID)
+    val logger: Logger? = LoggerFactory.getLogger(MOD_ID)
 
 	override fun onInitialize() {
 		TFBlockSetTypes.registerBlockSetTypes()

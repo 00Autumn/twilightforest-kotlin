@@ -17,7 +17,5 @@ object TwilightForestClient : ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlock(TFBlocks.TWILIGHT_OAK_TRAPDOOR, RenderLayer.getCutout())
         BlockRenderLayerMap.INSTANCE.putBlock(TFBlocks.TWILIGHT_OAK_LEAVES, RenderLayer.getCutout())
         BlockRenderLayerMap.INSTANCE.putBlock(TFBlocks.TWILIGHT_OAK_SAPLING, RenderLayer.getCutout())
-        BlockRenderLayerMap.INSTANCE.putBlock(TFBlocks.TWILIGHT_OAK_SIGN, RenderLayer.getCutout())
-        BlockRenderLayerMap.INSTANCE.putBlock(TFBlocks.TWILIGHT_OAK_HANGING_SIGN, RenderLayer.getCutout())
     }
 }

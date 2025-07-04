@@ -149,12 +149,6 @@ class TFItemTagProvider(output: FabricDataOutput, registriesFuture: CompletableF
         valueLookupBuilder(ItemTags.WOODEN_BUTTONS).add(
             TFBlocks.TWILIGHT_OAK_BUTTON.asItem()
         )
-        /*valueLookupBuilder(ItemTags.SIGNS).add(
-            TFItems.TWILIGHT_OAK_SIGN
-        )
-        valueLookupBuilder(ItemTags.HANGING_SIGNS).add(
-            TFItems.TWILIGHT_OAK_HANGING_SIGN
-        )*/
     }
 
 }

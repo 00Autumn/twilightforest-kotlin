@@ -30,11 +30,9 @@ class PocketWatchItem(settings: Settings) : Item(settings) {
         val ownerUUID = getOwnerUUID(stack)
         if (ownerUUID == null || ownerUUID != player.uuid) return
 
-        // Always apply Speed and Jump Boost if the item is soulbound and in inventory
         player.addStatusEffect(StatusEffectInstance(StatusEffects.SPEED))
         player.addStatusEffect(StatusEffectInstance(StatusEffects.JUMP_BOOST))
 
-        // Only apply Haste if the item is actively held in the main hand
         if (player.mainHandStack === stack) {
             player.addStatusEffect(StatusEffectInstance(StatusEffects.HASTE))
         }

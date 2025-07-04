@@ -1,6 +1,8 @@
 package autumn.twilightforest.init.item
 
 import autumn.twilightforest.TwilightForest
+import autumn.twilightforest.datacomponent.TFDataComponentTypes
+import autumn.twilightforest.datacomponent.tooltip.TooltipComponent
 import autumn.twilightforest.init.item.custom.PocketWatchItem
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents
 import net.minecraft.item.Item
@@ -17,7 +19,7 @@ import net.minecraft.util.Rarity
 
 object TFItems {
 
-    //EQUIPMENT INGREDIENTS
+
     val NAGA_SCALE = registerItem("naga_scale") { it.rarity(Rarity.UNCOMMON); Item(it) }
     val LIVEROOT = registerItem("liveroot") { Item(it) }
     val RAW_IRONWOOD = registerItem("raw_ironwood") { Item(it) }
@@ -57,7 +59,8 @@ object TFItems {
     val MEEF_STROGANOFF = registerItem("meef_stroganoff") { Item(it.maxCount(1).food(TFFoodComponents.MEEF_STROGANOFF).useRemainder(Items.BOWL).rarity(Rarity.UNCOMMON)) }
     val HYDRA_CHOP = registerItem("hydra_chop") { Item(it.food(TFFoodComponents.HYDRA_CHOP, TFConsumableComponents.HYDRA_CHOP_EFFECT).fireproof().rarity(Rarity.UNCOMMON)) }
     val TORCHBERRIES = registerItem("torchberries") { Item(it.food(TFFoodComponents.TORCHBERRIES, TFConsumableComponents.TORCHBERRIES_EFFECT)) }
-    val EXPERIMENT_115 = registerItem("experiment_115") { Item(it.food(TFFoodComponents.EXPERIMENT_115)) }
+    val EXPERIMENT_115 = registerItem("experiment_115") { Item(it.food(TFFoodComponents.EXPERIMENT_115).component(
+        TFDataComponentTypes.TOOLTIP, TooltipComponent("tooltip.twilightforest.experiment_115.tooltip"))) }
     val MAZE_WAFER = registerItem("maze_wafer") { Item(it.food(TFFoodComponents.MAZE_WAFER)) }
 
     // EQUIPMENT & TRINKETS

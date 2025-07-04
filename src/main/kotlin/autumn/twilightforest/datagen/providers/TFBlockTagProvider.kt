@@ -129,18 +129,5 @@ class TFBlockTagProvider(output: FabricDataOutput, registriesFuture: Completable
         valueLookupBuilder(BlockTags.WOODEN_BUTTONS).add(
             TFBlocks.TWILIGHT_OAK_BUTTON
         )
-        /*valueLookupBuilder(BlockTags.STANDING_SIGNS).add(
-            TFBlocks.TWILIGHT_OAK_SIGN
-        )
-        valueLookupBuilder(BlockTags.WALL_SIGNS).add(
-            TFBlocks.TWILIGHT_OAK_WALL_SIGN
-        )
-        valueLookupBuilder(BlockTags.CEILING_HANGING_SIGNS).add(
-            TFBlocks.TWILIGHT_OAK_HANGING_SIGN
-        )
-        valueLookupBuilder(BlockTags.WALL_HANGING_SIGNS).add(
-            TFBlocks.TWILIGHT_OAK_WALL_HANGING_SIGN
-        )*/
-
     }
 }

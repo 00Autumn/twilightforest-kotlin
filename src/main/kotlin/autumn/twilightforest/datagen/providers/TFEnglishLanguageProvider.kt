@@ -171,6 +171,8 @@ class TFEnglishLanguageProvider(output: FabricDataOutput, registryLookup: Comple
         entries?.add(TFBlocks.TWILIGHT_OAK_SLAB.asItem(), "Twilight Oak Slab")
         entries?.add(TFBlocks.TWILIGHT_OAK_PRESSURE_PLATE.asItem(), "Twilight Oak Pressure Plate")
         entries?.add(TFBlocks.TWILIGHT_OAK_BUTTON.asItem(), "Twilight Oak Button")
+        entries?.add(TFItems.TWILIGHT_OAK_SIGN, "Twilight Oak Sign")
+        entries?.add(TFItems.TWILIGHT_OAK_HANGING_SIGN, "Twilight Oak Hanging Sign")
 
         addText(entries, Text.translatable("itemgroup.twilightforest.twilight_forest_items"), "Twilight Forest: Items")
         addText(entries, Text.translatable("itemgroup.twilightforest.twilight_forest_blocks"), "Twilight Forest: Blocks")

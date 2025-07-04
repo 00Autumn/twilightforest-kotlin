@@ -26,7 +26,7 @@ object TFBlockFamilies {
         val TWILIGHT_OAK: BlockFamily = registerBlockFamily(TFBlocks.TWILIGHT_OAK_PLANKS)
             .button(TFBlocks.TWILIGHT_OAK_BUTTON)
             .pressurePlate(TFBlocks.TWILIGHT_OAK_PRESSURE_PLATE)
-            //.sign(TFBlocks.TWILIGHT_OAK_SIGN, TFBlocks.TWILIGHT_OAK_WALL_SIGN)
+            .sign(TFBlocks.TWILIGHT_OAK_SIGN, TFBlocks.TWILIGHT_OAK_WALL_SIGN)
             .fence(TFBlocks.TWILIGHT_OAK_FENCE)
             .fenceGate(TFBlocks.TWILIGHT_OAK_FENCE_GATE)
             .stairs(TFBlocks.TWILIGHT_OAK_STAIRS)

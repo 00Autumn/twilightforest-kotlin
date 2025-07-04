@@ -3,12 +3,15 @@ package autumn.twilightforest.init.item
 import autumn.twilightforest.TwilightForest
 import autumn.twilightforest.datacomponent.TFDataComponentTypes
 import autumn.twilightforest.datacomponent.tooltip.TooltipComponent
+import autumn.twilightforest.init.block.TFBlocks
 import autumn.twilightforest.init.item.custom.FieryItem
 import autumn.twilightforest.init.item.custom.PocketWatchItem
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents
+import net.minecraft.item.HangingSignItem
 import net.minecraft.item.Item
 import net.minecraft.item.ItemGroups
 import net.minecraft.item.Items
+import net.minecraft.item.SignItem
 import net.minecraft.item.ToolMaterial
 import net.minecraft.item.equipment.EquipmentType
 import net.minecraft.registry.Registries
@@ -123,6 +126,10 @@ object TFItems {
     val YETI_CHESTPLATE = registerItem("yeti_chestplate") { Item(it.armor(TFArmorMaterials.YETI_ARMOR_MATERIAL, EquipmentType.CHESTPLATE)) }
     val YETI_HELMET = registerItem("yeti_helmet") { Item(it.armor(TFArmorMaterials.YETI_ARMOR_MATERIAL, EquipmentType.HELMET)) }
 
+    //WOOD
+    val TWILIGHT_OAK_SIGN = registerItem("twilight_oak_sign") { SignItem(TFBlocks.TWILIGHT_OAK_SIGN, TFBlocks.TWILIGHT_OAK_WALL_SIGN, it.maxCount(16)) }
+    val TWILIGHT_OAK_HANGING_SIGN = registerItem("twilight_oak_hanging_sign") { HangingSignItem(TFBlocks.TWILIGHT_OAK_HANGING_SIGN, TFBlocks.TWILIGHT_OAK_WALL_HANGING_SIGN, it.maxCount(16)) }
+
     private fun registerItem(name: String, factory: (Item.Settings) -> Item): Item {
         val id = Identifier.of(TwilightForest.MOD_ID, name)
         val key = RegistryKey.of(RegistryKeys.ITEM, id)
@@ -165,6 +172,8 @@ object TFItems {
         }
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.FUNCTIONAL).register { entries ->
             entries.add(TOWER_KEY)
+            entries.add(TWILIGHT_OAK_SIGN)
+            entries.add(TWILIGHT_OAK_HANGING_SIGN)
         }
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.FOOD_AND_DRINK).register { entries ->
             entries.add(RAW_VENISON)

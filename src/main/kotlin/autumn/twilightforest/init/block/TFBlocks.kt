@@ -7,6 +7,7 @@ import autumn.twilightforest.init.block.custom.ArcticFurBlock
 import autumn.twilightforest.init.block.custom.FieryBlock
 import autumn.twilightforest.init.block.custom.HedgeBlock
 import autumn.twilightforest.init.block.custom.KnightmetalBlock
+import autumn.twilightforest.sign.TFSignBlockHelper
 import autumn.twilightforest.util.TFBlockSetTypes
 import autumn.twilightforest.util.TFWoodTypes
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents
@@ -17,16 +18,21 @@ import net.minecraft.block.ButtonBlock
 import net.minecraft.block.DoorBlock
 import net.minecraft.block.FenceBlock
 import net.minecraft.block.FenceGateBlock
+import net.minecraft.block.HangingSignBlock
 import net.minecraft.block.InfestedBlock
 import net.minecraft.block.MapColor
 import net.minecraft.block.PillarBlock
 import net.minecraft.block.PressurePlateBlock
 import net.minecraft.block.SaplingBlock
+import net.minecraft.block.SignBlock
 import net.minecraft.block.SlabBlock
 import net.minecraft.block.SlimeBlock
 import net.minecraft.block.StairsBlock
 import net.minecraft.block.TintedParticleLeavesBlock
 import net.minecraft.block.TrapdoorBlock
+import net.minecraft.block.WallHangingSignBlock
+import net.minecraft.block.WallSignBlock
+import net.minecraft.block.WoodType
 import net.minecraft.block.enums.NoteBlockInstrument
 import net.minecraft.block.piston.PistonBehavior
 import net.minecraft.item.BlockItem
@@ -104,6 +110,12 @@ object TFBlocks {
     val TWILIGHT_OAK_SLAB = registerCopyBlock("twilight_oak_slab", Blocks.OAK_SLAB) { settings -> SlabBlock(settings) }
     val TWILIGHT_OAK_PRESSURE_PLATE = registerCopyBlock("twilight_oak_pressure_plate", Blocks.OAK_PRESSURE_PLATE) { settings -> PressurePlateBlock(TFBlockSetTypes.TWILIGHT_OAK_BLOCK_SET_TYPE, settings) }
     val TWILIGHT_OAK_BUTTON = registerVanillaBlock("twilight_oak_button", Blocks.OAK_BUTTON) { settings -> ButtonBlock(TFBlockSetTypes.TWILIGHT_OAK_BLOCK_SET_TYPE, 10, settings) }
+    val TWILIGHT_OAK_WOOD_TYPE: WoodType = TFSignBlockHelper.registerDefaultWoodType(TwilightForest.id("twilight_oak"))
+    private val SIGN_SETTINGS = AbstractBlock.Settings.create().strength(1.0f).noCollision()
+    val TWILIGHT_OAK_SIGN: Block = TFSignBlockHelper.registerSignBlock(TwilightForest.id("twilight_oak_sign"), { settings -> SignBlock(TWILIGHT_OAK_WOOD_TYPE, settings) }, SIGN_SETTINGS)
+    val TWILIGHT_OAK_WALL_SIGN: Block = TFSignBlockHelper.registerSignBlock(TwilightForest.id("twilight_oak_wall_sign"), { settings -> WallSignBlock(TWILIGHT_OAK_WOOD_TYPE, settings) }, SIGN_SETTINGS)
+    val TWILIGHT_OAK_HANGING_SIGN: Block = TFSignBlockHelper.registerSignBlock(TwilightForest.id("twilight_oak_hanging_sign"), { settings -> HangingSignBlock(TWILIGHT_OAK_WOOD_TYPE, settings) }, SIGN_SETTINGS)
+    val TWILIGHT_OAK_WALL_HANGING_SIGN: Block = TFSignBlockHelper.registerSignBlock(TwilightForest.id("twilight_oak_wall_hanging_sign"), { settings -> WallHangingSignBlock(TWILIGHT_OAK_WOOD_TYPE, settings) }, SIGN_SETTINGS)
 
     private fun registerBlock(name: String, function: (AbstractBlock.Settings) -> Block): Block {
         val id = Identifier.of(TwilightForest.MOD_ID, name)

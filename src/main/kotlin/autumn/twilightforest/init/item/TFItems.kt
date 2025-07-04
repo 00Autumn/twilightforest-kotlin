@@ -3,6 +3,7 @@ package autumn.twilightforest.init.item
 import autumn.twilightforest.TwilightForest
 import autumn.twilightforest.datacomponent.TFDataComponentTypes
 import autumn.twilightforest.datacomponent.tooltip.TooltipComponent
+import autumn.twilightforest.init.item.custom.FieryItem
 import autumn.twilightforest.init.item.custom.PocketWatchItem
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents
 import net.minecraft.item.Item
@@ -30,7 +31,7 @@ object TFItems {
     val KNIGHTMETAL_INGOT = registerItem("knightmetal_ingot") { Item(it) }
     val FIERY_BLOOD = registerItem("fiery_blood") { it.rarity(Rarity.UNCOMMON); Item(it) }
     val FIERY_TEARS = registerItem("fiery_tears") { it.rarity(Rarity.UNCOMMON); Item(it) }
-    val FIERY_INGOT = registerItem("fiery_ingot") { it.rarity(Rarity.UNCOMMON); Item(it) }
+    val FIERY_INGOT = registerItem("fiery_ingot") { it.rarity(Rarity.UNCOMMON); FieryItem(it) }
     val ARCTIC_FUR = registerItem("arctic_fur") { Item(it) }
     val ALPHA_YETI_FUR = registerItem("alpha_yeti_fur") { it.rarity(Rarity.UNCOMMON); Item(it) }
 
@@ -105,12 +106,12 @@ object TFItems {
     val PHANTOM_CHESTPLATE = registerItem("phantom_chestplate") { Item(it.armor(TFArmorMaterials.PHANTOM_ARMOR_MATERIAL, EquipmentType.CHESTPLATE).rarity(Rarity.EPIC)) }
     val PHANTOM_HELMET = registerItem("phantom_helmet") { Item(it.armor(TFArmorMaterials.PHANTOM_ARMOR_MATERIAL, EquipmentType.HELMET).rarity(Rarity.EPIC)) }
 
-    val FIERY_BOOTS = registerItem("fiery_boots") { Item(it.armor(TFArmorMaterials.FIERY_ARMOR_MATERIAL, EquipmentType.BOOTS)) }
-    val FIERY_LEGGINGS = registerItem("fiery_leggings") { Item(it.armor(TFArmorMaterials.FIERY_ARMOR_MATERIAL, EquipmentType.LEGGINGS)) }
-    val FIERY_CHESTPLATE = registerItem("fiery_chestplate") { Item(it.armor(TFArmorMaterials.FIERY_ARMOR_MATERIAL, EquipmentType.CHESTPLATE)) }
-    val FIERY_HELMET = registerItem("fiery_helmet") { Item(it.armor(TFArmorMaterials.FIERY_ARMOR_MATERIAL, EquipmentType.HELMET)) }
-    val FIERY_SWORD = registerItem("fiery_sword") { Item(it.sword(TFToolMaterials.FIERY, 4.0F, -2.4F)) }
-    val FIERY_PICKAXE = registerItem("fiery_pickaxe") { Item(it.pickaxe(TFToolMaterials.FIERY, 2.0F, -2.8F)) }
+    val FIERY_BOOTS = registerItem("fiery_boots") { FieryItem(it.armor(TFArmorMaterials.FIERY_ARMOR_MATERIAL, EquipmentType.BOOTS)) }
+    val FIERY_LEGGINGS = registerItem("fiery_leggings") { FieryItem(it.armor(TFArmorMaterials.FIERY_ARMOR_MATERIAL, EquipmentType.LEGGINGS)) }
+    val FIERY_CHESTPLATE = registerItem("fiery_chestplate") { FieryItem(it.armor(TFArmorMaterials.FIERY_ARMOR_MATERIAL, EquipmentType.CHESTPLATE)) }
+    val FIERY_HELMET = registerItem("fiery_helmet") { FieryItem(it.armor(TFArmorMaterials.FIERY_ARMOR_MATERIAL, EquipmentType.HELMET)) }
+    val FIERY_SWORD = registerItem("fiery_sword") { FieryItem(it.sword(TFToolMaterials.FIERY, 4.0F, -2.4F)) }
+    val FIERY_PICKAXE = registerItem("fiery_pickaxe") { FieryItem(it.pickaxe(TFToolMaterials.FIERY, 2.0F, -2.8F)) }
 
     val ARCTIC_BOOTS = registerItem("arctic_boots") { Item(it.armor(TFArmorMaterials.ARCTIC_ARMOR_MATERIAL, EquipmentType.BOOTS)) }
     val ARCTIC_LEGGINGS = registerItem("arctic_leggings") { Item(it.armor(TFArmorMaterials.ARCTIC_ARMOR_MATERIAL, EquipmentType.LEGGINGS)) }

@@ -70,8 +70,8 @@ object TFItemGroups {
                 entries.add(TFBlocks.CHISELED_MAZESTONE)
                 entries.add(TFBlocks.CUT_MAZESTONE)
                 entries.add(TFBlocks.DECORATIVE_MAZESTONE)
-                entries.add(TFBlocks.CRACKED_MAZESTONE)
-                entries.add(TFBlocks.MOSSY_MAZESTONE)
+                entries.add(TFBlocks.CRACKED_MAZESTONE_BRICK)
+                entries.add(TFBlocks.MOSSY_MAZESTONE_BRICK)
                 entries.add(TFBlocks.MAZESTONE_MOSAIC)
                 entries.add(TFBlocks.MAZESTONE_BORDER)
 

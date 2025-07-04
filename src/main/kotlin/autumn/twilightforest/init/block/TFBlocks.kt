@@ -1,6 +1,8 @@
 package autumn.twilightforest.init.block
 
 import autumn.twilightforest.TwilightForest
+import autumn.twilightforest.datacomponent.TFDataComponentTypes
+import autumn.twilightforest.datacomponent.tooltip.TooltipComponent
 import autumn.twilightforest.init.block.custom.ArcticFurBlock
 import autumn.twilightforest.init.block.custom.FieryBlock
 import autumn.twilightforest.init.block.custom.HedgeBlock
@@ -42,11 +44,13 @@ object TFBlocks {
     // NATURAL BLOCKS
     val ROOT_BLOCK = registerBlock("root_block") { settings -> Block(settings.burnable().mapColor(MapColor.BROWN).sounds(BlockSoundGroup.WOOD).strength(2.0F, 3.0F)) }
     val LIVEROOT_BLOCK = registerBlock("liveroot_block") { settings -> Block(settings.burnable().mapColor(MapColor.LICHEN_GREEN).sounds(BlockSoundGroup.WOOD).strength(2.0F, 3.0F)) }
+
+    //STORAGE BLOCKS
     val MAZE_SLIME_BLOCK = registerCopyBlock("maze_slime_block", Blocks.SLIME_BLOCK) { settings -> SlimeBlock(settings.mapColor(MapColor.LIGHT_GRAY)) }
     val IRONWOOD_BLOCK = registerCopyBlock("ironwood_block", Blocks.IRON_BLOCK) { settings -> Block(settings.mapColor(MapColor.LICHEN_GREEN).sounds(BlockSoundGroup.METAL)) }
     val STEELEAF_BLOCK = registerCopyBlock("steeleaf_block", Blocks.DIAMOND_BLOCK) { settings -> Block(settings.mapColor(MapColor.GREEN).sounds(BlockSoundGroup.METAL)) }
     val KNIGHTMETAL_BLOCK = registerCopyBlock("knightmetal_block", Blocks.DIAMOND_BLOCK) { settings -> KnightmetalBlock(settings.mapColor(MapColor.LIGHT_GRAY).sounds(BlockSoundGroup.ANVIL)) }
-    val FIERY_BLOCK = registerCopyBlock("fiery_block", Blocks.DIAMOND_BLOCK) { settings -> FieryBlock(settings.mapColor(MapColor.TERRACOTTA_RED).sounds(BlockSoundGroup.METAL)) }
+    val FIERY_BLOCK = registerBlockWithTooltip(name = "fiery_block", baseBlock = Blocks.DIAMOND_BLOCK, tooltipKey = "tooltip.twilightforest.fiery_block.tooltip") { settings -> FieryBlock(settings.mapColor(MapColor.TERRACOTTA_RED).sounds(BlockSoundGroup.METAL)) }
     val ARCTIC_FUR_BLOCK = registerCopyBlock("arctic_fur_block", Blocks.WHITE_WOOL) { settings -> ArcticFurBlock(settings) }
 
     // LABYRINTH BLOCKS
@@ -56,8 +60,8 @@ object TFBlocks {
     val CHISELED_MAZESTONE = registerCopyBlock("chiseled_mazestone", MAZESTONE) { settings -> Block(settings) }
     val CUT_MAZESTONE = registerCopyBlock("cut_mazestone", MAZESTONE) { settings -> Block(settings) }
     val DECORATIVE_MAZESTONE = registerCopyBlock("decorative_mazestone", MAZESTONE) { settings -> Block(settings) }
-    val CRACKED_MAZESTONE = registerCopyBlock("cracked_mazestone", MAZESTONE) { settings -> Block(settings) }
-    val MOSSY_MAZESTONE = registerCopyBlock("mossy_mazestone", MAZESTONE) { settings -> Block(settings) }
+    val CRACKED_MAZESTONE_BRICK = registerCopyBlock("cracked_mazestone_brick", MAZESTONE) { settings -> Block(settings) }
+    val MOSSY_MAZESTONE_BRICK = registerCopyBlock("mossy_mazestone_brick", MAZESTONE) { settings -> Block(settings) }
     val MAZESTONE_MOSAIC = registerCopyBlock("mazestone_mosaic", MAZESTONE) { settings -> Block(settings) }
     val MAZESTONE_BORDER = registerCopyBlock("mazestone_border", MAZESTONE) { settings -> Block(settings) }
 
@@ -121,7 +125,6 @@ object TFBlocks {
 
     private fun registerVanillaBlock(name: String, vanillaBlock: Block, function: (AbstractBlock.Settings) -> Block): Block {
         val id = Identifier.of(TwilightForest.MOD_ID, name)
-        // Use vanilla block's settings as-is, do NOT call registryKey() here
         val settings = vanillaBlock.settings
         val block = function(settings)
         registerBlockItem(name, block)
@@ -145,6 +148,25 @@ object TFBlocks {
         Registry.register(Registries.ITEM, id, blockItem)
     }
 
+    private fun registerBlockWithTooltip(name: String, baseBlock: Block, tooltipKey: String, blockFactory: (AbstractBlock.Settings) -> Block): Block {
+        val id = Identifier.of(TwilightForest.MOD_ID, name)
+        val blockKey = RegistryKey.of(RegistryKeys.BLOCK, id)
+        val blockSettings = AbstractBlock.Settings.copy(baseBlock).registryKey(blockKey)
+        val block = blockFactory(blockSettings)
+        val registeredBlock = Registry.register(Registries.BLOCK, id, block)
+        val tooltipComponent = TooltipComponent(tooltipKey)
+        val itemKey = RegistryKey.of(RegistryKeys.ITEM, id)
+        val itemSettings = Item.Settings()
+            .useBlockPrefixedTranslationKey()
+            .registryKey(itemKey)
+            .component(TFDataComponentTypes.TOOLTIP, tooltipComponent)
+
+        val blockItem = BlockItem(block, itemSettings)
+        Registry.register(Registries.ITEM, id, blockItem)
+
+        return registeredBlock
+    }
+
     fun registerBlocks() {
         TwilightForest.logger?.info("Registering blocks for " + TwilightForest.MOD_ID)
 
@@ -165,8 +187,8 @@ object TFBlocks {
             entries.add(CHISELED_MAZESTONE)
             entries.add(CUT_MAZESTONE)
             entries.add(DECORATIVE_MAZESTONE)
-            entries.add(CRACKED_MAZESTONE)
-            entries.add(MOSSY_MAZESTONE)
+            entries.add(CRACKED_MAZESTONE_BRICK)
+            entries.add(MOSSY_MAZESTONE_BRICK)
             entries.add(MAZESTONE_MOSAIC)
             entries.add(MAZESTONE_BORDER)
 

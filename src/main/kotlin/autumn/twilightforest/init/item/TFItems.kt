@@ -64,7 +64,8 @@ object TFItems {
     val MAZE_WAFER = registerItem("maze_wafer") { Item(it.food(TFFoodComponents.MAZE_WAFER)) }
 
     // EQUIPMENT & TRINKETS
-    val POCKET_WATCH = registerItem("pocket_watch") { PocketWatchItem(it.maxCount(1).rarity(Rarity.RARE)) }
+    val POCKET_WATCH = registerItem("pocket_watch") { PocketWatchItem(it.maxCount(1).rarity(Rarity.RARE).component(
+        TFDataComponentTypes.TOOLTIP, TooltipComponent("tooltip.twilightforest.pocket_watch.tooltip"))) }
 
     val NAGA_LEGGINGS = registerItem("naga_leggings") { Item(it.armor(TFArmorMaterials.NAGA_ARMOR_MATERIAL, EquipmentType.LEGGINGS)) }
     val NAGA_CHESTPLATE = registerItem("naga_chestplate") { Item(it.armor(TFArmorMaterials.NAGA_ARMOR_MATERIAL, EquipmentType.CHESTPLATE)) }

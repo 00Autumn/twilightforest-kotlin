@@ -23,7 +23,8 @@ class TFBlockTagProvider(output: FabricDataOutput, registriesFuture: Completable
                 TFBlocks.CHISELED_MAZESTONE,
                 TFBlocks.CUT_MAZESTONE,
                 TFBlocks.DECORATIVE_MAZESTONE,
-                TFBlocks.CRACKED_MAZESTONE,
+                TFBlocks.CRACKED_MAZESTONE_BRICK,
+                TFBlocks.MOSSY_MAZESTONE_BRICK,
                 TFBlocks.MAZESTONE_MOSAIC,
                 TFBlocks.MAZESTONE_BORDER,
 
@@ -63,7 +64,8 @@ class TFBlockTagProvider(output: FabricDataOutput, registriesFuture: Completable
                 TFBlocks.CHISELED_MAZESTONE,
                 TFBlocks.CUT_MAZESTONE,
                 TFBlocks.DECORATIVE_MAZESTONE,
-                TFBlocks.CRACKED_MAZESTONE,
+                TFBlocks.CRACKED_MAZESTONE_BRICK,
+                TFBlocks.MOSSY_MAZESTONE_BRICK,
                 TFBlocks.MAZESTONE_MOSAIC,
                 TFBlocks.MAZESTONE_BORDER
             )
@@ -80,7 +82,8 @@ class TFBlockTagProvider(output: FabricDataOutput, registriesFuture: Completable
             TFBlocks.CHISELED_MAZESTONE,
             TFBlocks.CUT_MAZESTONE,
             TFBlocks.DECORATIVE_MAZESTONE,
-            TFBlocks.CRACKED_MAZESTONE,
+            TFBlocks.CRACKED_MAZESTONE_BRICK,
+            TFBlocks.MOSSY_MAZESTONE_BRICK,
             TFBlocks.MAZESTONE_MOSAIC,
             TFBlocks.MAZESTONE_BORDER
         )

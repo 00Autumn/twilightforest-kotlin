@@ -39,8 +39,8 @@ class TFModelProvider(output: FabricDataOutput) : FabricModelProvider(output) {
             registerSimpleCubeAll(TFBlocks.CHISELED_MAZESTONE)
             registerSimpleCubeAll(TFBlocks.CUT_MAZESTONE)
             registerSimpleCubeAll(TFBlocks.DECORATIVE_MAZESTONE)
-            registerSimpleCubeAll(TFBlocks.CRACKED_MAZESTONE)
-            registerSimpleCubeAll(TFBlocks.MOSSY_MAZESTONE)
+            registerSimpleCubeAll(TFBlocks.CRACKED_MAZESTONE_BRICK)
+            registerSimpleCubeAll(TFBlocks.MOSSY_MAZESTONE_BRICK)
             registerSimpleCubeAll(TFBlocks.MAZESTONE_MOSAIC)
             registerSimpleCubeAll(TFBlocks.MAZESTONE_BORDER)
 

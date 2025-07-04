@@ -3,15 +3,27 @@
   "pools": [
     {
       "bonus_rolls": 0.0,
-      "conditions": [
-        {
-          "condition": "minecraft:survives_explosion"
-        }
-      ],
       "entries": [
         {
-          "type": "minecraft:item",
-          "name": "twilightforest:mazestone_brick"
+          "type": "minecraft:alternatives",
+          "children": [
+            {
+              "type": "minecraft:item",
+              "conditions": [
+                {
+                  "condition": "minecraft:match_tool",
+                  "predicate": {
+                    "items": "#twilightforest:fiery_tool"
+                  }
+                }
+              ],
+              "name": "twilightforest:cracked_mazestone_brick"
+            },
+            {
+              "type": "minecraft:item",
+              "name": "twilightforest:mazestone"
+            }
+          ]
         }
       ],
       "rolls": 1.0

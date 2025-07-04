@@ -103,8 +103,12 @@ class TFItemTagProvider(output: FabricDataOutput, registriesFuture: CompletableF
         valueLookupBuilder(ItemTags.PIGLIN_LOVED)
             .add(TFItems.GOLD_MINOTAUR_AXE)
 
-        valueLookupBuilder(TFItemTags.MAZEBREAKER_ITEM)
+        valueLookupBuilder(TFItemTags.MAZEBREAKER_TOOL)
             .add(TFItems.MAZEBREAKER_PICKAXE)
+
+        valueLookupBuilder(TFItemTags.FIERY_TOOL)
+            .add(TFItems.FIERY_PICKAXE)
+            .add(TFItems.FIERY_SWORD)
 
         valueLookupBuilder(TFItemTags.KEPT_ON_DEATH)
             .add(TFItems.PHANTOM_CHESTPLATE)

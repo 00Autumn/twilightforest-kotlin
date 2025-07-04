@@ -457,7 +457,7 @@ class TFRecipeProvider(output: FabricDataOutput, registriesFuture: CompletableFu
                     .offerTo(exporter)
 
                 // MOSSY VARIANTS
-                createShapeless(RecipeCategory.BUILDING_BLOCKS, TFBlocks.MOSSY_MAZESTONE, 1)
+                createShapeless(RecipeCategory.BUILDING_BLOCKS, TFBlocks.MOSSY_MAZESTONE_BRICK, 1)
                     .input(TFBlocks.MAZESTONE_BRICK)
                     .input(Blocks.MOSS_BLOCK)
                     .criterion(hasItem(TFBlocks.MAZESTONE), conditionsFromItem(TFBlocks.MAZESTONE))
@@ -478,7 +478,7 @@ class TFRecipeProvider(output: FabricDataOutput, registriesFuture: CompletableFu
                 offerSmelting(
                     MAZESTONE_SMELTABLES,
                     RecipeCategory.BUILDING_BLOCKS,
-                    TFBlocks.CRACKED_MAZESTONE,
+                    TFBlocks.CRACKED_MAZESTONE_BRICK,
                     0.25f,
                     200,
                     "mazestone"

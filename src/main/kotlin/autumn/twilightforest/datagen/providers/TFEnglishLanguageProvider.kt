@@ -132,8 +132,8 @@ class TFEnglishLanguageProvider(output: FabricDataOutput, registryLookup: Comple
         entries?.add(TFBlocks.CHISELED_MAZESTONE.asItem(), "Chiseled Mazestone")
         entries?.add(TFBlocks.CUT_MAZESTONE.asItem(), "Cut Mazestone")
         entries?.add(TFBlocks.DECORATIVE_MAZESTONE.asItem(), "Decorative Mazestone")
-        entries?.add(TFBlocks.CRACKED_MAZESTONE.asItem(), "Cracked Mazestone")
-        entries?.add(TFBlocks.MOSSY_MAZESTONE.asItem(), "Mossy Mazestone")
+        entries?.add(TFBlocks.CRACKED_MAZESTONE_BRICK.asItem(), "Cracked Mazestone Brick")
+        entries?.add(TFBlocks.MOSSY_MAZESTONE_BRICK.asItem(), "Mossy Mazestone Brick")
         entries?.add(TFBlocks.MAZESTONE_MOSAIC.asItem(), "Mazestone Mosaic")
         entries?.add(TFBlocks.MAZESTONE_BORDER.asItem(), "Mazestone Border")
 
@@ -179,7 +179,7 @@ class TFEnglishLanguageProvider(output: FabricDataOutput, registryLookup: Comple
         addText(entries,Text.translatable("tooltip.twilightforest.experiment_115.tooltip"), "It's not quite cake...")
         addText(entries,Text.translatable("tooltip.twilightforest.pocket_watch.tooltip"), "It seems to always be running late")
         addText(entries,Text.translatable("tooltip.twilightforest.arctic_fur_block.tooltip"), "Here for your own safety!")
-        addText(entries,Text.translatable("tooltip.twilightforest.fiery_metal_block.tooltip"), "Watch your step...")
+        addText(entries,Text.translatable("tooltip.twilightforest.fiery_block.tooltip"), "Watch your step...")
         addText(entries,Text.translatable("tooltip.twilightforest.knightmetal_block.tooltip"), "The cactus but more METAL!")
     }
 }

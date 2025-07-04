@@ -2,7 +2,7 @@
   "block.twilightforest.antibuilt_block": "Antibuilt Block",
   "block.twilightforest.arctic_fur_block": "Block of Arctic Fur",
   "block.twilightforest.chiseled_mazestone": "Chiseled Mazestone",
-  "block.twilightforest.cracked_mazestone": "Cracked Mazestone",
+  "block.twilightforest.cracked_mazestone_brick": "Cracked Mazestone Brick",
   "block.twilightforest.cracked_towerwood": "Cracked Towerwood",
   "block.twilightforest.cracked_underbrick": "Cracked Underbrick",
   "block.twilightforest.cut_mazestone": "Cut Mazestone",
@@ -23,7 +23,7 @@
   "block.twilightforest.mazestone_brick": "Mazestone Brick",
   "block.twilightforest.mazestone_large_brick": "Large Mazestone Brick",
   "block.twilightforest.mazestone_mosaic": "Mazestone Mosaic",
-  "block.twilightforest.mossy_mazestone": "Mossy Mazestone",
+  "block.twilightforest.mossy_mazestone_brick": "Mossy Mazestone Brick",
   "block.twilightforest.mossy_underbrick": "Mossy Underbrick",
   "block.twilightforest.root_block": "Root Block",
   "block.twilightforest.steeleaf_block": "Block of Steeleaf",
@@ -131,7 +131,7 @@
   "itemgroup.twilightforest.twilight_forest_items": "Twilight Forest: Items",
   "tooltip.twilightforest.arctic_fur_block.tooltip": "Here for your own safety!",
   "tooltip.twilightforest.experiment_115.tooltip": "It's not quite cake...",
-  "tooltip.twilightforest.fiery_metal_block.tooltip": "Watch your step...",
+  "tooltip.twilightforest.fiery_block.tooltip": "Watch your step...",
   "tooltip.twilightforest.knightmetal_block.tooltip": "The cactus but more METAL!",
   "tooltip.twilightforest.pocket_watch.tooltip": "It seems to always be running late"
 }

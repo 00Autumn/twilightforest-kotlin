@@ -1,4 +1,4 @@
-// 1.21.5	-999999999-01-01T00:00:00	twilightForest/Tags for minecraft:item
+// 1.21.6	-999999999-01-01T00:00:00	twilightForest/Tags for minecraft:item
 a60dbce39527970b03af723b64656128b26f70e6 data/minecraft/tags/item/axes.json
 7f89e0aad5b3f84db9e6935350ccb1dabe9664a8 data/minecraft/tags/item/fence_gates.json
 d5284d1dd2d3d75ae88e99a96923d3a5a4204f01 data/minecraft/tags/item/freeze_immune_wearables.json
@@ -23,11 +23,12 @@ edfaa8cda9c6e3da8038e030c4631fa83cb73959 data/minecraft/tags/item/wooden_slabs.j
 d0a074d94d33f94c2c54fb0f8c36952f34c0f0e5 data/twilightforest/tags/item/alpha_yeti_furs.json
 b365ad6615ef9b05f43067637b8c869c06150e9e data/twilightforest/tags/item/arctic_furs.json
 c4ca6360cc73d65fd4a4a4c6cf7de2143124ccbf data/twilightforest/tags/item/fiery_ingots.json
+841a7cd83bf04952f2c5547d35ba37e8808acbb6 data/twilightforest/tags/item/fiery_tool.json
 bed43612fb08f85dd3dc7dbc5a4a871f7440b9d7 data/twilightforest/tags/item/ironwood_ingots.json
 b428c7e83405bbb26b44a4f5e0471b9c8d8b3721 data/twilightforest/tags/item/is_fiery_vial.json
 1cb37d739286eb3bb036507d81eedfaccd21f2ab data/twilightforest/tags/item/kept_on_death.json
 980eaf5c00d22d6f49e221d0c1effd89470aaee8 data/twilightforest/tags/item/knightmetal_ingots.json
-6a1304e043ca96f1d574fad44e907e6de1e6b9c9 data/twilightforest/tags/item/mazebreaker_item.json
+6a1304e043ca96f1d574fad44e907e6de1e6b9c9 data/twilightforest/tags/item/mazebreaker_tool.json
 6744e98207dbd9c56f7a1fff47c3a42119f89370 data/twilightforest/tags/item/naga_scales.json
 fe132d332dc184d80aa8a12f0f65d1219b025d5e data/twilightforest/tags/item/repairs_arctic_armor.json
 fb10e1b8acf2b06c68335277201db88ba3ef61bf data/twilightforest/tags/item/repairs_fiery_armor.json

@@ -7,7 +7,8 @@ import net.minecraft.registry.tag.TagKey
 import net.minecraft.util.Identifier
 
 object TFItemTags {
-    val MAZEBREAKER_ITEM: TagKey<Item> = createTag("mazebreaker_item")
+    val MAZEBREAKER_TOOL: TagKey<Item> = createTag("mazebreaker_tool")
+    val FIERY_TOOL: TagKey<Item> = createTag("fiery_tool")
 
     val KEPT_ON_DEATH: TagKey<Item> = createTag("kept_on_death")
 

@@ -1,6 +1,8 @@
 package autumn.twilightforest.datacomponent
 
 import autumn.twilightforest.TwilightForest
+import autumn.twilightforest.datacomponent.tooltip.TooltipComponent
+import net.fabricmc.fabric.api.item.v1.ComponentTooltipAppenderRegistry
 import net.minecraft.component.ComponentType
 import net.minecraft.component.type.NbtComponent
 import net.minecraft.registry.Registries
@@ -10,6 +12,11 @@ import net.minecraft.util.Identifier
 object TFDataComponentTypes {
     val SOULBOUND: ComponentType<NbtComponent> = registerDataComponentType("soulbound") {
         it.codec(NbtComponent.CODEC)
+    }
+
+    val TOOLTIP: ComponentType<TooltipComponent> = registerDataComponentType("tooltip") {
+        it.codec(TooltipComponent.CODEC)
+
     }
 
     private fun <T> registerDataComponentType(
@@ -25,5 +32,9 @@ object TFDataComponentTypes {
 
     fun registerDataComponentTypes() {
         TwilightForest.logger?.info("Registering data component types for" + TwilightForest.MOD_ID)
+
+        ComponentTooltipAppenderRegistry.addFirst(
+            TOOLTIP
+        )
     }
 }

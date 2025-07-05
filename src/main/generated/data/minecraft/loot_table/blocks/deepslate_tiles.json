@@ -1,0 +1,32 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:alternatives",
+          "children": [
+            {
+              "type": "minecraft:item",
+              "conditions": [
+                {
+                  "condition": "minecraft:match_tool",
+                  "predicate": {
+                    "items": "#twilightforest:fiery_tool"
+                  }
+                }
+              ],
+              "name": "minecraft:cracked_deepslate_tiles"
+            },
+            {
+              "type": "minecraft:item",
+              "name": "minecraft:deepslate_tiles"
+            }
+          ]
+        }
+      ],
+      "rolls": 1.0
+    }
+  ]
+}

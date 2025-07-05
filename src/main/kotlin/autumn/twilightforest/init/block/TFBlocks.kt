@@ -117,6 +117,7 @@ object TFBlocks {
     val TWILIGHT_OAK_HANGING_SIGN: Block = TFSignBlockHelper.registerSignBlock(TwilightForest.id("twilight_oak_hanging_sign"), { settings -> HangingSignBlock(TWILIGHT_OAK_WOOD_TYPE, settings) }, SIGN_SETTINGS)
     val TWILIGHT_OAK_WALL_HANGING_SIGN: Block = TFSignBlockHelper.registerSignBlock(TwilightForest.id("twilight_oak_wall_hanging_sign"), { settings -> WallHangingSignBlock(TWILIGHT_OAK_WOOD_TYPE, settings) }, SIGN_SETTINGS)
 
+
     private fun registerBlock(name: String, function: (AbstractBlock.Settings) -> Block): Block {
         val id = Identifier.of(TwilightForest.MOD_ID, name)
         val blockKey = RegistryKey.of(RegistryKeys.BLOCK, id)

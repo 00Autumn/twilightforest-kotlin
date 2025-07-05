@@ -1,12 +1,14 @@
 package autumn.twilightforest.init.item
 
 import autumn.twilightforest.TwilightForest
+import autumn.twilightforest.boat.api.item.TFBoatItemHelper
 import autumn.twilightforest.datacomponent.TFDataComponentTypes
 import autumn.twilightforest.datacomponent.tooltip.TooltipComponent
 import autumn.twilightforest.init.block.TFBlocks
 import autumn.twilightforest.init.item.custom.FieryItem
 import autumn.twilightforest.init.item.custom.PocketWatchItem
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents
+import net.minecraft.item.BoatItem
 import net.minecraft.item.HangingSignItem
 import net.minecraft.item.Item
 import net.minecraft.item.ItemGroups
@@ -129,6 +131,8 @@ object TFItems {
     //WOOD
     val TWILIGHT_OAK_SIGN = registerItem("twilight_oak_sign") { SignItem(TFBlocks.TWILIGHT_OAK_SIGN, TFBlocks.TWILIGHT_OAK_WALL_SIGN, it.maxCount(16)) }
     val TWILIGHT_OAK_HANGING_SIGN = registerItem("twilight_oak_hanging_sign") { HangingSignItem(TFBlocks.TWILIGHT_OAK_HANGING_SIGN, TFBlocks.TWILIGHT_OAK_WALL_HANGING_SIGN, it.maxCount(16)) }
+    val TWILIGHT_OAK_BOAT: BoatItem = TFBoatItemHelper.registerBoatItem(Identifier.of(TwilightForest.MOD_ID, "twilight_oak"), false)
+    val TWILIGHT_OAK_CHEST_BOAT: BoatItem = TFBoatItemHelper.registerBoatItem(Identifier.of(TwilightForest.MOD_ID, "twilight_oak"), true)
 
     private fun registerItem(name: String, factory: (Item.Settings) -> Item): Item {
         val id = Identifier.of(TwilightForest.MOD_ID, name)
@@ -242,6 +246,9 @@ object TFItems {
             entries.add(YETI_LEGGINGS)
             entries.add(YETI_CHESTPLATE)
             entries.add(YETI_HELMET)
+
+            entries.add(TWILIGHT_OAK_BOAT)
+            entries.add(TWILIGHT_OAK_CHEST_BOAT)
         }
     }
 }

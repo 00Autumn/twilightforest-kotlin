@@ -1,6 +1,6 @@
 {
   "required": true,
-  "package": "autumn.twilightforest.mixin",
+  "package": "autumn.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
   ],

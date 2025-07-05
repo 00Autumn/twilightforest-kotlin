@@ -48,6 +48,9 @@ object TFItemGroups {
                 entries.add(TFItems.TORCHBERRIES)
                 entries.add(TFItems.EXPERIMENT_115)
                 entries.add(TFItems.MAZE_WAFER)
+
+                entries.add(TFItems.TWILIGHT_OAK_BOAT)
+                entries.add(TFItems.TWILIGHT_OAK_CHEST_BOAT)
             }.build()
     )
     val TWILIGHT_FOREST_BLOCKS_GROUP = Registry.register(Registries.ITEM_GROUP,

@@ -111,7 +111,9 @@ class TFModelProvider(output: FabricDataOutput) : FabricModelProvider(output) {
                 TFItems.TORCHBERRIES,
                 TFItems.EXPERIMENT_115,
                 TFItems.MAZE_WAFER,
-                TFItems.POCKET_WATCH
+                TFItems.POCKET_WATCH,
+                TFItems.TWILIGHT_OAK_BOAT,
+                TFItems.TWILIGHT_OAK_CHEST_BOAT
             ).forEach { generator.register(it, Models.GENERATED) }
             //DUAL-LAYER
             generator.register(TFItems.BORER_ESSENCE)

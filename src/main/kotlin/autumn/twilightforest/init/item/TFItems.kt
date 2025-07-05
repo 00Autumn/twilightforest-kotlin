@@ -134,6 +134,41 @@ object TFItems {
     val TWILIGHT_OAK_BOAT: BoatItem = TFBoatItemHelper.registerBoatItem(Identifier.of(TwilightForest.MOD_ID, "twilight_oak"), false)
     val TWILIGHT_OAK_CHEST_BOAT: BoatItem = TFBoatItemHelper.registerBoatItem(Identifier.of(TwilightForest.MOD_ID, "twilight_oak"), true)
 
+    val CANOPY_SIGN = registerItem("canopy_sign") { SignItem(TFBlocks.CANOPY_SIGN, TFBlocks.CANOPY_WALL_SIGN, it.maxCount(16)) }
+    val CANOPY_HANGING_SIGN = registerItem("canopy_hanging_sign") { HangingSignItem(TFBlocks.CANOPY_HANGING_SIGN, TFBlocks.CANOPY_WALL_HANGING_SIGN, it.maxCount(16)) }
+    val CANOPY_BOAT: BoatItem = TFBoatItemHelper.registerBoatItem(Identifier.of(TwilightForest.MOD_ID, "canopy"), false)
+    val CANOPY_CHEST_BOAT: BoatItem = TFBoatItemHelper.registerBoatItem(Identifier.of(TwilightForest.MOD_ID, "canopy"), true)
+
+    val TWILIGHT_MANGROVE_SIGN = registerItem("twilight_mangrove_sign") { SignItem(TFBlocks.TWILIGHT_MANGROVE_SIGN, TFBlocks.TWILIGHT_MANGROVE_WALL_SIGN, it.maxCount(16)) }
+    val TWILIGHT_MANGROVE_HANGING_SIGN = registerItem("twilight_mangrove_hanging_sign") { HangingSignItem(TFBlocks.TWILIGHT_MANGROVE_HANGING_SIGN, TFBlocks.TWILIGHT_MANGROVE_WALL_HANGING_SIGN, it.maxCount(16)) }
+    val TWILIGHT_MANGROVE_BOAT: BoatItem = TFBoatItemHelper.registerBoatItem(Identifier.of(TwilightForest.MOD_ID, "twilight_mangrove"), false)
+    val TWILIGHT_MANGROVE_CHEST_BOAT: BoatItem = TFBoatItemHelper.registerBoatItem(Identifier.of(TwilightForest.MOD_ID, "twilight_mangrove"), true)
+
+    val DARK_SIGN = registerItem("dark_sign") { SignItem(TFBlocks.DARK_SIGN, TFBlocks.DARK_WALL_SIGN, it.maxCount(16)) }
+    val DARK_HANGING_SIGN = registerItem("dark_hanging_sign") { HangingSignItem(TFBlocks.DARK_HANGING_SIGN, TFBlocks.DARK_WALL_HANGING_SIGN, it.maxCount(16)) }
+    val DARK_BOAT: BoatItem = TFBoatItemHelper.registerBoatItem(Identifier.of(TwilightForest.MOD_ID, "dark"), false)
+    val DARK_CHEST_BOAT: BoatItem = TFBoatItemHelper.registerBoatItem(Identifier.of(TwilightForest.MOD_ID, "dark"), true)
+
+    val TIME_SIGN = registerItem("time_sign") { SignItem(TFBlocks.TIME_SIGN, TFBlocks.TIME_WALL_SIGN, it.maxCount(16)) }
+    val TIME_HANGING_SIGN = registerItem("time_hanging_sign") { HangingSignItem(TFBlocks.TIME_HANGING_SIGN, TFBlocks.TIME_WALL_HANGING_SIGN, it.maxCount(16)) }
+    val TIME_BOAT: BoatItem = TFBoatItemHelper.registerBoatItem(Identifier.of(TwilightForest.MOD_ID, "time"), false)
+    val TIME_CHEST_BOAT: BoatItem = TFBoatItemHelper.registerBoatItem(Identifier.of(TwilightForest.MOD_ID, "time"), true)
+
+    val TRANSFORMATION_SIGN = registerItem("transformation_sign") { SignItem(TFBlocks.TRANSFORMATION_SIGN, TFBlocks.TRANSFORMATION_WALL_SIGN, it.maxCount(16)) }
+    val TRANSFORMATION_HANGING_SIGN = registerItem("transformation_hanging_sign") { HangingSignItem(TFBlocks.TRANSFORMATION_HANGING_SIGN, TFBlocks.TRANSFORMATION_WALL_HANGING_SIGN, it.maxCount(16)) }
+    val TRANSFORMATION_BOAT: BoatItem = TFBoatItemHelper.registerBoatItem(Identifier.of(TwilightForest.MOD_ID, "transformation"), false)
+    val TRANSFORMATION_CHEST_BOAT: BoatItem = TFBoatItemHelper.registerBoatItem(Identifier.of(TwilightForest.MOD_ID, "transformation"), true)
+
+    val MINING_SIGN = registerItem("mining_sign") { SignItem(TFBlocks.MINING_SIGN, TFBlocks.MINING_WALL_SIGN, it.maxCount(16)) }
+    val MINING_HANGING_SIGN = registerItem("mining_hanging_sign") { HangingSignItem(TFBlocks.MINING_HANGING_SIGN, TFBlocks.MINING_WALL_HANGING_SIGN, it.maxCount(16)) }
+    val MINING_BOAT: BoatItem = TFBoatItemHelper.registerBoatItem(Identifier.of(TwilightForest.MOD_ID, "mining"), false)
+    val MINING_CHEST_BOAT: BoatItem = TFBoatItemHelper.registerBoatItem(Identifier.of(TwilightForest.MOD_ID, "mining"), true)
+
+    val SORTING_SIGN = registerItem("sorting_sign") { SignItem(TFBlocks.SORTING_SIGN, TFBlocks.SORTING_WALL_SIGN, it.maxCount(16)) }
+    val SORTING_HANGING_SIGN = registerItem("sorting_hanging_sign") { HangingSignItem(TFBlocks.SORTING_HANGING_SIGN, TFBlocks.SORTING_WALL_HANGING_SIGN, it.maxCount(16)) }
+    val SORTING_BOAT: BoatItem = TFBoatItemHelper.registerBoatItem(Identifier.of(TwilightForest.MOD_ID, "sorting"), false)
+    val SORTING_CHEST_BOAT: BoatItem = TFBoatItemHelper.registerBoatItem(Identifier.of(TwilightForest.MOD_ID, "sorting"), true)
+
     private fun registerItem(name: String, factory: (Item.Settings) -> Item): Item {
         val id = Identifier.of(TwilightForest.MOD_ID, name)
         val key = RegistryKey.of(RegistryKeys.ITEM, id)
@@ -145,110 +180,5 @@ object TFItems {
 
     fun registerItems() {
         TwilightForest.logger?.info("Registering items for" + TwilightForest.MOD_ID)
-
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register { entries ->
-            entries.add(NAGA_SCALE)
-            entries.add(LIVEROOT)
-            entries.add(RAW_IRONWOOD)
-            entries.add(IRONWOOD_INGOT)
-            entries.add(STEELEAF_INGOT)
-            entries.add(ARMOR_SHARD)
-            entries.add(ARMOR_SHARD_CLUSTER)
-            entries.add(KNIGHTMETAL_INGOT)
-            entries.add(FIERY_BLOOD)
-            entries.add(FIERY_TEARS)
-            entries.add(FIERY_INGOT)
-            entries.add(ARCTIC_FUR)
-            entries.add(ALPHA_YETI_FUR)
-
-            entries.add(RAVEN_FEATHER)
-            entries.add(MAGIC_MAP_FOCUS)
-            entries.add(MAZE_MAP_FOCUS)
-            entries.add(CHARM_OF_LIFE_I)
-            entries.add(CHARM_OF_LIFE_II)
-            entries.add(CHARM_OF_KEEPING_I)
-            entries.add(CHARM_OF_KEEPING_II)
-            entries.add(CHARM_OF_KEEPING_III)
-            entries.add(BORER_ESSENCE)
-            entries.add(CARMINITE)
-            entries.add(EMPERORS_CLOTH)
-            entries.add(CROWN_SPLINTER)
-        }
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.FUNCTIONAL).register { entries ->
-            entries.add(TOWER_KEY)
-            entries.add(TWILIGHT_OAK_SIGN)
-            entries.add(TWILIGHT_OAK_HANGING_SIGN)
-        }
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.FOOD_AND_DRINK).register { entries ->
-            entries.add(RAW_VENISON)
-            entries.add(COOKED_VENISON)
-            entries.add(RAW_MEEF)
-            entries.add(COOKED_MEEF)
-            entries.add(MEEF_STROGANOFF)
-            entries.add(HYDRA_CHOP)
-            entries.add(TORCHBERRIES)
-            entries.add(EXPERIMENT_115)
-            entries.add(MAZE_WAFER)
-        }
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS).register { entries ->
-            entries.add(POCKET_WATCH)
-
-            entries.add(NAGA_LEGGINGS)
-            entries.add(NAGA_CHESTPLATE)
-
-            entries.add(IRONWOOD_BOOTS)
-            entries.add(IRONWOOD_LEGGINGS)
-            entries.add(IRONWOOD_CHESTPLATE)
-            entries.add(IRONWOOD_HELMET)
-            entries.add(IRONWOOD_SWORD)
-            entries.add(IRONWOOD_PICKAXE)
-            entries.add(IRONWOOD_SHOVEL)
-            entries.add(IRONWOOD_AXE)
-            entries.add(IRONWOOD_HOE)
-
-            entries.add(STEELEAF_BOOTS)
-            entries.add(STEELEAF_LEGGINGS)
-            entries.add(STEELEAF_CHESTPLATE)
-            entries.add(STEELEAF_HELMET)
-            entries.add(STEELEAF_SWORD)
-            entries.add(STEELEAF_PICKAXE)
-            entries.add(STEELEAF_SHOVEL)
-            entries.add(STEELEAF_AXE)
-            entries.add(STEELEAF_HOE)
-
-            entries.add(GOLD_MINOTAUR_AXE)
-            entries.add(DIAMOND_MINOTAUR_AXE)
-            entries.add(MAZEBREAKER_PICKAXE)
-
-            entries.add(KNIGHTMETAL_BOOTS)
-            entries.add(KNIGHTMETAL_LEGGINGS)
-            entries.add(KNIGHTMETAL_CHESTPLATE)
-            entries.add(KNIGHTMETAL_HELMET)
-            entries.add(KNIGHTMETAL_SWORD)
-            entries.add(KNIGHTMETAL_PICKAXE)
-            entries.add(KNIGHTMETAL_AXE)
-            entries.add(PHANTOM_CHESTPLATE)
-            entries.add(PHANTOM_HELMET)
-
-            entries.add(FIERY_BOOTS)
-            entries.add(FIERY_LEGGINGS)
-            entries.add(FIERY_CHESTPLATE)
-            entries.add(FIERY_HELMET)
-            entries.add(FIERY_SWORD)
-            entries.add(FIERY_PICKAXE)
-
-            entries.add(ARCTIC_BOOTS)
-            entries.add(ARCTIC_LEGGINGS)
-            entries.add(ARCTIC_CHESTPLATE)
-            entries.add(ARCTIC_HELMET)
-
-            entries.add(YETI_BOOTS)
-            entries.add(YETI_LEGGINGS)
-            entries.add(YETI_CHESTPLATE)
-            entries.add(YETI_HELMET)
-
-            entries.add(TWILIGHT_OAK_BOAT)
-            entries.add(TWILIGHT_OAK_CHEST_BOAT)
-        }
     }
 }

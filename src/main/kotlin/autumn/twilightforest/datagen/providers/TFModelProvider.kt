@@ -71,6 +71,69 @@ class TFModelProvider(output: FabricDataOutput) : FabricModelProvider(output) {
             registerTintableCross(TFBlocks.TWILIGHT_OAK_SAPLING, BlockStateModelGenerator.CrossType.NOT_TINTED)
             registerHangingSign(TFBlocks.STRIPPED_TWILIGHT_OAK_LOG, TFBlocks.TWILIGHT_OAK_HANGING_SIGN, TFBlocks.TWILIGHT_OAK_WALL_HANGING_SIGN)
             twilightOakFamily?.let { twilightOakPool.family(it) }
+
+            createLogTexturePool(TFBlocks.CANOPY_LOG).log(TFBlocks.CANOPY_LOG).wood(TFBlocks.CANOPY_WOOD)
+            createLogTexturePool(TFBlocks.STRIPPED_CANOPY_LOG).log(TFBlocks.STRIPPED_CANOPY_LOG).wood(TFBlocks.STRIPPED_CANOPY_WOOD)
+            val canopyFamily = TFBlockFamilies.get(TFBlocks.CANOPY_PLANKS)
+            val canopyPool = registerCubeAllModelTexturePool(TFBlocks.CANOPY_PLANKS)
+            registerSimpleCubeAll(TFBlocks.CANOPY_LEAVES)
+            registerTintableCross(TFBlocks.CANOPY_SAPLING, BlockStateModelGenerator.CrossType.NOT_TINTED)
+            registerHangingSign(TFBlocks.STRIPPED_CANOPY_LOG, TFBlocks.CANOPY_HANGING_SIGN, TFBlocks.CANOPY_WALL_HANGING_SIGN)
+            canopyFamily?.let { canopyPool.family(it) }
+
+            createLogTexturePool(TFBlocks.TWILIGHT_MANGROVE_LOG).log(TFBlocks.TWILIGHT_MANGROVE_LOG).wood(TFBlocks.TWILIGHT_MANGROVE_WOOD)
+            createLogTexturePool(TFBlocks.STRIPPED_TWILIGHT_MANGROVE_LOG).log(TFBlocks.STRIPPED_TWILIGHT_MANGROVE_LOG).wood(TFBlocks.STRIPPED_TWILIGHT_MANGROVE_WOOD)
+            val twilightMangroveFamily = TFBlockFamilies.get(TFBlocks.TWILIGHT_MANGROVE_PLANKS)
+            val twilightMangrovePool = registerCubeAllModelTexturePool(TFBlocks.TWILIGHT_MANGROVE_PLANKS)
+            registerSimpleCubeAll(TFBlocks.TWILIGHT_MANGROVE_LEAVES)
+            registerTintableCross(TFBlocks.TWILIGHT_MANGROVE_SAPLING, BlockStateModelGenerator.CrossType.NOT_TINTED)
+            registerHangingSign(TFBlocks.STRIPPED_TWILIGHT_MANGROVE_LOG, TFBlocks.TWILIGHT_MANGROVE_HANGING_SIGN, TFBlocks.TWILIGHT_MANGROVE_WALL_HANGING_SIGN)
+            twilightMangroveFamily?.let { twilightMangrovePool.family(it) }
+
+            createLogTexturePool(TFBlocks.DARK_LOG).log(TFBlocks.DARK_LOG).wood(TFBlocks.DARK_WOOD)
+            createLogTexturePool(TFBlocks.STRIPPED_DARK_LOG).log(TFBlocks.STRIPPED_DARK_LOG).wood(TFBlocks.STRIPPED_DARK_WOOD)
+            val darkFamily = TFBlockFamilies.get(TFBlocks.DARK_PLANKS)
+            val darkPool = registerCubeAllModelTexturePool(TFBlocks.DARK_PLANKS)
+            registerSimpleCubeAll(TFBlocks.DARK_LEAVES)
+            registerTintableCross(TFBlocks.DARK_SAPLING, BlockStateModelGenerator.CrossType.NOT_TINTED)
+            registerHangingSign(TFBlocks.STRIPPED_DARK_LOG, TFBlocks.DARK_HANGING_SIGN, TFBlocks.DARK_WALL_HANGING_SIGN)
+            darkFamily?.let { darkPool.family(it) }
+
+            createLogTexturePool(TFBlocks.TIME_LOG).log(TFBlocks.TIME_LOG).wood(TFBlocks.TIME_WOOD)
+            createLogTexturePool(TFBlocks.STRIPPED_TIME_LOG).log(TFBlocks.STRIPPED_TIME_LOG).wood(TFBlocks.STRIPPED_TIME_WOOD)
+            val timeFamily = TFBlockFamilies.get(TFBlocks.TIME_PLANKS)
+            val timePool = registerCubeAllModelTexturePool(TFBlocks.TIME_PLANKS)
+            registerSimpleCubeAll(TFBlocks.TIME_LEAVES)
+            registerTintableCross(TFBlocks.TIME_SAPLING, BlockStateModelGenerator.CrossType.NOT_TINTED)
+            registerHangingSign(TFBlocks.STRIPPED_TIME_LOG, TFBlocks.TIME_HANGING_SIGN, TFBlocks.TIME_WALL_HANGING_SIGN)
+            timeFamily?.let { timePool.family(it) }
+
+            createLogTexturePool(TFBlocks.TRANSFORMATION_LOG).log(TFBlocks.TRANSFORMATION_LOG).wood(TFBlocks.TRANSFORMATION_WOOD)
+            createLogTexturePool(TFBlocks.STRIPPED_TRANSFORMATION_LOG).log(TFBlocks.STRIPPED_TRANSFORMATION_LOG).wood(TFBlocks.STRIPPED_TRANSFORMATION_WOOD)
+            val transformationFamily = TFBlockFamilies.get(TFBlocks.TRANSFORMATION_PLANKS)
+            val transformationPool = registerCubeAllModelTexturePool(TFBlocks.TRANSFORMATION_PLANKS)
+            registerSimpleCubeAll(TFBlocks.TRANSFORMATION_LEAVES)
+            registerTintableCross(TFBlocks.TRANSFORMATION_SAPLING, BlockStateModelGenerator.CrossType.NOT_TINTED)
+            registerHangingSign(TFBlocks.STRIPPED_TRANSFORMATION_LOG, TFBlocks.TRANSFORMATION_HANGING_SIGN, TFBlocks.TRANSFORMATION_WALL_HANGING_SIGN)
+            transformationFamily?.let { transformationPool.family(it) }
+
+            createLogTexturePool(TFBlocks.MINING_LOG).log(TFBlocks.MINING_LOG).wood(TFBlocks.MINING_WOOD)
+            createLogTexturePool(TFBlocks.STRIPPED_MINING_LOG).log(TFBlocks.STRIPPED_MINING_LOG).wood(TFBlocks.STRIPPED_MINING_WOOD)
+            val miningFamily = TFBlockFamilies.get(TFBlocks.MINING_PLANKS)
+            val miningPool = registerCubeAllModelTexturePool(TFBlocks.MINING_PLANKS)
+            registerSimpleCubeAll(TFBlocks.MINING_LEAVES)
+            registerTintableCross(TFBlocks.MINING_SAPLING, BlockStateModelGenerator.CrossType.NOT_TINTED)
+            registerHangingSign(TFBlocks.STRIPPED_MINING_LOG, TFBlocks.MINING_HANGING_SIGN, TFBlocks.MINING_WALL_HANGING_SIGN)
+            miningFamily?.let { miningPool.family(it) }
+
+            createLogTexturePool(TFBlocks.SORTING_LOG).log(TFBlocks.SORTING_LOG).wood(TFBlocks.SORTING_WOOD)
+            createLogTexturePool(TFBlocks.STRIPPED_SORTING_LOG).log(TFBlocks.STRIPPED_SORTING_LOG).wood(TFBlocks.STRIPPED_SORTING_WOOD)
+            val sortingFamily = TFBlockFamilies.get(TFBlocks.SORTING_PLANKS)
+            val sortingPool = registerCubeAllModelTexturePool(TFBlocks.SORTING_PLANKS)
+            registerSimpleCubeAll(TFBlocks.SORTING_LEAVES)
+            registerTintableCross(TFBlocks.SORTING_SAPLING, BlockStateModelGenerator.CrossType.NOT_TINTED)
+            registerHangingSign(TFBlocks.STRIPPED_SORTING_LOG, TFBlocks.SORTING_HANGING_SIGN, TFBlocks.SORTING_WALL_HANGING_SIGN)
+            sortingFamily?.let { sortingPool.family(it) }
         }
     }
 
@@ -113,7 +176,21 @@ class TFModelProvider(output: FabricDataOutput) : FabricModelProvider(output) {
                 TFItems.MAZE_WAFER,
                 TFItems.POCKET_WATCH,
                 TFItems.TWILIGHT_OAK_BOAT,
-                TFItems.TWILIGHT_OAK_CHEST_BOAT
+                TFItems.TWILIGHT_OAK_CHEST_BOAT,
+                TFItems.CANOPY_BOAT,
+                TFItems.CANOPY_CHEST_BOAT,
+                TFItems.TWILIGHT_MANGROVE_BOAT,
+                TFItems.TWILIGHT_MANGROVE_CHEST_BOAT,
+                TFItems.DARK_BOAT,
+                TFItems.DARK_CHEST_BOAT,
+                TFItems.TIME_BOAT,
+                TFItems.TIME_CHEST_BOAT,
+                TFItems.TRANSFORMATION_BOAT,
+                TFItems.TRANSFORMATION_CHEST_BOAT,
+                TFItems.MINING_BOAT,
+                TFItems.MINING_CHEST_BOAT,
+                TFItems.SORTING_BOAT,
+                TFItems.SORTING_CHEST_BOAT,
             ).forEach { generator.register(it, Models.GENERATED) }
             //DUAL-LAYER
             generator.register(TFItems.BORER_ESSENCE)

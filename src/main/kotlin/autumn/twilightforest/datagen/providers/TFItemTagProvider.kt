@@ -2,7 +2,7 @@ package autumn.twilightforest.datagen.providers
 
 import autumn.twilightforest.init.block.TFBlocks
 import autumn.twilightforest.init.item.TFItems
-import autumn.twilightforest.util.TFItemTags
+import autumn.twilightforest.util.tag.TFItemTags
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider
 import net.minecraft.registry.RegistryWrapper

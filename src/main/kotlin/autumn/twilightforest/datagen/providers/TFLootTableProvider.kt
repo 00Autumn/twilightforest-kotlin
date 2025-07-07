@@ -2,7 +2,7 @@ package autumn.twilightforest.datagen.providers
 
 import autumn.twilightforest.init.block.TFBlocks
 import autumn.twilightforest.init.item.TFItems
-import autumn.twilightforest.util.TFItemTags
+import autumn.twilightforest.util.tag.TFItemTags
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider
 import net.minecraft.block.Block
@@ -13,13 +13,11 @@ import net.minecraft.item.Items
 import net.minecraft.loot.LootPool
 import net.minecraft.loot.LootTable
 import net.minecraft.loot.condition.MatchToolLootCondition
-import net.minecraft.loot.context.LootContext
 import net.minecraft.loot.entry.AlternativeEntry
 import net.minecraft.loot.entry.ItemEntry
 import net.minecraft.loot.provider.number.ConstantLootNumberProvider
 import net.minecraft.predicate.item.ItemPredicate
 import net.minecraft.registry.RegistryEntryLookup
-import net.minecraft.registry.RegistryKey
 import net.minecraft.registry.RegistryKeys
 import net.minecraft.registry.RegistryWrapper
 import net.minecraft.registry.tag.TagKey
@@ -74,6 +72,20 @@ class TFLootTableProvider(dataOutput: FabricDataOutput, private val registryLook
         addDrop(TFBlocks.TWILIGHT_OAK_SLAB)
         addDrop(TFBlocks.TWILIGHT_OAK_PRESSURE_PLATE)
         addDrop(TFBlocks.TWILIGHT_OAK_BUTTON)
+
+        addDrop(TFBlocks.CANOPY_LOG)
+        addDrop(TFBlocks.STRIPPED_CANOPY_LOG)
+        addDrop(TFBlocks.CANOPY_WOOD)
+        addDrop(TFBlocks.STRIPPED_CANOPY_WOOD)
+        leavesDrops(TFBlocks.CANOPY_LEAVES, TFBlocks.CANOPY_SAPLING, SAPLING_DROP_CHANCE.component1())
+        addDrop(TFBlocks.CANOPY_DOOR)
+        addDrop(TFBlocks.CANOPY_TRAPDOOR)
+        addDrop(TFBlocks.CANOPY_FENCE)
+        addDrop(TFBlocks.CANOPY_FENCE_GATE)
+        addDrop(TFBlocks.CANOPY_STAIRS)
+        addDrop(TFBlocks.CANOPY_SLAB)
+        addDrop(TFBlocks.CANOPY_PRESSURE_PLATE)
+        addDrop(TFBlocks.CANOPY_BUTTON)
 
         //FIERY DROPS
         val itemLookup = registryLookupFuture.get().getOrThrow(RegistryKeys.ITEM)

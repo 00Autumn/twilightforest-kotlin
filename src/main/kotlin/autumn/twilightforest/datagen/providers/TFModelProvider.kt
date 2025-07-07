@@ -7,11 +7,17 @@ import autumn.twilightforest.init.item.TFItems
 import autumn.twilightforest.util.TFBlockFamilies
 import net.fabricmc.fabric.api.client.datagen.v1.provider.FabricModelProvider
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput
+import net.minecraft.block.Block
+import net.minecraft.block.Blocks
 import net.minecraft.client.data.BlockStateModelGenerator
 import net.minecraft.client.data.ItemModelGenerator
+import net.minecraft.client.data.ModelIds
 import net.minecraft.client.data.Models
 import net.minecraft.client.data.TextureKey
 import net.minecraft.client.data.TextureMap
+import net.minecraft.client.data.TextureMap.texture
+import net.minecraft.client.data.TexturedModel
+import net.minecraft.client.render.RenderPhase
 import net.minecraft.entity.EquipmentSlot
 import net.minecraft.item.Item
 import net.minecraft.item.equipment.EquipmentAsset
@@ -67,7 +73,7 @@ class TFModelProvider(output: FabricDataOutput) : FabricModelProvider(output) {
                 .wood(TFBlocks.STRIPPED_TWILIGHT_OAK_WOOD)
             val twilightOakFamily = TFBlockFamilies.get(TFBlocks.TWILIGHT_OAK_PLANKS)
             val twilightOakPool = registerCubeAllModelTexturePool(TFBlocks.TWILIGHT_OAK_PLANKS)
-            registerSimpleCubeAll(TFBlocks.TWILIGHT_OAK_LEAVES)
+            registerTintedBlockAndItem(TFBlocks.TWILIGHT_OAK_LEAVES, TexturedModel.LEAVES, 0)
             registerTintableCross(TFBlocks.TWILIGHT_OAK_SAPLING, BlockStateModelGenerator.CrossType.NOT_TINTED)
             registerHangingSign(TFBlocks.STRIPPED_TWILIGHT_OAK_LOG, TFBlocks.TWILIGHT_OAK_HANGING_SIGN, TFBlocks.TWILIGHT_OAK_WALL_HANGING_SIGN)
             twilightOakFamily?.let { twilightOakPool.family(it) }
@@ -76,7 +82,7 @@ class TFModelProvider(output: FabricDataOutput) : FabricModelProvider(output) {
             createLogTexturePool(TFBlocks.STRIPPED_CANOPY_LOG).log(TFBlocks.STRIPPED_CANOPY_LOG).wood(TFBlocks.STRIPPED_CANOPY_WOOD)
             val canopyFamily = TFBlockFamilies.get(TFBlocks.CANOPY_PLANKS)
             val canopyPool = registerCubeAllModelTexturePool(TFBlocks.CANOPY_PLANKS)
-            registerSimpleCubeAll(TFBlocks.CANOPY_LEAVES)
+            registerTintedBlockAndItem(TFBlocks.CANOPY_LEAVES, TexturedModel.LEAVES, 0)
             registerTintableCross(TFBlocks.CANOPY_SAPLING, BlockStateModelGenerator.CrossType.NOT_TINTED)
             registerHangingSign(TFBlocks.STRIPPED_CANOPY_LOG, TFBlocks.CANOPY_HANGING_SIGN, TFBlocks.CANOPY_WALL_HANGING_SIGN)
             canopyFamily?.let { canopyPool.family(it) }
@@ -85,7 +91,7 @@ class TFModelProvider(output: FabricDataOutput) : FabricModelProvider(output) {
             createLogTexturePool(TFBlocks.STRIPPED_TWILIGHT_MANGROVE_LOG).log(TFBlocks.STRIPPED_TWILIGHT_MANGROVE_LOG).wood(TFBlocks.STRIPPED_TWILIGHT_MANGROVE_WOOD)
             val twilightMangroveFamily = TFBlockFamilies.get(TFBlocks.TWILIGHT_MANGROVE_PLANKS)
             val twilightMangrovePool = registerCubeAllModelTexturePool(TFBlocks.TWILIGHT_MANGROVE_PLANKS)
-            registerSimpleCubeAll(TFBlocks.TWILIGHT_MANGROVE_LEAVES)
+            registerTintedBlockAndItem(TFBlocks.TWILIGHT_MANGROVE_LEAVES, TexturedModel.LEAVES, 0)
             registerTintableCross(TFBlocks.TWILIGHT_MANGROVE_SAPLING, BlockStateModelGenerator.CrossType.NOT_TINTED)
             registerHangingSign(TFBlocks.STRIPPED_TWILIGHT_MANGROVE_LOG, TFBlocks.TWILIGHT_MANGROVE_HANGING_SIGN, TFBlocks.TWILIGHT_MANGROVE_WALL_HANGING_SIGN)
             twilightMangroveFamily?.let { twilightMangrovePool.family(it) }
@@ -94,7 +100,7 @@ class TFModelProvider(output: FabricDataOutput) : FabricModelProvider(output) {
             createLogTexturePool(TFBlocks.STRIPPED_DARK_LOG).log(TFBlocks.STRIPPED_DARK_LOG).wood(TFBlocks.STRIPPED_DARK_WOOD)
             val darkFamily = TFBlockFamilies.get(TFBlocks.DARK_PLANKS)
             val darkPool = registerCubeAllModelTexturePool(TFBlocks.DARK_PLANKS)
-            registerSimpleCubeAll(TFBlocks.DARK_LEAVES)
+            registerTintedBlockAndItem(TFBlocks.DARK_LEAVES, TexturedModel.LEAVES, 0)
             registerTintableCross(TFBlocks.DARK_SAPLING, BlockStateModelGenerator.CrossType.NOT_TINTED)
             registerHangingSign(TFBlocks.STRIPPED_DARK_LOG, TFBlocks.DARK_HANGING_SIGN, TFBlocks.DARK_WALL_HANGING_SIGN)
             darkFamily?.let { darkPool.family(it) }
@@ -103,7 +109,7 @@ class TFModelProvider(output: FabricDataOutput) : FabricModelProvider(output) {
             createLogTexturePool(TFBlocks.STRIPPED_TIME_LOG).log(TFBlocks.STRIPPED_TIME_LOG).wood(TFBlocks.STRIPPED_TIME_WOOD)
             val timeFamily = TFBlockFamilies.get(TFBlocks.TIME_PLANKS)
             val timePool = registerCubeAllModelTexturePool(TFBlocks.TIME_PLANKS)
-            registerSimpleCubeAll(TFBlocks.TIME_LEAVES)
+            registerTintedBlockAndItem(TFBlocks.TIME_LEAVES, TexturedModel.LEAVES, 0)
             registerTintableCross(TFBlocks.TIME_SAPLING, BlockStateModelGenerator.CrossType.NOT_TINTED)
             registerHangingSign(TFBlocks.STRIPPED_TIME_LOG, TFBlocks.TIME_HANGING_SIGN, TFBlocks.TIME_WALL_HANGING_SIGN)
             timeFamily?.let { timePool.family(it) }
@@ -112,7 +118,7 @@ class TFModelProvider(output: FabricDataOutput) : FabricModelProvider(output) {
             createLogTexturePool(TFBlocks.STRIPPED_TRANSFORMATION_LOG).log(TFBlocks.STRIPPED_TRANSFORMATION_LOG).wood(TFBlocks.STRIPPED_TRANSFORMATION_WOOD)
             val transformationFamily = TFBlockFamilies.get(TFBlocks.TRANSFORMATION_PLANKS)
             val transformationPool = registerCubeAllModelTexturePool(TFBlocks.TRANSFORMATION_PLANKS)
-            registerSimpleCubeAll(TFBlocks.TRANSFORMATION_LEAVES)
+            registerTintedBlockAndItem(TFBlocks.TRANSFORMATION_LEAVES, TexturedModel.LEAVES, 0)
             registerTintableCross(TFBlocks.TRANSFORMATION_SAPLING, BlockStateModelGenerator.CrossType.NOT_TINTED)
             registerHangingSign(TFBlocks.STRIPPED_TRANSFORMATION_LOG, TFBlocks.TRANSFORMATION_HANGING_SIGN, TFBlocks.TRANSFORMATION_WALL_HANGING_SIGN)
             transformationFamily?.let { transformationPool.family(it) }
@@ -121,7 +127,7 @@ class TFModelProvider(output: FabricDataOutput) : FabricModelProvider(output) {
             createLogTexturePool(TFBlocks.STRIPPED_MINING_LOG).log(TFBlocks.STRIPPED_MINING_LOG).wood(TFBlocks.STRIPPED_MINING_WOOD)
             val miningFamily = TFBlockFamilies.get(TFBlocks.MINING_PLANKS)
             val miningPool = registerCubeAllModelTexturePool(TFBlocks.MINING_PLANKS)
-            registerSimpleCubeAll(TFBlocks.MINING_LEAVES)
+            registerTintedBlockAndItem(TFBlocks.MINING_LEAVES, TexturedModel.LEAVES, 0)
             registerTintableCross(TFBlocks.MINING_SAPLING, BlockStateModelGenerator.CrossType.NOT_TINTED)
             registerHangingSign(TFBlocks.STRIPPED_MINING_LOG, TFBlocks.MINING_HANGING_SIGN, TFBlocks.MINING_WALL_HANGING_SIGN)
             miningFamily?.let { miningPool.family(it) }
@@ -130,7 +136,7 @@ class TFModelProvider(output: FabricDataOutput) : FabricModelProvider(output) {
             createLogTexturePool(TFBlocks.STRIPPED_SORTING_LOG).log(TFBlocks.STRIPPED_SORTING_LOG).wood(TFBlocks.STRIPPED_SORTING_WOOD)
             val sortingFamily = TFBlockFamilies.get(TFBlocks.SORTING_PLANKS)
             val sortingPool = registerCubeAllModelTexturePool(TFBlocks.SORTING_PLANKS)
-            registerSimpleCubeAll(TFBlocks.SORTING_LEAVES)
+            registerTintedBlockAndItem(TFBlocks.SORTING_LEAVES, TexturedModel.LEAVES, 0)
             registerTintableCross(TFBlocks.SORTING_SAPLING, BlockStateModelGenerator.CrossType.NOT_TINTED)
             registerHangingSign(TFBlocks.STRIPPED_SORTING_LOG, TFBlocks.SORTING_HANGING_SIGN, TFBlocks.SORTING_WALL_HANGING_SIGN)
             sortingFamily?.let { sortingPool.family(it) }

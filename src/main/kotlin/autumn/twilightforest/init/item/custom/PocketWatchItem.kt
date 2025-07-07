@@ -1,27 +1,21 @@
 package autumn.twilightforest.init.item.custom
 
-import autumn.twilightforest.datacomponent.TFDataComponentTypes
+import autumn.twilightforest.component.TFDataComponentTypes
 import net.minecraft.component.DataComponentTypes
 import net.minecraft.component.type.NbtComponent
-import net.minecraft.component.type.TooltipDisplayComponent
 import net.minecraft.entity.Entity
 import net.minecraft.entity.EquipmentSlot
 import net.minecraft.entity.effect.StatusEffectInstance
 import net.minecraft.entity.effect.StatusEffects
 import net.minecraft.entity.player.PlayerEntity
-import net.minecraft.entity.player.PlayerInventory
 import net.minecraft.item.Item
 import net.minecraft.item.ItemStack
-import net.minecraft.item.tooltip.TooltipType
 import net.minecraft.nbt.NbtCompound
-import net.minecraft.nbt.NbtHelper
 import net.minecraft.server.world.ServerWorld
 import net.minecraft.text.Text
-import net.minecraft.nbt.NbtElement
 import net.minecraft.nbt.NbtIntArray
 import java.nio.ByteBuffer
 import java.util.UUID
-import java.util.function.Consumer
 
 class PocketWatchItem(settings: Settings) : Item(settings) {
 

@@ -1,17 +1,17 @@
 package autumn.twilightforest.init.block
 
 import autumn.twilightforest.TwilightForest
-import autumn.twilightforest.datacomponent.TFDataComponentTypes
-import autumn.twilightforest.datacomponent.tooltip.TooltipComponent
-import autumn.twilightforest.init.block.TFBlocks.registerCopyBlock
+import autumn.twilightforest.component.TFDataComponentTypes
+import autumn.twilightforest.component.tooltip.TooltipComponent
 import autumn.twilightforest.init.block.custom.ArcticFurBlock
+import autumn.twilightforest.init.block.custom.CanopyLeavesBlock
 import autumn.twilightforest.init.block.custom.FieryBlock
 import autumn.twilightforest.init.block.custom.HedgeBlock
 import autumn.twilightforest.init.block.custom.KnightmetalBlock
 import autumn.twilightforest.sign.TFSignBlockHelper
 import autumn.twilightforest.util.TFBlockSetTypes
 import autumn.twilightforest.util.TFWoodTypes
-import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents
+import autumn.twilightforest.world.feature.TFConfiguredFeatures
 import net.minecraft.block.AbstractBlock
 import net.minecraft.block.Block
 import net.minecraft.block.Blocks
@@ -25,6 +25,7 @@ import net.minecraft.block.MapColor
 import net.minecraft.block.PillarBlock
 import net.minecraft.block.PressurePlateBlock
 import net.minecraft.block.SaplingBlock
+import net.minecraft.block.SaplingGenerator
 import net.minecraft.block.SignBlock
 import net.minecraft.block.SlabBlock
 import net.minecraft.block.SlimeBlock
@@ -38,13 +39,13 @@ import net.minecraft.block.enums.NoteBlockInstrument
 import net.minecraft.block.piston.PistonBehavior
 import net.minecraft.item.BlockItem
 import net.minecraft.item.Item
-import net.minecraft.item.ItemGroups
 import net.minecraft.registry.Registries
 import net.minecraft.registry.Registry
 import net.minecraft.registry.RegistryKey
 import net.minecraft.registry.RegistryKeys
 import net.minecraft.sound.BlockSoundGroup
 import net.minecraft.util.Identifier
+import java.util.Optional
 
 object TFBlocks {
 
@@ -101,7 +102,7 @@ object TFBlocks {
     val TWILIGHT_OAK_WOOD = registerCopyBlock("twilight_oak_wood", Blocks.OAK_WOOD) { settings -> PillarBlock(settings) }
     val STRIPPED_TWILIGHT_OAK_WOOD = registerCopyBlock("stripped_twilight_oak_wood", Blocks.STRIPPED_OAK_WOOD) { settings -> PillarBlock(settings) }
     val TWILIGHT_OAK_LEAVES = registerVanillaBlock("twilight_oak_leaves", Blocks.OAK_LEAVES) { settings -> TintedParticleLeavesBlock(0.02F, settings) }
-    val TWILIGHT_OAK_SAPLING = registerCopyBlock("twilight_oak_sapling", Blocks.OAK_SAPLING) { settings -> SaplingBlock(null, settings) }
+    val TWILIGHT_OAK_SAPLING = registerCopyBlock("twilight_oak_sapling", Blocks.OAK_SAPLING) { settings -> SaplingBlock(SaplingGenerator(TwilightForest.id("twilight_oak").toString(), 0.1F, Optional.of(TFConfiguredFeatures.LARGE_TWILIGHT_OAK_TREE_KEY), Optional.empty(), Optional.of(TFConfiguredFeatures.TWILIGHT_OAK_TREE_KEY), Optional.empty(), Optional.empty(), Optional.empty()), settings) }
     val TWILIGHT_OAK_PLANKS = registerCopyBlock("twilight_oak_planks", Blocks.OAK_PLANKS) { settings -> Block(settings) }
     val TWILIGHT_OAK_DOOR = registerCopyBlock("twilight_oak_door", Blocks.OAK_DOOR) { settings -> DoorBlock(TFBlockSetTypes.TWILIGHT_OAK_BLOCK_SET_TYPE, settings) }
     val TWILIGHT_OAK_TRAPDOOR = registerCopyBlock("twilight_oak_trapdoor", Blocks.OAK_TRAPDOOR) { settings -> TrapdoorBlock(TFBlockSetTypes.TWILIGHT_OAK_BLOCK_SET_TYPE, settings) }
@@ -122,8 +123,8 @@ object TFBlocks {
     val STRIPPED_CANOPY_LOG = registerVanillaBlock("stripped_canopy_log", Blocks.STRIPPED_JUNGLE_LOG) { settings -> PillarBlock(settings) }
     val CANOPY_WOOD = registerCopyBlock("canopy_wood", Blocks.JUNGLE_WOOD) { settings -> PillarBlock(settings) }
     val STRIPPED_CANOPY_WOOD = registerCopyBlock("stripped_canopy_wood", Blocks.STRIPPED_JUNGLE_WOOD) { settings -> PillarBlock(settings) }
-    val CANOPY_LEAVES = registerVanillaBlock("canopy_leaves", Blocks.JUNGLE_LEAVES) { settings -> TintedParticleLeavesBlock(0.02F, settings) }
-    val CANOPY_SAPLING = registerCopyBlock("canopy_sapling", Blocks.JUNGLE_SAPLING) { settings -> SaplingBlock(null, settings) }
+    val CANOPY_LEAVES = registerVanillaBlock("canopy_leaves", Blocks.JUNGLE_LEAVES) { settings -> CanopyLeavesBlock(0.005F, settings) }
+    val CANOPY_SAPLING = registerCopyBlock("canopy_sapling", Blocks.JUNGLE_SAPLING) { settings -> SaplingBlock(SaplingGenerator(TwilightForest.id("canopy").toString(), 0.1F, Optional.empty(), Optional.empty(), Optional.of(TFConfiguredFeatures.CANOPY_TREE_KEY), Optional.empty(), Optional.empty(), Optional.empty()), settings) }
     val CANOPY_PLANKS = registerCopyBlock("canopy_planks", Blocks.JUNGLE_PLANKS) { settings -> Block(settings) }
     val CANOPY_DOOR = registerCopyBlock("canopy_door", Blocks.JUNGLE_DOOR) { settings -> DoorBlock(TFBlockSetTypes.CANOPY_BLOCK_SET_TYPE, settings) }
     val CANOPY_TRAPDOOR = registerCopyBlock("canopy_trapdoor", Blocks.JUNGLE_TRAPDOOR) {settings -> TrapdoorBlock(TFBlockSetTypes.CANOPY_BLOCK_SET_TYPE, settings) }

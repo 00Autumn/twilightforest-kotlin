@@ -2,16 +2,14 @@ package autumn.twilightforest.init.item
 
 import autumn.twilightforest.TwilightForest
 import autumn.twilightforest.boat.api.item.TFBoatItemHelper
-import autumn.twilightforest.datacomponent.TFDataComponentTypes
-import autumn.twilightforest.datacomponent.tooltip.TooltipComponent
+import autumn.twilightforest.component.TFDataComponentTypes
+import autumn.twilightforest.component.tooltip.TooltipComponent
 import autumn.twilightforest.init.block.TFBlocks
 import autumn.twilightforest.init.item.custom.FieryItem
 import autumn.twilightforest.init.item.custom.PocketWatchItem
-import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents
 import net.minecraft.item.BoatItem
 import net.minecraft.item.HangingSignItem
 import net.minecraft.item.Item
-import net.minecraft.item.ItemGroups
 import net.minecraft.item.Items
 import net.minecraft.item.SignItem
 import net.minecraft.item.ToolMaterial

@@ -1,4 +1,4 @@
-package autumn.twilightforest.util
+package autumn.twilightforest.util.tag
 
 import autumn.twilightforest.TwilightForest
 import net.minecraft.block.Block

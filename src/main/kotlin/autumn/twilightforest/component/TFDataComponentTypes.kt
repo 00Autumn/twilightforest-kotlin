@@ -1,7 +1,7 @@
-package autumn.twilightforest.datacomponent
+package autumn.twilightforest.component
 
 import autumn.twilightforest.TwilightForest
-import autumn.twilightforest.datacomponent.tooltip.TooltipComponent
+import autumn.twilightforest.component.tooltip.TooltipComponent
 import net.fabricmc.fabric.api.item.v1.ComponentTooltipAppenderRegistry
 import net.minecraft.component.ComponentType
 import net.minecraft.component.type.NbtComponent

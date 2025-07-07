@@ -1,4 +1,4 @@
-package autumn.twilightforest.datacomponent.tooltip
+package autumn.twilightforest.component.tooltip
 
 import com.mojang.serialization.Codec
 import com.mojang.serialization.codecs.RecordCodecBuilder

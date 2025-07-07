@@ -1,7 +1,7 @@
 package autumn.twilightforest.init.item
 
 import autumn.twilightforest.TwilightForest
-import autumn.twilightforest.util.TFItemTags
+import autumn.twilightforest.util.tag.TFItemTags
 import net.minecraft.item.equipment.ArmorMaterial
 import net.minecraft.item.equipment.EquipmentAsset
 import net.minecraft.item.equipment.EquipmentType

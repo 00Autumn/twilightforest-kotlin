@@ -1,6 +1,6 @@
 package autumn.twilightforest
 
-import autumn.twilightforest.datacomponent.TFDataComponentTypes
+import autumn.twilightforest.component.TFDataComponentTypes
 import autumn.twilightforest.init.block.TFBlocks
 import autumn.twilightforest.init.item.TFFoodComponents
 import autumn.twilightforest.init.item.TFItemGroups
@@ -8,7 +8,13 @@ import autumn.twilightforest.init.item.TFItems
 import autumn.twilightforest.util.TFBlockFamilies
 import autumn.twilightforest.util.TFBlockSetTypes
 import autumn.twilightforest.util.TFWoodTypes
+import autumn.twilightforest.world.biome.TFBiomes
+import autumn.twilightforest.world.foliage.TFFoliagePlacerTypes
+import autumn.twilightforest.world.gen.TFWorldGeneration
 import net.fabricmc.api.ModInitializer
+import net.minecraft.registry.Registries
+import net.minecraft.registry.Registry
+import net.minecraft.registry.RegistryKeys
 import net.minecraft.util.Identifier
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
@@ -26,6 +32,8 @@ object TwilightForest : ModInitializer {
 		TFFoodComponents.registerFoodComponents()
 		TFItemGroups.registerItemGroups()
 		TFDataComponentTypes.registerDataComponentTypes()
+		TFFoliagePlacerTypes.registerFoliagePlacerTypes()
+		TFWorldGeneration.generateWorldGen()
 	}
 
 	fun id(path: String): Identifier {

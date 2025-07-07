@@ -1,7 +1,7 @@
 package autumn.twilightforest.init.item
 
-import autumn.twilightforest.util.TFBlockTags
-import autumn.twilightforest.util.TFItemTags
+import autumn.twilightforest.util.tag.TFBlockTags
+import autumn.twilightforest.util.tag.TFItemTags
 import net.minecraft.item.ToolMaterial
 
 object TFToolMaterials {

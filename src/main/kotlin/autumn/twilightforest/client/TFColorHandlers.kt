@@ -28,6 +28,23 @@ object TFColorHandlers {
             }
 
             TFBlocks.TIME_LEAVES -> {
+                if (world == null || pos == null) 0xFF364C03.toInt() // fallback color (54, 76, 3)
+                else {
+                    val fade = (pos.x * 63 + pos.y * 63 + pos.z * 63).let {
+                        var v = it
+                        if ((v and 256) != 0) v = 255 - (v and 255)
+                        v and 255
+                    }
+                    val spring = (255 - fade) / 255f
+                    val fall = fade / 255f
+                    val red = (spring * 54 + fall * 168).toInt()
+                    val green = (spring * 76 + fall * 199).toInt()
+                    val blue = (spring * 3 + fall * 43).toInt()
+                    (0xFF shl 24) or (red shl 16) or (green shl 8) or blue
+                }
+            }
+
+            TFBlocks.TRANSFORMATION_LEAVES -> {
                 if (world == null || pos == null) 0xFF6CCAEA.toInt() // fallback color (108, 204, 234)
                 else {
                     val fade = (pos.x * 27 + pos.y * 63 + pos.z * 39).let {
@@ -44,7 +61,7 @@ object TFColorHandlers {
                 }
             }
 
-            TFBlocks.TRANSFORMATION_LEAVES -> {
+            TFBlocks.MINING_LEAVES -> {
                 if (world == null || pos == null) 0xFFFDF144.toInt() // fallback color (252, 241, 68)
                 else {
                     val fade = (pos.x * 31 + pos.y * 33 + pos.z * 32).let {
@@ -57,23 +74,6 @@ object TFColorHandlers {
                     val red = (spring * 252 + fall * 237).toInt()
                     val green = (spring * 241 + fall * 172).toInt()
                     val blue = (spring * 68 + fall * 9).toInt()
-                    (0xFF shl 24) or (red shl 16) or (green shl 8) or blue
-                }
-            }
-
-            TFBlocks.MINING_LEAVES -> {
-                if (world == null || pos == null) 0xFF364C03.toInt() // fallback color (54, 76, 3)
-                else {
-                    val fade = (pos.x * 63 + pos.y * 63 + pos.z * 63).let {
-                        var v = it
-                        if ((v and 256) != 0) v = 255 - (v and 255)
-                        v and 255
-                    }
-                    val spring = (255 - fade) / 255f
-                    val fall = fade / 255f
-                    val red = (spring * 54 + fall * 168).toInt()
-                    val green = (spring * 76 + fall * 199).toInt()
-                    val blue = (spring * 3 + fall * 43).toInt()
                     (0xFF shl 24) or (red shl 16) or (green shl 8) or blue
                 }
             }

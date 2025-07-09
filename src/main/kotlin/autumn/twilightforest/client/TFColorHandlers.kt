@@ -15,7 +15,8 @@ object TFColorHandlers {
 
     val LEAF_COLOR_PROVIDER = BlockColorProvider { state, world, pos, tintIndex ->
         when (state.block) {
-            TFBlocks.TWILIGHT_OAK_LEAVES -> 0x3C8031  // your custom green color
+            TFBlocks.TWILIGHT_OAK_LEAVES -> 0x3C8031
+            TFBlocks.DARK_LEAVES -> 3890751
 
             TFBlocks.CANOPY_LEAVES -> {
                 val baseColor = if (world != null && pos != null) BiomeColors.getFoliageColor(world, pos) else FoliageColors.SPRUCE
@@ -103,6 +104,7 @@ object TFColorHandlers {
             TFBlocks.TWILIGHT_OAK_LEAVES,
             TFBlocks.CANOPY_LEAVES,
             TFBlocks.TWILIGHT_MANGROVE_LEAVES,
+            TFBlocks.DARK_LEAVES,
             TFBlocks.TIME_LEAVES,
             TFBlocks.TRANSFORMATION_LEAVES,
             TFBlocks.MINING_LEAVES,

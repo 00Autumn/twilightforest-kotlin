@@ -2,7 +2,8 @@ package autumn.twilightforest.world.feature
 
 import autumn.twilightforest.TwilightForest
 import autumn.twilightforest.init.block.TFBlocks
-import autumn.twilightforest.world.foliage.custom.SpheroidFoliagePlacer
+import autumn.twilightforest.world.foliage.custom.CanopyFoliagePlacer
+import autumn.twilightforest.world.foliage.custom.DarkFoliagePlacer
 import net.minecraft.block.Block
 import net.minecraft.block.Blocks
 import net.minecraft.registry.Registerable
@@ -28,6 +29,7 @@ object TFConfiguredFeatures {
     val TWILIGHT_OAK_TREE_KEY = registerKey("twilight_oak_tree_key")
     val LARGE_TWILIGHT_OAK_TREE_KEY = registerKey("large_twilight_oak_tree_key")
     val CANOPY_TREE_KEY = registerKey("canopy_tree_key")
+    val DARKWOOD_TREE_KEY = registerKey("darkwood_tree_key")
 
     fun bootstrap(context: Registerable<ConfiguredFeature<*, *>>) {
         val registryEntryLookup: RegistryEntryLookup<Block?> = context.getRegistryLookup<Block?>(RegistryKeys.BLOCK)
@@ -49,12 +51,23 @@ object TFConfiguredFeatures {
         ).build())
 
         register(context,CANOPY_TREE_KEY, Feature.TREE,TreeFeatureConfig.Builder(
-                SimpleBlockStateProvider.of(TFBlocks.CANOPY_LOG),
-                StraightTrunkPlacer(25, 5, 5),
-                SimpleBlockStateProvider.of(TFBlocks.CANOPY_LEAVES),
-                SpheroidFoliagePlacer(
-                    7.5,4.0,ConstantIntProvider.create(0),0.85f,24),
-                TwoLayersFeatureSize(1, 1, 2))
+            SimpleBlockStateProvider.of(TFBlocks.CANOPY_LOG),
+            StraightTrunkPlacer(25, 5, 5),
+            SimpleBlockStateProvider.of(TFBlocks.CANOPY_LEAVES),
+            CanopyFoliagePlacer(
+                7.5,4.0,ConstantIntProvider.create(0),0.85f,24),
+            TwoLayersFeatureSize(1, 1, 2))
+            .dirtProvider(SimpleBlockStateProvider.of(Blocks.DIRT))
+            .ignoreVines()
+            .build())
+
+        register(
+            context,DARKWOOD_TREE_KEY, Feature.TREE, TreeFeatureConfig.Builder(
+                SimpleBlockStateProvider.of(TFBlocks.DARK_LOG),
+                StraightTrunkPlacer(10, 3, 1),
+                SimpleBlockStateProvider.of(TFBlocks.DARK_LEAVES),
+                DarkFoliagePlacer(7.0,3.5,ConstantIntProvider.create(0),0.9f,16),
+                TwoLayersFeatureSize(1, 0, 2))
                 .dirtProvider(SimpleBlockStateProvider.of(Blocks.DIRT))
                 .ignoreVines()
                 .build())

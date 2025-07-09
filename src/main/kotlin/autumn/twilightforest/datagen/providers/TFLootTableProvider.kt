@@ -87,6 +87,20 @@ class TFLootTableProvider(dataOutput: FabricDataOutput, private val registryLook
         addDrop(TFBlocks.CANOPY_PRESSURE_PLATE)
         addDrop(TFBlocks.CANOPY_BUTTON)
 
+        addDrop(TFBlocks.DARK_LOG)
+        addDrop(TFBlocks.STRIPPED_DARK_LOG)
+        addDrop(TFBlocks.DARK_WOOD)
+        addDrop(TFBlocks.STRIPPED_DARK_WOOD)
+        leavesDrops(TFBlocks.DARK_LEAVES, TFBlocks.DARK_SAPLING, SAPLING_DROP_CHANCE.component1())
+        addDrop(TFBlocks.DARK_DOOR)
+        addDrop(TFBlocks.DARK_TRAPDOOR)
+        addDrop(TFBlocks.DARK_FENCE)
+        addDrop(TFBlocks.DARK_FENCE_GATE)
+        addDrop(TFBlocks.DARK_STAIRS)
+        addDrop(TFBlocks.DARK_SLAB)
+        addDrop(TFBlocks.DARK_PRESSURE_PLATE)
+        addDrop(TFBlocks.DARK_BUTTON)
+
         //FIERY DROPS
         val itemLookup = registryLookupFuture.get().getOrThrow(RegistryKeys.ITEM)
 

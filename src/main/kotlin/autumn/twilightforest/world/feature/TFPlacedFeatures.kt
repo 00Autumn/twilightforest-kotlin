@@ -20,6 +20,7 @@ object TFPlacedFeatures {
     val TWILIGHT_OAK_TREE_KEY = registerKey("twilight_oak_tree_key")
     val LARGE_TWILIGHT_OAK_TREE_KEY = registerKey("large_twilight_oak_tree_key")
     val CANOPY_TREE_KEY = registerKey("canopy_tree_key")
+    val DARKWOOD_TREE_KEY = registerKey("darkwood_tree_key")
 
     fun bootstrap(context: Registerable<PlacedFeature>) {
         var configuredFeatures = context.getRegistryLookup(RegistryKeys.CONFIGURED_FEATURE)
@@ -38,6 +39,11 @@ object TFPlacedFeatures {
             VegetationPlacedFeatures.treeModifiersWithWouldSurvive(
                 PlacedFeatures.createCountExtraModifier(7, 0.1F, 1),
                 TFBlocks.CANOPY_SAPLING
+            ))
+        register(context, DARKWOOD_TREE_KEY, configuredFeatures.getOrThrow(TFConfiguredFeatures.DARKWOOD_TREE_KEY),
+            VegetationPlacedFeatures.treeModifiersWithWouldSurvive(
+                PlacedFeatures.createCountExtraModifier(7, 0.1F, 1),
+                TFBlocks.DARK_SAPLING
             ))
     }
 

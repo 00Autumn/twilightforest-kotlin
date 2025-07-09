@@ -4,10 +4,10 @@ import autumn.twilightforest.TwilightForest
 import autumn.twilightforest.component.TFDataComponentTypes
 import autumn.twilightforest.component.tooltip.TooltipComponent
 import autumn.twilightforest.init.block.custom.ArcticFurBlock
-import autumn.twilightforest.init.block.custom.CanopyLeavesBlock
 import autumn.twilightforest.init.block.custom.FieryBlock
 import autumn.twilightforest.init.block.custom.HedgeBlock
 import autumn.twilightforest.init.block.custom.KnightmetalBlock
+import autumn.twilightforest.init.block.custom.TFLeavesBlock
 import autumn.twilightforest.sign.TFSignBlockHelper
 import autumn.twilightforest.util.TFBlockSetTypes
 import autumn.twilightforest.util.TFWoodTypes
@@ -123,7 +123,7 @@ object TFBlocks {
     val STRIPPED_CANOPY_LOG = registerVanillaBlock("stripped_canopy_log", Blocks.STRIPPED_JUNGLE_LOG) { settings -> PillarBlock(settings) }
     val CANOPY_WOOD = registerCopyBlock("canopy_wood", Blocks.JUNGLE_WOOD) { settings -> PillarBlock(settings) }
     val STRIPPED_CANOPY_WOOD = registerCopyBlock("stripped_canopy_wood", Blocks.STRIPPED_JUNGLE_WOOD) { settings -> PillarBlock(settings) }
-    val CANOPY_LEAVES = registerVanillaBlock("canopy_leaves", Blocks.JUNGLE_LEAVES) { settings -> CanopyLeavesBlock(0.005F, settings) }
+    val CANOPY_LEAVES = registerVanillaBlock("canopy_leaves", Blocks.JUNGLE_LEAVES) { settings -> TFLeavesBlock(0.005F, settings) }
     val CANOPY_SAPLING = registerCopyBlock("canopy_sapling", Blocks.JUNGLE_SAPLING) { settings -> SaplingBlock(SaplingGenerator(TwilightForest.id("canopy").toString(), 0.1F, Optional.empty(), Optional.empty(), Optional.of(TFConfiguredFeatures.CANOPY_TREE_KEY), Optional.empty(), Optional.empty(), Optional.empty()), settings) }
     val CANOPY_PLANKS = registerCopyBlock("canopy_planks", Blocks.JUNGLE_PLANKS) { settings -> Block(settings) }
     val CANOPY_DOOR = registerCopyBlock("canopy_door", Blocks.JUNGLE_DOOR) { settings -> DoorBlock(TFBlockSetTypes.CANOPY_BLOCK_SET_TYPE, settings) }
@@ -165,8 +165,8 @@ object TFBlocks {
     val STRIPPED_DARK_LOG = registerVanillaBlock("stripped_dark_log", Blocks.STRIPPED_SPRUCE_LOG) { settings -> PillarBlock(settings) }
     val DARK_WOOD = registerCopyBlock("dark_wood", Blocks.SPRUCE_WOOD) { settings -> PillarBlock(settings) }
     val STRIPPED_DARK_WOOD = registerCopyBlock("stripped_dark_wood", Blocks.STRIPPED_SPRUCE_WOOD) { settings -> PillarBlock(settings) }
-    val DARK_LEAVES = registerVanillaBlock("dark_leaves", Blocks.SPRUCE_LEAVES) { settings -> TintedParticleLeavesBlock(0.02F, settings) }
-    val DARK_SAPLING = registerCopyBlock("dark_sapling", Blocks.SPRUCE_SAPLING) { settings -> SaplingBlock(null, settings) }
+    val DARK_LEAVES = registerVanillaBlock("dark_leaves", Blocks.SPRUCE_LEAVES) { settings -> TFLeavesBlock(0.001F, settings) }
+    val DARK_SAPLING = registerCopyBlock("dark_sapling", Blocks.SPRUCE_SAPLING) { settings -> SaplingBlock(SaplingGenerator(TwilightForest.id("darkwood").toString(), 0.1F, Optional.empty(), Optional.empty(), Optional.of(TFConfiguredFeatures.DARKWOOD_TREE_KEY), Optional.empty(), Optional.empty(), Optional.empty()), settings) }
     val DARK_PLANKS = registerCopyBlock("dark_planks", Blocks.SPRUCE_PLANKS) { settings -> Block(settings) }
     val DARK_DOOR = registerCopyBlock("dark_door", Blocks.SPRUCE_DOOR) { settings -> DoorBlock(TFBlockSetTypes.DARK_BLOCK_SET_TYPE, settings) }
     val DARK_TRAPDOOR = registerCopyBlock("dark_trapdoor", Blocks.SPRUCE_TRAPDOOR) { settings -> TrapdoorBlock(TFBlockSetTypes.DARK_BLOCK_SET_TYPE, settings) }

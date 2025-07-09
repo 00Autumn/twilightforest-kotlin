@@ -8,23 +8,27 @@ import net.minecraft.world.gen.GenerationStep
 
 object TFWorldGeneration {
     fun generateWorldGen() {
+
         BiomeModifications.addFeature(
-            //CHANGE BIOME KEY TO CUSTOM KEY LATER
             BiomeSelectors.includeByKey(TFBiomes.FOREST_KEY),
             GenerationStep.Feature.VEGETAL_DECORATION,
             TFPlacedFeatures.TWILIGHT_OAK_TREE_KEY
         )
         BiomeModifications.addFeature(
-            //CHANGE BIOME KEY TO CUSTOM KEY LATER
             BiomeSelectors.includeByKey(TFBiomes.FOREST_KEY),
             GenerationStep.Feature.VEGETAL_DECORATION,
             TFPlacedFeatures.LARGE_TWILIGHT_OAK_TREE_KEY
         )
         BiomeModifications.addFeature(
-            //CHANGE BIOME KEY TO CUSTOM KEY LATER
             BiomeSelectors.includeByKey(TFBiomes.FOREST_KEY),
             GenerationStep.Feature.VEGETAL_DECORATION,
             TFPlacedFeatures.CANOPY_TREE_KEY
+        )
+
+        BiomeModifications.addFeature(
+            BiomeSelectors.includeByKey(TFBiomes.FOREST_KEY),
+            GenerationStep.Feature.VEGETAL_DECORATION,
+            TFPlacedFeatures.DARKWOOD_TREE_KEY
         )
     }
 }

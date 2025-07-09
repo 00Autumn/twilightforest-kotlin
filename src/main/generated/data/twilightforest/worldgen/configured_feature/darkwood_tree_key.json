@@ -9,17 +9,17 @@
       }
     },
     "foliage_placer": {
-      "type": "twilightforest:canopy_foliage_placer",
-      "foliage_density": 0.85,
-      "height": 24,
-      "radius_horizontal": 7.5,
+      "type": "twilightforest:dark_foliage_placer",
+      "foliage_density": 0.9,
+      "height": 16,
+      "radius_horizontal": 7.0,
       "radius_offset": 0,
-      "radius_vertical": 4.0
+      "radius_vertical": 3.5
     },
     "foliage_provider": {
       "type": "minecraft:simple_state_provider",
       "state": {
-        "Name": "twilightforest:canopy_leaves",
+        "Name": "twilightforest:dark_leaves",
         "Properties": {
           "distance": "7",
           "persistent": "false",
@@ -32,19 +32,19 @@
     "minimum_size": {
       "type": "minecraft:two_layers_feature_size",
       "limit": 1,
-      "lower_size": 1,
+      "lower_size": 0,
       "upper_size": 2
     },
     "trunk_placer": {
       "type": "minecraft:straight_trunk_placer",
-      "base_height": 25,
-      "height_rand_a": 5,
-      "height_rand_b": 5
+      "base_height": 10,
+      "height_rand_a": 3,
+      "height_rand_b": 1
     },
     "trunk_provider": {
       "type": "minecraft:simple_state_provider",
       "state": {
-        "Name": "twilightforest:canopy_log",
+        "Name": "twilightforest:dark_log",
         "Properties": {
           "axis": "y"
         }

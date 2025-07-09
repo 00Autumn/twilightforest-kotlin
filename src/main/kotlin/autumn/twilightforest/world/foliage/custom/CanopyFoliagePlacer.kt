@@ -21,7 +21,7 @@ import kotlin.math.abs
 import kotlin.math.ceil
 import kotlin.math.sign
 
-class SpheroidFoliagePlacer(
+class CanopyFoliagePlacer(
     val radiusHorizontal: Double,
     val radiusVertical: Double,
     val radiusOffset: IntProvider,
@@ -30,18 +30,18 @@ class SpheroidFoliagePlacer(
 ) : FoliagePlacer(ConstantIntProvider.create(0), radiusOffset) {
 
     companion object {
-        val CODEC: MapCodec<SpheroidFoliagePlacer> = RecordCodecBuilder.mapCodec { instance ->
+        val CODEC: MapCodec<CanopyFoliagePlacer> = RecordCodecBuilder.mapCodec { instance ->
             instance.group(
                 Codec.DOUBLE.fieldOf("radius_horizontal").forGetter { it.radiusHorizontal },
                 Codec.DOUBLE.fieldOf("radius_vertical").forGetter { it.radiusVertical },
                 IntProvider.VALUE_CODEC.fieldOf("radius_offset").forGetter { it.radiusOffset },
                 Codec.FLOAT.fieldOf("foliage_density").forGetter { it.foliageDensity },
                 Codec.INT.fieldOf("height").forGetter { it.height }
-            ).apply(instance, ::SpheroidFoliagePlacer)
+            ).apply(instance, ::CanopyFoliagePlacer)
         }
     }
 
-    override fun getType(): FoliagePlacerType<*> = TFFoliagePlacerTypes.SPHEROID_FOLIAGE_TYPE
+    override fun getType(): FoliagePlacerType<*> = TFFoliagePlacerTypes.CANOPY_FOLIAGE_PLACER_TYPE
 
     override fun generate(
         world: TestableWorld,

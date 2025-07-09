@@ -2,6 +2,7 @@ package autumn.twilightforest.datagen.providers
 
 import autumn.twilightforest.TwilightForest
 import autumn.twilightforest.init.block.TFBlocks
+import autumn.twilightforest.init.entity.TFEntities
 import autumn.twilightforest.init.item.TFItems
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider
@@ -108,8 +109,8 @@ class TFEnglishLanguageProvider(output: FabricDataOutput, registryLookup: Comple
         entries?.add(TFItems.FIERY_PICKAXE, "Fiery Pickaxe")
 
         entries?.add(TFItems.ARCTIC_BOOTS, "Arctic Boots")
-        entries?.add(TFItems.ARCTIC_LEGGINGS, "Arctic Boots")
-        entries?.add(TFItems.ARCTIC_CHESTPLATE, "Arctic Boots")
+        entries?.add(TFItems.ARCTIC_LEGGINGS, "Arctic Leggings")
+        entries?.add(TFItems.ARCTIC_CHESTPLATE, "Arctic Chestplate")
         entries?.add(TFItems.ARCTIC_HELMET, "Arctic Helmet")
 
         entries?.add(TFItems.YETI_BOOTS, "Yeti Boots")
@@ -309,6 +310,8 @@ class TFEnglishLanguageProvider(output: FabricDataOutput, registryLookup: Comple
         entries?.add(TFItems.SORTING_BOAT, "Sorting Boat")
         entries?.add(TFItems.SORTING_CHEST_BOAT, "Sorting Chest Boat")
         addText(entries, Text.translatable("entity.twilightforest.sorting_chest_boat"), "Sorting Chest Boat")
+
+        entries?.add(TFEntities.DWARF_RABBIT, "Dwarf Rabbit")
 
         addText(entries, Text.translatable("itemgroup.twilightforest.twilight_forest_items"), "Twilight Forest: Items")
         addText(entries, Text.translatable("itemgroup.twilightforest.twilight_forest_blocks"), "Twilight Forest: Blocks")

@@ -3,9 +3,13 @@ package autumn.twilightforest
 import autumn.twilightforest.boat.api.client.TFBoatClientHelper
 import autumn.twilightforest.client.TFColorHandlers
 import autumn.twilightforest.init.block.TFBlocks
+import autumn.twilightforest.init.entity.TFEntities
+import autumn.twilightforest.init.entity.client.dwarf_rabbit.DwarfRabbitRenderer
 import autumn.twilightforest.util.TFWoodTypes
 import net.fabricmc.api.ClientModInitializer
 import net.fabricmc.fabric.api.client.rendering.v1.BlockRenderLayerMap
+import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry
+import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry
 import net.minecraft.client.render.BlockRenderLayer
 import net.minecraft.util.Identifier
 
@@ -15,7 +19,6 @@ object TwilightForestClient : ClientModInitializer {
         TFWoodTypes.registerWoodTypes()
         TFColorHandlers.registerBlockColors()
 
-        // Register block render layers
         val cutoutBlocks = listOf(
             TFBlocks.KNIGHTMETAL_BLOCK, TFBlocks.ANTIBUILT_BLOCK,
             TFBlocks.TWILIGHT_OAK_DOOR, TFBlocks.TWILIGHT_OAK_TRAPDOOR, TFBlocks.TWILIGHT_OAK_LEAVES, TFBlocks.TWILIGHT_OAK_SAPLING, TFBlocks.TWILIGHT_OAK_SIGN, TFBlocks.TWILIGHT_OAK_HANGING_SIGN,
@@ -29,7 +32,6 @@ object TwilightForestClient : ClientModInitializer {
         )
         cutoutBlocks.forEach { BlockRenderLayerMap.putBlock(it, BlockRenderLayer.CUTOUT) }
 
-        // Register boat model layers
         TFBoatClientHelper.registerModelLayers(Identifier.of(TwilightForest.MOD_ID, "twilight_oak"))
         TFBoatClientHelper.registerModelLayers(Identifier.of(TwilightForest.MOD_ID, "canopy"))
         TFBoatClientHelper.registerModelLayers(Identifier.of(TwilightForest.MOD_ID, "twilight_mangrove"))
@@ -38,6 +40,9 @@ object TwilightForestClient : ClientModInitializer {
         TFBoatClientHelper.registerModelLayers(Identifier.of(TwilightForest.MOD_ID, "transformation"))
         TFBoatClientHelper.registerModelLayers(Identifier.of(TwilightForest.MOD_ID, "mining"))
         TFBoatClientHelper.registerModelLayers(Identifier.of(TwilightForest.MOD_ID, "sorting"))
+
+        EntityModelLayerRegistry.registerModelLayer(DwarfRabbitModel.DWARF_RABBIT, DwarfRabbitModel::getTexturedModelData)
+        EntityRendererRegistry.register(TFEntities.DWARF_RABBIT, ::DwarfRabbitRenderer)
 
 
     }

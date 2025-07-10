@@ -19,6 +19,8 @@ object TFPlacedFeatures {
 
     val TWILIGHT_OAK_TREE_KEY = registerKey("twilight_oak_tree_key")
     val LARGE_TWILIGHT_OAK_TREE_KEY = registerKey("large_twilight_oak_tree_key")
+    val RAINBOW_OAK_TREE_KEY = registerKey("rainbow_oak_tree_key")
+    val LARGE_RAINBOW_OAK_TREE_KEY = registerKey("large_rainbow_oak_tree_key")
     val CANOPY_TREE_KEY = registerKey("canopy_tree_key")
     val DARKWOOD_TREE_KEY = registerKey("darkwood_tree_key")
 
@@ -34,6 +36,16 @@ object TFPlacedFeatures {
             VegetationPlacedFeatures.treeModifiersWithWouldSurvive(
                 PlacedFeatures.createCountExtraModifier(1, 0.1F, 1),
                 TFBlocks.TWILIGHT_OAK_SAPLING
+            ))
+        register(context, RAINBOW_OAK_TREE_KEY, configuredFeatures.getOrThrow(TFConfiguredFeatures.RAINBOW_OAK_TREE_KEY),
+            VegetationPlacedFeatures.treeModifiersWithWouldSurvive(
+                PlacedFeatures.createCountExtraModifier(1, 0.1F, 1),
+                TFBlocks.RAINBOW_OAK_SAPLING
+            ))
+        register(context, LARGE_RAINBOW_OAK_TREE_KEY, configuredFeatures.getOrThrow(TFConfiguredFeatures.LARGE_RAINBOW_OAK_TREE_KEY),
+            VegetationPlacedFeatures.treeModifiersWithWouldSurvive(
+                PlacedFeatures.createCountExtraModifier(1, 0.1F, 1),
+                TFBlocks.RAINBOW_OAK_SAPLING
             ))
         register(context, CANOPY_TREE_KEY, configuredFeatures.getOrThrow(TFConfiguredFeatures.CANOPY_TREE_KEY),
             VegetationPlacedFeatures.treeModifiersWithWouldSurvive(

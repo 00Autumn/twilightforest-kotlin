@@ -18,6 +18,25 @@ object TFColorHandlers {
             TFBlocks.TWILIGHT_OAK_LEAVES -> 0x3C8031
             TFBlocks.DARK_LEAVES -> 3890751
 
+            TFBlocks.RAINBOW_OAK_LEAVES -> {
+                if (world == null || pos == null) 0xFF7F7FFF.toInt()
+                else {
+                    var red = pos.x * 32 + pos.y * 16
+                    if ((red and 256) != 0) red = 255 - (red and 255)
+                    red = red and 255
+
+                    var green = pos.y * 32 + pos.z * 16
+                    if ((green and 256) != 0) green = 255 - (green and 255)
+                    green = green xor 255
+
+                    var blue = pos.x * 16 + pos.z * 32
+                    if ((blue and 256) != 0) blue = 255 - (blue and 255)
+                    blue = blue and 255
+
+                    (0xFF shl 24) or (red shl 16) or (green shl 8) or blue
+                }
+            }
+
             TFBlocks.CANOPY_LEAVES -> {
                 val baseColor = if (world != null && pos != null) BiomeColors.getFoliageColor(world, pos) else FoliageColors.SPRUCE
                 CANOPY_COLORIZER(baseColor)
@@ -29,7 +48,7 @@ object TFColorHandlers {
             }
 
             TFBlocks.TIME_LEAVES -> {
-                if (world == null || pos == null) 0xFF364C03.toInt() // fallback color (54, 76, 3)
+                if (world == null || pos == null) 0xFF364C03.toInt()
                 else {
                     val fade = (pos.x * 63 + pos.y * 63 + pos.z * 63).let {
                         var v = it
@@ -46,7 +65,7 @@ object TFColorHandlers {
             }
 
             TFBlocks.TRANSFORMATION_LEAVES -> {
-                if (world == null || pos == null) 0xFF6CCAEA.toInt() // fallback color (108, 204, 234)
+                if (world == null || pos == null) 0xFF6CCAEA.toInt()
                 else {
                     val fade = (pos.x * 27 + pos.y * 63 + pos.z * 39).let {
                         var v = it
@@ -63,7 +82,7 @@ object TFColorHandlers {
             }
 
             TFBlocks.MINING_LEAVES -> {
-                if (world == null || pos == null) 0xFFFDF144.toInt() // fallback color (252, 241, 68)
+                if (world == null || pos == null) 0xFFFDF144.toInt()
                 else {
                     val fade = (pos.x * 31 + pos.y * 33 + pos.z * 32).let {
                         var v = it
@@ -102,6 +121,7 @@ object TFColorHandlers {
         registerBlockColor(
             LEAF_COLOR_PROVIDER,
             TFBlocks.TWILIGHT_OAK_LEAVES,
+            TFBlocks.RAINBOW_OAK_LEAVES,
             TFBlocks.CANOPY_LEAVES,
             TFBlocks.TWILIGHT_MANGROVE_LEAVES,
             TFBlocks.DARK_LEAVES,
@@ -109,7 +129,6 @@ object TFColorHandlers {
             TFBlocks.TRANSFORMATION_LEAVES,
             TFBlocks.MINING_LEAVES,
             TFBlocks.SORTING_LEAVES
-            // Add other leaves if needed here
         )
     }
 }

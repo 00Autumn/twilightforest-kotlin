@@ -28,6 +28,8 @@ object TFConfiguredFeatures {
 
     val TWILIGHT_OAK_TREE_KEY = registerKey("twilight_oak_tree_key")
     val LARGE_TWILIGHT_OAK_TREE_KEY = registerKey("large_twilight_oak_tree_key")
+    val RAINBOW_OAK_TREE_KEY = registerKey("rainbow_oak_tree_key")
+    val LARGE_RAINBOW_OAK_TREE_KEY = registerKey("large_rainbow_oak_tree_key")
     val CANOPY_TREE_KEY = registerKey("canopy_tree_key")
     val DARKWOOD_TREE_KEY = registerKey("darkwood_tree_key")
 
@@ -46,6 +48,22 @@ object TFConfiguredFeatures {
             SimpleBlockStateProvider.of(TFBlocks.TWILIGHT_OAK_LOG),
             LargeOakTrunkPlacer(3, 11, 0),
             SimpleBlockStateProvider.of(TFBlocks.TWILIGHT_OAK_LEAVES),
+            LargeOakFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(4), 4),
+            TwoLayersFeatureSize(4, 1, 0, OptionalInt.of(4))
+        ).build())
+
+        register(context, RAINBOW_OAK_TREE_KEY, Feature.TREE, TreeFeatureConfig.Builder(
+            SimpleBlockStateProvider.of(TFBlocks.TWILIGHT_OAK_LOG),
+            StraightTrunkPlacer(4, 2, 0),
+            SimpleBlockStateProvider.of(TFBlocks.RAINBOW_OAK_LEAVES),
+            BlobFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), 3),
+            TwoLayersFeatureSize(1, 0, 1)
+        ).build())
+
+        register(context, LARGE_RAINBOW_OAK_TREE_KEY, Feature.TREE, TreeFeatureConfig.Builder(
+            SimpleBlockStateProvider.of(TFBlocks.TWILIGHT_OAK_LOG),
+            LargeOakTrunkPlacer(3, 11, 0),
+            SimpleBlockStateProvider.of(TFBlocks.RAINBOW_OAK_LEAVES),
             LargeOakFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(4), 4),
             TwoLayersFeatureSize(4, 1, 0, OptionalInt.of(4))
         ).build())

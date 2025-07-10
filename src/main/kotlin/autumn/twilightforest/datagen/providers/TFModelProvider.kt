@@ -7,22 +7,14 @@ import autumn.twilightforest.init.item.TFItems
 import autumn.twilightforest.util.TFBlockFamilies
 import net.fabricmc.fabric.api.client.datagen.v1.provider.FabricModelProvider
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput
-import net.minecraft.block.Block
-import net.minecraft.block.Blocks
 import net.minecraft.client.data.BlockStateModelGenerator
 import net.minecraft.client.data.ItemModelGenerator
-import net.minecraft.client.data.ModelIds
 import net.minecraft.client.data.Models
-import net.minecraft.client.data.TextureKey
 import net.minecraft.client.data.TextureMap
-import net.minecraft.client.data.TextureMap.texture
 import net.minecraft.client.data.TexturedModel
-import net.minecraft.client.render.RenderPhase
 import net.minecraft.entity.EquipmentSlot
 import net.minecraft.item.Item
 import net.minecraft.item.equipment.EquipmentAsset
-import net.minecraft.registry.Registries
-import net.minecraft.registry.Registry
 import net.minecraft.registry.RegistryKey
 import net.minecraft.util.Identifier
 
@@ -74,7 +66,9 @@ class TFModelProvider(output: FabricDataOutput) : FabricModelProvider(output) {
             val twilightOakFamily = TFBlockFamilies.get(TFBlocks.TWILIGHT_OAK_PLANKS)
             val twilightOakPool = registerCubeAllModelTexturePool(TFBlocks.TWILIGHT_OAK_PLANKS)
             registerTintedBlockAndItem(TFBlocks.TWILIGHT_OAK_LEAVES, TexturedModel.LEAVES, 0)
+            registerTintedBlockAndItem(TFBlocks.RAINBOW_OAK_LEAVES, TexturedModel.LEAVES, 0)
             registerTintableCross(TFBlocks.TWILIGHT_OAK_SAPLING, BlockStateModelGenerator.CrossType.NOT_TINTED)
+            registerTintableCross(TFBlocks.RAINBOW_OAK_SAPLING, BlockStateModelGenerator.CrossType.NOT_TINTED)
             registerHangingSign(TFBlocks.STRIPPED_TWILIGHT_OAK_LOG, TFBlocks.TWILIGHT_OAK_HANGING_SIGN, TFBlocks.TWILIGHT_OAK_WALL_HANGING_SIGN)
             twilightOakFamily?.let { twilightOakPool.family(it) }
 

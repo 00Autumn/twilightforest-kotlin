@@ -66,8 +66,6 @@ class PocketWatchItem(settings: Settings) : Item(settings) {
             return stack.get(TFDataComponentTypes.SOULBOUND) != null
         }
 
-        // --- Helper methods ---
-
         private fun uuidToIntArray(uuid: UUID): IntArray {
             val bb = ByteBuffer.wrap(ByteArray(16))
             bb.putLong(uuid.mostSignificantBits)

@@ -102,7 +102,9 @@ object TFBlocks {
     val TWILIGHT_OAK_WOOD = registerCopyBlock("twilight_oak_wood", Blocks.OAK_WOOD) { settings -> PillarBlock(settings) }
     val STRIPPED_TWILIGHT_OAK_WOOD = registerCopyBlock("stripped_twilight_oak_wood", Blocks.STRIPPED_OAK_WOOD) { settings -> PillarBlock(settings) }
     val TWILIGHT_OAK_LEAVES = registerVanillaBlock("twilight_oak_leaves", Blocks.OAK_LEAVES) { settings -> TintedParticleLeavesBlock(0.02F, settings) }
+    val RAINBOW_OAK_LEAVES = registerVanillaBlock("rainbow_oak_leaves", Blocks.OAK_LEAVES) { settings -> TintedParticleLeavesBlock(0.02F, settings) }
     val TWILIGHT_OAK_SAPLING = registerCopyBlock("twilight_oak_sapling", Blocks.OAK_SAPLING) { settings -> SaplingBlock(SaplingGenerator(TwilightForest.id("twilight_oak").toString(), 0.1F, Optional.of(TFConfiguredFeatures.LARGE_TWILIGHT_OAK_TREE_KEY), Optional.empty(), Optional.of(TFConfiguredFeatures.TWILIGHT_OAK_TREE_KEY), Optional.empty(), Optional.empty(), Optional.empty()), settings) }
+    val RAINBOW_OAK_SAPLING = registerCopyBlock("rainbow_oak_sapling", Blocks.OAK_SAPLING) { settings -> SaplingBlock(SaplingGenerator(TwilightForest.id("rainbow_oak").toString(), 0.1F, Optional.of(TFConfiguredFeatures.LARGE_RAINBOW_OAK_TREE_KEY), Optional.empty(), Optional.of(TFConfiguredFeatures.RAINBOW_OAK_TREE_KEY), Optional.empty(), Optional.empty(), Optional.empty()), settings) }
     val TWILIGHT_OAK_PLANKS = registerCopyBlock("twilight_oak_planks", Blocks.OAK_PLANKS) { settings -> Block(settings) }
     val TWILIGHT_OAK_DOOR = registerCopyBlock("twilight_oak_door", Blocks.OAK_DOOR) { settings -> DoorBlock(TFBlockSetTypes.TWILIGHT_OAK_BLOCK_SET_TYPE, settings) }
     val TWILIGHT_OAK_TRAPDOOR = registerCopyBlock("twilight_oak_trapdoor", Blocks.OAK_TRAPDOOR) { settings -> TrapdoorBlock(TFBlockSetTypes.TWILIGHT_OAK_BLOCK_SET_TYPE, settings) }

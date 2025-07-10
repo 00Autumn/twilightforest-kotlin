@@ -8,11 +8,7 @@ import net.minecraft.entity.Entity
 import net.minecraft.entity.EntityCollisionHandler
 import net.minecraft.entity.ItemEntity
 import net.minecraft.entity.ai.pathing.NavigationType
-import net.minecraft.item.Item
-import net.minecraft.item.ItemStack
-import net.minecraft.item.tooltip.TooltipType
 import net.minecraft.server.world.ServerWorld
-import net.minecraft.text.Text
 import net.minecraft.util.math.BlockPos
 import net.minecraft.util.shape.VoxelShape
 import net.minecraft.world.BlockView

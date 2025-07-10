@@ -64,6 +64,7 @@ class TFLootTableProvider(dataOutput: FabricDataOutput, private val registryLook
         addDrop(TFBlocks.TWILIGHT_OAK_WOOD)
         addDrop(TFBlocks.STRIPPED_TWILIGHT_OAK_WOOD)
         leavesDrops(TFBlocks.TWILIGHT_OAK_LEAVES, TFBlocks.TWILIGHT_OAK_SAPLING, SAPLING_DROP_CHANCE.component1())
+        leavesDrops(TFBlocks.RAINBOW_OAK_LEAVES, TFBlocks.RAINBOW_OAK_SAPLING, SAPLING_DROP_CHANCE.component1())
         addDrop(TFBlocks.TWILIGHT_OAK_DOOR)
         addDrop(TFBlocks.TWILIGHT_OAK_TRAPDOOR)
         addDrop(TFBlocks.TWILIGHT_OAK_FENCE)

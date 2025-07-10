@@ -1,15 +1,7 @@
 package autumn.twilightforest.init.item
 
 import autumn.twilightforest.TwilightForest
-import net.minecraft.component.type.ConsumableComponent
-import net.minecraft.component.type.ConsumableComponents
 import net.minecraft.component.type.FoodComponent
-import net.minecraft.entity.effect.StatusEffect
-import net.minecraft.entity.effect.StatusEffectInstance
-import net.minecraft.entity.effect.StatusEffects
-import net.minecraft.item.Items
-import net.minecraft.item.consume.ApplyEffectsConsumeEffect
-import net.minecraft.registry.entry.RegistryEntry
 
 object TFFoodComponents {
 

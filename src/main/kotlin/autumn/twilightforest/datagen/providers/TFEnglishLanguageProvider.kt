@@ -163,6 +163,8 @@ class TFEnglishLanguageProvider(output: FabricDataOutput, registryLookup: Comple
         entries?.add(TFBlocks.STRIPPED_TWILIGHT_OAK_LOG.asItem(), "Stripped Twilight Oak Log")
         entries?.add(TFBlocks.TWILIGHT_OAK_LEAVES.asItem(), "Twilight Oak Leaves")
         entries?.add(TFBlocks.TWILIGHT_OAK_SAPLING.asItem(), "Twilight Oak Sapling")
+        entries?.add(TFBlocks.RAINBOW_OAK_LEAVES.asItem(), "Rainbow Oak Leaves")
+        entries?.add(TFBlocks.RAINBOW_OAK_SAPLING.asItem(), "Rainbow Oak Sapling")
         entries?.add(TFBlocks.TWILIGHT_OAK_PLANKS.asItem(), "Twilight Oak Planks")
         entries?.add(TFBlocks.TWILIGHT_OAK_DOOR.asItem(), "Twilight Oak Door")
         entries?.add(TFBlocks.TWILIGHT_OAK_TRAPDOOR.asItem(), "Twilight Oak Trapdoor")

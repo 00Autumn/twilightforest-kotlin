@@ -27,6 +27,7 @@ class TFLootTableProvider(dataOutput: FabricDataOutput, private val registryLook
     override fun generate() {
         addDrop(TFBlocks.ROOT_BLOCK)
         addDrop(TFBlocks.LIVEROOT_BLOCK, TFItems.LIVEROOT)
+        addDrop(TFBlocks.SHIMMERING_GRASS_BLOCK, Blocks.DIRT)
 
         addDrop(TFBlocks.MAZE_SLIME_BLOCK)
         addDrop(TFBlocks.IRONWOOD_BLOCK)

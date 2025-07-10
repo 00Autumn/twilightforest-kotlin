@@ -19,6 +19,7 @@ import net.minecraft.block.ButtonBlock
 import net.minecraft.block.DoorBlock
 import net.minecraft.block.FenceBlock
 import net.minecraft.block.FenceGateBlock
+import net.minecraft.block.GrassBlock
 import net.minecraft.block.HangingSignBlock
 import net.minecraft.block.InfestedBlock
 import net.minecraft.block.MapColor
@@ -52,6 +53,7 @@ object TFBlocks {
     // NATURAL BLOCKS
     val ROOT_BLOCK = registerBlock("root_block") { settings -> Block(settings.burnable().mapColor(MapColor.BROWN).sounds(BlockSoundGroup.WOOD).strength(2.0F, 3.0F)) }
     val LIVEROOT_BLOCK = registerBlock("liveroot_block") { settings -> Block(settings.burnable().mapColor(MapColor.LICHEN_GREEN).sounds(BlockSoundGroup.WOOD).strength(2.0F, 3.0F)) }
+    val SHIMMERING_GRASS_BLOCK = registerVanillaBlock("shimmering_grass_block", Blocks.GRASS_BLOCK) { settings -> GrassBlock(settings) }
 
     //STORAGE BLOCKS
     val MAZE_SLIME_BLOCK = registerCopyBlock("maze_slime_block", Blocks.SLIME_BLOCK) { settings -> SlimeBlock(settings.mapColor(MapColor.LIGHT_GRAY)) }

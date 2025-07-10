@@ -1,7 +1,7 @@
 package autumn.twilightforest
 
 import autumn.twilightforest.boat.api.client.TFBoatClientHelper
-import autumn.twilightforest.client.TFColorHandlers
+import autumn.twilightforest.client.foliage.TFColorHandlers
 import autumn.twilightforest.init.block.TFBlocks
 import autumn.twilightforest.init.entity.TFEntities
 import autumn.twilightforest.init.entity.client.dwarf_rabbit.DwarfRabbitRenderer
@@ -31,6 +31,11 @@ object TwilightForestClient : ClientModInitializer {
             TFBlocks.SORTING_DOOR, TFBlocks.SORTING_TRAPDOOR, TFBlocks.SORTING_LEAVES, TFBlocks.SORTING_SAPLING, TFBlocks.SORTING_SIGN, TFBlocks.SORTING_HANGING_SIGN
         )
         cutoutBlocks.forEach { BlockRenderLayerMap.putBlock(it, BlockRenderLayer.CUTOUT) }
+
+        val cutoutMippedBlocks = listOf(
+            TFBlocks.SHIMMERING_GRASS_BLOCK
+        )
+        cutoutMippedBlocks.forEach { BlockRenderLayerMap.putBlock(it, BlockRenderLayer.CUTOUT_MIPPED) }
 
         TFBoatClientHelper.registerModelLayers(Identifier.of(TwilightForest.MOD_ID, "twilight_oak"))
         TFBoatClientHelper.registerModelLayers(Identifier.of(TwilightForest.MOD_ID, "canopy"))

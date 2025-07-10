@@ -74,6 +74,7 @@ object TFItemGroups {
             .entries {displayContext, entries ->
                 entries.add(TFBlocks.ROOT_BLOCK)
                 entries.add(TFBlocks.LIVEROOT_BLOCK)
+                entries.add(TFBlocks.SHIMMERING_GRASS_BLOCK)
 
                 entries.add(TFBlocks.IRONWOOD_BLOCK)
                 entries.add(TFBlocks.STEELEAF_BLOCK)

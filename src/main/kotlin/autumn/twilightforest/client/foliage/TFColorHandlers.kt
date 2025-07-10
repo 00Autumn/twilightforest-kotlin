@@ -1,4 +1,4 @@
-package autumn.twilightforest.client
+package autumn.twilightforest.client.foliage
 
 import autumn.twilightforest.TwilightForest
 import autumn.twilightforest.init.block.TFBlocks
@@ -38,12 +38,14 @@ object TFColorHandlers {
             }
 
             TFBlocks.CANOPY_LEAVES -> {
-                val baseColor = if (world != null && pos != null) BiomeColors.getFoliageColor(world, pos) else FoliageColors.SPRUCE
+                val baseColor =
+                    if (world != null && pos != null) BiomeColors.getFoliageColor(world, pos) else FoliageColors.SPRUCE
                 CANOPY_COLORIZER(baseColor)
             }
 
             TFBlocks.TWILIGHT_MANGROVE_LEAVES -> {
-                val baseColor = if (world != null && pos != null) BiomeColors.getFoliageColor(world, pos) else FoliageColors.BIRCH
+                val baseColor =
+                    if (world != null && pos != null) BiomeColors.getFoliageColor(world, pos) else FoliageColors.BIRCH
                 TWILIGHT_MANGROVE_COLORIZER(baseColor)
             }
 
@@ -111,6 +113,20 @@ object TFColorHandlers {
         }
     }
 
+    val SHIMMERING_GRASS_PROVIDER = BlockColorProvider { _, world, pos, _ ->
+        if (world == null || pos == null) {
+            0x91BD59
+        } else {
+            val baseColor = BiomeColors.getGrassColor(world, pos)
+
+            var shimmer = (pos.x * 16 + pos.z * 32) % 512
+            if (shimmer > 255) shimmer = 511 - shimmer
+            shimmer = 255 - shimmer
+
+            (baseColor and 0xFFFF00) or shimmer
+        }
+    }
+
     fun registerBlockColor(provider: BlockColorProvider, vararg blocks: Block) {
         ColorProviderRegistry.BLOCK.register(provider, *blocks)
     }
@@ -129,6 +145,11 @@ object TFColorHandlers {
             TFBlocks.TRANSFORMATION_LEAVES,
             TFBlocks.MINING_LEAVES,
             TFBlocks.SORTING_LEAVES
+        )
+
+        registerBlockColor(
+            SHIMMERING_GRASS_PROVIDER,
+            TFBlocks.SHIMMERING_GRASS_BLOCK
         )
     }
 }

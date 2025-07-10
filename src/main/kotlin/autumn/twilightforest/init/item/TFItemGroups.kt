@@ -243,6 +243,8 @@ object TFItemGroups {
                 entries.add(TFBlocks.SORTING_BUTTON)
                 entries.add(TFItems.SORTING_SIGN)
                 entries.add(TFItems.SORTING_HANGING_SIGN)
+
+                entries.add(TFBlocks.UNCRAFTING_TABLE)
             }.build()
     )
     val TWILIGHT_FOREST_EQUIPMENT_GROUP = Registry.register(Registries.ITEM_GROUP,

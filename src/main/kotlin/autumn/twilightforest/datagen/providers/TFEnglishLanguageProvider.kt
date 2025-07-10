@@ -4,6 +4,7 @@ import autumn.twilightforest.TwilightForest
 import autumn.twilightforest.init.block.TFBlocks
 import autumn.twilightforest.init.entity.TFEntities
 import autumn.twilightforest.init.item.TFItems
+import autumn.twilightforest.world.biome.TFBiomes
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider
 import net.minecraft.registry.RegistryWrapper
@@ -120,6 +121,7 @@ class TFEnglishLanguageProvider(output: FabricDataOutput, registryLookup: Comple
 
         entries?.add(TFBlocks.ROOT_BLOCK.asItem(), "Root Block")
         entries?.add(TFBlocks.LIVEROOT_BLOCK.asItem(), "Liveroot Block")
+        entries?.add(TFBlocks.SHIMMERING_GRASS_BLOCK.asItem(), "Shimmering Grass Block")
 
         entries?.add(TFBlocks.IRONWOOD_BLOCK.asItem(), "Block of Ironwood")
         entries?.add(TFBlocks.STEELEAF_BLOCK.asItem(), "Block of Steeleaf")
@@ -314,6 +316,10 @@ class TFEnglishLanguageProvider(output: FabricDataOutput, registryLookup: Comple
         addText(entries, Text.translatable("entity.twilightforest.sorting_chest_boat"), "Sorting Chest Boat")
 
         entries?.add(TFEntities.DWARF_RABBIT, "Dwarf Rabbit")
+
+        addText(entries, Text.translatable("biome.twilightforest.forest_key"), "Twilight Forest")
+        addText(entries, Text.translatable("biome.twilightforest.dark_forest_key"), "Dark Forest")
+        addText(entries, Text.translatable("biome.twilightforest.enchanted_forest_key"), "Enchanted Forest")
 
         addText(entries, Text.translatable("itemgroup.twilightforest.twilight_forest_items"), "Twilight Forest: Items")
         addText(entries, Text.translatable("itemgroup.twilightforest.twilight_forest_blocks"), "Twilight Forest: Blocks")

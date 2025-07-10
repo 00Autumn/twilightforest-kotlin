@@ -26,9 +26,20 @@ object TFWorldGeneration {
         )
 
         BiomeModifications.addFeature(
-            BiomeSelectors.includeByKey(TFBiomes.FOREST_KEY),
+            BiomeSelectors.includeByKey(TFBiomes.DARK_FOREST_KEY),
             GenerationStep.Feature.VEGETAL_DECORATION,
             TFPlacedFeatures.DARKWOOD_TREE_KEY
+        )
+
+        BiomeModifications.addFeature(
+            BiomeSelectors.includeByKey(TFBiomes.ENCHANTED_FOREST_KEY),
+            GenerationStep.Feature.VEGETAL_DECORATION,
+            TFPlacedFeatures.RAINBOW_OAK_TREE_KEY
+        )
+        BiomeModifications.addFeature(
+            BiomeSelectors.includeByKey(TFBiomes.ENCHANTED_FOREST_KEY),
+            GenerationStep.Feature.VEGETAL_DECORATION,
+            TFPlacedFeatures.LARGE_RAINBOW_OAK_TREE_KEY
         )
     }
 }

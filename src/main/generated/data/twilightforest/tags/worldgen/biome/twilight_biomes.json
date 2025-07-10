@@ -1,5 +1,7 @@
 {
   "values": [
-    "twilightforest:forest_key"
+    "twilightforest:forest_key",
+    "twilightforest:dark_forest_key",
+    "twilightforest:enchanted_forest_key"
   ]
 }

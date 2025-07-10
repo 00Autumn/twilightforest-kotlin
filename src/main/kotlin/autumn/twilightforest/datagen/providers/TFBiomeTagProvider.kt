@@ -15,5 +15,7 @@ class TFBiomeTagProvider(
     override fun configure(wrapperLookup: RegistryWrapper.WrapperLookup) {
         builder(TFBiomeTags.TWILIGHT_BIOMES)
             .add(TFBiomes.FOREST_KEY)
+            .add(TFBiomes.DARK_FOREST_KEY)
+            .add(TFBiomes.ENCHANTED_FOREST_KEY)
     }
 }

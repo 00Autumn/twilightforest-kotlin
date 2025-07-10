@@ -8,6 +8,7 @@ import autumn.twilightforest.init.block.custom.FieryBlock
 import autumn.twilightforest.init.block.custom.HedgeBlock
 import autumn.twilightforest.init.block.custom.KnightmetalBlock
 import autumn.twilightforest.init.block.custom.TFLeavesBlock
+import autumn.twilightforest.init.block.custom.UncraftingTableBlock
 import autumn.twilightforest.sign.TFSignBlockHelper
 import autumn.twilightforest.util.TFBlockSetTypes
 import autumn.twilightforest.util.TFWoodTypes
@@ -16,6 +17,7 @@ import net.minecraft.block.AbstractBlock
 import net.minecraft.block.Block
 import net.minecraft.block.Blocks
 import net.minecraft.block.ButtonBlock
+import net.minecraft.block.CraftingTableBlock
 import net.minecraft.block.DoorBlock
 import net.minecraft.block.FenceBlock
 import net.minecraft.block.FenceGateBlock
@@ -269,6 +271,10 @@ object TFBlocks {
     val SORTING_WALL_SIGN: Block = TFSignBlockHelper.registerSignBlock(TwilightForest.id("sorting_wall_sign"), { settings -> WallSignBlock(SORTING_WOOD_TYPE, settings) }, SIGN_SETTINGS)
     val SORTING_HANGING_SIGN: Block = TFSignBlockHelper.registerSignBlock(TwilightForest.id("sorting_hanging_sign"), { settings -> HangingSignBlock(SORTING_WOOD_TYPE, settings) }, SIGN_SETTINGS)
     val SORTING_WALL_HANGING_SIGN: Block = TFSignBlockHelper.registerSignBlock(TwilightForest.id("sorting_wall_hanging_sign"), { settings -> WallHangingSignBlock(SORTING_WOOD_TYPE, settings) }, SIGN_SETTINGS)
+
+
+    // UTILITY BLOCKS
+    val UNCRAFTING_TABLE = registerVanillaBlock("uncrafting_table", Blocks.CRAFTING_TABLE) {settings -> UncraftingTableBlock(settings) }
 
     private fun registerBlock(name: String, function: (AbstractBlock.Settings) -> Block): Block {
         val id = Identifier.of(TwilightForest.MOD_ID, name)

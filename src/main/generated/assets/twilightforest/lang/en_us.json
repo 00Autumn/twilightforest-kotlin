@@ -1,4 +1,7 @@
 {
+  "biome.twilightforest.dark_forest_key": "Dark Forest",
+  "biome.twilightforest.enchanted_forest_key": "Enchanted Forest",
+  "biome.twilightforest.forest_key": "Twilight Forest",
   "block.twilightforest.antibuilt_block": "Antibuilt Block",
   "block.twilightforest.arctic_fur_block": "Block of Arctic Fur",
   "block.twilightforest.canopy_button": "Canopy Button",
@@ -64,6 +67,7 @@
   "block.twilightforest.rainbow_oak_leaves": "Rainbow Oak Leaves",
   "block.twilightforest.rainbow_oak_sapling": "Rainbow Oak Sapling",
   "block.twilightforest.root_block": "Root Block",
+  "block.twilightforest.shimmering_grass_block": "Shimmering Grass Block",
   "block.twilightforest.sorting_button": "Sorting Button",
   "block.twilightforest.sorting_door": "Sortingwood Door",
   "block.twilightforest.sorting_fence": "Sorting Fence",

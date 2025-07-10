@@ -54,7 +54,7 @@ object TFPlacedFeatures {
             ))
         register(context, DARKWOOD_TREE_KEY, configuredFeatures.getOrThrow(TFConfiguredFeatures.DARKWOOD_TREE_KEY),
             VegetationPlacedFeatures.treeModifiersWithWouldSurvive(
-                PlacedFeatures.createCountExtraModifier(7, 0.1F, 1),
+                PlacedFeatures.createCountExtraModifier(9, 0.1F, 1),
                 TFBlocks.DARK_SAPLING
             ))
     }

@@ -7,6 +7,7 @@ import autumn.twilightforest.init.entity.custom.DwarfRabbitEntity
 import autumn.twilightforest.init.item.TFFoodComponents
 import autumn.twilightforest.init.item.TFItemGroups
 import autumn.twilightforest.init.item.TFItems
+import autumn.twilightforest.init.screen.TFScreenHandlers
 import autumn.twilightforest.util.TFBlockFamilies
 import autumn.twilightforest.util.TFBlockSetTypes
 import autumn.twilightforest.util.TFWoodTypes
@@ -34,6 +35,7 @@ object TwilightForest : ModInitializer {
 		TFFoliagePlacerTypes.registerFoliagePlacerTypes()
 		TFWorldGeneration.generateWorldGen()
 		TFEntities.registerEntities()
+		TFScreenHandlers.registerScreenHandlers()
 
 		FabricDefaultAttributeRegistry.register(TFEntities.DWARF_RABBIT, DwarfRabbitEntity.createAttributes())
 	}

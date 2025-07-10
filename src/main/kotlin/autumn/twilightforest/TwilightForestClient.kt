@@ -5,11 +5,14 @@ import autumn.twilightforest.client.foliage.TFColorHandlers
 import autumn.twilightforest.init.block.TFBlocks
 import autumn.twilightforest.init.entity.TFEntities
 import autumn.twilightforest.init.entity.client.dwarf_rabbit.DwarfRabbitRenderer
+import autumn.twilightforest.init.screen.TFScreenHandlers
+import autumn.twilightforest.init.screen.custom.UncraftingScreen
 import autumn.twilightforest.util.TFWoodTypes
 import net.fabricmc.api.ClientModInitializer
 import net.fabricmc.fabric.api.client.rendering.v1.BlockRenderLayerMap
 import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry
+import net.minecraft.client.gui.screen.ingame.HandledScreens
 import net.minecraft.client.render.BlockRenderLayer
 import net.minecraft.util.Identifier
 
@@ -49,6 +52,6 @@ object TwilightForestClient : ClientModInitializer {
         EntityModelLayerRegistry.registerModelLayer(DwarfRabbitModel.DWARF_RABBIT, DwarfRabbitModel::getTexturedModelData)
         EntityRendererRegistry.register(TFEntities.DWARF_RABBIT, ::DwarfRabbitRenderer)
 
-
+        HandledScreens.register(TFScreenHandlers.UNCRAFTING_SCREEN_HANDLER, ::UncraftingScreen)
     }
 }

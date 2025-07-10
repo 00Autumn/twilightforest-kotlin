@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "twilightforest:block/twilight_oak_planks",
+    "east": "twilightforest:block/uncrafting_table_side",
+    "north": "twilightforest:block/uncrafting_table_side",
+    "particle": "twilightforest:block/uncrafting_table_side",
+    "south": "twilightforest:block/uncrafting_table_side",
+    "up": "twilightforest:block/uncrafting_table_top",
+    "west": "twilightforest:block/uncrafting_table_side"
+  }
+}

@@ -7,7 +7,6 @@ import autumn.twilightforest.init.item.TFItems
 import autumn.twilightforest.util.TFBlockFamilies
 import net.fabricmc.fabric.api.client.datagen.v1.provider.FabricModelProvider
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput
-import net.minecraft.block.Blocks
 import net.minecraft.client.data.BlockStateModelGenerator
 import net.minecraft.client.data.ItemModelGenerator
 import net.minecraft.client.data.Models
@@ -66,75 +65,91 @@ class TFModelProvider(output: FabricDataOutput) : FabricModelProvider(output) {
                 .wood(TFBlocks.STRIPPED_TWILIGHT_OAK_WOOD)
             val twilightOakFamily = TFBlockFamilies.get(TFBlocks.TWILIGHT_OAK_PLANKS)
             val twilightOakPool = registerCubeAllModelTexturePool(TFBlocks.TWILIGHT_OAK_PLANKS)
-            registerTintedBlockAndItem(TFBlocks.TWILIGHT_OAK_LEAVES, TexturedModel.LEAVES, 0)
-            registerTintedBlockAndItem(TFBlocks.RAINBOW_OAK_LEAVES, TexturedModel.LEAVES, 0)
+            registerTintedBlockAndItem(TFBlocks.TWILIGHT_OAK_LEAVES, TexturedModel.LEAVES, 0x3C8031)
+            registerTintedBlockAndItem(TFBlocks.RAINBOW_OAK_LEAVES, TexturedModel.LEAVES, 0x3C8031)
             registerTintableCross(TFBlocks.TWILIGHT_OAK_SAPLING, BlockStateModelGenerator.CrossType.NOT_TINTED)
             registerTintableCross(TFBlocks.RAINBOW_OAK_SAPLING, BlockStateModelGenerator.CrossType.NOT_TINTED)
             registerHangingSign(TFBlocks.STRIPPED_TWILIGHT_OAK_LOG, TFBlocks.TWILIGHT_OAK_HANGING_SIGN, TFBlocks.TWILIGHT_OAK_WALL_HANGING_SIGN)
             twilightOakFamily?.let { twilightOakPool.family(it) }
+            registerChest(TFBlocks.TWILIGHT_OAK_CHEST, TFBlocks.TWILIGHT_OAK_PLANKS, Identifier.of(TwilightForest.MOD_ID, "twilight_oak"),  false)
+            registerChest(TFBlocks.TRAPPED_TWILIGHT_OAK_CHEST, TFBlocks.TWILIGHT_OAK_PLANKS, Identifier.of(TwilightForest.MOD_ID, "trapped_twilight_oak"),  false)
 
             createLogTexturePool(TFBlocks.CANOPY_LOG).log(TFBlocks.CANOPY_LOG).wood(TFBlocks.CANOPY_WOOD)
             createLogTexturePool(TFBlocks.STRIPPED_CANOPY_LOG).log(TFBlocks.STRIPPED_CANOPY_LOG).wood(TFBlocks.STRIPPED_CANOPY_WOOD)
             val canopyFamily = TFBlockFamilies.get(TFBlocks.CANOPY_PLANKS)
             val canopyPool = registerCubeAllModelTexturePool(TFBlocks.CANOPY_PLANKS)
-            registerTintedBlockAndItem(TFBlocks.CANOPY_LEAVES, TexturedModel.LEAVES, 0)
+            registerTintedBlockAndItem(TFBlocks.CANOPY_LEAVES, TexturedModel.LEAVES, 0x469A66)
             registerTintableCross(TFBlocks.CANOPY_SAPLING, BlockStateModelGenerator.CrossType.NOT_TINTED)
             registerHangingSign(TFBlocks.STRIPPED_CANOPY_LOG, TFBlocks.CANOPY_HANGING_SIGN, TFBlocks.CANOPY_WALL_HANGING_SIGN)
             canopyFamily?.let { canopyPool.family(it) }
+            registerChest(TFBlocks.CANOPY_CHEST, TFBlocks.CANOPY_PLANKS, Identifier.of(TwilightForest.MOD_ID, "lockless/canopy"),  false)
+            registerChest( TFBlocks.TRAPPED_CANOPY_CHEST, TFBlocks.CANOPY_PLANKS, Identifier.of(TwilightForest.MOD_ID, "lockless/trapped_canopy"),  false)
 
             createLogTexturePool(TFBlocks.TWILIGHT_MANGROVE_LOG).log(TFBlocks.TWILIGHT_MANGROVE_LOG).wood(TFBlocks.TWILIGHT_MANGROVE_WOOD)
             createLogTexturePool(TFBlocks.STRIPPED_TWILIGHT_MANGROVE_LOG).log(TFBlocks.STRIPPED_TWILIGHT_MANGROVE_LOG).wood(TFBlocks.STRIPPED_TWILIGHT_MANGROVE_WOOD)
             val twilightMangroveFamily = TFBlockFamilies.get(TFBlocks.TWILIGHT_MANGROVE_PLANKS)
             val twilightMangrovePool = registerCubeAllModelTexturePool(TFBlocks.TWILIGHT_MANGROVE_PLANKS)
-            registerTintedBlockAndItem(TFBlocks.TWILIGHT_MANGROVE_LEAVES, TexturedModel.LEAVES, 0)
+            registerTintedBlockAndItem(TFBlocks.TWILIGHT_MANGROVE_LEAVES, TexturedModel.LEAVES, 12638100)
             registerTintableCross(TFBlocks.TWILIGHT_MANGROVE_SAPLING, BlockStateModelGenerator.CrossType.NOT_TINTED)
             registerHangingSign(TFBlocks.STRIPPED_TWILIGHT_MANGROVE_LOG, TFBlocks.TWILIGHT_MANGROVE_HANGING_SIGN, TFBlocks.TWILIGHT_MANGROVE_WALL_HANGING_SIGN)
             twilightMangroveFamily?.let { twilightMangrovePool.family(it) }
+            registerChest(TFBlocks.TWILIGHT_MANGROVE_CHEST, TFBlocks.TWILIGHT_MANGROVE_PLANKS, Identifier.of(TwilightForest.MOD_ID, "twilight_mangrove"),  false)
+            registerChest(TFBlocks.TRAPPED_TWILIGHT_MANGROVE_CHEST, TFBlocks.TWILIGHT_MANGROVE_PLANKS, Identifier.of(TwilightForest.MOD_ID, "trapped_twilight_mangrove"),  false)
 
             createLogTexturePool(TFBlocks.DARK_LOG).log(TFBlocks.DARK_LOG).wood(TFBlocks.DARK_WOOD)
             createLogTexturePool(TFBlocks.STRIPPED_DARK_LOG).log(TFBlocks.STRIPPED_DARK_LOG).wood(TFBlocks.STRIPPED_DARK_WOOD)
             val darkFamily = TFBlockFamilies.get(TFBlocks.DARK_PLANKS)
             val darkPool = registerCubeAllModelTexturePool(TFBlocks.DARK_PLANKS)
-            registerTintedBlockAndItem(TFBlocks.DARK_LEAVES, TexturedModel.LEAVES, 0)
+            registerTintedBlockAndItem(TFBlocks.DARK_LEAVES, TexturedModel.LEAVES, 0xC0E694)
             registerTintableCross(TFBlocks.DARK_SAPLING, BlockStateModelGenerator.CrossType.NOT_TINTED)
             registerHangingSign(TFBlocks.STRIPPED_DARK_LOG, TFBlocks.DARK_HANGING_SIGN, TFBlocks.DARK_WALL_HANGING_SIGN)
             darkFamily?.let { darkPool.family(it) }
+            registerChest(TFBlocks.DARK_CHEST, TFBlocks.DARK_PLANKS, Identifier.of(TwilightForest.MOD_ID, "dark"),  false)
+            registerChest(TFBlocks.TRAPPED_DARK_CHEST, TFBlocks.DARK_PLANKS, Identifier.of(TwilightForest.MOD_ID, "trapped_dark"),  false)
 
             createLogTexturePool(TFBlocks.TIME_LOG).log(TFBlocks.TIME_LOG).wood(TFBlocks.TIME_WOOD)
             createLogTexturePool(TFBlocks.STRIPPED_TIME_LOG).log(TFBlocks.STRIPPED_TIME_LOG).wood(TFBlocks.STRIPPED_TIME_WOOD)
             val timeFamily = TFBlockFamilies.get(TFBlocks.TIME_PLANKS)
             val timePool = registerCubeAllModelTexturePool(TFBlocks.TIME_PLANKS)
-            registerTintedBlockAndItem(TFBlocks.TIME_LEAVES, TexturedModel.LEAVES, 0)
+            registerTintedBlockAndItem(TFBlocks.TIME_LEAVES, TexturedModel.LEAVES, -6996446)
             registerTintableCross(TFBlocks.TIME_SAPLING, BlockStateModelGenerator.CrossType.NOT_TINTED)
             registerHangingSign(TFBlocks.STRIPPED_TIME_LOG, TFBlocks.TIME_HANGING_SIGN, TFBlocks.TIME_WALL_HANGING_SIGN)
             timeFamily?.let { timePool.family(it) }
+            registerChest(TFBlocks.TIME_CHEST, TFBlocks.TIME_PLANKS, Identifier.of(TwilightForest.MOD_ID, "time"),  false)
+            registerChest(TFBlocks.TRAPPED_TIME_CHEST, TFBlocks.TIME_PLANKS, Identifier.of(TwilightForest.MOD_ID, "trapped_time"),  false)
 
             createLogTexturePool(TFBlocks.TRANSFORMATION_LOG).log(TFBlocks.TRANSFORMATION_LOG).wood(TFBlocks.TRANSFORMATION_WOOD)
             createLogTexturePool(TFBlocks.STRIPPED_TRANSFORMATION_LOG).log(TFBlocks.STRIPPED_TRANSFORMATION_LOG).wood(TFBlocks.STRIPPED_TRANSFORMATION_WOOD)
             val transformationFamily = TFBlockFamilies.get(TFBlocks.TRANSFORMATION_PLANKS)
             val transformationPool = registerCubeAllModelTexturePool(TFBlocks.TRANSFORMATION_PLANKS)
-            registerTintedBlockAndItem(TFBlocks.TRANSFORMATION_LEAVES, TexturedModel.LEAVES, 0)
+            registerTintedBlockAndItem(TFBlocks.TRANSFORMATION_LEAVES, TexturedModel.LEAVES, -10440246)
             registerTintableCross(TFBlocks.TRANSFORMATION_SAPLING, BlockStateModelGenerator.CrossType.NOT_TINTED)
             registerHangingSign(TFBlocks.STRIPPED_TRANSFORMATION_LOG, TFBlocks.TRANSFORMATION_HANGING_SIGN, TFBlocks.TRANSFORMATION_WALL_HANGING_SIGN)
             transformationFamily?.let { transformationPool.family(it) }
+            registerChest(TFBlocks.TRANSFORMATION_CHEST, TFBlocks.TRANSFORMATION_PLANKS, Identifier.of(TwilightForest.MOD_ID, "transformation"),  false)
+            registerChest(TFBlocks.TRAPPED_TRANSFORMATION_CHEST, TFBlocks.TRANSFORMATION_PLANKS, Identifier.of(TwilightForest.MOD_ID, "trapped_transformation"),  false)
 
             createLogTexturePool(TFBlocks.MINING_LOG).log(TFBlocks.MINING_LOG).wood(TFBlocks.MINING_WOOD)
             createLogTexturePool(TFBlocks.STRIPPED_MINING_LOG).log(TFBlocks.STRIPPED_MINING_LOG).wood(TFBlocks.STRIPPED_MINING_WOOD)
             val miningFamily = TFBlockFamilies.get(TFBlocks.MINING_PLANKS)
             val miningPool = registerCubeAllModelTexturePool(TFBlocks.MINING_PLANKS)
-            registerTintedBlockAndItem(TFBlocks.MINING_LEAVES, TexturedModel.LEAVES, 0)
+            registerTintedBlockAndItem(TFBlocks.MINING_LEAVES, TexturedModel.LEAVES, -3099370)
             registerTintableCross(TFBlocks.MINING_SAPLING, BlockStateModelGenerator.CrossType.NOT_TINTED)
             registerHangingSign(TFBlocks.STRIPPED_MINING_LOG, TFBlocks.MINING_HANGING_SIGN, TFBlocks.MINING_WALL_HANGING_SIGN)
             miningFamily?.let { miningPool.family(it) }
+            registerChest(TFBlocks.MINING_CHEST, TFBlocks.MINING_PLANKS, Identifier.of(TwilightForest.MOD_ID, "mining"),  false)
+            registerChest(TFBlocks.TRAPPED_MINING_CHEST, TFBlocks.MINING_PLANKS, Identifier.of(TwilightForest.MOD_ID, "trapped_mining"),  false)
 
             createLogTexturePool(TFBlocks.SORTING_LOG).log(TFBlocks.SORTING_LOG).wood(TFBlocks.SORTING_WOOD)
             createLogTexturePool(TFBlocks.STRIPPED_SORTING_LOG).log(TFBlocks.STRIPPED_SORTING_LOG).wood(TFBlocks.STRIPPED_SORTING_WOOD)
             val sortingFamily = TFBlockFamilies.get(TFBlocks.SORTING_PLANKS)
             val sortingPool = registerCubeAllModelTexturePool(TFBlocks.SORTING_PLANKS)
-            registerTintedBlockAndItem(TFBlocks.SORTING_LEAVES, TexturedModel.LEAVES, 0)
+            registerTintedBlockAndItem(TFBlocks.SORTING_LEAVES, TexturedModel.LEAVES, 8388416)
             registerTintableCross(TFBlocks.SORTING_SAPLING, BlockStateModelGenerator.CrossType.NOT_TINTED)
             registerHangingSign(TFBlocks.STRIPPED_SORTING_LOG, TFBlocks.SORTING_HANGING_SIGN, TFBlocks.SORTING_WALL_HANGING_SIGN)
             sortingFamily?.let { sortingPool.family(it) }
+            registerChest(TFBlocks.SORTING_CHEST, TFBlocks.SORTING_PLANKS, Identifier.of(TwilightForest.MOD_ID, "sorting"),  false)
+            registerChest(TFBlocks.TRAPPED_SORTING_CHEST, TFBlocks.SORTING_PLANKS, Identifier.of(TwilightForest.MOD_ID, "trapped_sorting"),  false)
         }
     }
 

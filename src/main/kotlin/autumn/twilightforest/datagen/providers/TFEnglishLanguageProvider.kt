@@ -4,7 +4,6 @@ import autumn.twilightforest.TwilightForest
 import autumn.twilightforest.init.block.TFBlocks
 import autumn.twilightforest.init.entity.TFEntities
 import autumn.twilightforest.init.item.TFItems
-import autumn.twilightforest.world.biome.TFBiomes
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider
 import net.minecraft.registry.RegistryWrapper
@@ -180,6 +179,8 @@ class TFEnglishLanguageProvider(output: FabricDataOutput, registryLookup: Comple
         entries?.add(TFItems.TWILIGHT_OAK_HANGING_SIGN, "Twilight Oak Hanging Sign")
         entries?.add(TFItems.TWILIGHT_OAK_BOAT, "Twilight Oak Boat")
         entries?.add(TFItems.TWILIGHT_OAK_CHEST_BOAT, "Twilight Oak Chest Boat")
+        entries?.add(TFBlocks.TWILIGHT_OAK_CHEST, "Twilight Oak Chest")
+        entries?.add(TFBlocks.TRAPPED_TWILIGHT_OAK_CHEST, "Trapped Twilight Oak Chest")
         addText(entries, Text.translatable("entity.twilightforest.twilight_oak_chest_boat"), "Twilight Oak Chest Boat")
 
         entries?.add(TFBlocks.CANOPY_LOG.asItem(), "Canopy Log")
@@ -199,6 +200,8 @@ class TFEnglishLanguageProvider(output: FabricDataOutput, registryLookup: Comple
         entries?.add(TFItems.CANOPY_HANGING_SIGN, "Canopy Hanging Sign")
         entries?.add(TFItems.CANOPY_BOAT, "Canopy Boat")
         entries?.add(TFItems.CANOPY_CHEST_BOAT, "Canopy Chest Boat")
+        entries?.add(TFBlocks.CANOPY_CHEST, "Canopy Chest")
+        entries?.add(TFBlocks.TRAPPED_CANOPY_CHEST, "Trapped Canopy Chest")
         addText(entries, Text.translatable("entity.twilightforest.canopy_chest_boat"), "Canopy Chest Boat")
 
         entries?.add(TFBlocks.TWILIGHT_MANGROVE_LOG.asItem(), "Twilight Mangrove Log")
@@ -218,6 +221,8 @@ class TFEnglishLanguageProvider(output: FabricDataOutput, registryLookup: Comple
         entries?.add(TFItems.TWILIGHT_MANGROVE_HANGING_SIGN, "Twilight Mangrove Hanging Sign")
         entries?.add(TFItems.TWILIGHT_MANGROVE_BOAT, "Twilight Mangrove Boat")
         entries?.add(TFItems.TWILIGHT_MANGROVE_CHEST_BOAT, "Twilight Mangrove Chest Boat")
+        entries?.add(TFBlocks.TWILIGHT_MANGROVE_CHEST, "Twilight Mangrove Chest")
+        entries?.add(TFBlocks.TRAPPED_TWILIGHT_MANGROVE_CHEST, "Trapped Twilight Mangrove Chest")
         addText(entries, Text.translatable("entity.twilightforest.twilight_mangrove_chest_boat"), "Twilight Mangrove Chest Boat")
 
         entries?.add(TFBlocks.DARK_LOG.asItem(), "Dark Log")
@@ -237,6 +242,8 @@ class TFEnglishLanguageProvider(output: FabricDataOutput, registryLookup: Comple
         entries?.add(TFItems.DARK_HANGING_SIGN, "Dark Hanging Sign")
         entries?.add(TFItems.DARK_BOAT, "Dark Boat")
         entries?.add(TFItems.DARK_CHEST_BOAT, "Dark Chest Boat")
+        entries?.add(TFBlocks.DARK_CHEST, "Darkwood Chest")
+        entries?.add(TFBlocks.TRAPPED_DARK_CHEST, "Trapped Darkwood Chest")
         addText(entries, Text.translatable("entity.twilightforest.dark_chest_boat"), "Dark Chest Boat")
 
         entries?.add(TFBlocks.TIME_LOG.asItem(), "Time Log")
@@ -256,7 +263,9 @@ class TFEnglishLanguageProvider(output: FabricDataOutput, registryLookup: Comple
         entries?.add(TFItems.TIME_HANGING_SIGN, "Time Hanging Sign")
         entries?.add(TFItems.TIME_BOAT, "Time Boat")
         entries?.add(TFItems.TIME_CHEST_BOAT, "Time Chest Boat")
-        addText(entries, Text.translatable("entity.twilightforest.time_chest_boat"), "Time Chest Boat")
+        entries?.add(TFBlocks.TIME_CHEST, "Time Chest")
+        entries?.add(TFBlocks.TRAPPED_TIME_CHEST, "Trapped Timewood Chest")
+        addText(entries, Text.translatable("entity.twilightforest.time_chest_boat"), "Timewood Chest Boat")
 
         entries?.add(TFBlocks.TRANSFORMATION_LOG.asItem(), "Transformation Log")
         entries?.add(TFBlocks.STRIPPED_TRANSFORMATION_LOG.asItem(), "Stripped Transformation Log")
@@ -275,6 +284,8 @@ class TFEnglishLanguageProvider(output: FabricDataOutput, registryLookup: Comple
         entries?.add(TFItems.TRANSFORMATION_HANGING_SIGN, "Transformation Hanging Sign")
         entries?.add(TFItems.TRANSFORMATION_BOAT, "Transformation Boat")
         entries?.add(TFItems.TRANSFORMATION_CHEST_BOAT, "Transformation Chest Boat")
+        entries?.add(TFBlocks.TRANSFORMATION_CHEST, "Transformation Chest")
+        entries?.add(TFBlocks.TRAPPED_TRANSFORMATION_CHEST, "Trapped Transformation Chest")
         addText(entries, Text.translatable("entity.twilightforest.transformation_chest_boat"), "Transformation Chest Boat")
 
         entries?.add(TFBlocks.MINING_LOG.asItem(), "Mining Log")
@@ -294,6 +305,8 @@ class TFEnglishLanguageProvider(output: FabricDataOutput, registryLookup: Comple
         entries?.add(TFItems.MINING_HANGING_SIGN, "Mining Hanging Sign")
         entries?.add(TFItems.MINING_BOAT, "Mining Boat")
         entries?.add(TFItems.MINING_CHEST_BOAT, "Mining Chest Boat")
+        entries?.add(TFBlocks.MINING_CHEST, "Miningwood Chest")
+        entries?.add(TFBlocks.TRAPPED_MINING_CHEST, "Trapped Miningwood Chest")
         addText(entries, Text.translatable("entity.twilightforest.mining_chest_boat"), "Mining Chest Boat")
 
         entries?.add(TFBlocks.SORTING_LOG.asItem(), "Sorting Log")
@@ -313,9 +326,12 @@ class TFEnglishLanguageProvider(output: FabricDataOutput, registryLookup: Comple
         entries?.add(TFItems.SORTING_HANGING_SIGN, "Sorting Hanging Sign")
         entries?.add(TFItems.SORTING_BOAT, "Sorting Boat")
         entries?.add(TFItems.SORTING_CHEST_BOAT, "Sorting Chest Boat")
+        entries?.add(TFBlocks.SORTING_CHEST, "Sortingwood Chest")
+        entries?.add(TFBlocks.TRAPPED_SORTING_CHEST, "Trapped Sortingwood Chest")
         addText(entries, Text.translatable("entity.twilightforest.sorting_chest_boat"), "Sorting Chest Boat")
 
         entries?.add(TFEntities.DWARF_RABBIT, "Dwarf Rabbit")
+        entries?.add(TFEntities.TINY_BIRD, "Tiny Bird")
 
         addText(entries, Text.translatable("biome.twilightforest.forest_key"), "Twilight Forest")
         addText(entries, Text.translatable("biome.twilightforest.dark_forest_key"), "Dark Forest")

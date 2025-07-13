@@ -1,6 +1,7 @@
 package autumn.twilightforest.init.block
 
 import autumn.twilightforest.TwilightForest
+import autumn.twilightforest.chest.TFChestBlockHelper
 import autumn.twilightforest.component.TFDataComponentTypes
 import autumn.twilightforest.component.tooltip.TooltipComponent
 import autumn.twilightforest.init.block.custom.ArcticFurBlock
@@ -8,7 +9,6 @@ import autumn.twilightforest.init.block.custom.FieryBlock
 import autumn.twilightforest.init.block.custom.HedgeBlock
 import autumn.twilightforest.init.block.custom.KnightmetalBlock
 import autumn.twilightforest.init.block.custom.TFLeavesBlock
-import autumn.twilightforest.init.block.custom.UncraftingTableBlock
 import autumn.twilightforest.sign.TFSignBlockHelper
 import autumn.twilightforest.util.TFBlockSetTypes
 import autumn.twilightforest.util.TFWoodTypes
@@ -17,7 +17,7 @@ import net.minecraft.block.AbstractBlock
 import net.minecraft.block.Block
 import net.minecraft.block.Blocks
 import net.minecraft.block.ButtonBlock
-import net.minecraft.block.CraftingTableBlock
+import net.minecraft.block.ChestBlock
 import net.minecraft.block.DoorBlock
 import net.minecraft.block.FenceBlock
 import net.minecraft.block.FenceGateBlock
@@ -35,9 +35,11 @@ import net.minecraft.block.SlimeBlock
 import net.minecraft.block.StairsBlock
 import net.minecraft.block.TintedParticleLeavesBlock
 import net.minecraft.block.TrapdoorBlock
+import net.minecraft.block.TrappedChestBlock
 import net.minecraft.block.WallHangingSignBlock
 import net.minecraft.block.WallSignBlock
 import net.minecraft.block.WoodType
+import net.minecraft.block.entity.BlockEntityType
 import net.minecraft.block.enums.NoteBlockInstrument
 import net.minecraft.block.piston.PistonBehavior
 import net.minecraft.item.BlockItem
@@ -274,7 +276,30 @@ object TFBlocks {
 
 
     // UTILITY BLOCKS
-    val UNCRAFTING_TABLE = registerVanillaBlock("uncrafting_table", Blocks.CRAFTING_TABLE) {settings -> UncraftingTableBlock(settings) }
+    val TWILIGHT_OAK_CHEST = TFChestBlockHelper.registerChestBlock("twilight_oak_chest", { settings -> ChestBlock({ BlockEntityType.CHEST }, settings) }, Blocks.CHEST.settings)
+    val TRAPPED_TWILIGHT_OAK_CHEST = TFChestBlockHelper.registerTrappedChestBlock("trapped_twilight_oak_chest", ::TrappedChestBlock, Blocks.TRAPPED_CHEST.settings)
+
+    val CANOPY_CHEST = TFChestBlockHelper.registerChestBlock("canopy_chest", { settings -> ChestBlock({ BlockEntityType.CHEST }, settings) }, Blocks.CHEST.settings)
+    val TRAPPED_CANOPY_CHEST = TFChestBlockHelper.registerTrappedChestBlock("trapped_canopy_chest", ::TrappedChestBlock, Blocks.TRAPPED_CHEST.settings)
+
+    val TWILIGHT_MANGROVE_CHEST = TFChestBlockHelper.registerChestBlock("twilight_mangrove_chest", { settings -> ChestBlock({ BlockEntityType.CHEST }, settings) }, Blocks.CHEST.settings)
+    val TRAPPED_TWILIGHT_MANGROVE_CHEST = TFChestBlockHelper.registerTrappedChestBlock("trapped_twilight_mangrove_chest", ::TrappedChestBlock, Blocks.TRAPPED_CHEST.settings)
+
+    val DARK_CHEST = TFChestBlockHelper.registerChestBlock("dark_chest", { settings -> ChestBlock({ BlockEntityType.CHEST }, settings) }, Blocks.CHEST.settings)
+    val TRAPPED_DARK_CHEST = TFChestBlockHelper.registerTrappedChestBlock("trapped_dark_chest", ::TrappedChestBlock, Blocks.TRAPPED_CHEST.settings)
+
+    val TIME_CHEST = TFChestBlockHelper.registerChestBlock("time_chest", { settings -> ChestBlock({ BlockEntityType.CHEST }, settings) }, Blocks.CHEST.settings)
+    val TRAPPED_TIME_CHEST = TFChestBlockHelper.registerTrappedChestBlock("trapped_time_chest", ::TrappedChestBlock, Blocks.TRAPPED_CHEST.settings)
+
+    val TRANSFORMATION_CHEST = TFChestBlockHelper.registerChestBlock("transformation_chest", { settings -> ChestBlock({ BlockEntityType.CHEST }, settings) }, Blocks.CHEST.settings)
+    val TRAPPED_TRANSFORMATION_CHEST = TFChestBlockHelper.registerTrappedChestBlock("trapped_transformation_chest", ::TrappedChestBlock, Blocks.TRAPPED_CHEST.settings)
+
+    val MINING_CHEST = TFChestBlockHelper.registerChestBlock("mining_chest", { settings -> ChestBlock({ BlockEntityType.CHEST }, settings) }, Blocks.CHEST.settings)
+    val TRAPPED_MINING_CHEST = TFChestBlockHelper.registerTrappedChestBlock("trapped_mining_chest", ::TrappedChestBlock, Blocks.TRAPPED_CHEST.settings)
+
+    val SORTING_CHEST = TFChestBlockHelper.registerChestBlock("sorting_chest", { settings -> ChestBlock({ BlockEntityType.CHEST }, settings) }, Blocks.CHEST.settings)
+    val TRAPPED_SORTING_CHEST = TFChestBlockHelper.registerTrappedChestBlock("trapped_sorting_chest", ::TrappedChestBlock, Blocks.TRAPPED_CHEST.settings)
+
 
     private fun registerBlock(name: String, function: (AbstractBlock.Settings) -> Block): Block {
         val id = Identifier.of(TwilightForest.MOD_ID, name)

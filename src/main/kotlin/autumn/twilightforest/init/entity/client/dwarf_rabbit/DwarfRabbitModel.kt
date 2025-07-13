@@ -1,6 +1,6 @@
+package autumn.twilightforest.init.entity.client.dwarf_rabbit
+
 import autumn.twilightforest.TwilightForest
-import autumn.twilightforest.init.entity.client.dwarf_rabbit.DwarfRabbitAnim
-import autumn.twilightforest.init.entity.client.dwarf_rabbit.DwarfRabbitRenderState
 import net.minecraft.client.model.Dilation
 import net.minecraft.client.model.ModelData
 import net.minecraft.client.model.ModelPart
@@ -13,9 +13,6 @@ import net.minecraft.client.render.entity.model.EntityModelLayer
 import net.minecraft.util.Identifier
 import net.minecraft.util.math.MathHelper
 
-// Made with Blockbench 4.12.5
-// Exported for Minecraft version 1.17+ for Yarn
-// Paste this class into your mod and generate all required imports
 class DwarfRabbitModel(root: ModelPart) : EntityModel<DwarfRabbitRenderState>(root) {
     private val modelRoot: ModelPart = root.getChild("root")
     private val dwarfRabbit: ModelPart = modelRoot.getChild("dwarf_rabbit")

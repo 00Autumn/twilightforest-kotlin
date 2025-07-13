@@ -131,6 +131,8 @@ object TFItemGroups {
                 entries.add(TFBlocks.TWILIGHT_OAK_BUTTON)
                 entries.add(TFItems.TWILIGHT_OAK_SIGN)
                 entries.add(TFItems.TWILIGHT_OAK_HANGING_SIGN)
+                entries.add(TFBlocks.TWILIGHT_OAK_CHEST)
+                entries.add(TFBlocks.TRAPPED_TWILIGHT_OAK_CHEST)
 
                 entries.add(TFBlocks.CANOPY_LOG)
                 entries.add(TFBlocks.STRIPPED_CANOPY_LOG)
@@ -147,6 +149,8 @@ object TFItemGroups {
                 entries.add(TFBlocks.CANOPY_BUTTON)
                 entries.add(TFItems.CANOPY_SIGN)
                 entries.add(TFItems.CANOPY_HANGING_SIGN)
+                entries.add(TFBlocks.CANOPY_CHEST)
+                entries.add(TFBlocks.TRAPPED_CANOPY_CHEST)
 
                 entries.add(TFBlocks.TWILIGHT_MANGROVE_LOG)
                 entries.add(TFBlocks.STRIPPED_TWILIGHT_MANGROVE_LOG)
@@ -163,6 +167,8 @@ object TFItemGroups {
                 entries.add(TFBlocks.TWILIGHT_MANGROVE_BUTTON)
                 entries.add(TFItems.TWILIGHT_MANGROVE_SIGN)
                 entries.add(TFItems.TWILIGHT_MANGROVE_HANGING_SIGN)
+                entries.add(TFBlocks.TWILIGHT_MANGROVE_CHEST)
+                entries.add(TFBlocks.TRAPPED_TWILIGHT_MANGROVE_CHEST)
 
                 entries.add(TFBlocks.DARK_LOG)
                 entries.add(TFBlocks.STRIPPED_DARK_LOG)
@@ -179,6 +185,8 @@ object TFItemGroups {
                 entries.add(TFBlocks.DARK_BUTTON)
                 entries.add(TFItems.DARK_SIGN)
                 entries.add(TFItems.DARK_HANGING_SIGN)
+                entries.add(TFBlocks.DARK_CHEST)
+                entries.add(TFBlocks.TRAPPED_DARK_CHEST)
 
                 entries.add(TFBlocks.TIME_LOG)
                 entries.add(TFBlocks.STRIPPED_TIME_LOG)
@@ -195,6 +203,8 @@ object TFItemGroups {
                 entries.add(TFBlocks.TIME_BUTTON)
                 entries.add(TFItems.TIME_SIGN)
                 entries.add(TFItems.TIME_HANGING_SIGN)
+                entries.add(TFBlocks.TIME_CHEST)
+                entries.add(TFBlocks.TRAPPED_TIME_CHEST)
 
                 entries.add(TFBlocks.TRANSFORMATION_LOG)
                 entries.add(TFBlocks.STRIPPED_TRANSFORMATION_LOG)
@@ -211,6 +221,8 @@ object TFItemGroups {
                 entries.add(TFBlocks.TRANSFORMATION_BUTTON)
                 entries.add(TFItems.TRANSFORMATION_SIGN)
                 entries.add(TFItems.TRANSFORMATION_HANGING_SIGN)
+                entries.add(TFBlocks.TRANSFORMATION_CHEST)
+                entries.add(TFBlocks.TRAPPED_TRANSFORMATION_CHEST)
 
                 entries.add(TFBlocks.MINING_LOG)
                 entries.add(TFBlocks.STRIPPED_MINING_LOG)
@@ -227,6 +239,8 @@ object TFItemGroups {
                 entries.add(TFBlocks.MINING_BUTTON)
                 entries.add(TFItems.MINING_SIGN)
                 entries.add(TFItems.MINING_HANGING_SIGN)
+                entries.add(TFBlocks.MINING_CHEST)
+                entries.add(TFBlocks.TRAPPED_MINING_CHEST)
 
                 entries.add(TFBlocks.SORTING_LOG)
                 entries.add(TFBlocks.STRIPPED_SORTING_LOG)
@@ -243,8 +257,8 @@ object TFItemGroups {
                 entries.add(TFBlocks.SORTING_BUTTON)
                 entries.add(TFItems.SORTING_SIGN)
                 entries.add(TFItems.SORTING_HANGING_SIGN)
-
-                entries.add(TFBlocks.UNCRAFTING_TABLE)
+                entries.add(TFBlocks.SORTING_CHEST)
+                entries.add(TFBlocks.TRAPPED_SORTING_CHEST)
             }.build()
     )
     val TWILIGHT_FOREST_EQUIPMENT_GROUP = Registry.register(Registries.ITEM_GROUP,

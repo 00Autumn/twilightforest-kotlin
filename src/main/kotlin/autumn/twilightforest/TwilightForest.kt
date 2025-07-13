@@ -2,12 +2,14 @@ package autumn.twilightforest
 
 import autumn.twilightforest.component.TFDataComponentTypes
 import autumn.twilightforest.init.block.TFBlocks
+import autumn.twilightforest.init.block.entity.TFBlockEntities
 import autumn.twilightforest.init.entity.TFEntities
-import autumn.twilightforest.init.entity.custom.DwarfRabbitEntity
+import autumn.twilightforest.init.entity.custom.dwarf_rabbit.DwarfRabbitEntity
 import autumn.twilightforest.init.item.TFFoodComponents
 import autumn.twilightforest.init.item.TFItemGroups
 import autumn.twilightforest.init.item.TFItems
-import autumn.twilightforest.init.screen.TFScreenHandlers
+import autumn.twilightforest.client.screen.TFScreenHandlers
+import autumn.twilightforest.init.entity.custom.tiny_bird.TinyBirdEntity
 import autumn.twilightforest.util.TFBlockFamilies
 import autumn.twilightforest.util.TFBlockSetTypes
 import autumn.twilightforest.util.TFWoodTypes
@@ -35,9 +37,11 @@ object TwilightForest : ModInitializer {
 		TFFoliagePlacerTypes.registerFoliagePlacerTypes()
 		TFWorldGeneration.generateWorldGen()
 		TFEntities.registerEntities()
+		TFBlockEntities.registerBlockEntities()
 		TFScreenHandlers.registerScreenHandlers()
 
 		FabricDefaultAttributeRegistry.register(TFEntities.DWARF_RABBIT, DwarfRabbitEntity.createAttributes())
+		FabricDefaultAttributeRegistry.register(TFEntities.TINY_BIRD, TinyBirdEntity.createAttributes())
 	}
 
 	fun id(path: String): Identifier {

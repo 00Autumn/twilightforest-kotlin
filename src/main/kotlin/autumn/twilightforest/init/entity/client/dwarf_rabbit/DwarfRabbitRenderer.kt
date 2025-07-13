@@ -1,9 +1,8 @@
 package autumn.twilightforest.init.entity.client.dwarf_rabbit
 
-import DwarfRabbitModel
 import autumn.twilightforest.TwilightForest
-import autumn.twilightforest.init.entity.custom.DwarfRabbitEntity
-import autumn.twilightforest.init.entity.custom.DwarfRabbitVariant
+import autumn.twilightforest.init.entity.custom.dwarf_rabbit.DwarfRabbitEntity
+import autumn.twilightforest.init.entity.custom.dwarf_rabbit.DwarfRabbitVariant
 import net.minecraft.client.render.VertexConsumerProvider
 import net.minecraft.client.render.entity.EntityRendererFactory
 import net.minecraft.client.render.entity.MobEntityRenderer
@@ -11,13 +10,7 @@ import net.minecraft.client.util.math.MatrixStack
 import net.minecraft.util.Identifier
 
 
-class DwarfRabbitRenderer(
-    context: EntityRendererFactory.Context
-) : MobEntityRenderer<DwarfRabbitEntity, DwarfRabbitRenderState, DwarfRabbitModel>(
-    context,
-    DwarfRabbitModel(context.getPart(DwarfRabbitModel.DWARF_RABBIT)),
-    0.25F
-) {
+class DwarfRabbitRenderer(context: EntityRendererFactory.Context) : MobEntityRenderer<DwarfRabbitEntity, DwarfRabbitRenderState, DwarfRabbitModel>(context, DwarfRabbitModel(context.getPart(DwarfRabbitModel.DWARF_RABBIT)), 0.25F) {
 
     override fun getTexture(state: DwarfRabbitRenderState): Identifier? {
         return LOCATION_BY_VARIANT[state.variant]

@@ -19,7 +19,7 @@ object TFColorHandlers {
             TFBlocks.DARK_LEAVES -> 3890751
 
             TFBlocks.RAINBOW_OAK_LEAVES -> {
-                if (world == null || pos == null) 0xFF7F7FFF.toInt()
+                if (world == null || pos == null) 0
                 else {
                     var red = pos.x * 32 + pos.y * 16
                     if ((red and 256) != 0) red = 255 - (red and 255)
@@ -50,7 +50,7 @@ object TFColorHandlers {
             }
 
             TFBlocks.TIME_LEAVES -> {
-                if (world == null || pos == null) 0xFF364C03.toInt()
+                if (world == null || pos == null) 0
                 else {
                     val fade = (pos.x * 63 + pos.y * 63 + pos.z * 63).let {
                         var v = it
@@ -67,7 +67,7 @@ object TFColorHandlers {
             }
 
             TFBlocks.TRANSFORMATION_LEAVES -> {
-                if (world == null || pos == null) 0xFF6CCAEA.toInt()
+                if (world == null || pos == null) 0
                 else {
                     val fade = (pos.x * 27 + pos.y * 63 + pos.z * 39).let {
                         var v = it
@@ -84,7 +84,7 @@ object TFColorHandlers {
             }
 
             TFBlocks.MINING_LEAVES -> {
-                if (world == null || pos == null) 0xFFFDF144.toInt()
+                if (world == null || pos == null) 0
                 else {
                     val fade = (pos.x * 31 + pos.y * 33 + pos.z * 32).let {
                         var v = it
@@ -104,7 +104,6 @@ object TFColorHandlers {
                 if (world == null || pos == null) {
                     -1
                 } else {
-                    // Use biome average foliage color as a simple substitute
                     BiomeColors.getFoliageColor(world, pos)
                 }
             }

@@ -1,0 +1,10 @@
+{
+  "model": {
+    "type": "minecraft:special",
+    "base": "twilightforest:item/twilight_mangrove_chest",
+    "model": {
+      "type": "minecraft:chest",
+      "texture": "twilightforest:twilight_mangrove"
+    }
+  }
+}

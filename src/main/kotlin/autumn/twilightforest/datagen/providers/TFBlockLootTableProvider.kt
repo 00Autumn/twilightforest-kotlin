@@ -23,8 +23,9 @@ import net.minecraft.registry.RegistryWrapper
 import net.minecraft.registry.tag.TagKey
 import java.util.concurrent.CompletableFuture
 
-class TFLootTableProvider(dataOutput: FabricDataOutput, private val registryLookupFuture: CompletableFuture<RegistryWrapper.WrapperLookup>) : FabricBlockLootTableProvider(dataOutput, registryLookupFuture) {
+class TFBlockLootTableProvider(dataOutput: FabricDataOutput, private val registryLookupFuture: CompletableFuture<RegistryWrapper.WrapperLookup>) : FabricBlockLootTableProvider(dataOutput, registryLookupFuture) {
     override fun generate() {
+
         addDrop(TFBlocks.ROOT_BLOCK)
         addDrop(TFBlocks.LIVEROOT_BLOCK, TFItems.LIVEROOT)
         addDrop(TFBlocks.SHIMMERING_GRASS_BLOCK, Blocks.DIRT)

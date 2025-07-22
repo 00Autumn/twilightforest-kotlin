@@ -51,6 +51,7 @@ class TFEnglishLanguageProvider(output: FabricDataOutput, registryLookup: Comple
         entries?.add(TFItems.CROWN_SPLINTER, "Crown Splinter")
 
         entries?.add(TFItems.TOWER_KEY, "Tower Key")
+        entries?.add(TFItems.TINY_EGG, "Tiny Egg")
 
         entries?.add(TFItems.RAW_VENISON, "Raw Venison")
         entries?.add(TFItems.COOKED_VENISON, "Venison Steak")
@@ -150,6 +151,7 @@ class TFEnglishLanguageProvider(output: FabricDataOutput, registryLookup: Comple
 
         entries?.add(TFBlocks.HEDGE.asItem(), "Hedge")
         entries?.add(TFBlocks.HEDGE_ROSE.asItem(), "Flowering Hedge")
+        entries?.add(TFBlocks.CORONATION_CARPET.asItem(), "Coronation Carpet")
 
         entries?.add(TFBlocks.STRONGHOLD_SHIELD.asItem(), "Stronghold Shield")
 
@@ -332,6 +334,21 @@ class TFEnglishLanguageProvider(output: FabricDataOutput, registryLookup: Comple
 
         entries?.add(TFEntities.DWARF_RABBIT, "Dwarf Rabbit")
         entries?.add(TFEntities.TINY_BIRD, "Tiny Bird")
+        entries?.add(TFEntities.WILD_DEER, "Wild Deer")
+        entries?.add(TFEntities.TOWERWOOD_BORER, "Towerwood Borer")
+        entries?.add(TFEntities.SQUIRREL, "Squirrel")
+        entries?.add(TFEntities.MAZE_SLIME, "Maze Slime")
+        entries?.add(TFEntities.CARMINITE_BROODLING, "Carminite Broodling")
+        entries?.add(TFEntities.KING_SPIDER, "King Spider")
+        entries?.add(TFEntities.SKELETON_DRUID, "Skeleton Druid")
+        entries?.add(TFEntities.HEDGE_SPIDER, "Hedge Spider")
+        entries?.add(TFEntities.SWARM_SPIDER, "Swarm Spider")
+        entries?.add(TFEntities.MIST_WOLF, "Mist Wolf")
+        entries?.add(TFEntities.WINTER_WOLF, "Winter Wolf")
+        entries?.add(TFEntities.CARMINITE_GHAST_GUARD, "Carminite Ghast Guard")
+        entries?.add(TFEntities.CARMINITE_GHASTLING, "Carminite Ghastling")
+        entries?.add(TFEntities.KNIGHT_PHANTOM, "Knight Phantom")
+        entries?.add(TFEntities.BIGHORN_SHEEP, "Bighorn Sheep")
 
         addText(entries, Text.translatable("biome.twilightforest.forest_key"), "Twilight Forest")
         addText(entries, Text.translatable("biome.twilightforest.dark_forest_key"), "Dark Forest")

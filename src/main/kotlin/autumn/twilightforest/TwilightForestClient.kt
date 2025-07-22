@@ -4,16 +4,42 @@ import autumn.twilightforest.boat.api.client.TFBoatClientHelper
 import autumn.twilightforest.client.foliage.TFColorHandlers
 import autumn.twilightforest.init.block.TFBlocks
 import autumn.twilightforest.init.entity.TFEntities
+import autumn.twilightforest.init.entity.client.bighorn_sheep.BighornSheepModel
+import autumn.twilightforest.init.entity.client.bighorn_sheep.BighornSheepRenderer
+import autumn.twilightforest.init.entity.client.carminite_broodling.CarminiteBroodlingRenderer
+import autumn.twilightforest.init.entity.client.carminite_ghast_guard.CarminiteGhastGuardRenderer
+import autumn.twilightforest.init.entity.client.carminite_ghastling.CarminiteGhastlingRenderer
 import autumn.twilightforest.init.entity.client.dwarf_rabbit.DwarfRabbitModel
 import autumn.twilightforest.init.entity.client.dwarf_rabbit.DwarfRabbitRenderer
+import autumn.twilightforest.init.entity.client.hedge_spider.HedgeSpiderRenderer
+import autumn.twilightforest.init.entity.client.king_spider.KingSpiderRenderer
+import autumn.twilightforest.init.entity.client.knight_phantom.KnightPhantomRenderer
+import autumn.twilightforest.init.entity.client.maze_slime.MazeSlimeRenderer
+import autumn.twilightforest.init.entity.client.mist_wolf.MistWolfRenderer
+import autumn.twilightforest.init.entity.client.skeleton_druid.SkeletonDruidModel
+import autumn.twilightforest.init.entity.client.skeleton_druid.SkeletonDruidRenderer
+import autumn.twilightforest.init.entity.client.skeleton_druid.projectile.NatureBoltEntityRenderer
+import autumn.twilightforest.init.entity.client.squirrel.SquirrelModel
+import autumn.twilightforest.init.entity.client.squirrel.SquirrelRenderer
+import autumn.twilightforest.init.entity.client.swarm_spider.SwarmSpiderRenderer
 import autumn.twilightforest.init.entity.client.tiny_bird.TinyBirdModel
 import autumn.twilightforest.init.entity.client.tiny_bird.TinyBirdRenderer
+import autumn.twilightforest.init.entity.client.towerwood_borer.TowerwoodBorerRenderer
+import autumn.twilightforest.init.entity.client.wild_deer.WildDeerModel
+import autumn.twilightforest.init.entity.client.wild_deer.WildDeerRenderer
+import autumn.twilightforest.init.entity.client.winter_wolf.WinterWolfRenderer
+import autumn.twilightforest.init.entity.equipment.client.knightmetal.KnightmetalArmorRenderer
+import autumn.twilightforest.init.entity.equipment.client.phantom.PhantomArmorRenderer
+import autumn.twilightforest.init.item.TFItems
 import autumn.twilightforest.util.TFWoodTypes
 import net.fabricmc.api.ClientModInitializer
+import net.fabricmc.fabric.api.client.rendering.v1.ArmorRenderer
 import net.fabricmc.fabric.api.client.rendering.v1.BlockRenderLayerMap
 import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry
 import net.minecraft.client.render.BlockRenderLayer
+import net.minecraft.client.render.entity.FlyingItemEntityRenderer
+import net.minecraft.client.render.entity.model.EntityModelLayers
 import net.minecraft.util.Identifier
 
 object TwilightForestClient : ClientModInitializer {
@@ -21,6 +47,9 @@ object TwilightForestClient : ClientModInitializer {
     override fun onInitializeClient() {
         TFWoodTypes.registerWoodTypes()
         TFColorHandlers.registerBlockColors()
+
+        ArmorRenderer.register(KnightmetalArmorRenderer, TFItems.KNIGHTMETAL_HELMET, TFItems.KNIGHTMETAL_CHESTPLATE, TFItems.KNIGHTMETAL_LEGGINGS, TFItems.KNIGHTMETAL_BOOTS)
+        ArmorRenderer.register(PhantomArmorRenderer, TFItems.PHANTOM_HELMET, TFItems.PHANTOM_CHESTPLATE)
 
         val cutoutBlocks = listOf(
             TFBlocks.KNIGHTMETAL_BLOCK, TFBlocks.ANTIBUILT_BLOCK,
@@ -54,5 +83,40 @@ object TwilightForestClient : ClientModInitializer {
 
         EntityModelLayerRegistry.registerModelLayer(TinyBirdModel.TINY_BIRD, TinyBirdModel::getTexturedModelData)
         EntityRendererRegistry.register(TFEntities.TINY_BIRD, ::TinyBirdRenderer)
+        EntityRendererRegistry.register(TFEntities.TINY_EGG, ::FlyingItemEntityRenderer)
+
+        EntityModelLayerRegistry.registerModelLayer(WildDeerModel.WILD_DEER, WildDeerModel::getTexturedModelData)
+        EntityRendererRegistry.register(TFEntities.WILD_DEER, ::WildDeerRenderer)
+
+        EntityRendererRegistry.register(TFEntities.TOWERWOOD_BORER, ::TowerwoodBorerRenderer)
+
+        EntityModelLayerRegistry.registerModelLayer(SquirrelModel.SQUIRREL, SquirrelModel::getTexturedModelData)
+        EntityRendererRegistry.register(TFEntities.SQUIRREL, ::SquirrelRenderer)
+
+        EntityRendererRegistry.register(TFEntities.MAZE_SLIME, ::MazeSlimeRenderer)
+
+        EntityRendererRegistry.register(TFEntities.CARMINITE_BROODLING, ::CarminiteBroodlingRenderer)
+
+        EntityRendererRegistry.register(TFEntities.KING_SPIDER, ::KingSpiderRenderer)
+
+        EntityModelLayerRegistry.registerModelLayer(SkeletonDruidModel.SKELETON_DRUID, SkeletonDruidModel::getTexturedModelData)
+        EntityRendererRegistry.register(TFEntities.SKELETON_DRUID, ::SkeletonDruidRenderer)
+        EntityRendererRegistry.register(TFEntities.NATURE_BOLT, ::NatureBoltEntityRenderer)
+
+        EntityRendererRegistry.register(TFEntities.HEDGE_SPIDER, ::HedgeSpiderRenderer)
+
+        EntityRendererRegistry.register(TFEntities.SWARM_SPIDER, ::SwarmSpiderRenderer)
+
+        EntityRendererRegistry.register(TFEntities.MIST_WOLF, ::MistWolfRenderer)
+
+        EntityRendererRegistry.register(TFEntities.WINTER_WOLF, ::WinterWolfRenderer)
+
+        EntityRendererRegistry.register(TFEntities.CARMINITE_GHAST_GUARD, ::CarminiteGhastGuardRenderer)
+        EntityRendererRegistry.register(TFEntities.CARMINITE_GHASTLING, ::CarminiteGhastlingRenderer)
+
+        EntityRendererRegistry.register(TFEntities.KNIGHT_PHANTOM, ::KnightPhantomRenderer)
+
+        EntityModelLayerRegistry.registerModelLayer(BighornSheepModel.BIGHORN_SHEEP, BighornSheepModel::getTexturedModelData)
+        EntityRendererRegistry.register(TFEntities.BIGHORN_SHEEP, ::BighornSheepRenderer)
     }
 }

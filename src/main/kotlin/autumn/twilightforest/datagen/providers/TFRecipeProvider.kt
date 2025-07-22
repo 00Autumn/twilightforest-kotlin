@@ -10,6 +10,11 @@ import net.minecraft.data.recipe.RecipeExporter
 import net.minecraft.data.recipe.RecipeGenerator
 import net.minecraft.item.ItemConvertible
 import net.minecraft.item.Items
+import net.minecraft.recipe.AbstractCookingRecipe
+import net.minecraft.recipe.CampfireCookingRecipe
+import net.minecraft.recipe.RecipeSerializer
+import net.minecraft.recipe.SmeltingRecipe
+import net.minecraft.recipe.SmokingRecipe
 import net.minecraft.recipe.book.RecipeCategory
 import net.minecraft.registry.RegistryKey
 import net.minecraft.registry.RegistryKeys
@@ -24,6 +29,15 @@ class TFRecipeProvider(output: FabricDataOutput, registriesFuture: CompletableFu
     ): RecipeGenerator? {
         return object : RecipeGenerator(p0, p1) {
             override fun generate() {
+                //FOOD
+                offerFoodCookingRecipe("furnace", RecipeSerializer.SMELTING, ::SmeltingRecipe, 200, TFItems.RAW_VENISON, TFItems.COOKED_VENISON, 0.35F)
+                offerFoodCookingRecipe("smoker", RecipeSerializer.SMOKING, ::SmokingRecipe, 100, TFItems.RAW_VENISON, TFItems.COOKED_VENISON, 0.35F)
+                offerFoodCookingRecipe("campfire", RecipeSerializer.CAMPFIRE_COOKING, ::CampfireCookingRecipe, 600, TFItems.RAW_VENISON, TFItems.COOKED_VENISON, 0.35F)
+
+                offerFoodCookingRecipe("furnace", RecipeSerializer.SMELTING, ::SmeltingRecipe, 200, TFItems.RAW_MEEF, TFItems.COOKED_MEEF, 0.35F)
+                offerFoodCookingRecipe("smoker", RecipeSerializer.SMOKING, ::SmokingRecipe, 100, TFItems.RAW_MEEF, TFItems.COOKED_MEEF, 0.35F)
+                offerFoodCookingRecipe("campfire", RecipeSerializer.CAMPFIRE_COOKING, ::CampfireCookingRecipe, 600, TFItems.RAW_MEEF, TFItems.COOKED_MEEF, 0.35F)
+
                 // NAGA SET
                 createShaped(RecipeCategory.COMBAT, TFItems.NAGA_LEGGINGS, 1)
                     .pattern("NNN")

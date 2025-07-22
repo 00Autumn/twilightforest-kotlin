@@ -1,7 +1,14 @@
 package autumn.twilightforest.world.biome
 
 import autumn.twilightforest.TwilightForest
+import autumn.twilightforest.init.entity.TFEntities
+import autumn.twilightforest.world.feature.TFPlacedFeatures
+import net.minecraft.block.Block
+import net.minecraft.entity.EntityType
+import net.minecraft.entity.SpawnGroup
+import net.minecraft.entity.passive.ChickenEntity
 import net.minecraft.registry.Registerable
+import net.minecraft.registry.RegistryEntryLookup
 import net.minecraft.registry.RegistryKey
 import net.minecraft.registry.RegistryKeys
 import net.minecraft.util.Identifier
@@ -9,19 +16,25 @@ import net.minecraft.world.biome.Biome
 import net.minecraft.world.biome.BiomeEffects
 import net.minecraft.world.biome.GenerationSettings
 import net.minecraft.world.biome.SpawnSettings
+import net.minecraft.world.gen.GenerationStep
+import net.minecraft.world.gen.feature.PlacedFeature
+import net.minecraft.world.gen.feature.PlacedFeatures
 
 object TFBiomes {
+
     val FOREST_KEY = registerKey("forest_key")
     val DARK_FOREST_KEY = registerKey("dark_forest_key")
     val ENCHANTED_FOREST_KEY = registerKey("enchanted_forest_key")
 
     fun bootstrap(context: Registerable<Biome>) {
-        register(context, FOREST_KEY, createForestBiome())
+        var placedFeatures = context.getRegistryLookup(RegistryKeys.PLACED_FEATURE)
+
+        register(context, FOREST_KEY, createForestBiome(placedFeatures))
         register(context, DARK_FOREST_KEY, createDarkForestBiome())
         register(context, ENCHANTED_FOREST_KEY, createEnchantedForestBiome())
     }
 
-    fun createForestBiome(): Biome {
+    fun createForestBiome(placedFeatures: RegistryEntryLookup<PlacedFeature>): Biome {
         return Biome.Builder()
             .temperature(0.5f)
             .downfall(0.5f)
@@ -37,10 +50,30 @@ object TFBiomes {
                     .build()
             )
             .spawnSettings(
-                SpawnSettings.Builder().build()
+                SpawnSettings.Builder()
+                    .creatureSpawnProbability(0.15F)
+                    .spawn(SpawnGroup.CREATURE, 10, SpawnSettings.SpawnEntry(EntityType.CHICKEN, 4, 4))
+                    .spawn(SpawnGroup.CREATURE, 15, SpawnSettings.SpawnEntry(TFEntities.WILD_DEER, 4, 5))
+                    .spawn(SpawnGroup.CREATURE, 5, SpawnSettings.SpawnEntry(EntityType.WOLF, 4, 4))
+                    .spawn(SpawnGroup.CREATURE, 15, SpawnSettings.SpawnEntry(TFEntities.TINY_BIRD, 4, 8))
+                    .spawn(SpawnGroup.CREATURE, 10, SpawnSettings.SpawnEntry(TFEntities.DWARF_RABBIT, 4, 5))
+                    .build()
             )
             .generationSettings(
-                GenerationSettings.Builder().build()
+                GenerationSettings.Builder()
+                    .feature(GenerationStep.Feature.LOCAL_MODIFICATIONS, placedFeatures.getOrThrow(RegistryKey.of(RegistryKeys.PLACED_FEATURE, Identifier.ofVanilla("disk_sand"))))
+                    .feature(GenerationStep.Feature.LOCAL_MODIFICATIONS, placedFeatures.getOrThrow(RegistryKey.of(RegistryKeys.PLACED_FEATURE, Identifier.ofVanilla("disk_clay"))))
+                    .feature(GenerationStep.Feature.LOCAL_MODIFICATIONS, placedFeatures.getOrThrow(RegistryKey.of(RegistryKeys.PLACED_FEATURE, Identifier.ofVanilla("disk_gravel"))))
+
+                    .feature(GenerationStep.Feature.VEGETAL_DECORATION, placedFeatures.getOrThrow(RegistryKey.of(RegistryKeys.PLACED_FEATURE, Identifier.ofVanilla("patch_tall_grass"))))
+                    .feature(GenerationStep.Feature.VEGETAL_DECORATION, placedFeatures.getOrThrow(RegistryKey.of(RegistryKeys.PLACED_FEATURE, Identifier.ofVanilla("patch_sugar_cane"))))
+                    .feature(GenerationStep.Feature.VEGETAL_DECORATION, placedFeatures.getOrThrow(RegistryKey.of(RegistryKeys.PLACED_FEATURE, Identifier.ofVanilla("patch_large_fern"))))
+                    .feature(GenerationStep.Feature.VEGETAL_DECORATION, placedFeatures.getOrThrow(TFPlacedFeatures.TWILIGHT_OAK_TREE_KEY))
+                    .feature(GenerationStep.Feature.VEGETAL_DECORATION, placedFeatures.getOrThrow(TFPlacedFeatures.LARGE_TWILIGHT_OAK_TREE_KEY))
+                    .feature(GenerationStep.Feature.VEGETAL_DECORATION, placedFeatures.getOrThrow(TFPlacedFeatures.CANOPY_TREE_KEY))
+
+                    .feature(GenerationStep.Feature.TOP_LAYER_MODIFICATION, placedFeatures.getOrThrow(RegistryKey.of(RegistryKeys.PLACED_FEATURE, Identifier.ofVanilla("freeze_top_layer"))))
+                    .build()
             )
             .build()
     }

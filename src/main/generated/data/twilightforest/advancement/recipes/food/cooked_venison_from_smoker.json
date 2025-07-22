@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_raw_venison": {
+      "conditions": {
+        "items": [
+          {
+            "items": "twilightforest:raw_venison"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "twilightforest:cooked_venison_from_smoker"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_raw_venison"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "twilightforest:cooked_venison_from_smoker"
+    ]
+  }
+}

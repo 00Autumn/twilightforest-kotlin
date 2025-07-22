@@ -1,0 +1,772 @@
+{
+  "variants": {
+    "north=false,east=false,south=false,west=false,north_east=false,north_west=false,south_east=false,south_west=false": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet"
+    },
+    "north=false,east=false,south=false,west=false,north_east=true,north_west=false,south_east=false,south_west=false": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet"
+    },
+    "north=false,east=false,south=false,west=false,north_east=false,north_west=true,south_east=false,south_west=false": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet"
+    },
+    "north=false,east=false,south=false,west=false,north_east=true,north_west=true,south_east=false,south_west=false": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet"
+    },
+    "north=false,east=false,south=false,west=false,north_east=false,north_west=false,south_east=true,south_west=false": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet"
+    },
+    "north=false,east=false,south=false,west=false,north_east=true,north_west=false,south_east=true,south_west=false": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet"
+    },
+    "north=false,east=false,south=false,west=false,north_east=false,north_west=true,south_east=true,south_west=false": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet"
+    },
+    "north=false,east=false,south=false,west=false,north_east=true,north_west=true,south_east=true,south_west=false": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet"
+    },
+    "north=false,east=false,south=false,west=false,north_east=false,north_west=false,south_east=false,south_west=true": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet"
+    },
+    "north=false,east=false,south=false,west=false,north_east=true,north_west=false,south_east=false,south_west=true": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet"
+    },
+    "north=false,east=false,south=false,west=false,north_east=false,north_west=true,south_east=false,south_west=true": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet"
+    },
+    "north=false,east=false,south=false,west=false,north_east=true,north_west=true,south_east=false,south_west=true": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet"
+    },
+    "north=false,east=false,south=false,west=false,north_east=false,north_west=false,south_east=true,south_west=true": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet"
+    },
+    "north=false,east=false,south=false,west=false,north_east=true,north_west=false,south_east=true,south_west=true": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet"
+    },
+    "north=false,east=false,south=false,west=false,north_east=false,north_west=true,south_east=true,south_west=true": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet"
+    },
+    "north=false,east=false,south=false,west=false,north_east=true,north_west=true,south_east=true,south_west=true": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet"
+    },
+    "north=true,east=false,south=false,west=false,north_east=false,north_west=false,south_east=false,south_west=false": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_n"
+    },
+    "north=true,east=false,south=false,west=false,north_east=true,north_west=false,south_east=false,south_west=false": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_n"
+    },
+    "north=true,east=false,south=false,west=false,north_east=false,north_west=true,south_east=false,south_west=false": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_n"
+    },
+    "north=true,east=false,south=false,west=false,north_east=true,north_west=true,south_east=false,south_west=false": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_n"
+    },
+    "north=true,east=false,south=false,west=false,north_east=false,north_west=false,south_east=true,south_west=false": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_n"
+    },
+    "north=true,east=false,south=false,west=false,north_east=true,north_west=false,south_east=true,south_west=false": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_n"
+    },
+    "north=true,east=false,south=false,west=false,north_east=false,north_west=true,south_east=true,south_west=false": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_n"
+    },
+    "north=true,east=false,south=false,west=false,north_east=true,north_west=true,south_east=true,south_west=false": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_n"
+    },
+    "north=true,east=false,south=false,west=false,north_east=false,north_west=false,south_east=false,south_west=true": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_n"
+    },
+    "north=true,east=false,south=false,west=false,north_east=true,north_west=false,south_east=false,south_west=true": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_n"
+    },
+    "north=true,east=false,south=false,west=false,north_east=false,north_west=true,south_east=false,south_west=true": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_n"
+    },
+    "north=true,east=false,south=false,west=false,north_east=true,north_west=true,south_east=false,south_west=true": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_n"
+    },
+    "north=true,east=false,south=false,west=false,north_east=false,north_west=false,south_east=true,south_west=true": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_n"
+    },
+    "north=true,east=false,south=false,west=false,north_east=true,north_west=false,south_east=true,south_west=true": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_n"
+    },
+    "north=true,east=false,south=false,west=false,north_east=false,north_west=true,south_east=true,south_west=true": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_n"
+    },
+    "north=true,east=false,south=false,west=false,north_east=true,north_west=true,south_east=true,south_west=true": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_n"
+    },
+    "north=false,east=true,south=false,west=false,north_east=false,north_west=false,south_east=false,south_west=false": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_e"
+    },
+    "north=false,east=true,south=false,west=false,north_east=true,north_west=false,south_east=false,south_west=false": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_e"
+    },
+    "north=false,east=true,south=false,west=false,north_east=false,north_west=true,south_east=false,south_west=false": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_e"
+    },
+    "north=false,east=true,south=false,west=false,north_east=true,north_west=true,south_east=false,south_west=false": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_e"
+    },
+    "north=false,east=true,south=false,west=false,north_east=false,north_west=false,south_east=true,south_west=false": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_e"
+    },
+    "north=false,east=true,south=false,west=false,north_east=true,north_west=false,south_east=true,south_west=false": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_e"
+    },
+    "north=false,east=true,south=false,west=false,north_east=false,north_west=true,south_east=true,south_west=false": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_e"
+    },
+    "north=false,east=true,south=false,west=false,north_east=true,north_west=true,south_east=true,south_west=false": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_e"
+    },
+    "north=false,east=true,south=false,west=false,north_east=false,north_west=false,south_east=false,south_west=true": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_e"
+    },
+    "north=false,east=true,south=false,west=false,north_east=true,north_west=false,south_east=false,south_west=true": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_e"
+    },
+    "north=false,east=true,south=false,west=false,north_east=false,north_west=true,south_east=false,south_west=true": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_e"
+    },
+    "north=false,east=true,south=false,west=false,north_east=true,north_west=true,south_east=false,south_west=true": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_e"
+    },
+    "north=false,east=true,south=false,west=false,north_east=false,north_west=false,south_east=true,south_west=true": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_e"
+    },
+    "north=false,east=true,south=false,west=false,north_east=true,north_west=false,south_east=true,south_west=true": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_e"
+    },
+    "north=false,east=true,south=false,west=false,north_east=false,north_west=true,south_east=true,south_west=true": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_e"
+    },
+    "north=false,east=true,south=false,west=false,north_east=true,north_west=true,south_east=true,south_west=true": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_e"
+    },
+    "north=false,east=false,south=true,west=false,north_east=false,north_west=false,south_east=false,south_west=false": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_s"
+    },
+    "north=false,east=false,south=true,west=false,north_east=true,north_west=false,south_east=false,south_west=false": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_s"
+    },
+    "north=false,east=false,south=true,west=false,north_east=false,north_west=true,south_east=false,south_west=false": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_s"
+    },
+    "north=false,east=false,south=true,west=false,north_east=true,north_west=true,south_east=false,south_west=false": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_s"
+    },
+    "north=false,east=false,south=true,west=false,north_east=false,north_west=false,south_east=true,south_west=false": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_s"
+    },
+    "north=false,east=false,south=true,west=false,north_east=true,north_west=false,south_east=true,south_west=false": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_s"
+    },
+    "north=false,east=false,south=true,west=false,north_east=false,north_west=true,south_east=true,south_west=false": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_s"
+    },
+    "north=false,east=false,south=true,west=false,north_east=true,north_west=true,south_east=true,south_west=false": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_s"
+    },
+    "north=false,east=false,south=true,west=false,north_east=false,north_west=false,south_east=false,south_west=true": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_s"
+    },
+    "north=false,east=false,south=true,west=false,north_east=true,north_west=false,south_east=false,south_west=true": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_s"
+    },
+    "north=false,east=false,south=true,west=false,north_east=false,north_west=true,south_east=false,south_west=true": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_s"
+    },
+    "north=false,east=false,south=true,west=false,north_east=true,north_west=true,south_east=false,south_west=true": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_s"
+    },
+    "north=false,east=false,south=true,west=false,north_east=false,north_west=false,south_east=true,south_west=true": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_s"
+    },
+    "north=false,east=false,south=true,west=false,north_east=true,north_west=false,south_east=true,south_west=true": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_s"
+    },
+    "north=false,east=false,south=true,west=false,north_east=false,north_west=true,south_east=true,south_west=true": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_s"
+    },
+    "north=false,east=false,south=true,west=false,north_east=true,north_west=true,south_east=true,south_west=true": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_s"
+    },
+    "north=false,east=false,south=false,west=true,north_east=false,north_west=false,south_east=false,south_west=false": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_w"
+    },
+    "north=false,east=false,south=false,west=true,north_east=true,north_west=false,south_east=false,south_west=false": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_w"
+    },
+    "north=false,east=false,south=false,west=true,north_east=false,north_west=true,south_east=false,south_west=false": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_w"
+    },
+    "north=false,east=false,south=false,west=true,north_east=true,north_west=true,south_east=false,south_west=false": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_w"
+    },
+    "north=false,east=false,south=false,west=true,north_east=false,north_west=false,south_east=true,south_west=false": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_w"
+    },
+    "north=false,east=false,south=false,west=true,north_east=true,north_west=false,south_east=true,south_west=false": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_w"
+    },
+    "north=false,east=false,south=false,west=true,north_east=false,north_west=true,south_east=true,south_west=false": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_w"
+    },
+    "north=false,east=false,south=false,west=true,north_east=true,north_west=true,south_east=true,south_west=false": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_w"
+    },
+    "north=false,east=false,south=false,west=true,north_east=false,north_west=false,south_east=false,south_west=true": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_w"
+    },
+    "north=false,east=false,south=false,west=true,north_east=true,north_west=false,south_east=false,south_west=true": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_w"
+    },
+    "north=false,east=false,south=false,west=true,north_east=false,north_west=true,south_east=false,south_west=true": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_w"
+    },
+    "north=false,east=false,south=false,west=true,north_east=true,north_west=true,south_east=false,south_west=true": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_w"
+    },
+    "north=false,east=false,south=false,west=true,north_east=false,north_west=false,south_east=true,south_west=true": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_w"
+    },
+    "north=false,east=false,south=false,west=true,north_east=true,north_west=false,south_east=true,south_west=true": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_w"
+    },
+    "north=false,east=false,south=false,west=true,north_east=false,north_west=true,south_east=true,south_west=true": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_w"
+    },
+    "north=false,east=false,south=false,west=true,north_east=true,north_west=true,south_east=true,south_west=true": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_w"
+    },
+    "north=true,east=true,south=false,west=false,north_east=false,north_west=false,south_east=false,south_west=false": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_n_e"
+    },
+    "north=true,east=false,south=true,west=false,north_east=false,north_west=false,south_east=false,south_west=false": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_n_s"
+    },
+    "north=true,east=false,south=false,west=true,north_east=false,north_west=false,south_east=false,south_west=false": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_n_w"
+    },
+    "north=false,east=true,south=true,west=false,north_east=false,north_west=false,south_east=false,south_west=false": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_e_s"
+    },
+    "north=false,east=true,south=false,west=true,north_east=false,north_west=false,south_east=false,south_west=false": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_e_w"
+    },
+    "north=false,east=false,south=true,west=true,north_east=false,north_west=false,south_east=false,south_west=false": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_s_w"
+    },
+    "north=false,east=true,south=false,west=true,north_east=false,north_west=false,south_east=false,south_west=true": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_e_w"
+    },
+    "north=false,east=true,south=false,west=true,north_east=false,north_west=false,south_east=true,south_west=false": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_e_w"
+    },
+    "north=false,east=true,south=false,west=true,north_east=false,north_west=false,south_east=true,south_west=true": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_e_w"
+    },
+    "north=false,east=true,south=false,west=true,north_east=false,north_west=true,south_east=false,south_west=false": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_e_w"
+    },
+    "north=false,east=true,south=false,west=true,north_east=false,north_west=true,south_east=false,south_west=true": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_e_w"
+    },
+    "north=false,east=true,south=false,west=true,north_east=false,north_west=true,south_east=true,south_west=false": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_e_w"
+    },
+    "north=false,east=true,south=false,west=true,north_east=false,north_west=true,south_east=true,south_west=true": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_e_w"
+    },
+    "north=false,east=true,south=false,west=true,north_east=true,north_west=false,south_east=false,south_west=false": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_e_w"
+    },
+    "north=false,east=true,south=false,west=true,north_east=true,north_west=false,south_east=false,south_west=true": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_e_w"
+    },
+    "north=false,east=true,south=false,west=true,north_east=true,north_west=false,south_east=true,south_west=false": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_e_w"
+    },
+    "north=false,east=true,south=false,west=true,north_east=true,north_west=false,south_east=true,south_west=true": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_e_w"
+    },
+    "north=false,east=true,south=false,west=true,north_east=true,north_west=true,south_east=false,south_west=false": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_e_w"
+    },
+    "north=false,east=true,south=false,west=true,north_east=true,north_west=true,south_east=false,south_west=true": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_e_w"
+    },
+    "north=false,east=true,south=false,west=true,north_east=true,north_west=true,south_east=true,south_west=false": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_e_w"
+    },
+    "north=false,east=true,south=false,west=true,north_east=true,north_west=true,south_east=true,south_west=true": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_e_w"
+    },
+    "north=true,east=false,south=true,west=false,north_east=false,north_west=false,south_east=false,south_west=true": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_n_s"
+    },
+    "north=true,east=false,south=true,west=false,north_east=false,north_west=false,south_east=true,south_west=false": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_n_s"
+    },
+    "north=true,east=false,south=true,west=false,north_east=false,north_west=false,south_east=true,south_west=true": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_n_s"
+    },
+    "north=true,east=false,south=true,west=false,north_east=false,north_west=true,south_east=false,south_west=false": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_n_s"
+    },
+    "north=true,east=false,south=true,west=false,north_east=false,north_west=true,south_east=false,south_west=true": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_n_s"
+    },
+    "north=true,east=false,south=true,west=false,north_east=false,north_west=true,south_east=true,south_west=false": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_n_s"
+    },
+    "north=true,east=false,south=true,west=false,north_east=false,north_west=true,south_east=true,south_west=true": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_n_s"
+    },
+    "north=true,east=false,south=true,west=false,north_east=true,north_west=false,south_east=false,south_west=false": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_n_s"
+    },
+    "north=true,east=false,south=true,west=false,north_east=true,north_west=false,south_east=false,south_west=true": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_n_s"
+    },
+    "north=true,east=false,south=true,west=false,north_east=true,north_west=false,south_east=true,south_west=false": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_n_s"
+    },
+    "north=true,east=false,south=true,west=false,north_east=true,north_west=false,south_east=true,south_west=true": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_n_s"
+    },
+    "north=true,east=false,south=true,west=false,north_east=true,north_west=true,south_east=false,south_west=false": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_n_s"
+    },
+    "north=true,east=false,south=true,west=false,north_east=true,north_west=true,south_east=false,south_west=true": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_n_s"
+    },
+    "north=true,east=false,south=true,west=false,north_east=true,north_west=true,south_east=true,south_west=false": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_n_s"
+    },
+    "north=true,east=false,south=true,west=false,north_east=true,north_west=true,south_east=true,south_west=true": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_n_s"
+    },
+    "north=true,east=false,south=true,west=true,north_east=false,north_west=false,south_east=false,south_west=false": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_n_s_w"
+    },
+    "north=true,east=false,south=true,west=true,north_east=true,north_west=false,south_east=false,south_west=false": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_n_s_w"
+    },
+    "north=true,east=false,south=true,west=true,north_east=false,north_west=false,south_east=true,south_west=false": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_n_s_w"
+    },
+    "north=true,east=false,south=true,west=true,north_east=true,north_west=false,south_east=true,south_west=false": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_n_s_w"
+    },
+    "north=true,east=false,south=true,west=true,north_east=false,north_west=true,south_east=false,south_west=false": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_n_s_w_nw"
+    },
+    "north=true,east=false,south=true,west=true,north_east=true,north_west=true,south_east=false,south_west=false": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_n_s_w_nw"
+    },
+    "north=true,east=false,south=true,west=true,north_east=false,north_west=true,south_east=true,south_west=false": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_n_s_w_nw"
+    },
+    "north=true,east=false,south=true,west=true,north_east=true,north_west=true,south_east=true,south_west=false": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_n_s_w_nw"
+    },
+    "north=true,east=false,south=true,west=true,north_east=false,north_west=false,south_east=false,south_west=true": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_n_s_w_sw"
+    },
+    "north=true,east=false,south=true,west=true,north_east=true,north_west=false,south_east=false,south_west=true": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_n_s_w_sw"
+    },
+    "north=true,east=false,south=true,west=true,north_east=false,north_west=false,south_east=true,south_west=true": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_n_s_w_sw"
+    },
+    "north=true,east=false,south=true,west=true,north_east=true,north_west=false,south_east=true,south_west=true": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_n_s_w_sw"
+    },
+    "north=true,east=false,south=true,west=true,north_east=false,north_west=true,south_east=false,south_west=true": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_n_s_w_nw_sw"
+    },
+    "north=true,east=false,south=true,west=true,north_east=true,north_west=true,south_east=false,south_west=true": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_n_s_w_nw_sw"
+    },
+    "north=true,east=false,south=true,west=true,north_east=false,north_west=true,south_east=true,south_west=true": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_n_s_w_nw_sw"
+    },
+    "north=true,east=false,south=true,west=true,north_east=true,north_west=true,south_east=true,south_west=true": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_n_s_w_nw_sw"
+    },
+    "north=true,east=true,south=true,west=false,north_east=false,north_west=false,south_east=false,south_west=false": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_n_e_s"
+    },
+    "north=true,east=true,south=true,west=false,north_east=false,north_west=true,south_east=false,south_west=false": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_n_e_s"
+    },
+    "north=true,east=true,south=true,west=false,north_east=false,north_west=false,south_east=false,south_west=true": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_n_e_s"
+    },
+    "north=true,east=true,south=true,west=false,north_east=false,north_west=true,south_east=false,south_west=true": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_n_e_s"
+    },
+    "north=true,east=true,south=true,west=false,north_east=true,north_west=false,south_east=false,south_west=false": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_n_e_s_ne"
+    },
+    "north=true,east=true,south=true,west=false,north_east=true,north_west=true,south_east=false,south_west=false": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_n_e_s_ne"
+    },
+    "north=true,east=true,south=true,west=false,north_east=false,north_west=false,south_east=true,south_west=false": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_n_e_s_se"
+    },
+    "north=true,east=true,south=true,west=false,north_east=false,north_west=true,south_east=true,south_west=false": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_n_e_s_se"
+    },
+    "north=true,east=true,south=true,west=false,north_east=true,north_west=false,south_east=true,south_west=false": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_n_e_s_ne_se"
+    },
+    "north=true,east=true,south=true,west=false,north_east=true,north_west=true,south_east=true,south_west=false": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_n_e_s_ne_se"
+    },
+    "north=true,east=true,south=true,west=false,north_east=true,north_west=false,south_east=false,south_west=true": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_n_e_s_ne"
+    },
+    "north=true,east=true,south=true,west=false,north_east=true,north_west=true,south_east=false,south_west=true": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_n_e_s_ne"
+    },
+    "north=true,east=true,south=true,west=false,north_east=true,north_west=false,south_east=true,south_west=true": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_n_e_s_ne_se"
+    },
+    "north=true,east=true,south=true,west=false,north_east=true,north_west=true,south_east=true,south_west=true": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_n_e_s_ne_se"
+    },
+    "north=true,east=true,south=true,west=false,north_east=false,north_west=true,south_east=true,south_west=true": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_n_e_s_se"
+    },
+    "north=false,east=true,south=true,west=true,north_east=false,north_west=false,south_east=false,south_west=false": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_e_s_w"
+    },
+    "north=false,east=true,south=true,west=true,north_east=false,north_west=false,south_east=true,south_west=false": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_e_s_w_se"
+    },
+    "north=false,east=true,south=true,west=true,north_east=false,north_west=false,south_east=false,south_west=true": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_e_s_w_sw"
+    },
+    "north=false,east=true,south=true,west=true,north_east=false,north_west=false,south_east=true,south_west=true": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_e_s_w_se_sw"
+    },
+    "north=false,east=true,south=true,west=true,north_east=true,north_west=false,south_east=false,south_west=false": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_e_s_w"
+    },
+    "north=false,east=true,south=true,west=true,north_east=true,north_west=false,south_east=true,south_west=false": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_e_s_w_se"
+    },
+    "north=false,east=true,south=true,west=true,north_east=true,north_west=false,south_east=false,south_west=true": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_e_s_w_sw"
+    },
+    "north=false,east=true,south=true,west=true,north_east=true,north_west=false,south_east=true,south_west=true": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_e_s_w_se_sw"
+    },
+    "north=false,east=true,south=true,west=true,north_east=false,north_west=true,south_east=false,south_west=false": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_e_s_w"
+    },
+    "north=false,east=true,south=true,west=true,north_east=false,north_west=true,south_east=true,south_west=false": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_e_s_w_se"
+    },
+    "north=false,east=true,south=true,west=true,north_east=false,north_west=true,south_east=false,south_west=true": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_e_s_w_sw"
+    },
+    "north=false,east=true,south=true,west=true,north_east=false,north_west=true,south_east=true,south_west=true": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_e_s_w_se_sw"
+    },
+    "north=false,east=true,south=true,west=true,north_east=true,north_west=true,south_east=false,south_west=false": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_e_s_w"
+    },
+    "north=false,east=true,south=true,west=true,north_east=true,north_west=true,south_east=true,south_west=false": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_e_s_w_se"
+    },
+    "north=false,east=true,south=true,west=true,north_east=true,north_west=true,south_east=false,south_west=true": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_e_s_w_sw"
+    },
+    "north=false,east=true,south=true,west=true,north_east=true,north_west=true,south_east=true,south_west=true": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_e_s_w_se_sw"
+    },
+    "north=true,east=true,south=false,west=true,north_east=false,north_west=false,south_east=false,south_west=false": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_n_e_w"
+    },
+    "north=true,east=true,south=false,west=true,north_east=false,north_west=false,south_east=true,south_west=false": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_n_e_w"
+    },
+    "north=true,east=true,south=false,west=true,north_east=false,north_west=false,south_east=false,south_west=true": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_n_e_w"
+    },
+    "north=true,east=true,south=false,west=true,north_east=false,north_west=false,south_east=true,south_west=true": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_n_e_w"
+    },
+    "north=true,east=true,south=false,west=true,north_east=true,north_west=false,south_east=false,south_west=false": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_n_e_w_ne"
+    },
+    "north=true,east=true,south=false,west=true,north_east=false,north_west=true,south_east=false,south_west=false": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_n_e_w_nw"
+    },
+    "north=true,east=true,south=false,west=true,north_east=true,north_west=true,south_east=false,south_west=false": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_n_e_w_ne_nw"
+    },
+    "north=true,east=true,south=false,west=true,north_east=true,north_west=false,south_east=false,south_west=true": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_n_e_w_ne"
+    },
+    "north=true,east=true,south=false,west=true,north_east=true,north_west=false,south_east=true,south_west=false": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_n_e_w_ne"
+    },
+    "north=true,east=true,south=false,west=true,north_east=true,north_west=false,south_east=true,south_west=true": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_n_e_w_ne"
+    },
+    "north=true,east=true,south=false,west=true,north_east=false,north_west=true,south_east=true,south_west=false": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_n_e_w_nw"
+    },
+    "north=true,east=true,south=false,west=true,north_east=false,north_west=true,south_east=false,south_west=true": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_n_e_w_nw"
+    },
+    "north=true,east=true,south=false,west=true,north_east=false,north_west=true,south_east=true,south_west=true": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_n_e_w_nw"
+    },
+    "north=true,east=true,south=false,west=true,north_east=true,north_west=true,south_east=true,south_west=false": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_n_e_w_ne_nw"
+    },
+    "north=true,east=true,south=false,west=true,north_east=true,north_west=true,south_east=false,south_west=true": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_n_e_w_ne_nw"
+    },
+    "north=true,east=true,south=false,west=true,north_east=true,north_west=true,south_east=true,south_west=true": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_n_e_w_ne_nw"
+    },
+    "north=true,east=true,south=true,west=true,north_east=false,north_west=false,south_east=false,south_west=false": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_n_e_s_w"
+    },
+    "north=true,east=true,south=true,west=true,north_east=false,north_west=false,south_east=false,south_west=true": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_n_e_s_w_sw"
+    },
+    "north=true,east=true,south=true,west=true,north_east=false,north_west=false,south_east=true,south_west=false": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_n_e_s_w_se"
+    },
+    "north=true,east=true,south=true,west=true,north_east=false,north_west=false,south_east=true,south_west=true": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_n_e_s_w_se_sw"
+    },
+    "north=true,east=true,south=true,west=true,north_east=false,north_west=true,south_east=false,south_west=false": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_n_e_s_w_nw"
+    },
+    "north=true,east=true,south=true,west=true,north_east=false,north_west=true,south_east=false,south_west=true": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_n_e_s_w_nw_sw"
+    },
+    "north=true,east=true,south=true,west=true,north_east=false,north_west=true,south_east=true,south_west=false": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_n_e_s_w_nw_se"
+    },
+    "north=true,east=true,south=true,west=true,north_east=false,north_west=true,south_east=true,south_west=true": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_n_e_s_w_nw_se_sw"
+    },
+    "north=true,east=true,south=true,west=true,north_east=true,north_west=false,south_east=false,south_west=false": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_n_e_s_w_ne"
+    },
+    "north=true,east=true,south=true,west=true,north_east=true,north_west=false,south_east=false,south_west=true": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_n_e_s_w_ne_sw"
+    },
+    "north=true,east=true,south=true,west=true,north_east=true,north_west=false,south_east=true,south_west=false": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_n_e_s_w_ne_se"
+    },
+    "north=true,east=true,south=true,west=true,north_east=true,north_west=false,south_east=true,south_west=true": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_n_e_s_w_ne_se_sw"
+    },
+    "north=true,east=true,south=true,west=true,north_east=true,north_west=true,south_east=false,south_west=false": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_n_e_s_w_ne_nw"
+    },
+    "north=true,east=true,south=true,west=true,north_east=true,north_west=true,south_east=false,south_west=true": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_n_e_s_w_ne_nw_sw"
+    },
+    "north=true,east=true,south=true,west=true,north_east=true,north_west=true,south_east=true,south_west=false": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_n_e_s_w_ne_nw_se"
+    },
+    "north=true,east=true,south=true,west=true,north_east=true,north_west=true,south_east=true,south_west=true": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_n_e_s_w_ne_nw_se_sw"
+    },
+    "north=true,east=true,south=false,west=false,north_east=true,north_west=false,south_east=false,south_west=false": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_n_e_ne"
+    },
+    "north=true,east=false,south=false,west=true,north_east=false,north_west=true,south_east=false,south_west=false": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_n_w_nw"
+    },
+    "north=false,east=true,south=true,west=false,north_east=false,north_west=false,south_east=true,south_west=false": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_e_s_se"
+    },
+    "north=false,east=false,south=true,west=true,north_east=false,north_west=false,south_east=false,south_west=true": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_s_w_sw"
+    },
+    "north=true,east=true,south=false,west=false,north_east=true,north_west=true,south_east=true,south_west=true": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_n_e_ne"
+    },
+    "north=true,east=true,south=false,west=false,north_east=true,north_west=true,south_east=true,south_west=false": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_n_e_ne"
+    },
+    "north=true,east=true,south=false,west=false,north_east=true,north_west=true,south_east=false,south_west=true": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_n_e_ne"
+    },
+    "north=true,east=true,south=false,west=false,north_east=true,north_west=true,south_east=false,south_west=false": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_n_e_ne"
+    },
+    "north=true,east=true,south=false,west=false,north_east=true,north_west=false,south_east=false,south_west=true": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_n_e_ne"
+    },
+    "north=true,east=true,south=false,west=false,north_east=false,north_west=true,south_east=true,south_west=true": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_n_e"
+    },
+    "north=true,east=true,south=false,west=false,north_east=false,north_west=true,south_east=true,south_west=false": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_n_e"
+    },
+    "north=true,east=true,south=false,west=false,north_east=false,north_west=true,south_east=false,south_west=true": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_n_e"
+    },
+    "north=true,east=true,south=false,west=false,north_east=false,north_west=true,south_east=false,south_west=false": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_n_e"
+    },
+    "north=true,east=true,south=false,west=false,north_east=false,north_west=false,south_east=true,south_west=true": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_n_e"
+    },
+    "north=true,east=true,south=true,west=false,north_east=false,north_west=false,south_east=true,south_west=true": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_n_e_s_se"
+    },
+    "north=true,east=true,south=false,west=false,north_east=true,north_west=false,south_east=true,south_west=true": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_n_e_ne"
+    },
+    "north=true,east=true,south=false,west=false,north_east=true,north_west=false,south_east=true,south_west=false": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_n_e_ne"
+    },
+    "north=true,east=true,south=false,west=false,north_east=false,north_west=false,south_east=true,south_west=false": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_n_e_s_se"
+    },
+    "north=true,east=true,south=false,west=false,north_east=false,north_west=false,south_east=false,south_west=true": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_n_e_s"
+    },
+    "north=false,east=true,south=true,west=false,north_east=true,north_west=true,south_east=true,south_west=true": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_e_s_se"
+    },
+    "north=false,east=true,south=true,west=false,north_east=true,north_west=true,south_east=true,south_west=false": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_e_s_se"
+    },
+    "north=false,east=true,south=true,west=false,north_east=true,north_west=true,south_east=false,south_west=true": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_e_s"
+    },
+    "north=false,east=true,south=true,west=false,north_east=true,north_west=true,south_east=false,south_west=false": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_e_s"
+    },
+    "north=false,east=true,south=true,west=false,north_east=true,north_west=false,south_east=true,south_west=true": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_e_s_se"
+    },
+    "north=false,east=true,south=true,west=false,north_east=true,north_west=false,south_east=true,south_west=false": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_e_s_se"
+    },
+    "north=false,east=true,south=true,west=false,north_east=true,north_west=false,south_east=false,south_west=true": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_e_s"
+    },
+    "north=false,east=true,south=true,west=false,north_east=true,north_west=false,south_east=false,south_west=false": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_e_s"
+    },
+    "north=false,east=true,south=true,west=false,north_east=false,north_west=true,south_east=true,south_west=true": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_e_s_se"
+    },
+    "north=false,east=true,south=true,west=false,north_east=false,north_west=true,south_east=true,south_west=false": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_e_s_se"
+    },
+    "north=false,east=true,south=true,west=false,north_east=false,north_west=true,south_east=false,south_west=true": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_e_s"
+    },
+    "north=false,east=true,south=true,west=false,north_east=false,north_west=true,south_east=false,south_west=false": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_e_s"
+    },
+    "north=false,east=true,south=true,west=false,north_east=false,north_west=false,south_east=true,south_west=true": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_e_s_se"
+    },
+    "north=false,east=true,south=true,west=false,north_east=false,north_west=false,south_east=false,south_west=true": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_e_s"
+    },
+    "north=true,east=false,south=false,west=true,north_east=true,north_west=true,south_east=true,south_west=true": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_n_w_nw"
+    },
+    "north=true,east=false,south=false,west=true,north_east=true,north_west=true,south_east=true,south_west=false": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_n_w_nw"
+    },
+    "north=true,east=false,south=false,west=true,north_east=true,north_west=true,south_east=false,south_west=true": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_n_w_nw"
+    },
+    "north=true,east=false,south=false,west=true,north_east=true,north_west=true,south_east=false,south_west=false": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_n_w_nw"
+    },
+    "north=true,east=false,south=false,west=true,north_east=true,north_west=false,south_east=true,south_west=true": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_n_w"
+    },
+    "north=true,east=false,south=false,west=true,north_east=true,north_west=false,south_east=true,south_west=false": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_n_w"
+    },
+    "north=true,east=false,south=false,west=true,north_east=true,north_west=false,south_east=false,south_west=true": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_n_w"
+    },
+    "north=true,east=false,south=false,west=true,north_east=true,north_west=false,south_east=false,south_west=false": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_n_w"
+    },
+    "north=true,east=false,south=false,west=true,north_east=false,north_west=true,south_east=true,south_west=true": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_n_w_nw"
+    },
+    "north=true,east=false,south=false,west=true,north_east=false,north_west=true,south_east=true,south_west=false": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_n_w_nw"
+    },
+    "north=true,east=false,south=false,west=true,north_east=false,north_west=true,south_east=false,south_west=true": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_n_w_nw"
+    },
+    "north=true,east=false,south=false,west=true,north_east=false,north_west=false,south_east=true,south_west=true": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_n_w"
+    },
+    "north=true,east=false,south=false,west=true,north_east=false,north_west=false,south_east=true,south_west=false": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_n_w"
+    },
+    "north=true,east=false,south=false,west=true,north_east=false,north_west=false,south_east=false,south_west=true": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_n_w"
+    },
+    "north=false,east=false,south=true,west=true,north_east=true,north_west=true,south_east=true,south_west=true": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_s_w_sw"
+    },
+    "north=false,east=false,south=true,west=true,north_east=true,north_west=true,south_east=true,south_west=false": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_s_w"
+    },
+    "north=false,east=false,south=true,west=true,north_east=true,north_west=true,south_east=false,south_west=true": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_s_w_sw"
+    },
+    "north=false,east=false,south=true,west=true,north_east=true,north_west=true,south_east=false,south_west=false": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_s_w"
+    },
+    "north=false,east=false,south=true,west=true,north_east=true,north_west=false,south_east=true,south_west=true": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_s_w_sw"
+    },
+    "north=false,east=false,south=true,west=true,north_east=true,north_west=false,south_east=true,south_west=false": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_s_w"
+    },
+    "north=false,east=false,south=true,west=true,north_east=true,north_west=false,south_east=false,south_west=true": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_s_w_sw"
+    },
+    "north=false,east=false,south=true,west=true,north_east=true,north_west=false,south_east=false,south_west=false": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_s_w"
+    },
+    "north=false,east=false,south=true,west=true,north_east=false,north_west=true,south_east=true,south_west=true": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_s_w_sw"
+    },
+    "north=false,east=false,south=true,west=true,north_east=false,north_west=true,south_east=true,south_west=false": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_s_w"
+    },
+    "north=false,east=false,south=true,west=true,north_east=false,north_west=true,south_east=false,south_west=true": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_s_w_sw"
+    },
+    "north=false,east=false,south=true,west=true,north_east=false,north_west=true,south_east=false,south_west=false": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_s_w"
+    },
+    "north=false,east=false,south=true,west=true,north_east=false,north_west=false,south_east=true,south_west=true": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_s_w_sw"
+    },
+    "north=false,east=false,south=true,west=true,north_east=false,north_west=false,south_east=true,south_west=false": {
+      "model": "twilightforest:block/coronation_carpet/coronation_carpet_s_w"
+    }
+  }
+}

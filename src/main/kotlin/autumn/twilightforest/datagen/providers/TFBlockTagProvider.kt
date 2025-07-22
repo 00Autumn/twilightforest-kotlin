@@ -95,42 +95,152 @@ class TFBlockTagProvider(output: FabricDataOutput, registriesFuture: Completable
             TFBlocks.TWILIGHT_OAK_LOG,
             TFBlocks.STRIPPED_TWILIGHT_OAK_LOG,
             TFBlocks.TWILIGHT_OAK_WOOD,
-            TFBlocks.STRIPPED_TWILIGHT_OAK_WOOD
+            TFBlocks.STRIPPED_TWILIGHT_OAK_WOOD,
+            TFBlocks.CANOPY_LOG,
+            TFBlocks.STRIPPED_CANOPY_LOG,
+            TFBlocks.CANOPY_WOOD,
+            TFBlocks.STRIPPED_CANOPY_WOOD,
+            TFBlocks.TWILIGHT_MANGROVE_LOG,
+            TFBlocks.STRIPPED_TWILIGHT_MANGROVE_LOG,
+            TFBlocks.TWILIGHT_MANGROVE_WOOD,
+            TFBlocks.STRIPPED_TWILIGHT_MANGROVE_WOOD,
+            TFBlocks.TIME_LOG,
+            TFBlocks.STRIPPED_TIME_LOG,
+            TFBlocks.TIME_WOOD,
+            TFBlocks.STRIPPED_TIME_WOOD,
+            TFBlocks.TRANSFORMATION_LOG,
+            TFBlocks.STRIPPED_TRANSFORMATION_LOG,
+            TFBlocks.TRANSFORMATION_WOOD,
+            TFBlocks.STRIPPED_TRANSFORMATION_WOOD,
+            TFBlocks.MINING_LOG,
+            TFBlocks.STRIPPED_MINING_LOG,
+            TFBlocks.MINING_WOOD,
+            TFBlocks.STRIPPED_MINING_WOOD,
+            TFBlocks.SORTING_LOG,
+            TFBlocks.STRIPPED_SORTING_LOG,
+            TFBlocks.SORTING_WOOD,
+            TFBlocks.STRIPPED_SORTING_WOOD
         )
         valueLookupBuilder(BlockTags.LOGS_THAT_BURN)
             .addTag(TFBlockTags.TWILIGHT_FOREST_LOGS)
+        valueLookupBuilder(BlockTags.LOGS).add(
+            TFBlocks.DARK_LOG,
+            TFBlocks.STRIPPED_DARK_LOG,
+            TFBlocks.DARK_WOOD,
+            TFBlocks.STRIPPED_DARK_WOOD
+        )
+
         valueLookupBuilder(BlockTags.LEAVES).add(
-            TFBlocks.TWILIGHT_OAK_LEAVES
+            TFBlocks.TWILIGHT_OAK_LEAVES,
+            TFBlocks.RAINBOW_OAK_LEAVES,
+            TFBlocks.CANOPY_LEAVES,
+            TFBlocks.TWILIGHT_MANGROVE_LEAVES,
+            TFBlocks.DARK_LEAVES,
+            TFBlocks.TIME_LEAVES,
+            TFBlocks.TRANSFORMATION_LEAVES,
+            TFBlocks.MINING_LEAVES,
+            TFBlocks.SORTING_LEAVES
         )
         valueLookupBuilder(BlockTags.SAPLINGS).add(
-            TFBlocks.TWILIGHT_OAK_SAPLING
+            TFBlocks.TWILIGHT_OAK_SAPLING,
+            TFBlocks.RAINBOW_OAK_SAPLING,
+            TFBlocks.CANOPY_SAPLING,
+            TFBlocks.TWILIGHT_MANGROVE_SAPLING,
+            TFBlocks.DARK_SAPLING,
+            TFBlocks.TIME_SAPLING,
+            TFBlocks.TRANSFORMATION_SAPLING,
+            TFBlocks.MINING_SAPLING,
+            TFBlocks.SORTING_SAPLING
         )
         valueLookupBuilder(BlockTags.PLANKS).add(
-            TFBlocks.TWILIGHT_OAK_PLANKS
+            TFBlocks.TWILIGHT_OAK_PLANKS,
+            TFBlocks.CANOPY_PLANKS,
+            TFBlocks.TWILIGHT_MANGROVE_PLANKS,
+            TFBlocks.DARK_PLANKS,
+            TFBlocks.TIME_PLANKS,
+            TFBlocks.TRANSFORMATION_PLANKS,
+            TFBlocks.MINING_PLANKS,
+            TFBlocks.SORTING_PLANKS
         )
         valueLookupBuilder(BlockTags.WOODEN_DOORS).add(
-            TFBlocks.TWILIGHT_OAK_DOOR
+            TFBlocks.TWILIGHT_OAK_DOOR,
+            TFBlocks.CANOPY_DOOR,
+            TFBlocks.TWILIGHT_MANGROVE_DOOR,
+            TFBlocks.DARK_DOOR,
+            TFBlocks.TIME_DOOR,
+            TFBlocks.TRANSFORMATION_DOOR,
+            TFBlocks.MINING_DOOR,
+            TFBlocks.SORTING_DOOR
         )
         valueLookupBuilder(BlockTags.WOODEN_TRAPDOORS).add(
-            TFBlocks.TWILIGHT_OAK_TRAPDOOR
+            TFBlocks.TWILIGHT_OAK_TRAPDOOR,
+            TFBlocks.CANOPY_TRAPDOOR,
+            TFBlocks.TWILIGHT_MANGROVE_TRAPDOOR,
+            TFBlocks.DARK_TRAPDOOR,
+            TFBlocks.TIME_TRAPDOOR,
+            TFBlocks.TRANSFORMATION_TRAPDOOR,
+            TFBlocks.MINING_TRAPDOOR,
+            TFBlocks.SORTING_TRAPDOOR
         )
         valueLookupBuilder(BlockTags.WOODEN_FENCES).add(
-            TFBlocks.TWILIGHT_OAK_FENCE
+            TFBlocks.TWILIGHT_OAK_FENCE,
+            TFBlocks.CANOPY_FENCE,
+            TFBlocks.TWILIGHT_MANGROVE_FENCE,
+            TFBlocks.DARK_FENCE,
+            TFBlocks.TIME_FENCE,
+            TFBlocks.TRANSFORMATION_FENCE,
+            TFBlocks.MINING_FENCE,
+            TFBlocks.SORTING_FENCE
         )
         valueLookupBuilder(BlockTags.FENCE_GATES).add(
-            TFBlocks.TWILIGHT_OAK_FENCE_GATE
+            TFBlocks.TWILIGHT_OAK_FENCE_GATE,
+            TFBlocks.CANOPY_FENCE_GATE,
+            TFBlocks.TWILIGHT_MANGROVE_FENCE_GATE,
+            TFBlocks.DARK_FENCE_GATE,
+            TFBlocks.TIME_FENCE_GATE,
+            TFBlocks.TRANSFORMATION_FENCE_GATE,
+            TFBlocks.MINING_FENCE_GATE,
+            TFBlocks.SORTING_FENCE_GATE
         )
         valueLookupBuilder(BlockTags.WOODEN_STAIRS).add(
-            TFBlocks.TWILIGHT_OAK_STAIRS
+            TFBlocks.TWILIGHT_OAK_STAIRS,
+            TFBlocks.CANOPY_STAIRS,
+            TFBlocks.TWILIGHT_MANGROVE_STAIRS,
+            TFBlocks.DARK_STAIRS,
+            TFBlocks.TIME_STAIRS,
+            TFBlocks.TRANSFORMATION_STAIRS,
+            TFBlocks.MINING_STAIRS,
+            TFBlocks.SORTING_STAIRS
         )
         valueLookupBuilder(BlockTags.WOODEN_SLABS).add(
-            TFBlocks.TWILIGHT_OAK_SLAB
+            TFBlocks.TWILIGHT_OAK_SLAB,
+            TFBlocks.CANOPY_SLAB,
+            TFBlocks.TWILIGHT_MANGROVE_SLAB,
+            TFBlocks.DARK_SLAB,
+            TFBlocks.TIME_SLAB,
+            TFBlocks.TRANSFORMATION_SLAB,
+            TFBlocks.MINING_SLAB,
+            TFBlocks.SORTING_SLAB
         )
         valueLookupBuilder(BlockTags.WOODEN_PRESSURE_PLATES).add(
-            TFBlocks.TWILIGHT_OAK_PRESSURE_PLATE
+            TFBlocks.TWILIGHT_OAK_PRESSURE_PLATE,
+            TFBlocks.CANOPY_PRESSURE_PLATE,
+            TFBlocks.TWILIGHT_MANGROVE_PRESSURE_PLATE,
+            TFBlocks.DARK_PRESSURE_PLATE,
+            TFBlocks.TIME_PRESSURE_PLATE,
+            TFBlocks.TRANSFORMATION_PRESSURE_PLATE,
+            TFBlocks.MINING_PRESSURE_PLATE,
+            TFBlocks.SORTING_PRESSURE_PLATE
         )
         valueLookupBuilder(BlockTags.WOODEN_BUTTONS).add(
-            TFBlocks.TWILIGHT_OAK_BUTTON
+            TFBlocks.TWILIGHT_OAK_BUTTON,
+            TFBlocks.CANOPY_BUTTON,
+            TFBlocks.TWILIGHT_MANGROVE_BUTTON,
+            TFBlocks.DARK_BUTTON,
+            TFBlocks.TIME_BUTTON,
+            TFBlocks.TRANSFORMATION_BUTTON,
+            TFBlocks.MINING_BUTTON,
+            TFBlocks.SORTING_BUTTON
         )
     }
 }

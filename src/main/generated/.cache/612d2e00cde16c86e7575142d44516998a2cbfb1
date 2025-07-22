@@ -1,6 +1,7 @@
-// 1.21.7	-999999999-01-01T00:00:00	twilightForest/Tags for minecraft:block
-7f89e0aad5b3f84db9e6935350ccb1dabe9664a8 data/minecraft/tags/block/fence_gates.json
-24bbac3e67533318f52f8a7f3a7e4803cdba9e63 data/minecraft/tags/block/leaves.json
+// 1.21.8	-999999999-01-01T00:00:00	twilightForest/Tags for minecraft:block
+8516a994dbc22e8cb2f63d9eb7e3d4172322d953 data/minecraft/tags/block/fence_gates.json
+a599f50a3e15b7e394bf3f8e7c677ba5beab48ce data/minecraft/tags/block/leaves.json
+97652f431059f64ffc5747f498cdcf278ddd0555 data/minecraft/tags/block/logs.json
 fa185e626b9eb457ecb24d7fdb86bb9a4fc79832 data/minecraft/tags/block/logs_that_burn.json
 ffe7605d195930efeb9cd2c6ddff848c013939cc data/minecraft/tags/block/mineable/axe.json
 894142a18566c008a63daa05efba2dde1ef6eb26 data/minecraft/tags/block/mineable/hoe.json
@@ -8,19 +9,19 @@ ffb79a58c32ab52db4a79d3db63e3e27de78fdb1 data/minecraft/tags/block/mineable/pick
 bd9ebcc64d96bbb0f21e9e5804cbdd846e4533de data/minecraft/tags/block/needs_diamond_tool.json
 5b9e6c018ad232d38429da34f286224beef8f10f data/minecraft/tags/block/needs_iron_tool.json
 9801f24a0666870fdcf584489810f7c3acbf9fd8 data/minecraft/tags/block/needs_stone_tool.json
-1159460bc9f26874e46ef893746bd349a8562000 data/minecraft/tags/block/planks.json
-3908af010fe072238ba2623f48b38a8a778b7c52 data/minecraft/tags/block/saplings.json
+31d9cb704c2654567c6eb9e8a3031bf18a1c2f42 data/minecraft/tags/block/planks.json
+e68f8b540885f72b3a7b13ab1db5f4bb9b04fa67 data/minecraft/tags/block/saplings.json
 c15f20a0c7467da527d9bde3456b9eb9e6a86021 data/minecraft/tags/block/strider_warm_blocks.json
-343310748ffee1f32369805a6136bbc8cafb8582 data/minecraft/tags/block/wooden_buttons.json
-c002e338361573de933f6380c979bbe6292a3e21 data/minecraft/tags/block/wooden_doors.json
-ea7b2ac38d6e9cbb5ee8cd87a9a9e5c17f4d7617 data/minecraft/tags/block/wooden_fences.json
-04f4f56ed00ee38270536c5aef09343683472685 data/minecraft/tags/block/wooden_pressure_plates.json
-edfaa8cda9c6e3da8038e030c4631fa83cb73959 data/minecraft/tags/block/wooden_slabs.json
-0bf8abd96ad780cda7c6784c4be746326e7ce2d0 data/minecraft/tags/block/wooden_stairs.json
-80343e8b03655007ef288ec81b8e8fb85dbfadc6 data/minecraft/tags/block/wooden_trapdoors.json
+8ae3384e3c5c617ec7f8b915668c5787c9a79994 data/minecraft/tags/block/wooden_buttons.json
+d40acf8138dfb4a31be2c3efeccf9f3125b7bf05 data/minecraft/tags/block/wooden_doors.json
+7d422d03fd06c2d856a5a6a3f39fd1e1ff66d33f data/minecraft/tags/block/wooden_fences.json
+d03471cefa86793bb7c9f6b0c69646f302c45111 data/minecraft/tags/block/wooden_pressure_plates.json
+7b277a46c00cd96bfbde12bbe1d59fbfd452e0aa data/minecraft/tags/block/wooden_slabs.json
+c8e915ea4224852f5a43faf867e397b243c8658c data/minecraft/tags/block/wooden_stairs.json
+ae31bed97ffe3dce29ba190a960d6ed0dfa400bc data/minecraft/tags/block/wooden_trapdoors.json
 bd9ebcc64d96bbb0f21e9e5804cbdd846e4533de data/twilightforest/tags/block/mazebreaker_tool_accelerated.json
 a249c46329a41538f49a564e1f14338aaf1be5a0 data/twilightforest/tags/block/needs_fiery_tool.json
 32b13946c4cd1f944b029659ccce5fcb2adad4ff data/twilightforest/tags/block/needs_ironwood_tool.json
 a249c46329a41538f49a564e1f14338aaf1be5a0 data/twilightforest/tags/block/needs_knightmetal_tool.json
 a249c46329a41538f49a564e1f14338aaf1be5a0 data/twilightforest/tags/block/needs_steeleaf_tool.json
-d94381f990d5908c2d71247b1b14946ef4a4ef3d data/twilightforest/tags/block/twilight_forest_logs.json
+468b8cfe5f8817a699556fe75af814369b51028a data/twilightforest/tags/block/twilight_forest_logs.json

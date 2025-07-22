@@ -1,6 +1,7 @@
 package autumn.twilightforest.init.entity.custom.tiny_bird
 
 import autumn.twilightforest.init.entity.TFEntities
+import autumn.twilightforest.util.TFLootTables
 import net.minecraft.entity.AnimationState
 import net.minecraft.entity.EntityData
 import net.minecraft.entity.EntityType
@@ -17,17 +18,24 @@ import net.minecraft.entity.player.PlayerEntity
 import net.minecraft.item.ItemStack
 import net.minecraft.registry.tag.ItemTags
 import net.minecraft.server.world.ServerWorld
+import net.minecraft.sound.SoundEvents
 import net.minecraft.storage.ReadView
 import net.minecraft.storage.WriteView
 import net.minecraft.util.Util
 import net.minecraft.world.LocalDifficulty
 import net.minecraft.world.ServerWorldAccess
 import net.minecraft.world.World
+import net.minecraft.world.event.GameEvent
 import java.util.function.Predicate
 
 class TinyBirdEntity(entityType: EntityType<out AnimalEntity>, world: World) : AnimalEntity(entityType, world) {
     val flyAnimationState: AnimationState = AnimationState()
-    private var flyAnimationTimeout = 1
+    private var eggLayTime: Int
+    private var flyAnimationTimeout = 400
+
+    init {
+        eggLayTime = random.nextInt(6000) + 6000
+    }
 
     override fun initGoals() {
         this.goalSelector.add(0, SwimGoal(this))
@@ -40,13 +48,13 @@ class TinyBirdEntity(entityType: EntityType<out AnimalEntity>, world: World) : A
         this.goalSelector.add(7, LookAroundGoal(this))
     }
 
-    override fun isBreedingItem(stack: ItemStack?): Boolean {
-        return stack?.isIn(ItemTags.CHICKEN_FOOD) == true
+    override fun isBreedingItem(stack: ItemStack): Boolean {
+        return stack.isIn(ItemTags.CHICKEN_FOOD)
     }
 
     private fun setupAnimationStates() {
         if(this.flyAnimationTimeout <= 0) {
-            this.flyAnimationTimeout = 600
+            flyAnimationTimeout = random.nextInt(700) + 300
             this.flyAnimationState.start(this.age)
         } else {
             --this.flyAnimationTimeout
@@ -58,6 +66,19 @@ class TinyBirdEntity(entityType: EntityType<out AnimalEntity>, world: World) : A
 
         if(this.world.isClient) {
             this.setupAnimationStates()
+        }
+    }
+
+    override fun tickMovement() {
+        super.tickMovement()
+        val serverWorld = world as? ServerWorld
+        if (serverWorld != null && isAlive && !isBaby && --eggLayTime <= 0) {
+            if (forEachGiftedItem(serverWorld, TFLootTables.TINY_BIRD_LAY_GAMEPLAY, this::dropStack)) {
+                playSound(SoundEvents.ENTITY_CHICKEN_EGG, 1.0f, (random.nextFloat() - random.nextFloat()) * 0.2f + 1.0f)
+                emitGameEvent(GameEvent.ENTITY_PLACE)
+            }
+
+            eggLayTime = random.nextInt(6000) + 6000
         }
     }
 
@@ -80,7 +101,7 @@ class TinyBirdEntity(entityType: EntityType<out AnimalEntity>, world: World) : A
     private val typeVariant: Int
         get() = dataTracker.get(DATA_ID_TYPE_VARIANT)
 
-    private fun setVariant(variant: TinyBirdVariant) {
+    fun setVariant(variant: TinyBirdVariant) {
         dataTracker.set(DATA_ID_TYPE_VARIANT, variant.id and 255)
     }
 
@@ -92,6 +113,16 @@ class TinyBirdEntity(entityType: EntityType<out AnimalEntity>, world: World) : A
     override fun readData(view: ReadView) {
         super.readData(view)
         dataTracker.set(DATA_ID_TYPE_VARIANT, view.getInt("Variant", 0))
+    }
+
+    override fun writeCustomData(view: WriteView) {
+        super.writeCustomData(view)
+        view.putInt("EggLayTime", eggLayTime)
+    }
+
+    override fun readCustomData(view: ReadView) {
+        super.readCustomData(view)
+        eggLayTime = view.getInt("EggLayTime", 0)
     }
 
     override fun initialize(

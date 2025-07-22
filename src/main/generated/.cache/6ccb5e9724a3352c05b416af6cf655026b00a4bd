@@ -1,4 +1,4 @@
-// 1.21.7	-999999999-01-01T00:00:00	twilightForest/Model Definitions
+// 1.21.8	-999999999-01-01T00:00:00	twilightForest/Model Definitions
 a753d663958c27ad77bd65d8d9ee637ae7cd5a9d assets/twilightforest/blockstates/antibuilt_block.json
 ff6dd086fab0453865f6439c576c9120934ae968 assets/twilightforest/blockstates/arctic_fur_block.json
 00ec1f804d0935e5f475c9cc8b08b865f2c394f1 assets/twilightforest/blockstates/canopy_button.json
@@ -416,6 +416,7 @@ c9bd57761f58627f38d888214fa05b83099dc788 assets/twilightforest/items/time_pressu
 e58a9d72ba3bf6e9964f8a1215cd2ed970d9466f assets/twilightforest/items/time_stairs.json
 3e922a20d29b255e44396f3c53deca9651f0909a assets/twilightforest/items/time_trapdoor.json
 e429a3c1ed97fae45f8b58d96c22f0d88e8b2919 assets/twilightforest/items/time_wood.json
+b9cf10f737bcbb3dd6121f736ceea36e71d8509d assets/twilightforest/items/tiny_egg.json
 d53d8b7413c628be178d083a8f64f4d3f9d17fc0 assets/twilightforest/items/torchberries.json
 f8aa6d55806c1b8c0005089a8263fbaee6c79a5a assets/twilightforest/items/tower_key.json
 eb7e7a3447720aa57eb6abdd97cef72c2e4b4ba1 assets/twilightforest/items/towerwood.json
@@ -1226,6 +1227,7 @@ d18e3e48cd0ee23767355e2cb7a25c8b13abe95c assets/twilightforest/models/item/time_
 3d2e2a38af3e3fcdfcda2187b5a91a36e1efe6f7 assets/twilightforest/models/item/time_hanging_sign.json
 b8b14f90fb2dce3e231361082d926fe478c962a4 assets/twilightforest/models/item/time_sapling.json
 4779242a129f3a76e2b38f07859596c2a5bf7fff assets/twilightforest/models/item/time_sign.json
+67fd60c7e4dfce88bc54607832e284e408495fd4 assets/twilightforest/models/item/tiny_egg.json
 0280159c3df7e4dcc3016802c6e5a0c03e7206d3 assets/twilightforest/models/item/torchberries.json
 d49abbd4952c051a5eb366049854772f5548a5c4 assets/twilightforest/models/item/tower_key.json
 d82c6c8c0ce2c8162b0fdd3a791d86bfa3a041fe assets/twilightforest/models/item/transformation_boat.json

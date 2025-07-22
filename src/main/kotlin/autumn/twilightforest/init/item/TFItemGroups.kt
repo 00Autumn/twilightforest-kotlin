@@ -38,6 +38,7 @@ object TFItemGroups {
                 entries.add(TFItems.CROWN_SPLINTER)
 
                 entries.add(TFItems.TOWER_KEY)
+                entries.add(TFItems.TINY_EGG)
 
                 entries.add(TFItems.RAW_VENISON)
                 entries.add(TFItems.COOKED_VENISON)
@@ -104,6 +105,7 @@ object TFItemGroups {
 
                 entries.add(TFBlocks.HEDGE)
                 entries.add(TFBlocks.HEDGE_ROSE)
+                entries.add(TFBlocks.CORONATION_CARPET)
 
                 entries.add(TFBlocks.STRONGHOLD_SHIELD);
 

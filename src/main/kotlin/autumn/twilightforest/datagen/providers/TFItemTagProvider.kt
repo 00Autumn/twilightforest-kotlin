@@ -5,6 +5,7 @@ import autumn.twilightforest.init.item.TFItems
 import autumn.twilightforest.util.tag.TFItemTags
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider
+import net.minecraft.item.Items
 import net.minecraft.registry.RegistryWrapper
 import net.minecraft.registry.tag.ItemTags
 import java.util.concurrent.CompletableFuture
@@ -23,6 +24,11 @@ class TFItemTagProvider(output: FabricDataOutput, registriesFuture: CompletableF
             .add(TFItems.RAW_MEEF)
             .add(TFItems.COOKED_MEEF)
             .add(TFItems.HYDRA_CHOP)
+
+        valueLookupBuilder(TFItemTags.SKELETON_DRUID_PREFERRED_WEAPON)
+            .add(Items.GOLDEN_HOE)
+        valueLookupBuilder(TFItemTags.KNIGHT_PHANTOM_PREFERRED_WEAPON)
+            .add(TFItems.KNIGHTMETAL_SWORD)
 
         valueLookupBuilder(TFItemTags.IS_FIERY_VIAL)
             .add(TFItems.FIERY_BLOOD)

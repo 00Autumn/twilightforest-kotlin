@@ -7,6 +7,7 @@ import autumn.twilightforest.component.tooltip.TooltipComponent
 import autumn.twilightforest.init.block.TFBlocks
 import autumn.twilightforest.init.item.custom.FieryItem
 import autumn.twilightforest.init.item.custom.PocketWatchItem
+import autumn.twilightforest.init.item.custom.TinyEggItem
 import net.minecraft.item.BoatItem
 import net.minecraft.item.HangingSignItem
 import net.minecraft.item.Item
@@ -54,6 +55,8 @@ object TFItems {
 
     // MISC ITEMS
     val TOWER_KEY = registerItem("tower_key") { Item(it.fireproof().rarity(Rarity.UNCOMMON)) }
+    val TINY_EGG = registerItem("tiny_egg") { TinyEggItem(it.maxCount(16)) }
+
 
     // FOOD ITEMS
     val RAW_VENISON = registerItem("raw_venison") { Item(it.food(TFFoodComponents.RAW_VENISON)) }

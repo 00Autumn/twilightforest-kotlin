@@ -1,5 +1,13 @@
 {
   "values": [
-    "twilightforest:twilight_oak_sapling"
+    "twilightforest:twilight_oak_sapling",
+    "twilightforest:rainbow_oak_sapling",
+    "twilightforest:canopy_sapling",
+    "twilightforest:twilight_mangrove_sapling",
+    "twilightforest:dark_sapling",
+    "twilightforest:time_sapling",
+    "twilightforest:transformation_sapling",
+    "twilightforest:mining_sapling",
+    "twilightforest:sorting_sapling"
   ]
 }

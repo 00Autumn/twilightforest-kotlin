@@ -9,6 +9,7 @@ import net.minecraft.world.gen.GenerationStep
 object TFWorldGeneration {
     fun generateWorldGen() {
 
+        /*
         BiomeModifications.addFeature(
             BiomeSelectors.includeByKey(TFBiomes.FOREST_KEY),
             GenerationStep.Feature.VEGETAL_DECORATION,
@@ -41,5 +42,7 @@ object TFWorldGeneration {
             GenerationStep.Feature.VEGETAL_DECORATION,
             TFPlacedFeatures.LARGE_RAINBOW_OAK_TREE_KEY
         )
+        */
+
     }
 }

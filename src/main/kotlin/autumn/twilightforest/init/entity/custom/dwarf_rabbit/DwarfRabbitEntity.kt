@@ -18,6 +18,7 @@ import net.minecraft.entity.player.PlayerEntity
 import net.minecraft.item.ItemStack
 import net.minecraft.item.Items
 import net.minecraft.recipe.Ingredient
+import net.minecraft.registry.tag.ItemTags
 import net.minecraft.server.world.ServerWorld
 import net.minecraft.storage.ReadView
 import net.minecraft.storage.WriteView
@@ -43,8 +44,8 @@ class DwarfRabbitEntity(entityType: EntityType<out AnimalEntity>, world: World) 
         this.goalSelector.add(6, LookAroundGoal(this))
     }
 
-    override fun isBreedingItem(stack: ItemStack?): Boolean {
-        return stack?.isOf(Items.CARROT) == true
+    override fun isBreedingItem(stack: ItemStack): Boolean {
+        return stack.isIn(ItemTags.RABBIT_FOOD)
     }
 
     override fun createChild(world: ServerWorld?, entity: PassiveEntity?): PassiveEntity? {

@@ -8,6 +8,7 @@ import autumn.twilightforest.init.block.custom.ArcticFurBlock
 import autumn.twilightforest.init.block.custom.FieryBlock
 import autumn.twilightforest.init.block.custom.HedgeBlock
 import autumn.twilightforest.init.block.custom.KnightmetalBlock
+import autumn.twilightforest.init.block.custom.TFConnectedCarpetBlock
 import autumn.twilightforest.init.block.custom.TFLeavesBlock
 import autumn.twilightforest.sign.TFSignBlockHelper
 import autumn.twilightforest.util.TFBlockSetTypes
@@ -101,6 +102,7 @@ object TFBlocks {
     // MISC BLOCKS
     val HEDGE = registerBlock("hedge") { settings -> HedgeBlock(settings.mapColor(MapColor.GREEN).pistonBehavior(PistonBehavior.DESTROY).sounds(BlockSoundGroup.GRASS).strength(2.0F, 6.0F)) }
     val HEDGE_ROSE = registerCopyBlock("hedge_rose", HEDGE) { settings -> HedgeBlock(settings.mapColor(MapColor.DARK_RED)) }
+    val CORONATION_CARPET = registerBlock("coronation_carpet") {settings -> TFConnectedCarpetBlock(settings) }
 
     // WOOD BLOCKS
     val TWILIGHT_OAK_LOG = registerVanillaBlock("twilight_oak_log", Blocks.OAK_LOG) { settings -> PillarBlock(settings) }

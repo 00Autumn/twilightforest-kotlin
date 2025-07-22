@@ -10,6 +10,9 @@ object TFItemTags {
     val MAZEBREAKER_TOOL: TagKey<Item> = createTag("mazebreaker_tool")
     val FIERY_TOOL: TagKey<Item> = createTag("fiery_tool")
 
+    val SKELETON_DRUID_PREFERRED_WEAPON: TagKey<Item> = createTag("skeleton_druid_preferred_weapon")
+    val KNIGHT_PHANTOM_PREFERRED_WEAPON: TagKey<Item> = createTag("knight_phantom_preferred_weapon")
+
     val KEPT_ON_DEATH: TagKey<Item> = createTag("kept_on_death")
 
     val IS_FIERY_VIAL: TagKey<Item> = createTag("is_fiery_vial")

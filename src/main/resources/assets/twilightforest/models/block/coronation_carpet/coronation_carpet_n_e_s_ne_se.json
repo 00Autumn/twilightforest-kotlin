@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/carpet",
+  "textures": {
+    "wool": "twilightforest:block/coronation_carpet/coronation_carpet_n_e_s_ne_se"
+  }
+}

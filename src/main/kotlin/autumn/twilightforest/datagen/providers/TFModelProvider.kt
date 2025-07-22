@@ -181,6 +181,7 @@ class TFModelProvider(output: FabricDataOutput) : FabricModelProvider(output) {
                 TFItems.EMPERORS_CLOTH,
                 TFItems.CROWN_SPLINTER,
                 TFItems.TOWER_KEY,
+                TFItems.TINY_EGG,
                 TFItems.RAW_VENISON,
                 TFItems.COOKED_VENISON,
                 TFItems.RAW_MEEF,

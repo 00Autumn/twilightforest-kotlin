@@ -349,6 +349,7 @@ class TFEnglishLanguageProvider(output: FabricDataOutput, registryLookup: Comple
         entries?.add(TFEntities.CARMINITE_GHASTLING, "Carminite Ghastling")
         entries?.add(TFEntities.KNIGHT_PHANTOM, "Knight Phantom")
         entries?.add(TFEntities.BIGHORN_SHEEP, "Bighorn Sheep")
+        entries?.add(TFEntities.WILD_BOAR, "Wild Boar")
 
         addText(entries, Text.translatable("biome.twilightforest.forest_key"), "Twilight Forest")
         addText(entries, Text.translatable("biome.twilightforest.dark_forest_key"), "Dark Forest")

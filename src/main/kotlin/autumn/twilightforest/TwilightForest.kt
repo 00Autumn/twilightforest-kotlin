@@ -32,6 +32,7 @@ import net.minecraft.entity.mob.GhastEntity
 import net.minecraft.entity.mob.HostileEntity
 import net.minecraft.entity.mob.SilverfishEntity
 import net.minecraft.entity.mob.SpiderEntity
+import net.minecraft.entity.passive.PigEntity
 import net.minecraft.entity.passive.SheepEntity
 import net.minecraft.util.Identifier
 import org.slf4j.Logger
@@ -74,6 +75,7 @@ object TwilightForest : ModInitializer {
 		FabricDefaultAttributeRegistry.register(TFEntities.CARMINITE_GHASTLING, GhastEntity.createGhastAttributes())
 		FabricDefaultAttributeRegistry.register(TFEntities.KNIGHT_PHANTOM, KnightPhantomEntity.creatKnightPhantomAttributes())
 		FabricDefaultAttributeRegistry.register(TFEntities.BIGHORN_SHEEP, SheepEntity.createSheepAttributes())
+		FabricDefaultAttributeRegistry.register(TFEntities.WILD_BOAR, PigEntity.createPigAttributes())
 	}
 
 	fun id(path: String): Identifier {

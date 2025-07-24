@@ -25,6 +25,8 @@ import autumn.twilightforest.init.entity.client.swarm_spider.SwarmSpiderRenderer
 import autumn.twilightforest.init.entity.client.tiny_bird.TinyBirdModel
 import autumn.twilightforest.init.entity.client.tiny_bird.TinyBirdRenderer
 import autumn.twilightforest.init.entity.client.towerwood_borer.TowerwoodBorerRenderer
+import autumn.twilightforest.init.entity.client.wild_boar.WildBoarModel
+import autumn.twilightforest.init.entity.client.wild_boar.WildBoarRenderer
 import autumn.twilightforest.init.entity.client.wild_deer.WildDeerModel
 import autumn.twilightforest.init.entity.client.wild_deer.WildDeerRenderer
 import autumn.twilightforest.init.entity.client.winter_wolf.WinterWolfRenderer
@@ -118,5 +120,8 @@ object TwilightForestClient : ClientModInitializer {
 
         EntityModelLayerRegistry.registerModelLayer(BighornSheepModel.BIGHORN_SHEEP, BighornSheepModel::getTexturedModelData)
         EntityRendererRegistry.register(TFEntities.BIGHORN_SHEEP, ::BighornSheepRenderer)
+
+        EntityModelLayerRegistry.registerModelLayer(WildBoarModel.WILD_BOAR, WildBoarModel::getTexturedModelData)
+        EntityRendererRegistry.register(TFEntities.WILD_BOAR, ::WildBoarRenderer)
     }
 }

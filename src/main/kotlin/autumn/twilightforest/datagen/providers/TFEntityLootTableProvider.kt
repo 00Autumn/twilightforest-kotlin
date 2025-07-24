@@ -281,5 +281,16 @@ class TFEntityLootTableProvider(output: FabricDataOutput, registryLookup: Comple
                 )
             )
         }
+
+        register(TFEntities.WILD_BOAR, LootTable.Builder().pool(
+            LootPool.builder()
+                .rolls(ConstantLootNumberProvider.create(1.0F))
+                .with(
+                    ItemEntry.builder(Items.PORKCHOP)
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0F, 3.0F)))
+                        .apply(FurnaceSmeltLootFunction.builder().conditionally(this.createSmeltLootCondition()))
+                        .apply(EnchantedCountIncreaseLootFunction.builder(this.registries, UniformLootNumberProvider.create(0.0F, 1.0F)))
+                )
+        ))
     }
 }

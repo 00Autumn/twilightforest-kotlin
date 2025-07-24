@@ -6,6 +6,7 @@ import autumn.twilightforest.init.entity.custom.dwarf_rabbit.DwarfRabbitEntity
 import autumn.twilightforest.init.entity.custom.squirrel.SquirrelEntity
 import autumn.twilightforest.init.entity.custom.tiny_bird.TinyBirdEntity
 import autumn.twilightforest.init.entity.custom.tiny_bird.TinyEggEntity
+import autumn.twilightforest.init.entity.custom.wild_boar.WildBoarEntity
 import autumn.twilightforest.init.entity.custom.wild_deer.WildDeerEntity
 import autumn.twilightforest.init.entity.vanilla.bighorn_sheep.BighornSheepEntity
 import autumn.twilightforest.init.entity.vanilla.carminite_broodling.CarminiteBroodlingEntity
@@ -204,6 +205,15 @@ object TFEntities {
             .passengerAttachments(1.2375F)
             .maxTrackingRange(10)
             .build(BIGHORN_SHEEP_KEY))
+
+    val WILD_BOAR_KEY = RegistryKey.of(RegistryKeys.ENTITY_TYPE, Identifier.of(TwilightForest.MOD_ID, "wild_boar"))
+    val WILD_BOAR = Registry.register(Registries.ENTITY_TYPE,
+        Identifier.of(TwilightForest.MOD_ID, "wild_boar"),
+        EntityType.Builder.create(::WildBoarEntity, SpawnGroup.CREATURE)
+            .dimensions(0.9F, 0.9F)
+            .passengerAttachments(0.86875F)
+            .maxTrackingRange(10)
+            .build(WILD_BOAR_KEY))
 
     fun registerEntities() {
         TwilightForest.logger?.info("Registering entities for " + TwilightForest.MOD_ID)
